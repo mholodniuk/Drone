@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dragonfly: Plik źródłowy /home/maciek/dorn/prj/src/Dron.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="dragonfly-icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Dragonfly
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00062_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Dron.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="a00062.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00023.html">Dron.hh</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00041.html">Nazwy.hh</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="a00062.html#a194f9a557b404b2955f51a3e7cb28569">   10</a></span>&#160;<span class="preprocessor">#define BLAD_OBLICZEN 1e-8</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a00106.html#a10e3f7aeae3b22d76e9b79ae216e9e77">   24</a></span>&#160;std::string <a class="code" href="a00106.html#a10e3f7aeae3b22d76e9b79ae216e9e77">Dron::TworzNazweRotora</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> id_Drona, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrRotora)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  std::stringstream StrmWy;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  StrmWy &lt;&lt; <span class="stringliteral">&quot;dat/Dron&quot;</span>&lt;&lt;id_Drona&lt;&lt;<span class="stringliteral">&quot;/PlikWlasciwy_Dron&quot;</span>&lt;&lt;id_Drona&lt;&lt;<span class="stringliteral">&quot;_Rotor&quot;</span>&lt;&lt;nrRotora+1&lt;&lt;<span class="stringliteral">&quot;.dat&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">return</span> StrmWy.str();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00106.html#a85043c9ab654565bb109585b676ca20f">   44</a></span>&#160;std::string <a class="code" href="a00106.html#a85043c9ab654565bb109585b676ca20f">Dron::TworzNazweKorpusu</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> id_Drona)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  std::ostringstream StrmWy;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  StrmWy &lt;&lt; <span class="stringliteral">&quot;dat/Dron&quot;</span>&lt;&lt;id_Drona&lt;&lt;<span class="stringliteral">&quot;/PlikWlasciwy_Dron&quot;</span>&lt;&lt;id_Drona&lt;&lt;<span class="stringliteral">&quot;_Korpus.dat&quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> StrmWy.str();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a00106.html#a445552b3dfcb46cc7556e801e64f4d8e">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#a445552b3dfcb46cc7556e801e64f4d8e">Dron::PodajWspolrzedne</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Wspolrzedna x: &quot;</span>&lt;&lt;<a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[0]&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Wspolrzedna y: &quot;</span>&lt;&lt;<a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[1]&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">//std::cout&lt;&lt;&quot;Wspolrzedna z: &quot;&lt;&lt;Polozenie[2]&lt;&lt;std::endl;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">//Wektor3D::ZwrocIloscWektorow();</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00106.html#a246caac7fba0c0cb58b49ae896cb6305">   67</a></span>&#160;<a class="code" href="a00138.html">Wektor3D</a> <a class="code" href="a00106.html#a246caac7fba0c0cb58b49ae896cb6305">Dron::ZwrocPolozenie</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="a00106.html#ae8449c4acc9e1de1819b7db69f8665fe">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#ae8449c4acc9e1de1819b7db69f8665fe">Dron::TworzDrona</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ID, PzG::LaczeDoGNUPlota &amp; Lacze)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  std::string NazwaPliku;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">id</span> = ID;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;4; ++i)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    NazwaPliku = <a class="code" href="a00106.html#a10e3f7aeae3b22d76e9b79ae216e9e77">TworzNazweRotora</a>(ID, i);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[i].<a class="code" href="a00102.html#acc96bfdcd122da809e00ce225f5c5238">UstawNazwaPlikuWlasciwego</a>(NazwaPliku.c_str());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Lacze.DodajNazwePliku(NazwaPliku.c_str());</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  NazwaPliku = <a class="code" href="a00106.html#a85043c9ab654565bb109585b676ca20f">TworzNazweKorpusu</a>(ID);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="a00106.html#a3b458eb0bc9d408a6b6aeeec9af1a808">KorpusDrona</a>.<a class="code" href="a00102.html#acc96bfdcd122da809e00ce225f5c5238">UstawNazwaPlikuWlasciwego</a>(NazwaPliku.c_str());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  Lacze.DodajNazwePliku(NazwaPliku.c_str());</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="a00106.html#ae1fb7dd84aff0aee71199ab6e2ee2949">  105</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#ae1fb7dd84aff0aee71199ab6e2ee2949">Dron::Oblicz_i_Zapisz_WspKorpusu</a>()</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Translacja = {0, 0, 2};</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> w = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> + Translacja;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> SkalaKorpusu = {10, 8, 4};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="a00106.html#a3b458eb0bc9d408a6b6aeeec9af1a808">KorpusDrona</a>.<a class="code" href="a00130.html#af758517a3f2d1fbe62da6ab0dfc57adc">ZadajKatObrotu</a>(<a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="a00106.html#a3b458eb0bc9d408a6b6aeeec9af1a808">KorpusDrona</a>.<a class="code" href="a00102.html#a9740f61b9dc0c3f8ca9fe2f3414e1e42">UstawSkale</a>(SkalaKorpusu);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="a00106.html#a3b458eb0bc9d408a6b6aeeec9af1a808">KorpusDrona</a>.<a class="code" href="a00130.html#a97065b4375d19d6f2bee4a610a425b4e">TransDoUklRodzica</a>(w);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="a00106.html#aca7c226602e49d6c233df6fdadaa8b4f">  123</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#aca7c226602e49d6c233df6fdadaa8b4f">Dron::Oblicz_i_Zapisz_WspRotorow</a>()</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">double</span> kat_obr = 0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="a00122.html">Macierz3x3</a> MacierzRot;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">double</span> Rad = <a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a>*M_PI/180;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  MacierzRot.<a class="code" href="a00122.html#ab0699c8f99fa17bbcc4a7c400bed506d">ObrotZ</a>(Rad);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> TranslacjaRotorLewyPrzedni = {5, 4, 5};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  TranslacjaRotorLewyPrzedni = MacierzRot * TranslacjaRotorLewyPrzedni;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> w1 = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> + TranslacjaRotorLewyPrzedni;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> TranslacjaRotorPrawyPrzedni = {5, -4, 5};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  TranslacjaRotorPrawyPrzedni = MacierzRot * TranslacjaRotorPrawyPrzedni;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> w2 = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> + TranslacjaRotorPrawyPrzedni;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> TranslacjaRotorLewyTylny = {-5, 4, 5};</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  TranslacjaRotorLewyTylny = MacierzRot * TranslacjaRotorLewyTylny;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> w3 = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> + TranslacjaRotorLewyTylny;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> TranslacjaRotorPrawyTylny = {-5, -4, 5};</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  TranslacjaRotorPrawyTylny = MacierzRot * TranslacjaRotorPrawyTylny;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> w4 = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> + TranslacjaRotorPrawyTylny;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> SkalaRotora = {8,8,4};</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> idx=0; idx&lt;<a class="code" href="a00041.html#a9f5ca209b61eae19f489e3af0ab5637d">ILOSC_ROTOROW</a>; ++idx)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[idx].<a class="code" href="a00102.html#a9740f61b9dc0c3f8ca9fe2f3414e1e42">UstawSkale</a>(SkalaRotora);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[0].<a class="code" href="a00118.html#a38ed7e121d2b7a78650d1deee3fe1035">ZadajKatObrotu</a>(kat_obr);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[1].<a class="code" href="a00118.html#a38ed7e121d2b7a78650d1deee3fe1035">ZadajKatObrotu</a>(-kat_obr);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[2].<a class="code" href="a00118.html#a38ed7e121d2b7a78650d1deee3fe1035">ZadajKatObrotu</a>(-kat_obr);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[3].<a class="code" href="a00118.html#a38ed7e121d2b7a78650d1deee3fe1035">ZadajKatObrotu</a>(kat_obr);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[0].<a class="code" href="a00118.html#a80691e151f45065f7cd520bea08406a5">TransDoUklRodzica</a>(w1);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[1].<a class="code" href="a00118.html#a80691e151f45065f7cd520bea08406a5">TransDoUklRodzica</a>(w2);  </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[2].<a class="code" href="a00118.html#a80691e151f45065f7cd520bea08406a5">TransDoUklRodzica</a>(w3);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[3].<a class="code" href="a00118.html#a80691e151f45065f7cd520bea08406a5">TransDoUklRodzica</a>(w4);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  kat_obr+=15;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="a00106.html#a9cea5ba789e3ac0961846a77d909b552">  169</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#a9cea5ba789e3ac0961846a77d909b552">Dron::Oblicz_i_ZapiszWspDrona</a>()</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="a00106.html#ae1fb7dd84aff0aee71199ab6e2ee2949">Oblicz_i_Zapisz_WspKorpusu</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <a class="code" href="a00106.html#aca7c226602e49d6c233df6fdadaa8b4f">Oblicz_i_Zapisz_WspRotorow</a>();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">  185</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">Dron::TransDoUklRodzica</a>(<span class="keyword">const</span> <a class="code" href="a00138.html">Wektor3D</a>&amp; Wek, PzG::LaczeDoGNUPlota &amp; Lacze)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> += Wek;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="a00106.html#a3b458eb0bc9d408a6b6aeeec9af1a808">KorpusDrona</a>.<a class="code" href="a00130.html#a97065b4375d19d6f2bee4a610a425b4e">TransDoUklRodzica</a>(<a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>)) std::cerr&lt;&lt;<span class="stringliteral">&quot;Nastapil blad podczas ruchu&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> idx=0; idx&lt;<a class="code" href="a00041.html#a9f5ca209b61eae19f489e3af0ab5637d">ILOSC_ROTOROW</a>; ++idx)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">RotorDrona</a>[idx].<a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>(<a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>)) std::cerr&lt;&lt;<span class="stringliteral">&quot;Nastapil blad podczas ruchu&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <a class="code" href="a00106.html#a9cea5ba789e3ac0961846a77d909b552">Oblicz_i_ZapiszWspDrona</a>();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  Lacze.Rysuj();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="a00106.html#a185638c36a312f1b6cf9f85d3a6d7a25">  209</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00106.html#a185638c36a312f1b6cf9f85d3a6d7a25">Dron::LotWGore</a>(<span class="keywordtype">double</span> Dlugosc_lotu, PzG::LaczeDoGNUPlota &amp; Lacze)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Translacja = {0,0,1};</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Wznoszenie...&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">for</span>(;<a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[2] &lt;= Dlugosc_lotu; <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[2] += 1)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>(Translacja, Lacze);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    usleep(100000);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[2] -= 1;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="a00106.html#a377c3c7c4d1775ce4041fcd8756c73e0">  231</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00106.html#a377c3c7c4d1775ce4041fcd8756c73e0">Dron::LotWDol</a>(PzG::LaczeDoGNUPlota &amp; Lacze)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Translacja = {0, 0, -1};</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Opadanie...&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordflow">for</span>(; <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[2] &gt; 0;)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>(Translacja, Lacze);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    usleep(100000);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[2] += 2;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="comment">//Lacze.Rysuj();</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="a00062.html#a137fb37c1ae4396aa7d833ef3a677a7e">  246</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="a00062.html#a137fb37c1ae4396aa7d833ef3a677a7e">Zaokraglenie</a>(<span class="keywordtype">double</span> liczba, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> miejsce)</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> _10 = pow(10, miejsce);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keywordflow">return</span> round(liczba*_10)/10;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="a00106.html#a2a9e379826745a478b3a57638f9496b4">  273</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00106.html#a2a9e379826745a478b3a57638f9496b4">Dron::PoziomyLot</a>(<span class="keywordtype">double</span> Dlugosc_lotu, <span class="keywordtype">double</span> kat_skretu, PzG::LaczeDoGNUPlota &amp; Lacze)</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Trans = {0,0,0};</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> nWsp = <a class="code" href="a00106.html#a4d1aa29cabcee8554a4712824fba7ede">ObliczNoweWsp</a>(kat_skretu, Dlugosc_lotu);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> WektorRuchu = nWsp - <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordtype">double</span> mnoznik = 0.015625;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  Trans = WektorRuchu * mnoznik;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Lot do przodu...&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="comment">//std::cout&lt;&lt;nWsp&lt;&lt;Polozenie;</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keywordflow">if</span>(kat_skretu &gt; 0 &amp;&amp; kat_skretu &lt;= 90)</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">for</span>(; <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[0] &lt; nWsp[0]; )</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>(Trans, Lacze);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      usleep(100000);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordflow">if</span>(kat_skretu&gt;90 &amp;&amp; kat_skretu &lt;= 180)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">for</span>(; <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[1] &gt; nWsp[1]; )</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>(Trans, Lacze);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      usleep(100000);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> - Trans;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keywordflow">if</span>(kat_skretu &gt; 180 &amp;&amp; kat_skretu &lt;= 270)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">for</span>(; <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[0] &gt; nWsp[0]; )</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>(Trans, Lacze);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      usleep(100000);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> - Trans;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="keywordflow">if</span>(kat_skretu &gt; 270 &amp;&amp; kat_skretu &lt;= 360)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">for</span>(; <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>[0] &lt; nWsp[0]; )</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>(Trans, Lacze);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;      usleep(100000);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a> - Trans;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;}</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="a00106.html#a73e0a729daf06e3a66eb1d3484b3433d">  331</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#a73e0a729daf06e3a66eb1d3484b3433d">Dron::Lec</a>(<a class="code" href="a00138.html">Wektor3D</a>&amp; Wek_kierunkowy, <span class="keyword">const</span> <span class="keywordtype">double</span> dlugosc_lotu, PzG::LaczeDoGNUPlota&amp; Lacze)</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;{</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  assert(fabs(Wek_kierunkowy.<a class="code" href="a00138.html#a0e87b310ac7caa6827d71ba26c49c738">ObliczDlugosc</a>()-1) &lt; <a class="code" href="a00062.html#a194f9a557b404b2955f51a3e7cb28569">BLAD_OBLICZEN</a>);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="comment">//pojedynczy_krok = 2;</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Wek_czastkowy = Wek_kierunkowy * <a class="code" href="a00106.html#adf3032d48849b9cf50111eea945e1705">pojedynczy_krok</a>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Polozenie_startowe = <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keywordtype">double</span> PozostalaDlugosc = dlugosc_lotu;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  PozostalaDlugosc -= <a class="code" href="a00106.html#adf3032d48849b9cf50111eea945e1705">pojedynczy_krok</a>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="keywordflow">while</span>(PozostalaDlugosc &gt; 0)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>(Wek_czastkowy, Lacze);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    usleep(100000);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    Lacze.Rysuj();</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    PozostalaDlugosc -= <a class="code" href="a00106.html#adf3032d48849b9cf50111eea945e1705">pojedynczy_krok</a>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> WekPrzesuniecia = Wek_kierunkowy*dlugosc_lotu;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <a class="code" href="a00106.html#a70329a1e382c3c78f88f79328d525c88">ZmienPolozenieDrona</a>(Polozenie_startowe + WekPrzesuniecia);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <a class="code" href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">TransDoUklRodzica</a>({0,0,0}, Lacze);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;}</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="a00106.html#a09b0c45f6b8e6642a231744656e52db9">  360</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#a09b0c45f6b8e6642a231744656e52db9">Dron::LotDoPrzodu</a>(<span class="keywordtype">double</span> dlugosc_lotu, <span class="keywordtype">double</span> kat_skretu, PzG::LaczeDoGNUPlota&amp; Lacze)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Kierunek_lotu = {1, 0, 0};</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  <a class="code" href="a00122.html">Macierz3x3</a> MacierzRot;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordtype">double</span> Rad = kat_skretu*M_PI/180;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  MacierzRot.<a class="code" href="a00122.html#ab0699c8f99fa17bbcc4a7c400bed506d">ObrotZ</a>(Rad);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  Kierunek_lotu = MacierzRot * Kierunek_lotu;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <a class="code" href="a00106.html#a73e0a729daf06e3a66eb1d3484b3433d">Lec</a>(Kierunek_lotu, fabs(dlugosc_lotu), Lacze);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="a00106.html#a86d7fab7b926930274de0ee8eebbb0f0">  374</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#a86d7fab7b926930274de0ee8eebbb0f0">Dron::LotPionowy</a>(<span class="keywordtype">double</span> dlugosc_lotu, PzG::LaczeDoGNUPlota&amp; Lacze)</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;{</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="keywordtype">double</span> kierunek = 0;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordflow">if</span>(dlugosc_lotu&gt;0) kierunek =  1;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  <span class="keywordflow">if</span>(dlugosc_lotu&lt;0) kierunek = -1;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Kierunek_lotu = {0,0,kierunek};</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <a class="code" href="a00106.html#a73e0a729daf06e3a66eb1d3484b3433d">Lec</a>(Kierunek_lotu, fabs(dlugosc_lotu), Lacze);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno"><a class="line" href="a00106.html#a25f42d02fc5b27f30e872d444ffb5230">  394</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#a25f42d02fc5b27f30e872d444ffb5230">Dron::Obrot</a>(<span class="keywordtype">double</span> kat_obrotu, PzG::LaczeDoGNUPlota &amp; Lacze)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;{</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  <span class="keywordflow">if</span>(kat_obrotu&gt;=0)</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">for</span>(; <a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a> &lt;= kat_obrotu; <a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a> += 1)</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;      <a class="code" href="a00106.html#a9cea5ba789e3ac0961846a77d909b552">Oblicz_i_ZapiszWspDrona</a>();</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;      usleep(100000);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;      Lacze.Rysuj();</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a> -= 1;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">for</span>(; <a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a> &gt;= kat_obrotu; <a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a> -= 1)</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    {</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;      <a class="code" href="a00106.html#a9cea5ba789e3ac0961846a77d909b552">Oblicz_i_ZapiszWspDrona</a>();</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;      usleep(100000);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;      Lacze.Rysuj();</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a> += 1;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno"><a class="line" href="a00106.html#a4d1aa29cabcee8554a4712824fba7ede">  433</a></span>&#160;<a class="code" href="a00138.html">Wektor3D</a> <a class="code" href="a00106.html#a4d1aa29cabcee8554a4712824fba7ede">Dron::ObliczNoweWsp</a>(<span class="keywordtype">double</span> kat_skretu, <span class="keywordtype">double</span> Dlugosc_lotu)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> Wsp;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="keywordtype">double</span> kat_rad = kat_skretu*M_PI/180;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  Wsp[0] = Dlugosc_lotu * cos(kat_rad);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  Wsp[1] = Dlugosc_lotu * sin(kat_rad);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  Wsp += <a class="code" href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Polozenie</a>;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;  <span class="keywordflow">return</span> Wsp;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;}</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
+<div class="line"><a name="l00460"></a><span class="lineno"><a class="line" href="a00106.html#a18ec79a34af0435e99deca78ed08b5b1">  460</a></span>&#160;std::vector&lt;Wektor3D&gt; <a class="code" href="a00106.html#a18ec79a34af0435e99deca78ed08b5b1">Dron::UstalSciezke</a>(<span class="keywordtype">double</span> kat_skretu, <span class="keywordtype">double</span> Dlugosc_lotu)</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;{</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;  std::vector&lt;Wektor3D&gt; Sciezka;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;  <a class="code" href="a00138.html">Wektor3D</a> pomoc;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;  <a class="code" href="a00122.html">Macierz3x3</a> MacierzRot;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;  std::cout&lt;&lt;std::endl&lt;&lt;std::endl&lt;&lt;<span class="stringliteral">&quot;Planuje sciezke ruchu drona...\nWcisnij ENTER aby poleciec w gore&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;  Sciezka.push_back(<a class="code" href="a00106.html#a246caac7fba0c0cb58b49ae896cb6305">ZwrocPolozenie</a>());</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;  pomoc = <a class="code" href="a00106.html#a246caac7fba0c0cb58b49ae896cb6305">ZwrocPolozenie</a>();</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;  pomoc[2] += 80;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;  Sciezka.push_back(pomoc);</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;  pomoc = <a class="code" href="a00106.html#a4d1aa29cabcee8554a4712824fba7ede">ObliczNoweWsp</a>(kat_skretu, Dlugosc_lotu);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;  pomoc[2] += 80;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;  Sciezka.push_back(pomoc);</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;  pomoc[2] -= 80;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;  Sciezka.push_back(pomoc);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  <span class="keywordflow">return</span> Sciezka;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;}</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
+<div class="line"><a name="l00491"></a><span class="lineno"><a class="line" href="a00106.html#a3dc10ddb3c17812e4abd79e1032017cb">  491</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#a3dc10ddb3c17812e4abd79e1032017cb">Dron::PlanujPoczatkowaSciezke</a>(std::vector&lt;Wektor3D&gt;&amp; PunktySciezki, PzG::LaczeDoGNUPlota&amp; Lacze)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;  std::ofstream Plik_Trasa(<a class="code" href="a00020.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a>);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  <span class="keywordflow">if</span>(!Plik_Trasa.is_open())</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;  {</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    std::cerr&lt;&lt;<span class="stringliteral">&quot;Nie udalo sie otworzyc pliku&quot;</span>&lt;&lt;<a class="code" href="a00020.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;  }</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;  <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = PunktySciezki.cbegin(); i != PunktySciezki.cend(); ++i)</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;  {</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    Plik_Trasa&lt;&lt;*i;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;  }</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;  Lacze.DodajNazwePliku(<a class="code" href="a00020.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a>);</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;  Lacze.Rysuj();</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;  Plik_Trasa.close();</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;}</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
+<div class="line"><a name="l00514"></a><span class="lineno"><a class="line" href="a00106.html#a904f1ed9e3a3298a7e85619260de5a1f">  514</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00106.html#a904f1ed9e3a3298a7e85619260de5a1f">Dron::Lot</a>(PzG::LaczeDoGNUPlota &amp; Lacze)</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;{</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;  std::vector&lt;Wektor3D&gt; Sciezka;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;  <span class="keywordtype">double</span> kat, dlugosc;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Podaj kierunek lotu (kat w stopniach): &quot;</span>;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;  std::cin&gt;&gt;kat;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;  kat += <a class="code" href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Kat_OrDrona</a>;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Podaj dlugosc lotu: &quot;</span>;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;  std::cin&gt;&gt;dlugosc;</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;  std::cin.ignore(1000, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;  </div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;  <span class="comment">//std::cout&lt;&lt;&quot;Wcisniej ENTER any zaplanowac sciezke i wykonac lot&quot;&lt;&lt;std::endl;</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;  Sciezka = <a class="code" href="a00106.html#a18ec79a34af0435e99deca78ed08b5b1">UstalSciezke</a>(kat, dlugosc);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;  <a class="code" href="a00106.html#a3dc10ddb3c17812e4abd79e1032017cb">PlanujPoczatkowaSciezke</a>(Sciezka, Lacze);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;  </div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;  std::cin.ignore(1000, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;  <a class="code" href="a00106.html#a86d7fab7b926930274de0ee8eebbb0f0">LotPionowy</a>(80, Lacze);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Wcisniej ENTER aby dron wykonal obrot&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;  std::cin.ignore(1000, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;  <a class="code" href="a00106.html#a25f42d02fc5b27f30e872d444ffb5230">Obrot</a>(kat, Lacze);</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;  </div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Wcisniej ENTER aby dron wykonal lot do celu&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;  std::cin.ignore(1000, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;  <a class="code" href="a00106.html#a09b0c45f6b8e6642a231744656e52db9">LotDoPrzodu</a>(dlugosc, kat, Lacze);</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Wcisniej ENTER any dron wykonal lot w dol&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;  std::cin.ignore(1000, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;  <a class="code" href="a00106.html#a86d7fab7b926930274de0ee8eebbb0f0">LotPionowy</a>(-80 ,Lacze);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;  std::cout&lt;&lt;<span class="stringliteral">&quot;Wcisniej ENTER any usunac trase przelotu&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;  std::cin.ignore(1000, <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;  Lacze.UsunNazwePliku(<a class="code" href="a00020.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a>);</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;  Lacze.Rysuj();</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  </div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;  <a class="code" href="a00106.html#a445552b3dfcb46cc7556e801e64f4d8e">PodajWspolrzedne</a>();</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aa00106_html_aca7c226602e49d6c233df6fdadaa8b4f"><div class="ttname"><a href="a00106.html#aca7c226602e49d6c233df6fdadaa8b4f">Dron::Oblicz_i_Zapisz_WspRotorow</a></div><div class="ttdeci">void Oblicz_i_Zapisz_WspRotorow()</div><div class="ttdoc">Obliczajaca wspolrzedne rotorow drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00123">Dron.cpp:123</a></div></div>
+<div class="ttc" id="aa00106_html_a85043c9ab654565bb109585b676ca20f"><div class="ttname"><a href="a00106.html#a85043c9ab654565bb109585b676ca20f">Dron::TworzNazweKorpusu</a></div><div class="ttdeci">std::string TworzNazweKorpusu(unsigned int id_Drona)</div><div class="ttdoc">Metoda tworzaca nazwe korpusu.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00044">Dron.cpp:44</a></div></div>
+<div class="ttc" id="aa00020_html_a346a5da43df2b2a2038e95c893ccb129"><div class="ttname"><a href="a00020.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a></div><div class="ttdeci">#define PLIK_TRASY_PRZELOTU</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00032">Nazwy.hh:32</a></div></div>
+<div class="ttc" id="aa00138_html_a0e87b310ac7caa6827d71ba26c49c738"><div class="ttname"><a href="a00138.html#a0e87b310ac7caa6827d71ba26c49c738">Wektor::ObliczDlugosc</a></div><div class="ttdeci">double ObliczDlugosc()</div><div class="ttdoc">Metoda obliczajaca dlugosc wektora.</div><div class="ttdef"><b>Definition:</b> <a href="a00053_source.html#l00306">Wektor.hh:306</a></div></div>
+<div class="ttc" id="aa00106_html_a9bb58205cae16612a0eb3c4dc5522c1f"><div class="ttname"><a href="a00106.html#a9bb58205cae16612a0eb3c4dc5522c1f">Dron::RotorDrona</a></div><div class="ttdeci">Graniastoslup RotorDrona[4]</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00031">Dron.hh:31</a></div></div>
+<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">Macierz3x3</a></div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00013">Macierz3x3.hh:13</a></div></div>
+<div class="ttc" id="aa00106_html_a185638c36a312f1b6cf9f85d3a6d7a25"><div class="ttname"><a href="a00106.html#a185638c36a312f1b6cf9f85d3a6d7a25">Dron::LotWGore</a></div><div class="ttdeci">bool LotWGore(double Dlugosc_lotu, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metody Animujace ruch drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00209">Dron.cpp:209</a></div></div>
+<div class="ttc" id="aa00106_html_a25f42d02fc5b27f30e872d444ffb5230"><div class="ttname"><a href="a00106.html#a25f42d02fc5b27f30e872d444ffb5230">Dron::Obrot</a></div><div class="ttdeci">void Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda realizujaca obrot drona COS JEST NIE TAK.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00394">Dron.cpp:394</a></div></div>
+<div class="ttc" id="aa00106_html_a246caac7fba0c0cb58b49ae896cb6305"><div class="ttname"><a href="a00106.html#a246caac7fba0c0cb58b49ae896cb6305">Dron::ZwrocPolozenie</a></div><div class="ttdeci">Wektor3D ZwrocPolozenie() const</div><div class="ttdoc">Metoda zwracajaca aktualnie polozenie drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00067">Dron.cpp:67</a></div></div>
+<div class="ttc" id="aa00106_html_a904f1ed9e3a3298a7e85619260de5a1f"><div class="ttname"><a href="a00106.html#a904f1ed9e3a3298a7e85619260de5a1f">Dron::Lot</a></div><div class="ttdeci">void Lot(PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda realizujaca cala animacje lotu drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00514">Dron.cpp:514</a></div></div>
+<div class="ttc" id="aa00106_html_adf3032d48849b9cf50111eea945e1705"><div class="ttname"><a href="a00106.html#adf3032d48849b9cf50111eea945e1705">Dron::pojedynczy_krok</a></div><div class="ttdeci">int pojedynczy_krok</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00033">Dron.hh:33</a></div></div>
+<div class="ttc" id="aa00102_html_acc96bfdcd122da809e00ce225f5c5238"><div class="ttname"><a href="a00102.html#acc96bfdcd122da809e00ce225f5c5238">BrylaGeometryczna::UstawNazwaPlikuWlasciwego</a></div><div class="ttdeci">void UstawNazwaPlikuWlasciwego(const char *NazwaPliku)</div><div class="ttdoc">Metoda Ustawiajaca Nazwe Pliku Docelowego.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00013">BrylaGeometryczna.cpp:13</a></div></div>
+<div class="ttc" id="aa00122_html_ab0699c8f99fa17bbcc4a7c400bed506d"><div class="ttname"><a href="a00122.html#ab0699c8f99fa17bbcc4a7c400bed506d">Macierz3x3::ObrotZ</a></div><div class="ttdeci">void ObrotZ(double kat)</div><div class="ttdoc">Metoda generujaca macierz obrotu wokol osi OZ.</div><div class="ttdef"><b>Definition:</b> <a href="a00074_source.html#l00055">Macierz3x3.cpp:55</a></div></div>
+<div class="ttc" id="aa00106_html_a18ec79a34af0435e99deca78ed08b5b1"><div class="ttname"><a href="a00106.html#a18ec79a34af0435e99deca78ed08b5b1">Dron::UstalSciezke</a></div><div class="ttdeci">std::vector&lt; Wektor3D &gt; UstalSciezke(double kat_skretu, double Dlugosc_lotu)</div><div class="ttdoc">Metoda ustalajaca sciezke lotu drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00460">Dron.cpp:460</a></div></div>
+<div class="ttc" id="aa00106_html_a2a9e379826745a478b3a57638f9496b4"><div class="ttname"><a href="a00106.html#a2a9e379826745a478b3a57638f9496b4">Dron::PoziomyLot</a></div><div class="ttdeci">bool PoziomyLot(double Dlugosc_lotu, double kat_skretu, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda realizujaca animujace unoszenie drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00273">Dron.cpp:273</a></div></div>
+<div class="ttc" id="aa00138_html"><div class="ttname"><a href="a00138.html">Wektor&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="aa00106_html_a10e3f7aeae3b22d76e9b79ae216e9e77"><div class="ttname"><a href="a00106.html#a10e3f7aeae3b22d76e9b79ae216e9e77">Dron::TworzNazweRotora</a></div><div class="ttdeci">std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora)</div><div class="ttdoc">Metody generujace nazwy plikow.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00024">Dron.cpp:24</a></div></div>
+<div class="ttc" id="aa00106_html_a70329a1e382c3c78f88f79328d525c88"><div class="ttname"><a href="a00106.html#a70329a1e382c3c78f88f79328d525c88">Dron::ZmienPolozenieDrona</a></div><div class="ttdeci">void ZmienPolozenieDrona(const Wektor3D &amp;nPolozenie)</div><div class="ttdoc">Metoda przemieszczajaca drona do zadanego wektora polozenia.</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00040">Dron.hh:40</a></div></div>
+<div class="ttc" id="aa00106_html_ae8449c4acc9e1de1819b7db69f8665fe"><div class="ttname"><a href="a00106.html#ae8449c4acc9e1de1819b7db69f8665fe">Dron::TworzDrona</a></div><div class="ttdeci">void TworzDrona(unsigned int ID, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda tworzaca zestaw plikow ze wspolrzednymi.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00082">Dron.cpp:82</a></div></div>
+<div class="ttc" id="aa00118_html_a80691e151f45065f7cd520bea08406a5"><div class="ttname"><a href="a00118.html#a80691e151f45065f7cd520bea08406a5">Graniastoslup::TransDoUklRodzica</a></div><div class="ttdeci">bool TransDoUklRodzica(const Wektor3D &amp;Wek)</div><div class="ttdoc">Metoda przesuwajaca Prostopadloscian wzgledem Drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00127">Graniastoslup.cpp:127</a></div></div>
+<div class="ttc" id="aa00102_html_a9740f61b9dc0c3f8ca9fe2f3414e1e42"><div class="ttname"><a href="a00102.html#a9740f61b9dc0c3f8ca9fe2f3414e1e42">BrylaGeometryczna::UstawSkale</a></div><div class="ttdeci">Wektor3D UstawSkale(const Wektor3D &amp;skala)</div><div class="ttdoc">Metoda ustawiajaca skale bryly.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00026">BrylaGeometryczna.cpp:26</a></div></div>
+<div class="ttc" id="aa00106_html_a09b0c45f6b8e6642a231744656e52db9"><div class="ttname"><a href="a00106.html#a09b0c45f6b8e6642a231744656e52db9">Dron::LotDoPrzodu</a></div><div class="ttdeci">void LotDoPrzodu(double dlugosc_lotu, double kat_skretu, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda realizujaca lot do przodu drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00360">Dron.cpp:360</a></div></div>
+<div class="ttc" id="aa00118_html_a38ed7e121d2b7a78650d1deee3fe1035"><div class="ttname"><a href="a00118.html#a38ed7e121d2b7a78650d1deee3fe1035">Graniastoslup::ZadajKatObrotu</a></div><div class="ttdeci">void ZadajKatObrotu(double kat)</div><div class="ttdoc">Metody Transformujace.</div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00026">Graniastoslup.cpp:26</a></div></div>
+<div class="ttc" id="aa00062_html_a194f9a557b404b2955f51a3e7cb28569"><div class="ttname"><a href="a00062.html#a194f9a557b404b2955f51a3e7cb28569">BLAD_OBLICZEN</a></div><div class="ttdeci">#define BLAD_OBLICZEN</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00010">Dron.cpp:10</a></div></div>
+<div class="ttc" id="aa00130_html_af758517a3f2d1fbe62da6ab0dfc57adc"><div class="ttname"><a href="a00130.html#af758517a3f2d1fbe62da6ab0dfc57adc">Prostopadloscian::ZadajKatObrotu</a></div><div class="ttdeci">void ZadajKatObrotu(double kat)</div><div class="ttdoc">Metody Transformujace.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00025">Prostopadloscian.cpp:25</a></div></div>
+<div class="ttc" id="aa00106_html_ab68c16525e3011cb70f477cd7a73b972"><div class="ttname"><a href="a00106.html#ab68c16525e3011cb70f477cd7a73b972">Dron::Polozenie</a></div><div class="ttdeci">Wektor3D Polozenie</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00028">Dron.hh:28</a></div></div>
+<div class="ttc" id="aa00106_html_a4d1aa29cabcee8554a4712824fba7ede"><div class="ttname"><a href="a00106.html#a4d1aa29cabcee8554a4712824fba7ede">Dron::ObliczNoweWsp</a></div><div class="ttdeci">Wektor3D ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const</div><div class="ttdoc">Metoda obliczajca wspolrzedne drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00433">Dron.cpp:433</a></div></div>
+<div class="ttc" id="aa00106_html_a73e0a729daf06e3a66eb1d3484b3433d"><div class="ttname"><a href="a00106.html#a73e0a729daf06e3a66eb1d3484b3433d">Dron::Lec</a></div><div class="ttdeci">void Lec(Wektor3D &amp;Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">nowe metody realizujace lot</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00331">Dron.cpp:331</a></div></div>
+<div class="ttc" id="aa00106_html_a9cea5ba789e3ac0961846a77d909b552"><div class="ttname"><a href="a00106.html#a9cea5ba789e3ac0961846a77d909b552">Dron::Oblicz_i_ZapiszWspDrona</a></div><div class="ttdeci">void Oblicz_i_ZapiszWspDrona()</div><div class="ttdoc">Metoda zapisujaca polozenie poszczegolnych wierzcholkow.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00169">Dron.cpp:169</a></div></div>
+<div class="ttc" id="aa00106_html_aa0e058c1c55a73cccb4098d2b02bba27"><div class="ttname"><a href="a00106.html#aa0e058c1c55a73cccb4098d2b02bba27">Dron::TransDoUklRodzica</a></div><div class="ttdeci">void TransDoUklRodzica(const Wektor3D &amp;Wek, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda transformujaca.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00185">Dron.cpp:185</a></div></div>
+<div class="ttc" id="aa00106_html_a445552b3dfcb46cc7556e801e64f4d8e"><div class="ttname"><a href="a00106.html#a445552b3dfcb46cc7556e801e64f4d8e">Dron::PodajWspolrzedne</a></div><div class="ttdeci">void PodajWspolrzedne() const</div><div class="ttdoc">Metody zwracajace/wyswietlajace polozenie.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00056">Dron.cpp:56</a></div></div>
+<div class="ttc" id="aa00106_html_ae1fb7dd84aff0aee71199ab6e2ee2949"><div class="ttname"><a href="a00106.html#ae1fb7dd84aff0aee71199ab6e2ee2949">Dron::Oblicz_i_Zapisz_WspKorpusu</a></div><div class="ttdeci">void Oblicz_i_Zapisz_WspKorpusu()</div><div class="ttdoc">Obliczajaca wspolrzedne korpusu drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00105">Dron.cpp:105</a></div></div>
+<div class="ttc" id="aa00106_html_a377c3c7c4d1775ce4041fcd8756c73e0"><div class="ttname"><a href="a00106.html#a377c3c7c4d1775ce4041fcd8756c73e0">Dron::LotWDol</a></div><div class="ttdeci">bool LotWDol(PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda realizujaca animujace opadania drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00231">Dron.cpp:231</a></div></div>
+<div class="ttc" id="aa00062_html_a137fb37c1ae4396aa7d833ef3a677a7e"><div class="ttname"><a href="a00062.html#a137fb37c1ae4396aa7d833ef3a677a7e">Zaokraglenie</a></div><div class="ttdeci">double Zaokraglenie(double liczba, unsigned int miejsce)</div><div class="ttdoc">pomocnicza funkcja zaokraglajaca liczby</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00246">Dron.cpp:246</a></div></div>
+<div class="ttc" id="aa00106_html_a1e7918e5ce3f73bd2655bf0fdacef815"><div class="ttname"><a href="a00106.html#a1e7918e5ce3f73bd2655bf0fdacef815">Dron::Kat_OrDrona</a></div><div class="ttdeci">double Kat_OrDrona</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00029">Dron.hh:29</a></div></div>
+<div class="ttc" id="aa00041_html_a9f5ca209b61eae19f489e3af0ab5637d"><div class="ttname"><a href="a00041.html#a9f5ca209b61eae19f489e3af0ab5637d">ILOSC_ROTOROW</a></div><div class="ttdeci">#define ILOSC_ROTOROW</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00011">Nazwy.hh:11</a></div></div>
+<div class="ttc" id="aa00041_html"><div class="ttname"><a href="a00041.html">Nazwy.hh</a></div><div class="ttdoc">Ten plik zawiera nazwy poszczegolnych plikow jako makra.</div></div>
+<div class="ttc" id="aa00106_html_a3dc10ddb3c17812e4abd79e1032017cb"><div class="ttname"><a href="a00106.html#a3dc10ddb3c17812e4abd79e1032017cb">Dron::PlanujPoczatkowaSciezke</a></div><div class="ttdeci">void PlanujPoczatkowaSciezke(std::vector&lt; Wektor3D &gt; &amp;PunktySciezki, PzG::LaczeDoGNUPlota &amp;Lacze) const</div><div class="ttdoc">Metody Ocliczajace i generujace sciezke lotu.</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00491">Dron.cpp:491</a></div></div>
+<div class="ttc" id="aa00130_html_a97065b4375d19d6f2bee4a610a425b4e"><div class="ttname"><a href="a00130.html#a97065b4375d19d6f2bee4a610a425b4e">Prostopadloscian::TransDoUklRodzica</a></div><div class="ttdeci">bool TransDoUklRodzica(const Wektor3D &amp;Wek)</div><div class="ttdoc">Metoda przesuwajaca Prostopadloscian wzgledem Drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00123">Prostopadloscian.cpp:123</a></div></div>
+<div class="ttc" id="aa00106_html_a3b458eb0bc9d408a6b6aeeec9af1a808"><div class="ttname"><a href="a00106.html#a3b458eb0bc9d408a6b6aeeec9af1a808">Dron::KorpusDrona</a></div><div class="ttdeci">Prostopadloscian KorpusDrona</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00030">Dron.hh:30</a></div></div>
+<div class="ttc" id="aa00023_html"><div class="ttname"><a href="a00023.html">Dron.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy Dron.</div></div>
+<div class="ttc" id="aa00106_html_a86d7fab7b926930274de0ee8eebbb0f0"><div class="ttname"><a href="a00106.html#a86d7fab7b926930274de0ee8eebbb0f0">Dron::LotPionowy</a></div><div class="ttdeci">void LotPionowy(double dlugosc_lout, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00374">Dron.cpp:374</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_13d7749518d8be18d673aed510b3a2c1.html">dorn</a></li><li class="navelem"><a class="el" href="dir_d97944975b058d4b4d219112e647c70b.html">prj</a></li><li class="navelem"><a class="el" href="dir_2b64194129eeae4e98aed51b7639dbb7.html">src</a></li><li class="navelem"><a class="el" href="a00062.html">Dron.cpp</a></li>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

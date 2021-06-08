@@ -1,0 +1,20 @@
+digraph "/home/maciek/dorn/prj/inc/Prostopadloscian.hh"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="/home/maciek/dorn/prj\l/inc/Prostopadloscian.hh",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Ten plik zawiera definicję klasy Prostopadloscian."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="/home/maciek/dorn/prj\l/inc/Dron.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00023.html",tooltip="Ten plik zawiera definicję klasy Dron."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="/home/maciek/dorn/prj\l/inc/Scena.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00050.html",tooltip="Ten plik zawiera definicję klasy Prostopadloscian."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="/home/maciek/dorn/prj\l/src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00077.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="/home/maciek/dorn/prj\l/src/Scena.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00089.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="/home/maciek/dorn/prj\l/src/Dron.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00062.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="/home/maciek/dorn/prj\l/src/Prostopadloscian.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00086.html",tooltip=" "];
+}

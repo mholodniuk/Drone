@@ -1,0 +1,18 @@
+digraph "Graficzna hierarchia klas"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="BrylaGeometryczna",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00102.html",tooltip="modeluje pojecie Bryly geometrycznej"];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 [label="GoraZDlugaGrania",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00110.html",tooltip="modeluje pojecie Gory z podluzna grania"];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="GoraZOstrymSzczytem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00114.html",tooltip="modeluje pojecie Gory z ostrym szczytem"];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Graniastoslup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00118.html",tooltip="modeluje pojecie Graniastoslupa"];
+  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Plaskowyz",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00126.html",tooltip="modeluje pojecie Plaskowyzu"];
+  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Prostopadloscian",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html",tooltip="modeluje pojecie Prostopadloscianu"];
+}

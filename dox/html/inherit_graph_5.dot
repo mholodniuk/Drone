@@ -1,0 +1,8 @@
+digraph "Graficzna hierarchia klas"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Wektor\< wymiar \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00138.html",tooltip="modeluje pojecie Wektora o dowolnym rozmiarze"];
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dragonfly: Plik źródłowy /home/maciek/dorn/prj/inc/Scena.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="dragonfly-icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Dragonfly
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00050_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Scena.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="a00050.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00023.html">Dron.hh</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00026.html">GoraZDlugaGrania.hh</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00029.html">GoraZOstrymSzczytem.hh</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00044.html">Plaskowyz.hh</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;lacze_do_gnuplota.hh&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00020.html">BrylaGeometryczna.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00134.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00134.html">Scena</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00134.html#afa66db1102301256bb20b5da4d318853">   27</a></span>&#160;    <a class="code" href="a00106.html">Dron</a> <a class="code" href="a00134.html#afa66db1102301256bb20b5da4d318853">Tab</a>[2];</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00134.html#ae8d7d121ba09af12c456a6dfe6da316b">   28</a></span>&#160;    PzG::LaczeDoGNUPlota <a class="code" href="a00134.html#ae8d7d121ba09af12c456a6dfe6da316b">Lacze</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//GoraZDlugaGrania gora;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00134.html#adbc01700fa1055ae551b8c0fb842966d">   30</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00134.html#adbc01700fa1055ae551b8c0fb842966d">Aktywny</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00134.html#a8e4f7de83b445fc1160c9091819bfb10">   31</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00134.html#a8e4f7de83b445fc1160c9091819bfb10">lPrzeszkod</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00134.html#a55ff52196a9708f8b35e355299bd4a96">   33</a></span>&#160;    std::list&lt;std::shared_ptr&lt;BrylaGeometryczna&gt;&gt; <a class="code" href="a00134.html#a55ff52196a9708f8b35e355299bd4a96">ListaPrzeszkod</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00134.html#a8f9fe11b4cfef890123a2acc94672e17">   38</a></span>&#160;    <a class="code" href="a00134.html#a8f9fe11b4cfef890123a2acc94672e17">Scena</a>() { };</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#aeca659dd59433366298ce1a828208d62">TworzScene</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#aba5cd9be3daabe70b47768fb56d9484f">Menu</a>(<span class="keywordtype">char</span>&amp; wybor);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#ab4c786d9def8a483b9873c27b5bd7f13">WyswietlMenu</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#a93c4b60ab40bdb5a9247add7fb487155">WyborDrona</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//Metody dodajace przeszkody</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#ab40952b8aec13ed7d6d340b32f219e7a">DodajGoreZDlugaGrania</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ID);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#a4be9ff121b9dc9fe1ce0707fea9d44b4">DodajGoreZOstrymSzczytem</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ID);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#ae72678ebd84f521a70ecfc59fdf0ca68">DodajPlaskowyz</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ID);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#a6faca9a9cb055f76ea492826cf77cbe4">DodajPrzeszkode</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//Metody usuwajace przeszkody</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#a0e67fffddcdc291ba6234949caa173a0">PokazPrzeszkody</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00134.html#a524ac639a8470d7552dbcb2d7ec19387">UsunPrzeszkode</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aa00134_html_a8e4f7de83b445fc1160c9091819bfb10"><div class="ttname"><a href="a00134.html#a8e4f7de83b445fc1160c9091819bfb10">Scena::lPrzeszkod</a></div><div class="ttdeci">unsigned int lPrzeszkod</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00031">Scena.hh:31</a></div></div>
+<div class="ttc" id="aa00044_html"><div class="ttname"><a href="a00044.html">Plaskowyz.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy Plaskowyz.</div></div>
+<div class="ttc" id="aa00134_html_a8f9fe11b4cfef890123a2acc94672e17"><div class="ttname"><a href="a00134.html#a8f9fe11b4cfef890123a2acc94672e17">Scena::Scena</a></div><div class="ttdeci">Scena()</div><div class="ttdoc">konstruktor bezparametryczny</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00038">Scena.hh:38</a></div></div>
+<div class="ttc" id="aa00029_html"><div class="ttname"><a href="a00029.html">GoraZOstrymSzczytem.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy GoraZOstrymSzczytem.</div></div>
+<div class="ttc" id="aa00134_html_a4be9ff121b9dc9fe1ce0707fea9d44b4"><div class="ttname"><a href="a00134.html#a4be9ff121b9dc9fe1ce0707fea9d44b4">Scena::DodajGoreZOstrymSzczytem</a></div><div class="ttdeci">void DodajGoreZOstrymSzczytem(unsigned int ID)</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00146">Scena.cpp:146</a></div></div>
+<div class="ttc" id="aa00134_html_ab40952b8aec13ed7d6d340b32f219e7a"><div class="ttname"><a href="a00134.html#ab40952b8aec13ed7d6d340b32f219e7a">Scena::DodajGoreZDlugaGrania</a></div><div class="ttdeci">void DodajGoreZDlugaGrania(unsigned int ID)</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00124">Scena.cpp:124</a></div></div>
+<div class="ttc" id="aa00134_html_ab4c786d9def8a483b9873c27b5bd7f13"><div class="ttname"><a href="a00134.html#ab4c786d9def8a483b9873c27b5bd7f13">Scena::WyswietlMenu</a></div><div class="ttdeci">void WyswietlMenu()</div><div class="ttdoc">Metoda wyswietlajaca menu programu.</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00036">Scena.cpp:36</a></div></div>
+<div class="ttc" id="aa00134_html_ae8d7d121ba09af12c456a6dfe6da316b"><div class="ttname"><a href="a00134.html#ae8d7d121ba09af12c456a6dfe6da316b">Scena::Lacze</a></div><div class="ttdeci">PzG::LaczeDoGNUPlota Lacze</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00028">Scena.hh:28</a></div></div>
+<div class="ttc" id="aa00134_html_a6faca9a9cb055f76ea492826cf77cbe4"><div class="ttname"><a href="a00134.html#a6faca9a9cb055f76ea492826cf77cbe4">Scena::DodajPrzeszkode</a></div><div class="ttdeci">void DodajPrzeszkode()</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00189">Scena.cpp:189</a></div></div>
+<div class="ttc" id="aa00134_html"><div class="ttname"><a href="a00134.html">Scena</a></div><div class="ttdoc">modeluje pojecie Sceny</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00025">Scena.hh:25</a></div></div>
+<div class="ttc" id="aa00134_html_afa66db1102301256bb20b5da4d318853"><div class="ttname"><a href="a00134.html#afa66db1102301256bb20b5da4d318853">Scena::Tab</a></div><div class="ttdeci">Dron Tab[2]</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00027">Scena.hh:27</a></div></div>
+<div class="ttc" id="aa00026_html"><div class="ttname"><a href="a00026.html">GoraZDlugaGrania.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy GoraZDlugaGrania.</div></div>
+<div class="ttc" id="aa00134_html_a524ac639a8470d7552dbcb2d7ec19387"><div class="ttname"><a href="a00134.html#a524ac639a8470d7552dbcb2d7ec19387">Scena::UsunPrzeszkode</a></div><div class="ttdeci">void UsunPrzeszkode()</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00230">Scena.cpp:230</a></div></div>
+<div class="ttc" id="aa00106_html"><div class="ttname"><a href="a00106.html">Dron</a></div><div class="ttdoc">modeluje pojecie Drona</div><div class="ttdef"><b>Definition:</b> <a href="a00023_source.html#l00026">Dron.hh:26</a></div></div>
+<div class="ttc" id="aa00134_html_a55ff52196a9708f8b35e355299bd4a96"><div class="ttname"><a href="a00134.html#a55ff52196a9708f8b35e355299bd4a96">Scena::ListaPrzeszkod</a></div><div class="ttdeci">std::list&lt; std::shared_ptr&lt; BrylaGeometryczna &gt; &gt; ListaPrzeszkod</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00033">Scena.hh:33</a></div></div>
+<div class="ttc" id="aa00020_html"><div class="ttname"><a href="a00020.html">BrylaGeometryczna.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy Prostopadloscian.</div></div>
+<div class="ttc" id="aa00134_html_a0e67fffddcdc291ba6234949caa173a0"><div class="ttname"><a href="a00134.html#a0e67fffddcdc291ba6234949caa173a0">Scena::PokazPrzeszkody</a></div><div class="ttdeci">void PokazPrzeszkody()</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00220">Scena.cpp:220</a></div></div>
+<div class="ttc" id="aa00134_html_ae72678ebd84f521a70ecfc59fdf0ca68"><div class="ttname"><a href="a00134.html#ae72678ebd84f521a70ecfc59fdf0ca68">Scena::DodajPlaskowyz</a></div><div class="ttdeci">void DodajPlaskowyz(unsigned int ID)</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00168">Scena.cpp:168</a></div></div>
+<div class="ttc" id="aa00023_html"><div class="ttname"><a href="a00023.html">Dron.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy Dron.</div></div>
+<div class="ttc" id="aa00134_html_a93c4b60ab40bdb5a9247add7fb487155"><div class="ttname"><a href="a00134.html#a93c4b60ab40bdb5a9247add7fb487155">Scena::WyborDrona</a></div><div class="ttdeci">void WyborDrona()</div><div class="ttdoc">Metoda pozwalajaca na wybor drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00049">Scena.cpp:49</a></div></div>
+<div class="ttc" id="aa00134_html_aba5cd9be3daabe70b47768fb56d9484f"><div class="ttname"><a href="a00134.html#aba5cd9be3daabe70b47768fb56d9484f">Scena::Menu</a></div><div class="ttdeci">void Menu(char &amp;wybor)</div><div class="ttdoc">Metody obslugujace dzialanie sceny.</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00075">Scena.cpp:75</a></div></div>
+<div class="ttc" id="aa00134_html_adbc01700fa1055ae551b8c0fb842966d"><div class="ttname"><a href="a00134.html#adbc01700fa1055ae551b8c0fb842966d">Scena::Aktywny</a></div><div class="ttdeci">unsigned int Aktywny</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00030">Scena.hh:30</a></div></div>
+<div class="ttc" id="aa00134_html_aeca659dd59433366298ce1a828208d62"><div class="ttname"><a href="a00134.html#aeca659dd59433366298ce1a828208d62">Scena::TworzScene</a></div><div class="ttdeci">void TworzScene()</div><div class="ttdoc">Metoda tworzaca uklad sceny.</div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00012">Scena.cpp:12</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_13d7749518d8be18d673aed510b3a2c1.html">dorn</a></li><li class="navelem"><a class="el" href="dir_d97944975b058d4b4d219112e647c70b.html">prj</a></li><li class="navelem"><a class="el" href="dir_efb3429070c56598e4e504a1d9e33a11.html">inc</a></li><li class="navelem"><a class="el" href="a00050.html">Scena.hh</a></li>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

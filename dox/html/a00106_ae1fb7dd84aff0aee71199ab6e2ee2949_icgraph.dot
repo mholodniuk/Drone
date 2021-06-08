@@ -1,0 +1,37 @@
+digraph "Dron::Oblicz_i_Zapisz_WspKorpusu"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Dron::Oblicz_i_Zapisz\l_WspKorpusu",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Obliczajaca wspolrzedne korpusu drona."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Dron::Oblicz_i_ZapiszWsp\lDrona",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a9cea5ba789e3ac0961846a77d909b552",tooltip="Metoda zapisujaca polozenie poszczegolnych wierzcholkow."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Dron::Obrot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a25f42d02fc5b27f30e872d444ffb5230",tooltip="Metoda realizujaca obrot drona COS JEST NIE TAK."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Dron::Lot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a904f1ed9e3a3298a7e85619260de5a1f",tooltip="Metoda realizujaca cala animacje lotu drona."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Scena::Menu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00134.html#aba5cd9be3daabe70b47768fb56d9484f",tooltip="Metody obslugujace dzialanie sceny."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00077.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Dron::TransDoUklRodzica",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#aa0e058c1c55a73cccb4098d2b02bba27",tooltip="Metoda transformujaca."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Dron::Lec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a73e0a729daf06e3a66eb1d3484b3433d",tooltip="nowe metody realizujace lot"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="Dron::LotDoPrzodu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a09b0c45f6b8e6642a231744656e52db9",tooltip="Metoda realizujaca lot do przodu drona."];
+  Node9 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node10 [label="Dron::LotPionowy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a86d7fab7b926930274de0ee8eebbb0f0",tooltip=" "];
+  Node10 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node11 [label="Dron::LotWDol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a377c3c7c4d1775ce4041fcd8756c73e0",tooltip="Metoda realizujaca animujace opadania drona."];
+  Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node12 [label="Dron::LotWGore",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a185638c36a312f1b6cf9f85d3a6d7a25",tooltip="Metody Animujace ruch drona."];
+  Node7 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 [label="Dron::PoziomyLot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html#a2a9e379826745a478b3a57638f9496b4",tooltip="Metoda realizujaca animujace unoszenie drona."];
+  Node7 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node14 [label="Scena::TworzScene",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00134.html#aeca659dd59433366298ce1a828208d62",tooltip="Metoda tworzaca uklad sceny."];
+  Node14 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+}
