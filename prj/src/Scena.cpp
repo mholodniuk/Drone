@@ -170,7 +170,7 @@ void Scena::DodajGoreZDlugaGrania(unsigned int ID)
   _GoraZDlugaGrania->TworzGoreZDlugaGrania(ID, Lacze);
   _GoraZDlugaGrania->TransDoUklRodzica(Polozenie_przeszkody, Lacze);
 
-  ListaPrzeszkod.push_back(_GoraZDlugaGrania);
+  //ListaPrzeszkod.push_back(_GoraZDlugaGrania);
   ListaObiektow.push_back(_GoraZDlugaGrania);
 }
 
@@ -205,7 +205,7 @@ void Scena::DodajGoreZOstrymSzczytem(unsigned int ID)
   _GoraZOstrymSzczytem->TworzGoreZOstrymSzczytem(ID, Lacze);
   _GoraZOstrymSzczytem->TransDoUklRodzica(Polozenie_przeszkody, Lacze);
 
-  ListaPrzeszkod.push_back(_GoraZOstrymSzczytem);
+  //ListaPrzeszkod.push_back(_GoraZOstrymSzczytem);
   ListaObiektow.push_back(_GoraZOstrymSzczytem);
 }
 
@@ -240,7 +240,7 @@ void Scena::DodajPlaskowyz(unsigned int ID)
   _Plaskowyz->TworzPlaskowyz(ID, Lacze);
   _Plaskowyz->TransDoUklRodzica(Polozenie_przeszkody, Lacze);
 
-  ListaPrzeszkod.push_back(_Plaskowyz);
+  //ListaPrzeszkod.push_back(_Plaskowyz);
   ListaObiektow.push_back(_Plaskowyz);
 }
 
@@ -258,19 +258,19 @@ void Scena::UstawPrzeszkody()
   _Plaskowyz->UstawSkale(skala);
   _Plaskowyz->TworzPlaskowyz(++lPrzeszkod, Lacze);
   _Plaskowyz->TransDoUklRodzica(tab[0], Lacze);
-  ListaPrzeszkod.push_back(_Plaskowyz);
+  //ListaPrzeszkod.push_back(_Plaskowyz);
   ListaObiektow.push_back(_Plaskowyz);
 
   _GoraZDlugaGrania->UstawSkale(skala);
   _GoraZDlugaGrania->TworzGoreZDlugaGrania(++lPrzeszkod, Lacze);
   _GoraZDlugaGrania->TransDoUklRodzica(tab[1], Lacze);
-  ListaPrzeszkod.push_back(_GoraZDlugaGrania);
+  //ListaPrzeszkod.push_back(_GoraZDlugaGrania);
   ListaObiektow.push_back(_GoraZDlugaGrania);
 
   _GoraZOstrymSzczytem->UstawSkale(skala);
   _GoraZOstrymSzczytem->TworzGoreZOstrymSzczytem(++lPrzeszkod, Lacze);
   _GoraZOstrymSzczytem->TransDoUklRodzica(tab[2], Lacze);
-  ListaPrzeszkod.push_back(_GoraZOstrymSzczytem);
+  //ListaPrzeszkod.push_back(_GoraZOstrymSzczytem);
   ListaObiektow.push_back(_GoraZOstrymSzczytem);
 }
 
@@ -320,9 +320,10 @@ void Scena::DodajPrzeszkode()
 void Scena::PokazPrzeszkody()
 {
   std::cout<<std::endl<<"Wybierz element powierzchni do usuniecia: " <<std::endl;
-  for(const std::shared_ptr<BrylaGeometryczna> &Br : ListaPrzeszkod)
+  for(const std::shared_ptr<ObiektSceny> &Br : ListaObiektow)
   {
-    std::cout << Br->PokazID() << ". " << Br->Identyfikuj() << std::endl;
+    if(!Br->CzyDron())
+      std::cout << Br->PokazID() << ". " << Br->Identyfikuj() << std::endl;
   }
   std::cout<<std::endl;
 }
@@ -340,19 +341,19 @@ void Scena::UsunPrzeszkode()
   int nr_przeszkody;
   PokazPrzeszkody();
 
-  if(ListaPrzeszkod.size()!=0)
+  if(ListaObiektow.size()>=2)
   {
     std::cout<<"Podaj numer elementu: ";
     std::cin >> nr_przeszkody;
   
-    for(const std::shared_ptr<BrylaGeometryczna> &Br : ListaPrzeszkod)
+    for(const std::shared_ptr<ObiektSceny> &Br : ListaObiektow)
     {
       if(Br->SprawdzID(nr_przeszkody))
       {
         std::cout<<"Usuwanie przeszkody z listy..." << std::endl;
         Lacze.UsunNazwePliku(Br->ZwrocNazwePlikuFinalnego());
         Lacze.Rysuj();
-        ListaPrzeszkod.remove((Br));
+        ListaObiektow.remove(Br);
         break;
       }
     }

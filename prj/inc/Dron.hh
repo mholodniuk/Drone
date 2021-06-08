@@ -50,6 +50,7 @@ public:
   // Metody zwracajace kat orientacji oraz ID
   double ZwrocKat_st() { return Kat_OrDrona; }
   double ZwrocID() { return id; }
+  virtual bool CzyDron() const override { return true; }
 
   // Metody generujace nazwy plikow
   std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);

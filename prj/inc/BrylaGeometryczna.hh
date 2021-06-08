@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>
+
 #include <iostream>
 #include <cmath>
 #include <fstream>
@@ -45,10 +45,7 @@ public:
     //!\brief Metoda ustawiajaca skale bryly
     Wektor3D UstawSkale(const Wektor3D& skala);
 
-    virtual std::string Identyfikuj() const { return "Bryla Geometryczna"; }
-    virtual bool SprawdzID(unsigned int) const { return true; }
-    virtual double PokazID() const { return 0; }
-    const char* ZwrocNazwePlikuFinalnego() const { return NazwaPliku_Finalny.c_str(); }
+    virtual const char* ZwrocNazwePlikuFinalnego() const override { return NazwaPliku_Finalny.c_str(); }
 
     virtual bool CzyLadowac() const override { return false; }
 };

@@ -397,7 +397,9 @@ void Dron::Lot(PzG::LaczeDoGNUPlota & Lacze)
   std::cout<<"Podaj dlugosc lotu: ";
   std::cin>>dlugosc;
   
-  //std::cout<<"Wcisniej ENTER any zaplanowac sciezke i wykonac lot"<<std::endl;
+  std::cout<<"Wcisniej ENTER any zaplanowac sciezke i wykonac lot"<<std::endl;
+  std::cin.ignore(100,'\n');
+  
   Sciezka = UstalSciezke(kat, dlugosc);
   PlanujPoczatkowaSciezke(Sciezka, Lacze);
 
@@ -413,7 +415,7 @@ void Dron::Lot(PzG::LaczeDoGNUPlota & Lacze)
   usleep(1000000);
   Lacze.Rysuj();
   
-  std::cout<<"Wcisniej ENTER aby zakonczyc procedure lotu"<<std::endl;
+  //std::cout<<"Wcisniej ENTER aby zakonczyc procedure lotu"<<std::endl;
   std::cin.ignore(1000, '\n');
   PodajWspolrzedne();
   Wektor3D::ZwrocIloscWektorow();
