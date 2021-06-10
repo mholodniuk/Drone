@@ -416,9 +416,9 @@ void Dron::Lot(PzG::LaczeDoGNUPlota & Lacze)
   Lacze.Rysuj();
   
   //std::cout<<"Wcisniej ENTER aby zakonczyc procedure lotu"<<std::endl;
-  std::cin.ignore(1000, '\n');
+  //std::cin.ignore(1000, '\n');
   PodajWspolrzedne();
-  Wektor3D::ZwrocIloscWektorow();
+  //Wektor3D::ZwrocIloscWektorow();
 }
 
 bool Dron::CzyLadowac() const

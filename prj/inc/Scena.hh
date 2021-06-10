@@ -31,7 +31,6 @@ class Scena
     unsigned int lPrzeszkod;
 
     std::list<std::shared_ptr<ObiektSceny>> ListaObiektow;
-    std::list<std::shared_ptr<BrylaGeometryczna>> ListaPrzeszkod;
     std::list<std::shared_ptr<Dron>> ListaDronow;
     std::shared_ptr<Dron> Dron_wybrany;
 

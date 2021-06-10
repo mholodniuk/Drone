@@ -90,7 +90,8 @@ void Scena::Menu(char& wybor)
       break;
 
     case 'p':
-      Dron_wybrany->Lot(Lacze); 
+      Dron_wybrany->Lot(Lacze);
+      Wektor3D::ZwrocIloscWektorow();
       break;
 
     default:
@@ -348,6 +349,7 @@ void Scena::UsunPrzeszkode()
   
     for(const std::shared_ptr<ObiektSceny> &Br : ListaObiektow)
     {
+      //tutaj czy trzeba dodac obsluge dronow?   chyba nie bo dla drona (Obiektu Sceny) jest false domyslnie
       if(Br->SprawdzID(nr_przeszkody))
       {
         std::cout<<"Usuwanie przeszkody z listy..." << std::endl;
@@ -355,8 +357,8 @@ void Scena::UsunPrzeszkode()
         Lacze.Rysuj();
         ListaObiektow.remove(Br);
         break;
-      }
+      }           //to jeszcze sprawdzic w gdb
     }
   }
-  else std::cout<<"Brak przeszkod do usuniecia!"<<std::endl;
+    else std::cout<<"Brak przeszkod do usuniecia!"<<std::endl;
 }
