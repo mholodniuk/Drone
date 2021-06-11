@@ -73,6 +73,16 @@ public:
   double ObliczDlugosc();
 
   /*!
+   * \brief Konwerter wektora o danym wymiarze na wektor o jeden wymiar mniejszy
+   */
+  operator Wektor<wymiar-1> () const
+  {
+    Wektor<wymiar-1> Wynik;
+    for(unsigned int idx=0; idx < wymiar-1; ++idx)  Wynik[idx] = (*this)[idx]; 
+    return Wynik;
+  }
+
+  /*!
    * \brief Metody zwracajace ilosc obiektow
    */
   static void ZwrocIloscWektorow()
