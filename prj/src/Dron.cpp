@@ -421,7 +421,15 @@ void Dron::Lot(PzG::LaczeDoGNUPlota & Lacze)
   //Wektor3D::ZwrocIloscWektorow();
 }
 
-bool Dron::CzyLadowac() const
+bool Dron::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 {
+  double odleglosc;
+  Wektor<2> Polozenie_drona_2D = Polozenie_drona;
+  Wektor<2> Polozenie_drona_this = Polozenie;
+
+  odleglosc = (Polozenie_drona_2D - Polozenie_drona_this).ObliczDlugosc();
+
+  if(odleglosc > Promien) return false;
+
   return true;
 }

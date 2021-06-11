@@ -47,5 +47,5 @@ public:
 
     virtual const char* ZwrocNazwePlikuFinalnego() const override { return NazwaPliku_Finalny.c_str(); }
 
-    virtual bool CzyLadowac() const override { return false; }
+    //virtual bool CzyZajete() const override { return false; }
 };

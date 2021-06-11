@@ -146,6 +146,18 @@ void GoraZOstrymSzczytem::TworzGoreZOstrymSzczytem(unsigned int ID, PzG::LaczeDo
     Lacze.DodajNazwePliku(NazwaPliku.c_str());
 }
 
+/*!
+ * \brief Metoda przesuwajaca Gore z ostrym szczytem o odpowiedni wektor
+ * 
+ * Tutaj dokonywane jest ostateczne przesuniecie o odpowiedni
+ * Wektor
+ * 
+ * \param[in] Wek - Wektor Translacji
+ * 
+ * \retval true - jesli operacja sie powiedzie
+ * \retval false - jesli operacja sie nie powiedzie
+ * 
+ */
 bool GoraZOstrymSzczytem::TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze)
 {
     if(!TworzOpisGoryZOstrymSzczytem(Wek)) return false;
@@ -153,6 +165,14 @@ bool GoraZOstrymSzczytem::TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNU
     return true;
 }
 
+/*!
+ * \brief Metoda pozwalajaca zidentyfikowac obiekt - jako przeszkode
+ * 
+ * W strumienu znajduje sie nazwa typu przeszkody, oraz jego polozenie
+ * 
+ * \return Obiekt - napis identyfikacyjny
+ * 
+ */
 std::string GoraZOstrymSzczytem::Identyfikuj() const
 {
     std::ostringstream Obiekt;
@@ -168,4 +188,74 @@ bool GoraZOstrymSzczytem::SprawdzID(unsigned int _id) const
         return true;
     else
         return false;
+}
+
+/*!
+ * \brief Metoda obliczajaca wspolrzedne wierzcholkow Plaskowyzu
+ * 
+ * W zwracanym wektorze znajduja sie kolejno Wektory polozenia
+ * wierzcholkow, zgodnie z ponizszym rysunkiem (x_min, y_max, x_max, y_min)
+ * Jednoczesnie, niejawnie zostaje dokonana konwersja z wektorow 3D na 2D
+ * 
+ *    4.------------2.
+ *    |             |
+ *    |             |
+ *    1.----------- 3.
+ * 
+ * \return wsp_wierzcholkow - vector zawierajacy wspolrzedne wierzcholkow
+ * 
+ */
+std::vector<Wektor<2>> GoraZOstrymSzczytem::ObliczeGraniczneWsp() const
+{
+    std::vector<Wektor<2>> wsp_wierzcholkow;
+
+    Wektor<2> x_min, x_max, y_min, y_max;
+    x_min[0] = Polozenie[0] - Skala[0]/2;
+    x_min[1] = Polozenie[1] - Skala[1]/2;
+
+    y_max[0] = Polozenie[0] + Skala[0]/2;
+    y_max[1] = Polozenie[1] + Skala[1]/2;
+
+    x_max[0] = Polozenie[0] + Skala[0]/2;
+    x_max[1] = x_min[1];
+
+    y_min[0] = Polozenie[0] - Skala[0]/2;
+    y_min[1] = y_max[1];
+
+    wsp_wierzcholkow.push_back(x_min);
+    wsp_wierzcholkow.push_back(y_max);
+    wsp_wierzcholkow.push_back(x_max);
+    wsp_wierzcholkow.push_back(y_min);
+
+    return wsp_wierzcholkow;
+}
+
+bool GoraZOstrymSzczytem::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
+{
+    std::vector<Wektor<2>> wsp_wierzcholkow_2D =  ObliczeGraniczneWsp();
+    double odleglosc, x, y; //x to zmienna pomocnicza
+    double licznik;
+    Wektor<2> Polozenie_drona_2D = Polozenie_drona;
+    Wektor<2> Polozenie_Plaskowyzu_2D = Polozenie;
+
+    odleglosc = (Polozenie_drona_2D - Polozenie_Plaskowyzu_2D).ObliczDlugosc();
+
+    //case 1: lewo/prawo
+    x = Promien + Skala[0]/2;
+    if(odleglosc > x) return false;
+    
+    //case 2: gora/dol
+    y = Promien + Skala[1]/2;
+    if(odleglosc > y) return false;
+
+    //case 3,4,5,6: odleglosci od wierzcholkow
+    for(unsigned int idx=0; idx<wsp_wierzcholkow_2D.size(); ++idx)
+    {
+        odleglosc = (Polozenie_drona_2D - wsp_wierzcholkow_2D[idx]).ObliczDlugosc();
+        if(odleglosc > Promien) ++licznik;
+    }
+
+    if(licznik == wsp_wierzcholkow_2D.size()) return false;
+    
+    return true;
 }

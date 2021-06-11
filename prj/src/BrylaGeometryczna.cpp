@@ -18,6 +18,8 @@ void BrylaGeometryczna::UstawNazwaPlikuWlasciwego(const char* NazwaPliku)
 /*!
  * \brief Metoda ustawiajaca skale Bryly
  * 
+ * \pre Skala musi byc dodatnia
+ * 
  * \param[in] SkalaZadana
  * 
  * \return Skala - skala z jaka rysowana jest bryla 

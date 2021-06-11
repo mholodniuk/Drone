@@ -36,32 +36,38 @@ class Scena
 
 public:
 
-    // konstruktor bezparametryczny
+    //!\brief konstruktor bezparametryczny
     Scena() { };
 
-    // Metoda tworzaca uklad sceny
+    //!\brief Metoda tworzaca uklad sceny
     void TworzScene();
 
-    // Metody obslugujace dzialanie sceny
+    //!\brief Metody obslugujace dzialanie sceny
     void Menu(char& wybor);
     void WyswietlMenu();
     void WyborDrona();
 
-    //Metody dodajace przeszkody
+    //!\brief Metody dodajace przeszkody
     void DodajGoreZDlugaGrania(unsigned int ID);
     void DodajGoreZOstrymSzczytem(unsigned int ID);
     void DodajPlaskowyz(unsigned int ID);
     void DodajPrzeszkode();
 
-    //metoda ustawiajaca poczatkowy zestaw przeszkod
+    //!\brief metoda ustawiajaca poczatkowy zestaw przeszkod
     void UstawPrzeszkody();
 
-    //Metody usuwajace przeszkody
+    //!\brief Metody usuwajace przeszkody
     void PokazPrzeszkody();
     void UsunPrzeszkode();
 
-    //metody dodajace drony
+    //!\brief metody dodajace drony
     std::shared_ptr<Dron> DodajDrona(unsigned int ID, const Wektor3D& wek);
     void UstawDrony();
+
+    //!\brief Metody animujace lot drona
+    void LotDrona(std::shared_ptr<Dron> &Dr);
+
+    //!!\brief Metody sprawdzajace czy obszar jest zajety
+    bool CzyZajete();
 
 };

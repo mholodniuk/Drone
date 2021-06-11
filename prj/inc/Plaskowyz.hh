@@ -44,6 +44,9 @@ public:
     void TworzPlaskowyz(unsigned int ID, PzG::LaczeDoGNUPlota& Lacze);
     bool TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze);
 
+    std::vector<Wektor<2>> ObliczeGraniczneWsp() const;
+
     virtual std::string Identyfikuj() const override;
+    virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 
 };

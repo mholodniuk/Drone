@@ -44,5 +44,8 @@ public:
     bool TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze);
 
     virtual std::string Identyfikuj() const override;
+    
+    std::vector<Wektor<2>> ObliczeGraniczneWsp() const;
+    virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 
 };

@@ -31,57 +31,57 @@ class Dron: public ObiektSceny
   Prostopadloscian KorpusDrona;
   Graniastoslup RotorDrona[4];
   unsigned int id;
-  int pojedynczy_krok = 1;
+  int pojedynczy_krok = 2;
 
   void Oblicz_i_Zapisz_WspKorpusu();
   void Oblicz_i_Zapisz_WspRotorow();
-  // Metoda przesuwajaca drona o zadany wektor przesuniecia
+  //! \brief Metoda przesuwajaca drona o zadany wektor przesuniecia
   void PrzesunDrona(const Wektor3D& Wek) { Polozenie += Wek; }
-  // Metoda przemieszczajaca drona do zadanego wektora polozenia
+  //! \brief Metoda przemieszczajaca drona do zadanego wektora polozenia
   void ZmienPolozenieDrona(const Wektor3D& nPolozenie) { Polozenie = nPolozenie; }
 
 public:
 
-  // Konstruktor bezparametryczny 
+  //! \brief Konstruktor bezparametryczny 
   Dron() { Kat_OrDrona = 0; }
   //Destrkutor
   virtual ~Dron() { }
 
-  // Metody zwracajace kat orientacji oraz ID
+  //! \brief Metody zwracajace kat orientacji oraz ID
   double ZwrocKat_st() { return Kat_OrDrona; }
   double ZwrocID() { return id; }
   virtual bool CzyDron() const override { return true; }
 
-  // Metody generujace nazwy plikow
+  //! \brief Metody generujace nazwy plikow
   std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);
   std::string TworzNazweKorpusu(unsigned int id_Drona);
 
-  // Metody zwracajace/wyswietlajace polozenie
+  //! \brief Metody zwracajace/wyswietlajace polozenie
   void PodajWspolrzedne() const;
   Wektor3D ZwrocPolozenie() const;
 
-  //Metoda tworzaca zestaw plikow ze wspolrzednymi
+  //! \brief Metoda tworzaca zestaw plikow ze wspolrzednymi
   void TworzDrona(unsigned int ID, PzG::LaczeDoGNUPlota & Lacze);
   
-  //! Metoda transformujaca 
+  //!! \brief Metoda transformujaca 
   void TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze);
 
-  //Metoda zapisujaca polozenie poszczegolnych wierzcholkow
+  //! \brief Metoda zapisujaca polozenie poszczegolnych wierzcholkow
   void Oblicz_i_ZapiszWspDrona();
 
-  //Metody Ocliczajace i generujace sciezke lotu 
+  //! \brief Metody Ocliczajace i generujace sciezke lotu 
   void PlanujPoczatkowaSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const;
   std::vector<Wektor3D> UstalSciezke(double kat_skretu, double Dlugosc_lotu);
   Wektor3D ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const;
 
-  //Metody Animujace ruch drona
+  //! \brief Metody Animujace ruch drona
   void Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
   void Lot(PzG::LaczeDoGNUPlota& Lacze);
   void Lec(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
   void LotDoPrzodu(double dlugosc_lotu, double kat_skretu,  PzG::LaczeDoGNUPlota& Lacze);
   void LotPionowy(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
 
-  //Metoda sprawdzajaca czy pod dronem jest wolne miejsce
-  virtual bool CzyLadowac() const override;
+  //! \brief Metoda sprawdzajaca czy pod dronem jest wolne miejsce
+  virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 
 };

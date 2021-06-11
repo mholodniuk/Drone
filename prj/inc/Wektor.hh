@@ -60,7 +60,7 @@ public:
    * \brief przeciazenia operatorow
    */
   Wektor& operator=(const Wektor&);
-  Wektor operator +(Wektor &)const; 
+  Wektor operator +(const Wektor &)const; 
   Wektor operator -(Wektor &) const;
   Wektor operator+= (const Wektor &);
   bool operator!= (const Wektor &) const;
@@ -182,7 +182,7 @@ Wektor<wymiar>::Wektor(const std::initializer_list<double> & rListaWsp): Wektor(
  * 
  */
 template<int wymiar>
-Wektor<wymiar> Wektor<wymiar>::operator+(Wektor<wymiar> & czynnik) const
+Wektor<wymiar> Wektor<wymiar>::operator+(const Wektor<wymiar> & czynnik) const
 {
   Wektor<wymiar> Wynik;
   for(int i=0; i < wymiar; ++i)

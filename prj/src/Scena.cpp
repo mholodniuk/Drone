@@ -2,6 +2,7 @@
 
 #include "Menu.hh"
 #include <vector>
+#include <unistd.h>
 
 /*!
  * \brief Metoda ustawiajaca Drony na scenie
@@ -90,7 +91,7 @@ void Scena::Menu(char& wybor)
       break;
 
     case 'p':
-      Dron_wybrany->Lot(Lacze);
+      LotDrona(Dron_wybrany);
       Wektor3D::ZwrocIloscWektorow();
       break;
 
@@ -360,4 +361,43 @@ void Scena::UsunPrzeszkode()
     }
   }
     else std::cout<<"Brak przeszkod do usuniecia!"<<std::endl;
+}
+
+void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
+{
+  //Dr->Lot(Lacze);
+  double kat, dlugosc;
+  std::vector<Wektor3D> Sciezka;
+  
+  std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
+  std::cin>>kat;
+  kat += Dr->ZwrocKat_st();
+  std::cout<<"Podaj dlugosc lotu: ";
+  std::cin>>dlugosc;
+
+  Sciezka = Dr->UstalSciezke(kat, dlugosc);
+  Dr->PlanujPoczatkowaSciezke(Sciezka, Lacze);
+
+  Dr->LotPionowy(80, Lacze);
+  Dr->Obrot(kat, Lacze);
+  Dr->LotDoPrzodu(dlugosc, kat, Lacze);
+  
+  std::cout<<"Wcisnij ENTER aby sprawdzic czy mozna ladowac";
+  std::cin.ignore(10000,'\n');
+
+  for(const std::shared_ptr<ObiektSceny>& Ob : ListaObiektow)
+  {
+    if(Ob == Dr) continue;
+    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), 10))
+    {
+      Dr->LotDoPrzodu(20, kat, Lacze);
+    }
+  }
+
+  Dr->LotPionowy(-80 ,Lacze);
+
+  Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
+  Lacze.Rysuj();
+  
+  Dr->PodajWspolrzedne();
 }

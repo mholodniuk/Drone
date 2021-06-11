@@ -44,6 +44,7 @@ public:
 
     virtual std::string Identyfikuj() const override;
 
-    virtual bool CzyLadowac() const override { return true; }
+    std::vector<Wektor<2>> ObliczeGraniczneWsp() const;
+    virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 
 };
