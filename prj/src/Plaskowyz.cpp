@@ -234,7 +234,7 @@ bool Plaskowyz::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 {
     std::vector<Wektor<2>> wsp_wierzcholkow_2D =  ObliczeGraniczneWsp();
     double odleglosc, x, y; //x to zmienna pomocnicza
-    double licznik;
+    double licznik = 0;
     Wektor<2> Polozenie_drona_2D = Polozenie_drona;
     Wektor<2> Polozenie_Plaskowyzu_2D = Polozenie;
 
@@ -242,20 +242,32 @@ bool Plaskowyz::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 
     //case 1: lewo/prawo
     x = Promien + Skala[0]/2;
-    if(odleglosc > x) return false;
-    
-    //case 2: gora/dol
     y = Promien + Skala[1]/2;
-    if(odleglosc > y) return false;
+    if(odleglosc >= x && odleglosc >= y)
+    {
+        std::cout<<"Wolne na osi x i y plask"<<std::endl;
+        return false;
+    }
+    //case 2: gora/dol
+/*
+    else if(odleglosc >= y)
+    {
+        std::cout<<"Wolne na osi y gzos"<<std::endl;
+        return false;
+    }
+*/
+    //if(odleglosc < x || odleglosc < y) return true;
 
     //case 3,4,5,6: odleglosci od wierzcholkow
     for(unsigned int idx=0; idx<wsp_wierzcholkow_2D.size(); ++idx)
     {
         odleglosc = (Polozenie_drona_2D - wsp_wierzcholkow_2D[idx]).ObliczDlugosc();
-        if(odleglosc > Promien) ++licznik;
+        if(odleglosc <= Promien) return true;
+        std::cout<<"Wolne, odleglosc plask"<< odleglosc <<std::endl;
     }
 
-    if(licznik == wsp_wierzcholkow_2D.size()) return false;
+    //if(licznik == wsp_wierzcholkow_2D.size()) return false;
+
     
     return true;
 }

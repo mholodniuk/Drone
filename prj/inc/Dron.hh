@@ -32,6 +32,7 @@ class Dron: public ObiektSceny
   Graniastoslup RotorDrona[4];
   unsigned int id;
   int pojedynczy_krok = 2;
+  unsigned int Promien_drona = 10;
 
   void Oblicz_i_Zapisz_WspKorpusu();
   void Oblicz_i_Zapisz_WspRotorow();
@@ -49,6 +50,7 @@ public:
 
   //! \brief Metody zwracajace kat orientacji oraz ID
   double ZwrocKat_st() { return Kat_OrDrona; }
+  double ZwrocPromien() { return Promien_drona; }
   double ZwrocID() { return id; }
   virtual bool CzyDron() const override { return true; }
 

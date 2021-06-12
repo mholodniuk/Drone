@@ -135,7 +135,7 @@ std::shared_ptr<Dron> Scena::DodajDrona(unsigned int ID, const Wektor3D& Wek)
  */
 void Scena::UstawDrony()
 {
-  Wektor3D W1 = {20, 40, 0}; Wektor3D W2 = {80, 100, 0};
+  Wektor3D W1 = {20, 50, 0}; Wektor3D W2 = {150, 100, 0};
 
   Dron_wybrany = DodajDrona(1, W1);
   DodajDrona(2, W2);
@@ -256,7 +256,7 @@ void Scena::UstawPrzeszkody()
   std::shared_ptr<GoraZOstrymSzczytem> _GoraZOstrymSzczytem = std::make_shared<GoraZOstrymSzczytem>();
 
   Wektor3D skala = {30, 40, 60};
-  Wektor3D tab[] = {{150,150,0}, {50,150,0}, {150,50,0}};
+  Wektor3D tab[] = {{150,150,0}, {50,150,0}, {70,50,0}};
   _Plaskowyz->UstawSkale(skala);
   _Plaskowyz->TworzPlaskowyz(++lPrzeszkod, Lacze);
   _Plaskowyz->TransDoUklRodzica(tab[0], Lacze);
@@ -381,19 +381,15 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
   Dr->LotPionowy(80, Lacze);
   Dr->Obrot(kat, Lacze);
   Dr->LotDoPrzodu(dlugosc, kat, Lacze);
-  
-  std::cout<<"Wcisnij ENTER aby sprawdzic czy mozna ladowac";
-  std::cin.ignore(10000,'\n');
 
   for(const std::shared_ptr<ObiektSceny>& Ob : ListaObiektow)
   {
     if(Ob == Dr) continue;
-    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), 15))
+    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
     {
-      Dr->LotDoPrzodu(20, kat, Lacze);
+      Dr->LotDoPrzodu(10, kat, Lacze);
     }
   }
-
   Dr->LotPionowy(-80 ,Lacze);
 
   Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
