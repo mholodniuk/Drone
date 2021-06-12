@@ -388,7 +388,7 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
   for(const std::shared_ptr<ObiektSceny>& Ob : ListaObiektow)
   {
     if(Ob == Dr) continue;
-    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), 10))
+    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), 15))
     {
       Dr->LotDoPrzodu(20, kat, Lacze);
     }
