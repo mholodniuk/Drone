@@ -74,13 +74,12 @@ public:
   void Oblicz_i_ZapiszWspDrona();
 
   //! \brief Metody Ocliczajace i generujace sciezke lotu 
-  void PlanujPoczatkowaSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const;
-  std::vector<Wektor3D> UstalSciezke(double kat_skretu, double Dlugosc_lotu);
+  void PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const;
+  std::vector<Wektor3D> UstalSciezke(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
   Wektor3D ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const;
 
   //! \brief Metody Animujace ruch drona
   void Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
-  void Lot(PzG::LaczeDoGNUPlota& Lacze);
   void Lec(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
   void LotDoPrzodu(double dlugosc_lotu, double kat_skretu,  PzG::LaczeDoGNUPlota& Lacze);
   void LotPionowy(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);

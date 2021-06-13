@@ -368,7 +368,12 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
   for(const std::shared_ptr<ObiektSceny>& Ob : ListaObiektow)
   {
     if(Ob == Dr) continue;
-    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien())) return true;
+    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
+    {
+      std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identyfikuj() << std::endl << 
+      std:: endl << "Przedluzam lot..." << std::endl;
+      return true;
+    }
   }
   return false;
 }
@@ -378,6 +383,7 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
   //Dr->Lot(Lacze);
   double kat, dlugosc;
   std::vector<Wektor3D> Sciezka;
+  Wektor3D Polozenie_poczatkowe = Dr->ZwrocPolozenie();
   
   std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
   std::cin>>kat;
@@ -385,8 +391,8 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
   std::cout<<"Podaj dlugosc lotu: ";
   std::cin>>dlugosc;
 
-  Sciezka = Dr->UstalSciezke(kat, dlugosc);
-  Dr->PlanujPoczatkowaSciezke(Sciezka, Lacze);
+  Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc);
+  Dr->PlanujSciezke(Sciezka, Lacze);
 
   Dr->LotPionowy(80, Lacze);
   Dr->Obrot(kat, Lacze);
@@ -394,6 +400,10 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 
   while(CzyZajete(Dr))
   {
+    //Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
+    Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, 20);
+    Dr->PlanujSciezke(Sciezka, Lacze);
+    Lacze.Rysuj();
     Dr->LotDoPrzodu(20, kat, Lacze);
   }
   

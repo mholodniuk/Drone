@@ -38,6 +38,7 @@ public:
 
     //!\brief Konstruktor bezparametryczny 
     BrylaGeometryczna() { };
+    virtual ~BrylaGeometryczna() { }
     
     //!\brief Metoda Ustawiajaca Nazwe Pliku Docelowego
     void UstawNazwaPlikuWlasciwego(const char* NazwaPliku);
@@ -47,5 +48,5 @@ public:
 
     virtual const char* ZwrocNazwePlikuFinalnego() const override { return NazwaPliku_Finalny.c_str(); }
 
-    //virtual bool CzyZajete() const override { return false; }
+    virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 };

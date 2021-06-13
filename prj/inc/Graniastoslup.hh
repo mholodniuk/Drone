@@ -34,4 +34,6 @@ public:
 
     //!\brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
     bool TransDoUklRodzica(const Wektor3D& Wek);
+
+    //virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 };

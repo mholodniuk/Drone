@@ -343,7 +343,7 @@ Wektor3D Dron::ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const
  * \return Sciezka - kontener z kolejnymi wektorami3D sciezki ruchu
  * 
  */
-std::vector<Wektor3D> Dron::UstalSciezke(double kat_skretu, double Dlugosc_lotu)
+std::vector<Wektor3D> Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
 {
   std::vector<Wektor3D> Sciezka;
   Wektor3D pomoc;
@@ -351,7 +351,7 @@ std::vector<Wektor3D> Dron::UstalSciezke(double kat_skretu, double Dlugosc_lotu)
 
   std::cout<<std::endl<<std::endl<<"Planuje sciezke ruchu drona..."<<std::endl;
 
-  Sciezka.push_back(ZwrocPolozenie());
+  Sciezka.push_back(Polozenie_poczatkowe);
   pomoc = ZwrocPolozenie();
   pomoc[2] += 80;
   Sciezka.push_back(pomoc);
@@ -374,7 +374,7 @@ std::vector<Wektor3D> Dron::UstalSciezke(double kat_skretu, double Dlugosc_lotu)
  * \param[in] Lacze
  * 
  */
-void Dron::PlanujPoczatkowaSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const
+void Dron::PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const
 {
   std::ofstream Plik_Trasa(PLIK_TRASY_PRZELOTU);
   if(!Plik_Trasa.is_open())
@@ -388,48 +388,6 @@ void Dron::PlanujPoczatkowaSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::La
   Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
   Lacze.Rysuj();
   Plik_Trasa.close();
-}
-
-/*!
- * \brief Metoda realizujaca cala animacje lotu drona
- *
- * Metoda po kolei oblicza sciezke i animuje ruch drona
- * 
- * \param[in] Lacze
- */
-void Dron::Lot(PzG::LaczeDoGNUPlota & Lacze)
-{
-  std::vector<Wektor3D> Sciezka;
-  double kat, dlugosc;
-
-  std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
-  std::cin>>kat;
-  kat += Kat_OrDrona;
-  std::cout<<"Podaj dlugosc lotu: ";
-  std::cin>>dlugosc;
-  
-  std::cout<<"Wcisniej ENTER any zaplanowac sciezke i wykonac lot"<<std::endl;
-  std::cin.ignore(100,'\n');
-  
-  Sciezka = UstalSciezke(kat, dlugosc);
-  PlanujPoczatkowaSciezke(Sciezka, Lacze);
-
-  LotPionowy(80, Lacze);
-
-  Obrot(kat, Lacze);
-
-  LotDoPrzodu(dlugosc, kat, Lacze);
-
-  LotPionowy(-80 ,Lacze);
-
-  Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
-  usleep(1000000);
-  Lacze.Rysuj();
-  
-  //std::cout<<"Wcisniej ENTER aby zakonczyc procedure lotu"<<std::endl;
-  //std::cin.ignore(1000, '\n');
-  PodajWspolrzedne();
-  //Wektor3D::ZwrocIloscWektorow();
 }
 
 bool Dron::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
