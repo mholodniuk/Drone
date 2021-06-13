@@ -248,11 +248,13 @@ bool Plaskowyz::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
         std::cout<<"Wolne na osi x i y plask"<<std::endl;
         return false;
     }
+    /*
     else if(odleglosc < x && odleglosc < y)
     {
         std::cout<<"Wolne w srodku plask"<<std::endl;
         return false;
     }
+    */
 
     //case 2: gora/dol
 /*

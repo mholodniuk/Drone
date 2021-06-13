@@ -9,6 +9,17 @@
 
 #define BLAD_OBLICZEN 1e-8
 
+
+Dron::Dron()
+{
+  Kat_OrDrona = 0;
+  KorpusDrona = std::make_shared<Prostopadloscian>();
+  for(std::shared_ptr<Graniastoslup>& Rotor : RotorDrona)
+  {
+    Rotor = std::make_shared<Graniastoslup>();
+  }
+}
+
 /*!
  * \brief Metoda tworzaca nazwe rotora
  * 
@@ -87,11 +98,11 @@ void Dron::TworzDrona(unsigned int ID, PzG::LaczeDoGNUPlota & Lacze)
   for(int i=0; i<4; ++i)
   {
     NazwaPliku = TworzNazweRotora(ID, i);
-    RotorDrona[i].UstawNazwaPlikuWlasciwego(NazwaPliku.c_str());
+    RotorDrona[i]->UstawNazwaPlikuWlasciwego(NazwaPliku.c_str());
     Lacze.DodajNazwePliku(NazwaPliku.c_str());
   }
   NazwaPliku = TworzNazweKorpusu(ID);
-  KorpusDrona.UstawNazwaPlikuWlasciwego(NazwaPliku.c_str());
+  KorpusDrona->UstawNazwaPlikuWlasciwego(NazwaPliku.c_str());
   Lacze.DodajNazwePliku(NazwaPliku.c_str());
 }
 
@@ -107,10 +118,10 @@ void Dron::Oblicz_i_Zapisz_WspKorpusu()
   Wektor3D Translacja = {0, 0, 2};
   Wektor3D w = Polozenie + Translacja;
   Wektor3D SkalaKorpusu = {10, 8, 4};
-  KorpusDrona.ZadajKatObrotu(Kat_OrDrona);
-  KorpusDrona.UstawSkale(SkalaKorpusu);
+  KorpusDrona->ZadajKatObrotu(Kat_OrDrona);
+  KorpusDrona->UstawSkale(SkalaKorpusu);
   
-  KorpusDrona.TransDoUklRodzica(w);
+  KorpusDrona->TransDoUklRodzica(w);
 }
 
 /*!
@@ -147,18 +158,18 @@ void Dron::Oblicz_i_Zapisz_WspRotorow()
   
   for(int idx=0; idx<ILOSC_ROTOROW; ++idx)
   {
-    RotorDrona[idx].UstawSkale(SkalaRotora);
+    RotorDrona[idx]->UstawSkale(SkalaRotora);
   }
 
-  RotorDrona[0].ZadajKatObrotu(kat_obr);
-  RotorDrona[1].ZadajKatObrotu(-kat_obr);
-  RotorDrona[2].ZadajKatObrotu(-kat_obr);
-  RotorDrona[3].ZadajKatObrotu(kat_obr);
+  RotorDrona[0]->ZadajKatObrotu(kat_obr);
+  RotorDrona[1]->ZadajKatObrotu(-kat_obr);
+  RotorDrona[2]->ZadajKatObrotu(-kat_obr);
+  RotorDrona[3]->ZadajKatObrotu(kat_obr);
 
-  RotorDrona[0].TransDoUklRodzica(w1);
-  RotorDrona[1].TransDoUklRodzica(w2);  
-  RotorDrona[2].TransDoUklRodzica(w3);
-  RotorDrona[3].TransDoUklRodzica(w4);
+  RotorDrona[0]->TransDoUklRodzica(w1);
+  RotorDrona[1]->TransDoUklRodzica(w2);  
+  RotorDrona[2]->TransDoUklRodzica(w3);
+  RotorDrona[3]->TransDoUklRodzica(w4);
 
   kat_obr+=15;
 }
@@ -186,10 +197,10 @@ void Dron::TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota & Lacze)
 {
   Polozenie += Wek;
   
-  if(!KorpusDrona.TransDoUklRodzica(Polozenie)) std::cerr<<"Nastapil blad podczas ruchu"<<std::endl;
+  if(!KorpusDrona->TransDoUklRodzica(Polozenie)) std::cerr<<"Nastapil blad podczas ruchu"<<std::endl;
   for(unsigned int idx=0; idx<ILOSC_ROTOROW; ++idx)
   {
-    if(!RotorDrona[idx].TransDoUklRodzica(Polozenie)) std::cerr<<"Nastapil blad podczas ruchu"<<std::endl;
+    if(!RotorDrona[idx]->TransDoUklRodzica(Polozenie)) std::cerr<<"Nastapil blad podczas ruchu"<<std::endl;
   }
   Oblicz_i_ZapiszWspDrona();
   Lacze.Rysuj();

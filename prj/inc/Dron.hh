@@ -29,8 +29,8 @@ class Dron: public ObiektSceny
 {
   Wektor3D Polozenie;
   double Kat_OrDrona;
-  Prostopadloscian KorpusDrona;
-  Graniastoslup RotorDrona[4];
+  std::shared_ptr<Prostopadloscian> KorpusDrona;
+  std::shared_ptr<Graniastoslup> RotorDrona[4];
   
   unsigned int id;
   int pojedynczy_krok = 2;
@@ -46,7 +46,7 @@ class Dron: public ObiektSceny
 public:
 
   //! \brief Konstruktor bezparametryczny 
-  Dron() { Kat_OrDrona = 0; }
+  Dron();
   //Destrkutor
   virtual ~Dron() { }
 

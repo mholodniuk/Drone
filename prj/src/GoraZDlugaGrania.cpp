@@ -244,11 +244,13 @@ bool GoraZDlugaGrania::CzyZajete(const Wektor3D& Polozenie_drona, double Promien
         std::cout<<"Wolne na osi x i y gzdg"<<std::endl;
         return false;
     }
+    /*
     else if(odleglosc < x && odleglosc < y)
     {
         std::cout<<"Wolne w srodku gzdg"<<std::endl;
         return false;
     }
+    */
     
     //case 2: gora/dol
 /*
