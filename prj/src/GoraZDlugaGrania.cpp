@@ -230,7 +230,7 @@ bool GoraZDlugaGrania::CzyZajete(const Wektor3D& Polozenie_drona, double Promien
 {
     std::vector<Wektor<2>> wsp_wierzcholkow_2D =  ObliczeGraniczneWsp();
     double odleglosc, x, y; //x to zmienna pomocnicza
-    double licznik = 0;
+    //double licznik = 0;
     Wektor<2> Polozenie_drona_2D = Polozenie_drona;
     Wektor<2> Polozenie_Plaskowyzu_2D = Polozenie;
 
@@ -243,7 +243,12 @@ bool GoraZDlugaGrania::CzyZajete(const Wektor3D& Polozenie_drona, double Promien
     {
         std::cout<<"Wolne na osi x i y gzdg"<<std::endl;
         return false;
-    } 
+    }
+    else if(odleglosc < x && odleglosc < y)
+    {
+        std::cout<<"Wolne w srodku gzdg"<<std::endl;
+        return false;
+    }
     
     //case 2: gora/dol
 /*

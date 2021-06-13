@@ -363,6 +363,16 @@ void Scena::UsunPrzeszkode()
     else std::cout<<"Brak przeszkod do usuniecia!"<<std::endl;
 }
 
+bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
+{
+  for(const std::shared_ptr<ObiektSceny>& Ob : ListaObiektow)
+  {
+    if(Ob == Dr) continue;
+    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien())) return true;
+  }
+  return false;
+}
+
 void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 {
   //Dr->Lot(Lacze);
@@ -382,14 +392,11 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
   Dr->Obrot(kat, Lacze);
   Dr->LotDoPrzodu(dlugosc, kat, Lacze);
 
-  for(const std::shared_ptr<ObiektSceny>& Ob : ListaObiektow)
+  while(CzyZajete(Dr))
   {
-    if(Ob == Dr) continue;
-    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
-    {
-      Dr->LotDoPrzodu(10, kat, Lacze);
-    }
+    Dr->LotDoPrzodu(20, kat, Lacze);
   }
+  
   Dr->LotPionowy(-80 ,Lacze);
 
   Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);

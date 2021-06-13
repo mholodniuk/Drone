@@ -68,6 +68,6 @@ public:
     void LotDrona(std::shared_ptr<Dron> &Dr);
 
     //!!\brief Metody sprawdzajace czy obszar jest zajety
-    bool CzyZajete();
+    bool CzyZajete(std::shared_ptr<Dron>& WDron);
 
 };

@@ -5,6 +5,7 @@
 #include "Graniastoslup.hh"
 #include "ObiektSceny.hh"
 #include <iostream>
+#include <memory>
 #include "lacze_do_gnuplota.hh"
 
 /*!
@@ -30,6 +31,7 @@ class Dron: public ObiektSceny
   double Kat_OrDrona;
   Prostopadloscian KorpusDrona;
   Graniastoslup RotorDrona[4];
+  
   unsigned int id;
   int pojedynczy_krok = 2;
   unsigned int Promien_drona = 10;
