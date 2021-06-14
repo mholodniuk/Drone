@@ -6,6 +6,8 @@
 #include <sstream>
 #include <cassert>
 #include <unistd.h>
+#include <chrono>
+#include <thread>
 
 #define BLAD_OBLICZEN 1e-8
 
@@ -68,8 +70,6 @@ void Dron::PodajWspolrzedne() const
 {
   std::cout<<"Wspolrzedna x: "<<Polozenie[0]<<std::endl;
   std::cout<<"Wspolrzedna y: "<<Polozenie[1]<<std::endl;
-  //std::cout<<"Wspolrzedna z: "<<Polozenie[2]<<std::endl;
-  //Wektor3D::ZwrocIloscWektorow();
 }
 
 /*!
@@ -279,7 +279,7 @@ void Dron::LotPionowy(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
  */
 void Dron::Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
 {
-  if(kat_obrotu>=0)
+  if(kat_obrotu>0)
   {
     for(; Kat_OrDrona <= kat_obrotu; Kat_OrDrona += 1)
     {
@@ -298,6 +298,20 @@ void Dron::Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
       Lacze.Rysuj();
     }
     Kat_OrDrona += 1;
+  }
+}
+
+void Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota& Lacze)
+{
+  double licznik = 0;
+  while(true)
+  {
+    Oblicz_i_ZapiszWspDrona();
+    usleep(100000);
+    Lacze.Rysuj();
+    licznik += 1;
+    //std::cout<< licznik/10 << std::endl;
+    if(licznik/10 >= czas_sek) break;
   }
 }
 
@@ -385,7 +399,7 @@ void Dron::PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPl
   {
     Plik_Trasa<<*i;
   }
-  Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
+  //Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
   Lacze.Rysuj();
   Plik_Trasa.close();
 }
@@ -400,5 +414,6 @@ bool Dron::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 
   if(odleglosc > Promien) return false;
 
+  std::cout<<"zajete przez drona"<<std::endl;
   return true;
 }

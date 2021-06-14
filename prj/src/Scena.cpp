@@ -391,6 +391,8 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
   std::cout<<"Podaj dlugosc lotu: ";
   std::cin>>dlugosc;
 
+  Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
+
   Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc);
   Dr->PlanujSciezke(Sciezka, Lacze);
 
@@ -400,10 +402,7 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 
   while(CzyZajete(Dr))
   {
-    //Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
-    Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, 20);
-    Dr->PlanujSciezke(Sciezka, Lacze);
-    Lacze.Rysuj();
+    Dr->Czekaj(2, Lacze);
     Dr->LotDoPrzodu(20, kat, Lacze);
   }
   

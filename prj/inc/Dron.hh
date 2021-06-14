@@ -83,6 +83,7 @@ public:
   void Lec(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
   void LotDoPrzodu(double dlugosc_lotu, double kat_skretu,  PzG::LaczeDoGNUPlota& Lacze);
   void LotPionowy(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
+  void Czekaj(double czas, PzG::LaczeDoGNUPlota& Lacze);
 
   //! \brief Metoda sprawdzajaca czy pod dronem jest wolne miejsce
   virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
