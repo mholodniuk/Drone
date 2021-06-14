@@ -366,7 +366,7 @@ Wektor3D Dron::ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const
  * \return Sciezka - kontener z kolejnymi wektorami3D sciezki ruchu
  * 
  */
-std::vector<Wektor3D> Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
+std::vector<Wektor3D> Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu) const
 {
   std::vector<Wektor3D> Sciezka;
   Wektor3D pomoc;

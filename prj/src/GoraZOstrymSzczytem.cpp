@@ -234,7 +234,6 @@ bool GoraZOstrymSzczytem::CzyZajete(const Wektor3D& Polozenie_drona, double Prom
 {
     std::vector<Wektor<2>> wsp_wierzcholkow_2D =  ObliczeGraniczneWsp();
     double odleglosc, x, y; //x to zmienna pomocnicza
-    //double max, min;
     Wektor<2> Polozenie_drona_2D = Polozenie_drona;
     Wektor<2> Polozenie_Plaskowyzu_2D = Polozenie;
 
@@ -245,30 +244,14 @@ bool GoraZOstrymSzczytem::CzyZajete(const Wektor3D& Polozenie_drona, double Prom
     y = Promien + Skala[1]/2;
     if(odleglosc >= x && odleglosc >= y)
     {
-        //std::cout<<"Wolne na osi x i y gzos"<<std::endl;
         return false;
     }
-/*
-    min = wsp_wierzcholkow_2D[0][1];
-    max = wsp_wierzcholkow_2D[1][1];
-    x = Promien + odleglosc;
-
-    if(x < max && x < min)
-    {
-        std::cout<<"Dron jest w srodku gzos"<<std::endl;
-        return true;
-    }
-*/
     //case 3,4,5,6: odleglosci od wierzcholkow
     for(unsigned int idx=0; idx<wsp_wierzcholkow_2D.size(); ++idx)
     {
         odleglosc = (Polozenie_drona_2D - wsp_wierzcholkow_2D[idx]).ObliczDlugosc();
         if(odleglosc <= Promien) return true;
-        //std::cout<<"Wolne, odleglosc gzos"<< odleglosc <<std::endl;
     }
-
-    //case 7: srodek
-    
     
     return true;
 }

@@ -260,19 +260,16 @@ void Scena::UstawPrzeszkody()
   _Plaskowyz->UstawSkale(skala);
   _Plaskowyz->TworzPlaskowyz(++lPrzeszkod, Lacze);
   _Plaskowyz->TransDoUklRodzica(tab[0], Lacze);
-  //ListaPrzeszkod.push_back(_Plaskowyz);
   ListaObiektow.push_back(_Plaskowyz);
 
   _GoraZDlugaGrania->UstawSkale(skala);
   _GoraZDlugaGrania->TworzGoreZDlugaGrania(++lPrzeszkod, Lacze);
   _GoraZDlugaGrania->TransDoUklRodzica(tab[1], Lacze);
-  //ListaPrzeszkod.push_back(_GoraZDlugaGrania);
   ListaObiektow.push_back(_GoraZDlugaGrania);
 
   _GoraZOstrymSzczytem->UstawSkale(skala);
   _GoraZOstrymSzczytem->TworzGoreZOstrymSzczytem(++lPrzeszkod, Lacze);
   _GoraZOstrymSzczytem->TransDoUklRodzica(tab[2], Lacze);
-  //ListaPrzeszkod.push_back(_GoraZOstrymSzczytem);
   ListaObiektow.push_back(_GoraZOstrymSzczytem);
 }
 
