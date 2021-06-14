@@ -245,7 +245,7 @@ bool Plaskowyz::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
     y = Promien + Skala[1]/2;
     if(odleglosc >= x && odleglosc >= y)
     {
-        std::cout<<"Wolne na osi x i y plask"<<std::endl;
+        //std::cout<<"Wolne na osi x i y plask"<<std::endl;
         return false;
     }
     /*
@@ -271,7 +271,7 @@ bool Plaskowyz::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
     {
         odleglosc = (Polozenie_drona_2D - wsp_wierzcholkow_2D[idx]).ObliczDlugosc();
         if(odleglosc <= Promien) return true;
-        std::cout<<"Wolne, odleglosc plask"<< odleglosc <<std::endl;
+        //std::cout<<"Wolne, odleglosc plask"<< odleglosc <<std::endl;
     }
 
     //if(licznik == wsp_wierzcholkow_2D.size()) return false;

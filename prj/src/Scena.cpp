@@ -357,7 +357,7 @@ void Scena::UsunPrzeszkode()
         Lacze.Rysuj();
         ListaObiektow.remove(Br);
         break;
-      }           //to jeszcze sprawdzic w gdb
+      }
     }
   }
     else std::cout<<"Brak przeszkod do usuniecia!"<<std::endl;
@@ -371,7 +371,7 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
     if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
     {
       std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identyfikuj() << std::endl << 
-      std:: endl << "Przedluzam lot..." << std::endl;
+      std:: endl << "Przedluzam lot..." << std::endl << std::endl;
       return true;
     }
   }
@@ -380,14 +380,12 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
 
 void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 {
-  //Dr->Lot(Lacze);
   double kat, dlugosc;
   std::vector<Wektor3D> Sciezka;
   Wektor3D Polozenie_poczatkowe = Dr->ZwrocPolozenie();
   
   std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
   std::cin>>kat;
-  kat += Dr->ZwrocKat_st();
   std::cout<<"Podaj dlugosc lotu: ";
   std::cin>>dlugosc;
 
@@ -398,12 +396,12 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 
   Dr->LotPionowy(80, Lacze);
   Dr->Obrot(kat, Lacze);
-  Dr->LotDoPrzodu(dlugosc, kat, Lacze);
+  Dr->LotDoPrzodu(dlugosc, Lacze);
 
   while(CzyZajete(Dr))
   {
     Dr->Czekaj(2, Lacze);
-    Dr->LotDoPrzodu(20, kat, Lacze);
+    Dr->LotDoPrzodu(20, Lacze);
   }
   
   Dr->LotPionowy(-80 ,Lacze);

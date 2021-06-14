@@ -54,6 +54,7 @@ public:
   double ZwrocKat_st() { return Kat_OrDrona; }
   double ZwrocPromien() { return Promien_drona; }
   double ZwrocID() { return id; }
+  void ZadajKat_st(double kat) { Kat_OrDrona = kat; }
   virtual bool CzyDron() const override { return true; }
 
   //! \brief Metody generujace nazwy plikow
@@ -81,11 +82,12 @@ public:
   //! \brief Metody Animujace ruch drona
   void Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
   void Lec(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
-  void LotDoPrzodu(double dlugosc_lotu, double kat_skretu,  PzG::LaczeDoGNUPlota& Lacze);
+  void LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
   void LotPionowy(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
   void Czekaj(double czas, PzG::LaczeDoGNUPlota& Lacze);
 
   //! \brief Metoda sprawdzajaca czy pod dronem jest wolne miejsce
   virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
+  virtual std::string Identyfikuj() const override;
 
 };

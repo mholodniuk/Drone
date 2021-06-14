@@ -80,6 +80,15 @@ Wektor3D Dron::ZwrocPolozenie() const
   return Polozenie;
 }
 
+std::string Dron::Identyfikuj() const
+{
+  std::ostringstream Obiekt;
+
+  Obiekt << "Dron (" << Polozenie[0] << ", " << Polozenie[1] <<")";
+
+  return Obiekt.str();
+}
+
 /*!
  * \brief Metoda tworzaca odpowiedni zestaw plikow wynikowych
  * 
@@ -243,13 +252,13 @@ void Dron::Lec(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDo
  * \pre dlugosc_lotu musi byc liczba dodatnia
  * 
  */
-void Dron::LotDoPrzodu(double dlugosc_lotu, double kat_skretu, PzG::LaczeDoGNUPlota& Lacze)
+void Dron::LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
 {
 
   Wektor3D Kierunek_lotu = {1, 0, 0};
   Macierz3x3 MacierzRot;
 
-  double Rad = kat_skretu*M_PI/180;
+  double Rad = Kat_OrDrona*M_PI/180;
 
   MacierzRot.ObrotZ(Rad);
   Kierunek_lotu = MacierzRot * Kierunek_lotu;
@@ -414,6 +423,6 @@ bool Dron::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 
   if(odleglosc > Promien) return false;
 
-  std::cout<<"zajete przez drona"<<std::endl;
+  //std::cout<<"zajete przez drona"<<std::endl;
   return true;
 }

@@ -245,7 +245,7 @@ bool GoraZOstrymSzczytem::CzyZajete(const Wektor3D& Polozenie_drona, double Prom
     y = Promien + Skala[1]/2;
     if(odleglosc >= x && odleglosc >= y)
     {
-        std::cout<<"Wolne na osi x i y gzos"<<std::endl;
+        //std::cout<<"Wolne na osi x i y gzos"<<std::endl;
         return false;
     }
 /*
@@ -264,7 +264,7 @@ bool GoraZOstrymSzczytem::CzyZajete(const Wektor3D& Polozenie_drona, double Prom
     {
         odleglosc = (Polozenie_drona_2D - wsp_wierzcholkow_2D[idx]).ObliczDlugosc();
         if(odleglosc <= Promien) return true;
-        std::cout<<"Wolne, odleglosc gzos"<< odleglosc <<std::endl;
+        //std::cout<<"Wolne, odleglosc gzos"<< odleglosc <<std::endl;
     }
 
     //case 7: srodek
