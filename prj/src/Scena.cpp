@@ -269,7 +269,7 @@ void Scena::UstawPrzeszkody()
 
   _GoraZOstrymSzczytem->UstawSkale(skala);
   _GoraZOstrymSzczytem->TworzGoreZOstrymSzczytem(++lPrzeszkod, Lacze);
-  _GoraZOstrymSzczytem->TransDoUklRodzica(tab[2], Lacze);
+  _GoraZOstrymSzczytem->TransDoUklRodzica({100, 100}, Lacze);
   ListaObiektow.push_back(_GoraZOstrymSzczytem);
 }
 
@@ -368,7 +368,8 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
     if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
     {
       std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identyfikuj() << std::endl << 
-      std:: endl << "Przedluzam lot..." << std::endl << std::endl;
+      std:: endl << "Przedluzam lot..... Wcisnij ENTER aby pokazac nowa trase" << std::endl << std::endl;
+
       return true;
     }
   }
@@ -397,14 +398,15 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 
   while(CzyZajete(Dr))
   {
-    Dr->Czekaj(2, Lacze);
+    Dr->WyczyscSciezke(Sciezka, Lacze);
+    Dr->Czekaj(5, Lacze);
+    Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc+20);
+    Dr->PlanujSciezke(Sciezka, Lacze);
     Dr->LotDoPrzodu(20, Lacze);
   }
   
   Dr->LotPionowy(-80 ,Lacze);
 
-  Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
-  Lacze.Rysuj();
   
   Dr->PodajWspolrzedne();
 }

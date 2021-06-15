@@ -387,6 +387,13 @@ std::vector<Wektor3D> Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, d
   return Sciezka;
 }
 
+void Dron::WyczyscSciezke(std::vector<Wektor3D>& Sciezka, PzG::LaczeDoGNUPlota& Lacze) const
+{
+  Sciezka.clear();
+  Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
+  Lacze.Rysuj();
+}
+
 /*!
  * \brief Metoda planujaca sciezke lotu drona
  *
