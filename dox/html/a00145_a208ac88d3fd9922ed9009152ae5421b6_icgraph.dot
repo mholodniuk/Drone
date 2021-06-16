@@ -1,0 +1,10 @@
+digraph "Plaskowyz::TworzOpisPlaskowyzu"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Plaskowyz::TworzOpisPlaskowyzu",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Metoda tworzaca opis gory z dluga grania."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Plaskowyz::TransDoUklRodzica",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00145.html#adc175de766b12dbbf889bd33c51cd887",tooltip="Metoda przesuwajaca Plaskowyz wzgledem sceny."];
+}

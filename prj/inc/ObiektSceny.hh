@@ -30,5 +30,5 @@ public:
     virtual std::string Identyfikuj() const { return "obiekt sceny"; }
     virtual bool SprawdzID(unsigned int) const { return false; }
     virtual double PokazID() const { return 0; } 
-    virtual const char* ZwrocNazwePlikuFinalnego() const { return "obiekt sceny"; }
+    virtual const char* ZwrocNazwePlikuFinalnego() const = 0;
 };

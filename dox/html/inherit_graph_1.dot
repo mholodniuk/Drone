@@ -4,5 +4,19 @@ digraph "Graficzna hierarchia klas"
   edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
   node [fontname="FreeSans",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="Dron",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00106.html",tooltip="modeluje pojecie Drona"];
+  Node0 [label="ObiektSceny",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00141.html",tooltip="modeluje pojecie Obiektu Sceny"];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 [label="BrylaGeometryczna",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00117.html",tooltip="modeluje pojecie Bryly geometrycznej"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="GoraZDlugaGrania",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00125.html",tooltip="modeluje pojecie Gory z podluzna grania"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="GoraZOstrymSzczytem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00129.html",tooltip="modeluje pojecie Gory z ostrym szczytem"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Graniastoslup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00133.html",tooltip="modeluje pojecie Graniastoslupa"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Plaskowyz",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00145.html",tooltip="modeluje pojecie Plaskowyzu"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Prostopadloscian",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00149.html",tooltip="modeluje pojecie Prostopadloscianu"];
+  Node0 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Dron",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00121.html",tooltip="modeluje pojecie Drona"];
 }

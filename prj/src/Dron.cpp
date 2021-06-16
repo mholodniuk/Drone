@@ -116,6 +116,19 @@ void Dron::TworzDrona(unsigned int ID, PzG::LaczeDoGNUPlota & Lacze)
 }
 
 /*!
+ * \brief Metoda zwracajca nazwe folderu docelowego
+ * 
+ * \note Zamiast nazwy pliku, metoda podaje nazwe folderu, w ktorym znajduje zestwa plikow
+ * 
+ * \return NazwaPlikuFinalnego
+ */
+const char* Dron::ZwrocNazwePlikuFinalnego() const
+{
+  std::string NazwaFolderu = "Dron" + id;
+  return NazwaFolderu.c_str(); 
+}
+
+/*!
  * \brief Obliczajaca wspolrzedne korpusu drona
  * 
  * Zadawana jest odpowiednia skala, kat oraz przesuniecie

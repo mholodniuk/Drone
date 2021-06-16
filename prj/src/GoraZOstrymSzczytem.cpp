@@ -183,6 +183,16 @@ std::string GoraZOstrymSzczytem::Identyfikuj() const
 }
 
 /*!
+ * \brief Metoda zwracajca nazwe pliku docelowego Gory z ostrym szczytem
+ * 
+ * \return NazwaPlikuFinalnego
+ */
+const char* GoraZOstrymSzczytem::ZwrocNazwePlikuFinalnego() const
+{
+    return NazwaPliku_Finalny.c_str();
+}
+
+/*!
  * \brief Metoda sprawdzajaca ID obiektu
  * 
  * \param[in] _id - id, ktore ma zostac sprawdzone

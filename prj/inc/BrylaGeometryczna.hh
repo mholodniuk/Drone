@@ -7,7 +7,7 @@
 #include "Wektor3D.hh"
 #include "Macierz3x3.hh"
 #include "Nazwy.hh"
-#include "ObiektSceny.hh"
+
 
 #define WYMIAR 3
 
@@ -26,7 +26,7 @@
  * skali bryly
  */
 
-class BrylaGeometryczna: public ObiektSceny
+class BrylaGeometryczna
 {
 protected:
 
@@ -48,8 +48,6 @@ public:
     Wektor3D UstawSkale(const Wektor3D& skala);
 
     //!\brief Metoda zwracajaca nazwe pliku docelowego
-    virtual const char* ZwrocNazwePlikuFinalnego() const override { return NazwaPliku_Finalny.c_str(); }
+    const char* ZwrocNazwePlikuFinalnego() const { return NazwaPliku_Finalny.c_str(); }
 
-    //!\brief Metoda sprawdzajaca czy obszar zajmowany przez bryle jest zajety
-    virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 };

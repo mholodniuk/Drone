@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Plik źródłowy /home/maciek/dorn/prj/src/GoraZDlugaGrania.cpp</title>
+<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/inc/Wektor3D.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,140 +61,22 @@ $(document).ready(function(){initNavTree('a00065_source.html',''); initResizable
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">GoraZDlugaGrania.cpp</div>  </div>
+<div class="title">Wektor3D.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00065.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00026.html">GoraZDlugaGrania.hh</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="a00110.html#abe8cc19f89ce35a53c3a9f0b26b7c055">    8</a></span>&#160;<a class="code" href="a00110.html#abe8cc19f89ce35a53c3a9f0b26b7c055">GoraZDlugaGrania::GoraZDlugaGrania</a>()</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="a00102.html#a0e583a9cdd9993585d7923012f4d0084">NazwaPliku_Wzorcowy</a> = <span class="stringliteral">&quot;bryly_wzorcowe/szescian_na_powierzchni.dat&quot;</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="a00110.html#a6d51d88f86d61852bc6eb54ce8119f8b">kat_or</a> = 0;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00110.html#a65b6da0510eba9d358186f5c9d3f9ef4">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00110.html#a65b6da0510eba9d358186f5c9d3f9ef4">GoraZDlugaGrania::Transformacja</a>(<span class="keyword">const</span> <a class="code" href="a00138.html">Wektor3D</a>&amp; trans)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="a00020.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>; ++i)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>[i] = <a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>[i] * <a class="code" href="a00102.html#ad8cdadc75419691a95b55d0459f0abaf">Skala</a>[i] + trans[i];</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00110.html#addc73d834785a19740ed43e094720257">   46</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00110.html#addc73d834785a19740ed43e094720257">GoraZDlugaGrania::TworzOpisGoryZDlugaGrania</a>(<span class="keyword">const</span> <a class="code" href="a00138.html">Wektor3D</a>&amp; Wek)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::ifstream PlikWzorcowy(<a class="code" href="a00102.html#a0e583a9cdd9993585d7923012f4d0084">NazwaPliku_Wzorcowy</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::ofstream PlikFinalny(<a class="code" href="a00102.html#a454acc498ef67a897cfa709bdc52a209">NazwaPliku_Finalny</a>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>(!PlikWzorcowy.is_open())</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::cerr&lt;&lt;std::endl&lt;&lt;<span class="stringliteral">&quot;Blad otwarcia pliku: &quot;</span>&lt;&lt;<a class="code" href="a00102.html#a0e583a9cdd9993585d7923012f4d0084">NazwaPliku_Wzorcowy</a>&lt;&lt;std::endl;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span>(!PlikFinalny.is_open())</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::cerr&lt;&lt;std::endl&lt;&lt;<span class="stringliteral">&quot;Blad otwarcia pliku: &quot;</span>&lt;&lt;<a class="code" href="a00102.html#a454acc498ef67a897cfa709bdc52a209">NazwaPliku_Finalny</a>&lt;&lt;std::endl;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    assert(PlikWzorcowy.good() &amp;&amp; PlikFinalny.good());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ind_krawedzi = 0; ind_krawedzi &lt; 5; ++ind_krawedzi)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ind_wierz = 0; ind_wierz &lt; 4; ++ind_wierz)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            PlikWzorcowy &gt;&gt; <a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span>(PlikWzorcowy.fail()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>[2] &gt; 0.5)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>[0] &lt; 0)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>[0] = fabs(<a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>[0]);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="a00110.html#a65b6da0510eba9d358186f5c9d3f9ef4">Transformacja</a>(Wek);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            PlikFinalny &lt;&lt; <a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span>(PlikFinalny.fail()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        PlikFinalny &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a> = Wek;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> !PlikFinalny.fail();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="a00110.html#a04b69f8a32c51c8703baabafd8da7b02">   96</a></span>&#160;std::string <a class="code" href="a00110.html#a04b69f8a32c51c8703baabafd8da7b02">GoraZDlugaGrania::TworzNazweGoryZGrania</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ID)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::ostringstream strmwy;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    strmwy &lt;&lt; <span class="stringliteral">&quot;dat/przeszkody/PlikWlasciwy_GoraZDlugaGrania_(przeszkoda_nr&quot;</span> &lt;&lt; ID &lt;&lt; <span class="stringliteral">&quot;).dat&quot;</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> strmwy.str();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="a00110.html#a42506c753d82e719e5dd85ea2067ece1">  115</a></span>&#160;<a class="code" href="a00138.html">Wektor3D</a> <a class="code" href="a00110.html#a42506c753d82e719e5dd85ea2067ece1">GoraZDlugaGrania::UstawPolozenie</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="a00138.html">Wektor3D</a> nPolozenie;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    nPolozenie[0] = x;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    nPolozenie[1] = y;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    nPolozenie[2] = 0;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> nPolozenie;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="a00110.html#a94baa09555c3471f3f775dfebdfe8e86">  135</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00110.html#a94baa09555c3471f3f775dfebdfe8e86">GoraZDlugaGrania::TworzGoreZDlugaGrania</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ID, PzG::LaczeDoGNUPlota&amp; Lacze)</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::string NazwaPliku;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">id</span> = ID;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    NazwaPliku = <a class="code" href="a00110.html#a04b69f8a32c51c8703baabafd8da7b02">TworzNazweGoryZGrania</a>(ID);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="a00102.html#acc96bfdcd122da809e00ce225f5c5238">UstawNazwaPlikuWlasciwego</a>(NazwaPliku.c_str());</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    Lacze.DodajNazwePliku(NazwaPliku.c_str());</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="a00110.html#a0ea5d70a372d56a8e1d82450071d1d8d">  145</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00110.html#a0ea5d70a372d56a8e1d82450071d1d8d">GoraZDlugaGrania::TransDoUklRodzica</a>(<span class="keyword">const</span> <a class="code" href="a00138.html">Wektor3D</a>&amp; Wek, PzG::LaczeDoGNUPlota&amp; Lacze)</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="a00110.html#addc73d834785a19740ed43e094720257">TworzOpisGoryZDlugaGrania</a>(Wek)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    Lacze.Rysuj();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="a00110.html#aa4c2a5235fd3cecde3015b20c898fc68">  152</a></span>&#160;std::string <a class="code" href="a00110.html#aa4c2a5235fd3cecde3015b20c898fc68">GoraZDlugaGrania::Identyfikuj</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    std::ostringstream Obiekt;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    Obiekt &lt;&lt; <span class="stringliteral">&quot;Gora z dluga grania (&quot;</span> &lt;&lt; <a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>[0] &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; <a class="code" href="a00110.html#a2c660920b5662d2d202c64accb567a6f">Polozenie</a>[1] &lt;&lt;<span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> Obiekt.str();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="a00110.html#a68bfc50980ac219ebc040c75cf774014">  161</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00110.html#a68bfc50980ac219ebc040c75cf774014">GoraZDlugaGrania::SprawdzID</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _id)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == _id)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<a href="a00065.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00062.html">Wektor.hh</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a00065.html#ac353a272b38b4ad342f7181ad7bdb91a">   15</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00157.html">Wektor&lt;3&gt;</a> <a class="code" href="a00065.html#ac353a272b38b4ad342f7181ad7bdb91a">Wektor3D</a>;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00110_html_addc73d834785a19740ed43e094720257"><div class="ttname"><a href="a00110.html#addc73d834785a19740ed43e094720257">GoraZDlugaGrania::TworzOpisGoryZDlugaGrania</a></div><div class="ttdeci">bool TworzOpisGoryZDlugaGrania(const Wektor3D &amp;Wek)</div><div class="ttdoc">Metoda tworzaca opis gory z dluga grania.</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00046">GoraZDlugaGrania.cpp:46</a></div></div>
-<div class="ttc" id="aa00110_html_a2c660920b5662d2d202c64accb567a6f"><div class="ttname"><a href="a00110.html#a2c660920b5662d2d202c64accb567a6f">GoraZDlugaGrania::Polozenie</a></div><div class="ttdeci">Wektor3D Polozenie</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00022">GoraZDlugaGrania.hh:22</a></div></div>
-<div class="ttc" id="aa00102_html_a454acc498ef67a897cfa709bdc52a209"><div class="ttname"><a href="a00102.html#a454acc498ef67a897cfa709bdc52a209">BrylaGeometryczna::NazwaPliku_Finalny</a></div><div class="ttdeci">std::string NazwaPliku_Finalny</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00033">BrylaGeometryczna.hh:33</a></div></div>
-<div class="ttc" id="aa00020_html_a07b7c303dc8ee0c5b01ad75bbeacc2a5"><div class="ttname"><a href="a00020.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a></div><div class="ttdeci">#define WYMIAR</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00011">BrylaGeometryczna.hh:11</a></div></div>
-<div class="ttc" id="aa00110_html_a68bfc50980ac219ebc040c75cf774014"><div class="ttname"><a href="a00110.html#a68bfc50980ac219ebc040c75cf774014">GoraZDlugaGrania::SprawdzID</a></div><div class="ttdeci">virtual bool SprawdzID(unsigned int _id) const override</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00161">GoraZDlugaGrania.cpp:161</a></div></div>
-<div class="ttc" id="aa00102_html_acc96bfdcd122da809e00ce225f5c5238"><div class="ttname"><a href="a00102.html#acc96bfdcd122da809e00ce225f5c5238">BrylaGeometryczna::UstawNazwaPlikuWlasciwego</a></div><div class="ttdeci">void UstawNazwaPlikuWlasciwego(const char *NazwaPliku)</div><div class="ttdoc">Metoda Ustawiajaca Nazwe Pliku Docelowego.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00013">BrylaGeometryczna.cpp:13</a></div></div>
-<div class="ttc" id="aa00138_html"><div class="ttname"><a href="a00138.html">Wektor&lt; 3 &gt;</a></div></div>
-<div class="ttc" id="aa00110_html_a6d51d88f86d61852bc6eb54ce8119f8b"><div class="ttname"><a href="a00110.html#a6d51d88f86d61852bc6eb54ce8119f8b">GoraZDlugaGrania::kat_or</a></div><div class="ttdeci">double kat_or</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00023">GoraZDlugaGrania.hh:23</a></div></div>
-<div class="ttc" id="aa00110_html_a65b6da0510eba9d358186f5c9d3f9ef4"><div class="ttname"><a href="a00110.html#a65b6da0510eba9d358186f5c9d3f9ef4">GoraZDlugaGrania::Transformacja</a></div><div class="ttdeci">void Transformacja(const Wektor3D &amp;trans)</div><div class="ttdoc">Metody Transformujace i obslugujace wyswietlanie gory na scenie.</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00023">GoraZDlugaGrania.cpp:23</a></div></div>
-<div class="ttc" id="aa00110_html_a94baa09555c3471f3f775dfebdfe8e86"><div class="ttname"><a href="a00110.html#a94baa09555c3471f3f775dfebdfe8e86">GoraZDlugaGrania::TworzGoreZDlugaGrania</a></div><div class="ttdeci">void TworzGoreZDlugaGrania(unsigned int ID, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda tworzaca odpowiedni plik wynikowy.</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00135">GoraZDlugaGrania.cpp:135</a></div></div>
-<div class="ttc" id="aa00110_html_a04b69f8a32c51c8703baabafd8da7b02"><div class="ttname"><a href="a00110.html#a04b69f8a32c51c8703baabafd8da7b02">GoraZDlugaGrania::TworzNazweGoryZGrania</a></div><div class="ttdeci">std::string TworzNazweGoryZGrania(unsigned int ID)</div><div class="ttdoc">Metoda tworzaca nazwe gory z dluga grania.</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00096">GoraZDlugaGrania.cpp:96</a></div></div>
-<div class="ttc" id="aa00102_html_ad8cdadc75419691a95b55d0459f0abaf"><div class="ttname"><a href="a00102.html#ad8cdadc75419691a95b55d0459f0abaf">BrylaGeometryczna::Skala</a></div><div class="ttdeci">Wektor3D Skala</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00034">BrylaGeometryczna.hh:34</a></div></div>
-<div class="ttc" id="aa00026_html"><div class="ttname"><a href="a00026.html">GoraZDlugaGrania.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy GoraZDlugaGrania.</div></div>
-<div class="ttc" id="aa00102_html_a0e583a9cdd9993585d7923012f4d0084"><div class="ttname"><a href="a00102.html#a0e583a9cdd9993585d7923012f4d0084">BrylaGeometryczna::NazwaPliku_Wzorcowy</a></div><div class="ttdeci">std::string NazwaPliku_Wzorcowy</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00032">BrylaGeometryczna.hh:32</a></div></div>
-<div class="ttc" id="aa00110_html_a42506c753d82e719e5dd85ea2067ece1"><div class="ttname"><a href="a00110.html#a42506c753d82e719e5dd85ea2067ece1">GoraZDlugaGrania::UstawPolozenie</a></div><div class="ttdeci">Wektor3D UstawPolozenie(int x, int y) const</div><div class="ttdoc">Destruktor.</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00115">GoraZDlugaGrania.cpp:115</a></div></div>
-<div class="ttc" id="aa00110_html_abe8cc19f89ce35a53c3a9f0b26b7c055"><div class="ttname"><a href="a00110.html#abe8cc19f89ce35a53c3a9f0b26b7c055">GoraZDlugaGrania::GoraZDlugaGrania</a></div><div class="ttdeci">GoraZDlugaGrania()</div><div class="ttdoc">Konstruktor bezparametryczny.</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00008">GoraZDlugaGrania.cpp:8</a></div></div>
-<div class="ttc" id="aa00110_html_a0ea5d70a372d56a8e1d82450071d1d8d"><div class="ttname"><a href="a00110.html#a0ea5d70a372d56a8e1d82450071d1d8d">GoraZDlugaGrania::TransDoUklRodzica</a></div><div class="ttdeci">bool TransDoUklRodzica(const Wektor3D &amp;Wek, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00145">GoraZDlugaGrania.cpp:145</a></div></div>
-<div class="ttc" id="aa00110_html_aa4c2a5235fd3cecde3015b20c898fc68"><div class="ttname"><a href="a00110.html#aa4c2a5235fd3cecde3015b20c898fc68">GoraZDlugaGrania::Identyfikuj</a></div><div class="ttdeci">virtual std::string Identyfikuj() const override</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00152">GoraZDlugaGrania.cpp:152</a></div></div>
+<div class="ttc" id="aa00065_html_ac353a272b38b4ad342f7181ad7bdb91a"><div class="ttname"><a href="a00065.html#ac353a272b38b4ad342f7181ad7bdb91a">Wektor3D</a></div><div class="ttdeci">Wektor&lt; 3 &gt; Wektor3D</div><div class="ttdoc">Klasa Wektor3D jest instancja szablonu wektor o wymiarze 3.</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00015">Wektor3D.hh:15</a></div></div>
+<div class="ttc" id="aa00062_html"><div class="ttname"><a href="a00062.html">Wektor.hh</a></div><div class="ttdoc">Ten plik zawiera definicję szablonu Wektor&lt;&gt;</div></div>
+<div class="ttc" id="aa00157_html"><div class="ttname"><a href="a00157.html">Wektor&lt; 3 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_13d7749518d8be18d673aed510b3a2c1.html">dorn</a></li><li class="navelem"><a class="el" href="dir_d97944975b058d4b4d219112e647c70b.html">prj</a></li><li class="navelem"><a class="el" href="dir_2b64194129eeae4e98aed51b7639dbb7.html">src</a></li><li class="navelem"><a class="el" href="a00065.html">GoraZDlugaGrania.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_bcde68eed882c7962dccf680e22ff87b.html">inc</a></li><li class="navelem"><a class="el" href="a00065.html">Wektor3D.hh</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

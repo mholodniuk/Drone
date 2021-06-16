@@ -2,7 +2,7 @@
 
 #include "BrylaGeometryczna.hh"
 #include "lacze_do_gnuplota.hh"
-
+#include "ObiektSceny.hh"
 
 /*!
  * \file "Plaskowyz.hh"
@@ -19,7 +19,7 @@
  * przesuniecie go we wskazane miejsce na scenie
  */
 
-class Plaskowyz: public BrylaGeometryczna
+class Plaskowyz: public BrylaGeometryczna, public ObiektSceny
 {
     Wektor3D Polozenie;
     double kat_or;      //to na razie bezuzyteczne
@@ -44,8 +44,9 @@ public:
     std::string TworzNazwePlaskowyzu(unsigned int ID);
     void TworzPlaskowyz(unsigned int ID, PzG::LaczeDoGNUPlota& Lacze);
     
-    //!\brief Metoda identyfikujaca
+    //!\brief Metody identyfikujace
     virtual std::string Identyfikuj() const override;
+    virtual const char* ZwrocNazwePlikuFinalnego() const override;
     
     //!\brief Metody sprawdzajace zajetosc obszaru
     std::vector<Wektor<2>> ObliczeGraniczneWsp() const;

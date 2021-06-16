@@ -176,6 +176,16 @@ std::string Plaskowyz::Identyfikuj() const
 }
 
 /*!
+ * \brief Metoda zwracajca nazwe pliku docelowego Plaskowyzu
+ * 
+ * \return NazwaPlikuFinalnego
+ */
+const char* Plaskowyz::ZwrocNazwePlikuFinalnego() const
+{
+    return NazwaPliku_Finalny.c_str();
+}
+
+/*!
  * \brief Metoda porownojaca ID obiektu, z id podanym jako argument
  * 
  * \param[in] _id - id do porownania

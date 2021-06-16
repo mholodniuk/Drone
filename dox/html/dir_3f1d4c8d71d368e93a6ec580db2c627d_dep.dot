@@ -1,0 +1,14 @@
+digraph "/home/maciek/dron3" {
+  compound=true
+  node [ fontsize="10", fontname="FreeSans"];
+  edge [ labelfontsize="10", labelfontname="FreeSans"];
+  subgraph clusterdir_db1df6b390d8921f22601c9f1cca779d {
+    graph [ bgcolor="#ddddee", pencolor="black", label="maciek" fontname="FreeSans", fontsize="10", URL="dir_db1df6b390d8921f22601c9f1cca779d.html"]
+  subgraph clusterdir_3f1d4c8d71d368e93a6ec580db2c627d {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_3f1d4c8d71d368e93a6ec580db2c627d.html"];
+    dir_3f1d4c8d71d368e93a6ec580db2c627d [shape=plaintext label="dron3"];
+    dir_72246153ca05efd81160f4b07d5e967c [shape=box label="dox" color="red" fillcolor="white" style="filled" URL="dir_72246153ca05efd81160f4b07d5e967c.html"];
+    dir_20980d61131da5791df5245c2ae7cc9b [shape=box label="prj" color="red" fillcolor="white" style="filled" URL="dir_20980d61131da5791df5245c2ae7cc9b.html"];
+  }
+  }
+}

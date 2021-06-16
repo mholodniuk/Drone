@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Plik źródłowy /home/maciek/dorn/prj/inc/Nazwy.hh</title>
+<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/inc/Macierz3x3.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,42 +61,61 @@ $(document).ready(function(){initNavTree('a00041_source.html',''); initResizable
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">Nazwy.hh</div>  </div>
+<div class="title">Macierz3x3.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00041.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00041.html#a3213f0122d3177f5f9d67ea485a4f638">    7</a></span>&#160;<span class="preprocessor">#define ILOSC_WIERZCHOLKOW_GRANIATOSLUPA  6</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="a00041.html#a801fc6872bc8062aedacf9b9b45bf192">    8</a></span>&#160;<span class="preprocessor">#define PROMIEN_PODSTAWY                  10</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00041.html#a54a99bb77f2f9cc379c17f59e80856c8">    9</a></span>&#160;<span class="preprocessor">#define GRUBOSC_ROTORA                    5.0</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="a00041.html#a7d104782d6322f7698c1486b6e00d6c1">   10</a></span>&#160;<span class="preprocessor">#define ILOSC_WIERZ_LINII_TWORZACEJ       4</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="a00041.html#a9f5ca209b61eae19f489e3af0ab5637d">   11</a></span>&#160;<span class="preprocessor">#define ILOSC_ROTOROW                     4</span></div>
+<a href="a00041.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00065.html">Wektor3D.hh</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">   11</a></span>&#160;<span class="preprocessor">#define WYMIAR 3</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00041.html#ab9d785760df7d38b8c4fe1d84f4d978d">   13</a></span>&#160;<span class="preprocessor">#define PLIK_WZORCOWEGO_SZESCIANU       &quot;bryly_wzorcowe/szescian.dat&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00041.html#ac10437a5f7133af7fe8703e7e350105e">   14</a></span>&#160;<span class="preprocessor">#define PLIK_WZORCOWEGO_GRANIASTOSLUPA6 &quot;bryly_wzorcowe/graniastoslup6.dat&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a00041.html#ab954ab5c53b1cd693c5bb1d24b25db4a">   15</a></span>&#160;<span class="preprocessor">#define PLIK_KORPUSU_DRONA1             &quot;dat/korpus_drana1.dat&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00137.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00137.html">Macierz3x3</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a00137.html#a1aab20b00d59d57bf85c4ff39145d39a">   15</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="a00137.html#a1aab20b00d59d57bf85c4ff39145d39a">wart</a>[<a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>][<a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>];</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//dron 1</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00041.html#a6e3c7e6d1a9951c3283dd637275d64e6">   19</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON1_KORPUS  &quot;dat/Dron1/PlikWlasciwy_Dron1_Korpus.dat&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a00041.html#a006a9471b4119eb1bec2a292c4315acd">   20</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON1_ROTOR1  &quot;dat/Dron1/PlikWlasciwy_Dron1_Rotor1.dat&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a00041.html#ac12a91e7d228562853617e2c0ea678d1">   21</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON1_ROTOR2  &quot;dat/Dron1/PlikWlasciwy_Dron1_Rotor2.dat&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00041.html#a103096588ce806b970bbc303169c3fde">   22</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON1_ROTOR3  &quot;dat/Dron1/PlikWlasciwy_Dron1_Rotor3.dat&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00041.html#a89ffdad9e2ea0df67866274330a10950">   23</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON1_ROTOR4  &quot;dat/Dron1/PlikWlasciwy_Dron1_Rotor4.dat&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="a00137.html#a1ad366312dfea47fa4b94f43fa32be46">Macierz3x3</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="a00137.html#a1ad366312dfea47fa4b94f43fa32be46">Macierz3x3</a>(<span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//dron 2</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00041.html#a1749db85ab4dbc2e3e1a2d1043e485d4">   26</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON2_KORPUS  &quot;dat/Dron2/PlikWlasciwy_Dron2_Korpus.dat&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00041.html#a2789441753973ed69ce77974996448ea">   27</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON2_ROTOR1  &quot;dat/Dron2/PlikWlasciwy_Dron2_Rotor1.dat&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00041.html#ada702919d023df75659eb3dd12475e29">   28</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON2_ROTOR2  &quot;dat/Dron2/PlikWlasciwy_Dron2_Rotor2.dat&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00041.html#afa470c314a09603afc6f998dc6b90723">   29</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON2_ROTOR3  &quot;dat/Dron2/PlikWlasciwy_Dron2_Rotor3.dat&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00041.html#a951e695fd984f50d2a2429ffe8d17b50">   30</a></span>&#160;<span class="preprocessor">#define PLIK_WLASCIWY__DRON2_ROTOR4  &quot;dat/Dron2/PlikWlasciwy_Dron2_Rotor4.dat&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00020.html#a346a5da43df2b2a2038e95c893ccb129">   32</a></span>&#160;<span class="preprocessor">#define PLIK_TRASY_PRZELOTU &quot;dat/trasa_przelotu.dat&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00137.html#ad344bfc44ea1b2017e8452f9df942728">   29</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="a00137.html#ad344bfc44ea1b2017e8452f9df942728">operator () </a>(<span class="keywordtype">int</span> wiersz, <span class="keywordtype">int</span> kolumna)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    assert(wiersz &gt;= 0 &amp;&amp; wiersz &lt; <a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    assert((kolumna &gt;= 0 &amp;&amp; kolumna &lt; <a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00137.html#a1aab20b00d59d57bf85c4ff39145d39a">wart</a>[wiersz][kolumna];</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00137.html#a0270c1d08ba22aaeb5fa994336d7f96f">   40</a></span>&#160;  <span class="keywordtype">double</span> &amp;<a class="code" href="a00137.html#ad344bfc44ea1b2017e8452f9df942728">operator () </a>(<span class="keywordtype">int</span> wiersz, <span class="keywordtype">int</span> kolumna)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    assert(wiersz &gt;= 0 &amp;&amp; wiersz &lt;= <a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    assert((kolumna &gt;= 0 &amp;&amp; kolumna &lt;= <a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00137.html#a1aab20b00d59d57bf85c4ff39145d39a">wart</a>[wiersz][kolumna];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00137.html#ab0699c8f99fa17bbcc4a7c400bed506d">ObrotZ</a>(<span class="keywordtype">double</span> kat);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00157.html">Wektor3D</a> <a class="code" href="a00137.html#a35fd1849f96a5b13fcf8e75aa4747cec">operator*</a>(<span class="keyword">const</span> <a class="code" href="a00157.html">Wektor3D</a>&amp; <a class="code" href="a00157.html">Wektor</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="a00137.html">Macierz3x3</a> <a class="code" href="a00137.html#a35fd1849f96a5b13fcf8e75aa4747cec">operator*</a>(<span class="keyword">const</span> <a class="code" href="a00137.html">Macierz3x3</a>&amp; Macierz) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aa00137_html"><div class="ttname"><a href="a00137.html">Macierz3x3</a></div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00013">Macierz3x3.hh:13</a></div></div>
+<div class="ttc" id="aa00137_html_ab0699c8f99fa17bbcc4a7c400bed506d"><div class="ttname"><a href="a00137.html#ab0699c8f99fa17bbcc4a7c400bed506d">Macierz3x3::ObrotZ</a></div><div class="ttdeci">void ObrotZ(double kat)</div><div class="ttdoc">Metoda generujaca macierz obrotu wokol osi OZ.</div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00055">Macierz3x3.cpp:55</a></div></div>
+<div class="ttc" id="aa00137_html_ad344bfc44ea1b2017e8452f9df942728"><div class="ttname"><a href="a00137.html#ad344bfc44ea1b2017e8452f9df942728">Macierz3x3::operator()</a></div><div class="ttdeci">double operator()(int wiersz, int kolumna) const</div><div class="ttdoc">operator indeksowania dla odczytu sprawdzane jest czy &quot;przekroczono&quot; zakresu macierzy</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00029">Macierz3x3.hh:29</a></div></div>
+<div class="ttc" id="aa00137_html_a35fd1849f96a5b13fcf8e75aa4747cec"><div class="ttname"><a href="a00137.html#a35fd1849f96a5b13fcf8e75aa4747cec">Macierz3x3::operator*</a></div><div class="ttdeci">Wektor3D operator*(const Wektor3D &amp;Wektor) const</div><div class="ttdoc">Operatory poszczegolnych dzialan.</div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00074">Macierz3x3.cpp:74</a></div></div>
+<div class="ttc" id="aa00041_html_a07b7c303dc8ee0c5b01ad75bbeacc2a5"><div class="ttname"><a href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a></div><div class="ttdeci">#define WYMIAR</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00011">Macierz3x3.hh:11</a></div></div>
+<div class="ttc" id="aa00157_html"><div class="ttname"><a href="a00157.html">Wektor</a></div><div class="ttdoc">modeluje pojecie Wektora o dowolnym rozmiarze</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00024">Wektor.hh:24</a></div></div>
+<div class="ttc" id="aa00137_html_a1ad366312dfea47fa4b94f43fa32be46"><div class="ttname"><a href="a00137.html#a1ad366312dfea47fa4b94f43fa32be46">Macierz3x3::Macierz3x3</a></div><div class="ttdeci">Macierz3x3()</div><div class="ttdoc">Konstruktory bezparamentryczny (macierz jednostkowa) i parametryczny.</div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00014">Macierz3x3.cpp:14</a></div></div>
+<div class="ttc" id="aa00137_html_a1aab20b00d59d57bf85c4ff39145d39a"><div class="ttname"><a href="a00137.html#a1aab20b00d59d57bf85c4ff39145d39a">Macierz3x3::wart</a></div><div class="ttdeci">double wart[WYMIAR][WYMIAR]</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00015">Macierz3x3.hh:15</a></div></div>
+<div class="ttc" id="aa00065_html"><div class="ttname"><a href="a00065.html">Wektor3D.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy Wektor3D.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_13d7749518d8be18d673aed510b3a2c1.html">dorn</a></li><li class="navelem"><a class="el" href="dir_d97944975b058d4b4d219112e647c70b.html">prj</a></li><li class="navelem"><a class="el" href="dir_efb3429070c56598e4e504a1d9e33a11.html">inc</a></li><li class="navelem"><a class="el" href="a00041.html">Nazwy.hh</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_bcde68eed882c7962dccf680e22ff87b.html">inc</a></li><li class="navelem"><a class="el" href="a00041.html">Macierz3x3.hh</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

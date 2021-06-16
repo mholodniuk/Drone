@@ -2,7 +2,7 @@
 
 #include "BrylaGeometryczna.hh"
 #include "lacze_do_gnuplota.hh"
-
+#include "ObiektSceny.hh"
 
 /*!
  * \file "GoraZOstrymSzczytem.hh"
@@ -18,7 +18,7 @@
  * Umozliwione jest stworzenie obiektu tej klasy oraz
  * przesuniecie go we wskazane miejsce na scenie
  */
-class GoraZOstrymSzczytem : public BrylaGeometryczna
+class GoraZOstrymSzczytem : public BrylaGeometryczna, public ObiektSceny
 {
     Wektor3D Polozenie;
     double kat_or;
@@ -47,6 +47,7 @@ public:
     
     //!\brief Metoda identyfikujaca
     virtual std::string Identyfikuj() const override;
+    virtual const char* ZwrocNazwePlikuFinalnego() const override;
     
     //!\brief Metody sprawdzajace zajetosc obszaru
     std::vector<Wektor<2>> ObliczeGraniczneWsp() const;

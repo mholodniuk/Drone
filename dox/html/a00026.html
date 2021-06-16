@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Dokumentacja pliku /home/maciek/dorn/prj/inc/GoraZDlugaGrania.hh</title>
+<title>Dragonfly: Dokumentacja pliku /home/maciek/dron3/prj/inc/BrylaGeometryczna.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,41 +61,87 @@ $(document).ready(function(){initNavTree('a00026.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Komponenty</a>  </div>
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#define-members">Definicje</a>  </div>
   <div class="headertitle">
-<div class="title">Dokumentacja pliku GoraZDlugaGrania.hh</div>  </div>
+<div class="title">Dokumentacja pliku BrylaGeometryczna.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Ten plik zawiera definicję klasy <a class="el" href="a00110.html" title="modeluje pojecie Gory z podluzna grania">GoraZDlugaGrania</a>.  
+<p>Ten plik zawiera definicję klasy <a class="el" href="a00117.html" title="modeluje pojecie Bryly geometrycznej">BrylaGeometryczna</a>.  
 <a href="#details">Więcej...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="a00020_source.html">BrylaGeometryczna.hh</a>&quot;</code><br />
-<code>#include &quot;lacze_do_gnuplota.hh&quot;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00065_source.html">Wektor3D.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00041_source.html">Macierz3x3.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00047_source.html">Nazwy.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00050_source.html">ObiektSceny.hh</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Wykres zależności załączania dla GoraZDlugaGrania.hh:</div>
+Wykres zależności załączania dla BrylaGeometryczna.hh:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00027.png" border="0" usemap="#_2home_2maciek_2dorn_2prj_2inc_2_gora_z_dluga_grania_8hh" alt=""/></div>
+<div class="center"><img src="a00027.png" border="0" usemap="#_2home_2maciek_2dron3_2prj_2inc_2_bryla_geometryczna_8hh" alt=""/></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00028.png" border="0" usemap="#_2home_2maciek_2dorn_2prj_2inc_2_gora_z_dluga_grania_8hhdep" alt=""/></div>
+<div class="center"><img src="a00028.png" border="0" usemap="#_2home_2maciek_2dron3_2prj_2inc_2_bryla_geometryczna_8hhdep" alt=""/></div>
 </div>
 </div>
 <p><a href="a00026_source.html">Idź do kodu źródłowego tego pliku.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Komponenty</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110.html">GoraZDlugaGrania</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">modeluje pojecie Gory z podluzna grania  <a href="a00110.html#details">Więcej...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00117.html">BrylaGeometryczna</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">modeluje pojecie Bryly geometrycznej  <a href="a00117.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:a346a5da43df2b2a2038e95c893ccb129"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a>&#160;&#160;&#160;&quot;dat/trasa_przelotu.dat&quot;</td></tr>
+<tr class="separator:a346a5da43df2b2a2038e95c893ccb129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b7c303dc8ee0c5b01ad75bbeacc2a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a07b7c303dc8ee0c5b01ad75bbeacc2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="a346a5da43df2b2a2038e95c893ccb129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346a5da43df2b2a2038e95c893ccb129">&#9670;&nbsp;</a></span>PLIK_TRASY_PRZELOTU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PLIK_TRASY_PRZELOTU&#160;&#160;&#160;&quot;dat/trasa_przelotu.dat&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="a00047_source.html#l00032">32</a> pliku <a class="el" href="a00047_source.html">Nazwy.hh</a>.</p>
+
+</div>
+</div>
+<a id="a07b7c303dc8ee0c5b01ad75bbeacc2a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b7c303dc8ee0c5b01ad75bbeacc2a5">&#9670;&nbsp;</a></span>WYMIAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WYMIAR&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="a00026_source.html#l00012">12</a> pliku <a class="el" href="a00026_source.html">BrylaGeometryczna.hh</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_13d7749518d8be18d673aed510b3a2c1.html">dorn</a></li><li class="navelem"><a class="el" href="dir_d97944975b058d4b4d219112e647c70b.html">prj</a></li><li class="navelem"><a class="el" href="dir_efb3429070c56598e4e504a1d9e33a11.html">inc</a></li><li class="navelem"><a class="el" href="a00026.html">GoraZDlugaGrania.hh</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_bcde68eed882c7962dccf680e22ff87b.html">inc</a></li><li class="navelem"><a class="el" href="a00026.html">BrylaGeometryczna.hh</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

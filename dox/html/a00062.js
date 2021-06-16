@@ -1,5 +1,6 @@
 var a00062 =
 [
-    [ "BLAD_OBLICZEN", "a00062.html#a194f9a557b404b2955f51a3e7cb28569", null ],
-    [ "Zaokraglenie", "a00062.html#a137fb37c1ae4396aa7d833ef3a677a7e", null ]
+    [ "Wektor", "a00157.html", "a00157" ],
+    [ "operator<<", "a00062.html#ad9987426ab232623d89f9e688dba757b", null ],
+    [ "operator>>", "a00062.html#a3d2ef8f21b2d0131978fd1b73cfb4c66", null ]
 ];

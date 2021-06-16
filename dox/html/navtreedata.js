@@ -23,11 +23,9 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Dragonfly", "index.html", [
-    [ "Wizualizacja niektórych elementów misji Dragonfly", "index.html", [
-      [ "Charakterystyka misji Dragonfly", "index.html#charakterystyka", null ],
-      [ "Diagram przypadków użycia", "index.html#usecase-diagram", null ],
-      [ "Diagram podstawowych klas", "index.html#class-diagram", null ],
-      [ "Diagramy czynności dla wybranych metod", "index.html#activity-diagram", null ]
+    [ "Dron", "index.html", null ],
+    [ "Diagram klas", "a00162.html", [
+      [ "Diagram zależności między klasami", "a00162.html#s", null ]
     ] ],
     [ "Klasy", "annotated.html", [
       [ "Lista klas", "annotated.html", "annotated_dup" ],
@@ -52,8 +50,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"a00020.html",
-"pages.html"
+"a00026.html",
+"a00157.html#aabc8439d0a4f64e414743cc138dea792"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
