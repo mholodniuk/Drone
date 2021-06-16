@@ -437,20 +437,34 @@ void Dron::WyczyscSciezke(std::vector<Wektor3D>& Sciezka, PzG::LaczeDoGNUPlota& 
 void Dron::PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const
 {
   std::ofstream Plik_Trasa(PLIK_TRASY_PRZELOTU);
+  
   if(!Plik_Trasa.is_open())
   {
-    std::cerr<<"Nie udalo sie otworzyc pliku"<<PLIK_TRASY_PRZELOTU<<std::endl;
+    std::cerr << "Nie udalo sie otworzyc pliku" << PLIK_TRASY_PRZELOTU << std::endl;
   }
-  
-  for(auto i = PunktySciezki.cbegin(); i != PunktySciezki.cend(); ++i)
-  {
-    Plik_Trasa<<*i;
-  }
+  WyswietlSciezke(PunktySciezki, Plik_Trasa);
 
   Lacze.Rysuj();
   Plik_Trasa.close();
 }
 
+/*!
+ * \brief Metoda wyswietlajaca Sciezke lotu
+ *
+ * Metoda kolejno zapisuje punkty sciezki do pliku
+ * wyjsciowego w celu wizualizacji ich w gnuplocie
+ * 
+ * \param[in] PunktySciezki - kontener z kolejnymi punktami sciezki
+ * \param[in] Plik - strumien plikowy
+ * 
+ */
+void Dron::WyswietlSciezke(std::vector<Wektor3D>& PunktySciezki, std::ofstream& Plik) const
+{
+  for(auto i = PunktySciezki.cbegin(); i != PunktySciezki.cend(); ++i)
+  {
+    Plik << *i;
+  }
+}
 /*!
  * \brief Metoda sprawdzajaca czy dane polozenie jest zajete przez obiekt klasy Dron
  *

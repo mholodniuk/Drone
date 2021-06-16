@@ -77,6 +77,7 @@ public:
   void PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const;
   std::vector<Wektor3D> UstalSciezke(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu) const;
   void WyczyscSciezke(std::vector<Wektor3D>& Sciezka, PzG::LaczeDoGNUPlota& Lacze) const;
+  void WyswietlSciezke(std::vector<Wektor3D>& Sciezka, std::ofstream& Plik) const;
   Wektor3D ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const;
 
   //! \brief Metody Animujace ruch drona

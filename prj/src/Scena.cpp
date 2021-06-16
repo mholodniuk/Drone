@@ -459,14 +459,17 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 
   while(CzyZajete(Dr))
   {
-    Dr->WyczyscSciezke(Sciezka, Lacze);
-    Dr->Czekaj(5, Lacze);
-    Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc+20);
+    Sciezka.clear();
+    Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc+30);
     Dr->PlanujSciezke(Sciezka, Lacze);
-    Dr->LotDoPrzodu(20, Lacze);
+    
+    Dr->Czekaj(5, Lacze);
+    Dr->LotDoPrzodu(30, Lacze);
   }
   
   Dr->LotPionowy(-80 ,Lacze);
 
+  Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
+  Lacze.Rysuj();
   Dr->PodajWspolrzedne();
 }
