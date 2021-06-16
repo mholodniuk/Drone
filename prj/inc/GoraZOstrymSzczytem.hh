@@ -39,12 +39,16 @@ public:
     //!\brief Metody Transformujace i obslugujace wyswietlanie gory na scenie
     void Transformacja(const Wektor3D& trans);
     bool TworzOpisGoryZOstrymSzczytem(const Wektor3D& Wek);
-    std::string TworzNazweGoryZeSzczytem(unsigned int ID);
-    void TworzGoreZOstrymSzczytem(unsigned int ID, PzG::LaczeDoGNUPlota& Lacze);
     bool TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze);
 
+    //!\brief Metody tworzace zestawy plikow
+    std::string TworzNazweGoryZeSzczytem(unsigned int ID);
+    void TworzGoreZOstrymSzczytem(unsigned int ID, PzG::LaczeDoGNUPlota& Lacze);
+    
+    //!\brief Metoda identyfikujaca
     virtual std::string Identyfikuj() const override;
     
+    //!\brief Metody sprawdzajace zajetosc obszaru
     std::vector<Wektor<2>> ObliczeGraniczneWsp() const;
     virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 

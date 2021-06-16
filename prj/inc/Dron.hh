@@ -88,6 +88,7 @@ public:
 
   //! \brief Metoda sprawdzajaca czy pod dronem jest wolne miejsce
   virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
+  //! \brief Metoda identyfikujaca
   virtual std::string Identyfikuj() const override;
 
 };

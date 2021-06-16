@@ -37,13 +37,17 @@ public:
 
     //!\brief Metody Transformujace i obslugujace wyswietlanie gory na scenie
     void Transformacja(const Wektor3D& trans);
-    bool TworzOpisGoryZDlugaGrania(const Wektor3D& Wek);
-    std::string TworzNazweGoryZGrania(unsigned int ID);
     void TworzGoreZDlugaGrania(unsigned int ID, PzG::LaczeDoGNUPlota& Lacze);
     bool TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze);
+    
+    //!\brief Metody tworzace zestawy plikow
+    bool TworzOpisGoryZDlugaGrania(const Wektor3D& Wek);
+    std::string TworzNazweGoryZGrania(unsigned int ID);
 
+    //!\brief Metoda identyfikujaca
     virtual std::string Identyfikuj() const override;
 
+    //!\brief Metody sprawdzajace zajetosc obszaru
     std::vector<Wektor<2>> ObliczeGraniczneWsp() const;
     virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 

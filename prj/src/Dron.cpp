@@ -310,6 +310,15 @@ void Dron::Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
   }
 }
 
+/*!
+ * \brief Metoda animujaca lot w miejscu
+ *
+ * Dron bedzie unosil sie w powietrzu przez zadana ilosc czasu
+ * 
+ * \param[in] czas_sek - czas w sekundach, jak dlugo drona ma sie unosic
+ * \param[in] LaczeDoGNUPlota
+ * 
+ */
 void Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota& Lacze)
 {
   double licznik = 0;
@@ -384,6 +393,17 @@ std::vector<Wektor3D> Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, d
   return Sciezka;
 }
 
+/*!
+ * \brief Metoda czyszczaca sciezke lotu drona
+ *
+ * NA RAZIE COS NIE DZIALA.
+ * Kontener z Wektorami3D zostaje wyczysczony, a nazwa pliku, ktory
+ * zawiera Sciezke usuniety ze sledzenia
+ * 
+ * \param[in] Sciezka - kontener z kolejnymi punktami sciezki
+ * \param[in] LaczeDoGNUPlota
+ * 
+ */
 void Dron::WyczyscSciezke(std::vector<Wektor3D>& Sciezka, PzG::LaczeDoGNUPlota& Lacze) const
 {
   Sciezka.clear();
@@ -398,7 +418,7 @@ void Dron::WyczyscSciezke(std::vector<Wektor3D>& Sciezka, PzG::LaczeDoGNUPlota& 
  * wyjsciowego w celu wizualizacji ich w gnuplocie
  * 
  * \param[in] PunktySciezki - kontener z kolejnymi punktami sciezki
- * \param[in] Lacze
+ * \param[in] LaczeDoGNUPlota
  * 
  */
 void Dron::PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const
@@ -417,6 +437,19 @@ void Dron::PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPl
   Plik_Trasa.close();
 }
 
+/*!
+ * \brief Metoda sprawdzajaca czy dane polozenie jest zajete przez obiekt klasy Dron
+ *
+ * Sprawdzane jest czy odleglosc miedzy srodkami dronow jest wieksza od
+ * dwoch promieni - czy drona na siebie nie nachodza
+ * 
+ * \param[in] Polozenie_drona - wektor polozenia aktualnie poruszanego drona
+ * \param[in] Promien - promien aktualnie poruszanego drona
+ * 
+ * \retval false - jesli dane miejsce nie jest zajete przez obiekt klasy Dron
+ * \retval true - jesli dane miejsce jest zajete przez obiekt klasy Dron
+ * 
+ */
 bool Dron::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 {
   double odleglosc;
@@ -425,8 +458,7 @@ bool Dron::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 
   odleglosc = (Polozenie_drona_2D - Polozenie_drona_this).ObliczDlugosc();
 
-  if(odleglosc > Promien) return false;
+  if(odleglosc > 2 * Promien) return false;
 
-  //std::cout<<"zajete przez drona"<<std::endl;
   return true;
 }

@@ -182,6 +182,15 @@ std::string GoraZOstrymSzczytem::Identyfikuj() const
     return Obiekt.str();
 }
 
+/*!
+ * \brief Metoda sprawdzajaca ID obiektu
+ * 
+ * \param[in] _id - id, ktore ma zostac sprawdzone
+ * 
+ * \retval false - jesli id sie nie zgadza
+ * \retval true - jeslie id jest takie samo
+ * 
+ */
 bool GoraZOstrymSzczytem::SprawdzID(unsigned int _id) const
 {
     if(id == _id)
@@ -230,6 +239,20 @@ std::vector<Wektor<2>> GoraZOstrymSzczytem::ObliczeGraniczneWsp() const
     return wsp_wierzcholkow;
 }
 
+/*!
+ * \brief Metoda sprawdzajaca czy dane polozenie jest zajete przez obiekt klasy GoraZOstrymSzczytem
+ *
+ * Sprawdzane jest czy odleglosc miedzy srodkami dronow jest wieksza od
+ * dwoch promienia + 1/2 skali na danej osi. Dodatkowo sprawdzana jest odleglosc
+ * od poszczegolnych wierzchokow.
+ * 
+ * \param[in] Polozenie_drona - wektor polozenia aktualnie poruszanego drona
+ * \param[in] Promien - promien aktualnie poruszanego drona
+ * 
+ * \retval false - jesli dane miejsce nie jest zajete przez obiekt klasy GoraZOstrymSzczytem
+ * \retval true - jesli dane miejsce jest zajete przez obiekt klasy GoraZOstrymSzczytem
+ * 
+ */
 bool GoraZOstrymSzczytem::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 {
     std::vector<Wektor<2>> wsp_wierzcholkow_2D =  ObliczeGraniczneWsp();
@@ -246,6 +269,7 @@ bool GoraZOstrymSzczytem::CzyZajete(const Wektor3D& Polozenie_drona, double Prom
     {
         return false;
     }
+
     //case 3,4,5,6: odleglosci od wierzcholkow
     for(unsigned int idx=0; idx<wsp_wierzcholkow_2D.size(); ++idx)
     {

@@ -178,6 +178,8 @@ std::string Plaskowyz::Identyfikuj() const
 /*!
  * \brief Metoda porownojaca ID obiektu, z id podanym jako argument
  * 
+ * \param[in] _id - id do porownania
+ * 
  * \retval true - jesli id sie zgadza
  * \retval false - jesli id sie nie zgadza
  *
@@ -230,6 +232,20 @@ std::vector<Wektor<2>> Plaskowyz::ObliczeGraniczneWsp() const
     return wsp_wierzcholkow;
 }
 
+/*!
+ * \brief Metoda sprawdzajaca czy dane polozenie jest zajete przez obiekt klasy GoraZDlugaGrania
+ *
+ * Sprawdzane jest czy odleglosc miedzy srodkami dronow jest wieksza od
+ * dwoch promienia + 1/2 skali na danej osi. Dodatkowo sprawdzana jest odleglosc
+ * od poszczegolnych wierzchokow.
+ * 
+ * \param[in] Polozenie_drona - wektor polozenia aktualnie poruszanego drona
+ * \param[in] Promien - promien aktualnie poruszanego drona
+ * 
+ * \retval false - jesli dane miejsce nie jest zajete przez obiekt klasy GoraZDlugaGrania
+ * \retval true - jesli dane miejsce jest zajete przez obiekt klasy GoraZDlugaGrania
+ * 
+ */
 bool Plaskowyz::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 {
     std::vector<Wektor<2>> wsp_wierzcholkow_2D =  ObliczeGraniczneWsp();
@@ -248,23 +264,6 @@ bool Plaskowyz::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
         //std::cout<<"Wolne na osi x i y plask"<<std::endl;
         return false;
     }
-    /*
-    else if(odleglosc < x && odleglosc < y)
-    {
-        std::cout<<"Wolne w srodku plask"<<std::endl;
-        return false;
-    }
-    */
-
-    //case 2: gora/dol
-/*
-    else if(odleglosc >= y)
-    {
-        std::cout<<"Wolne na osi y gzos"<<std::endl;
-        return false;
-    }
-*/
-    //if(odleglosc < x || odleglosc < y) return true;
 
     //case 3,4,5,6: odleglosci od wierzcholkow
     for(unsigned int idx=0; idx<wsp_wierzcholkow_2D.size(); ++idx)
@@ -273,9 +272,6 @@ bool Plaskowyz::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
         if(odleglosc <= Promien) return true;
         //std::cout<<"Wolne, odleglosc plask"<< odleglosc <<std::endl;
     }
-
-    //if(licznik == wsp_wierzcholkow_2D.size()) return false;
-
     
     return true;
 }

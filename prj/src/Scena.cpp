@@ -28,6 +28,7 @@ void Scena::WyswietlMenu()
   std::cout<<"\t p - Zadaj parametry przelotu"<<std::endl;
   std::cout<<"\t w - Podaj liczbe wektorow"<<std::endl;
   std::cout<<"\t d - Dodaj przeszkode"<<std::endl;
+  std::cout<<"\t D - Dodaj drona"<<std::endl;
   std::cout<<"\t u - Usun przeszkode"<<std::endl;
   std::cout<<"\t m - Wyswietl menu"<<std::endl<<std::endl;
   std::cout<<"\t k - Koniec dzialania programu"<<std::endl<<std::endl;
@@ -75,6 +76,7 @@ void Scena::Menu(char& wybor)
       break;
 
     case 'a':
+      WyswietlDrony();
       WyborDrona();
       break;
     
@@ -84,6 +86,10 @@ void Scena::Menu(char& wybor)
 
     case 'd':
       DodajPrzeszkode();
+      break;
+
+    case 'D':
+      DodajDrona();
       break;
 
     case 'u':
@@ -142,6 +148,39 @@ void Scena::UstawDrony()
 }
 
 /*!
+ * \brief Metoda Dodajaca drona
+ *
+ * \pre mozna dodac maksymalnie 3 drony
+ * 
+ * Z powodu ograniczonej ilosci folderow na zestawy
+ * plikow opisujace drona, maksymalnie mozna dodac do trzech 
+ * dronow. Dodany drona jest umiejscawiany na wskazanym miejscu
+ * 
+ */
+void Scena::DodajDrona()
+{
+  double wsp_x, wsp_y;
+  int id_drona = ListaDronow.size() + 1;
+
+  std::cout<<"Procedura dodawania drona..."<<std::endl;
+  std::cout<<"Podaj wsporzedne drona (x,y): ";
+  std::cin>>wsp_x>>wsp_y;
+
+  DodajDrona(id_drona, {wsp_x, wsp_y, 0});
+}
+
+void Scena::WyswietlDrony()
+{
+  std::cout<<"Aktualnie na scenie znajduje sie " << ListaDronow.size() << std::endl;
+
+  for(const std::shared_ptr<Dron> &Dr : ListaDronow)
+  {
+    std::cout << Dr->ZwrocID() << ". " << Dr->Identyfikuj() << std::endl;
+  }
+  std::cout<<std::endl;
+}
+
+/*!
  * \brief Metoda Dodajaca gore z dluga grania do sceny
  *
  * \pre ID musi byc liczba dodatnia rozna od poprzednio dodanych przeszkod
@@ -172,7 +211,6 @@ void Scena::DodajGoreZDlugaGrania(unsigned int ID)
   _GoraZDlugaGrania->TworzGoreZDlugaGrania(ID, Lacze);
   _GoraZDlugaGrania->TransDoUklRodzica(Polozenie_przeszkody, Lacze);
 
-  //ListaPrzeszkod.push_back(_GoraZDlugaGrania);
   ListaObiektow.push_back(_GoraZDlugaGrania);
 }
 
@@ -207,7 +245,6 @@ void Scena::DodajGoreZOstrymSzczytem(unsigned int ID)
   _GoraZOstrymSzczytem->TworzGoreZOstrymSzczytem(ID, Lacze);
   _GoraZOstrymSzczytem->TransDoUklRodzica(Polozenie_przeszkody, Lacze);
 
-  //ListaPrzeszkod.push_back(_GoraZOstrymSzczytem);
   ListaObiektow.push_back(_GoraZOstrymSzczytem);
 }
 
@@ -242,7 +279,6 @@ void Scena::DodajPlaskowyz(unsigned int ID)
   _Plaskowyz->TworzPlaskowyz(ID, Lacze);
   _Plaskowyz->TransDoUklRodzica(Polozenie_przeszkody, Lacze);
 
-  //ListaPrzeszkod.push_back(_Plaskowyz);
   ListaObiektow.push_back(_Plaskowyz);
 }
 
@@ -360,6 +396,19 @@ void Scena::UsunPrzeszkode()
     else std::cout<<"Brak przeszkod do usuniecia!"<<std::endl;
 }
 
+/*!
+ * \brief Metoda sprawdzajaca czy dane polozenie jest zajete przez Obiekt z listy obiektow
+ *
+ * Po kolei, obszar zajmowany przez kazdego z obiektow sceny jest sprawdzane
+ * czy nie naklada sie z obszarem zajmowanym przez drona podanego w
+ * argumencie (jest to dron wybrany, poruszajacy sie).
+ * 
+ * \param[in] Dr - wskaznik na aktualnie aktywnego drona
+ * 
+ * \retval false - jesli dane miejsce nie jest zajete przez obiekt sceny
+ * \retval true - jesli dane miejsce jest zajete przez obiekt sceny
+ * 
+ */
 bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
 {
   for(const std::shared_ptr<ObiektSceny>& Ob : ListaObiektow)
@@ -368,7 +417,7 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
     if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
     {
       std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identyfikuj() << 
-      std:: endl << "Przedluzam lot..... Wcisnij ENTER aby pokazac nowa trase" << std::endl << std::endl;
+      std:: endl << "Przedluzam lot....." << std::endl << std::endl;
 
       return true;
     }
@@ -376,6 +425,18 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
   return false;
 }
 
+/*!
+ * \brief Metoda realizujaca lot drona
+ *
+ * Po kolei zostaje wykonywana animacja lotu w gore, obrotu,
+ * lotu do celu, a nastepnie sprawdzenia zajetosci miejsca
+ * docelowego, jesli jest ono wolne - dron wyladuje; jesli nie
+ * - dron poleci 20 jednostke dalej. Na koncu zostaje pokazane
+ * polozenie ostateczne drona po wyladowaniu.
+ * 
+ * \param[in] Dr - wskaznik na aktualnie aktywnego drona
+ * 
+ */
 void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 {
   double kat, dlugosc;

@@ -178,6 +178,15 @@ std::string GoraZDlugaGrania::Identyfikuj() const
     return Obiekt.str();
 }
 
+/*!
+ * \brief Metoda sprawdzajaca ID obiektu
+ * 
+ * \param[in] _id - id, ktore ma zostac sprawdzone
+ * 
+ * \retval false - jesli id sie nie zgadza
+ * \retval true - jeslie id jest takie samo
+ * 
+ */
 bool GoraZDlugaGrania::SprawdzID(unsigned int _id) const
 {
     if(id == _id)
@@ -226,6 +235,20 @@ std::vector<Wektor<2>> GoraZDlugaGrania::ObliczeGraniczneWsp() const
     return wsp_wierzcholkow;
 }
 
+/*!
+ * \brief Metoda sprawdzajaca czy dane polozenie jest zajete przez obiekt klasy GoraZDlugaGrania
+ *
+ * Sprawdzane jest czy odleglosc miedzy srodkami dronow jest wieksza od
+ * dwoch promienia + 1/2 skali na danej osi. Dodatkowo sprawdzana jest odleglosc
+ * od poszczegolnych wierzchokow.
+ * 
+ * \param[in] Polozenie_drona - wektor polozenia aktualnie poruszanego drona
+ * \param[in] Promien - promien aktualnie poruszanego drona
+ * 
+ * \retval false - jesli dane miejsce nie jest zajete przez obiekt klasy GoraZDlugaGrania
+ * \retval true - jesli dane miejsce jest zajete przez obiekt klasy GoraZDlugaGrania
+ * 
+ */
 bool GoraZDlugaGrania::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 {
     std::vector<Wektor<2>> wsp_wierzcholkow_2D =  ObliczeGraniczneWsp();
@@ -244,23 +267,6 @@ bool GoraZDlugaGrania::CzyZajete(const Wektor3D& Polozenie_drona, double Promien
         //std::cout<<"Wolne na osi x i y gzdg"<<std::endl;
         return false;
     }
-    /*
-    else if(odleglosc < x && odleglosc < y)
-    {
-        std::cout<<"Wolne w srodku gzdg"<<std::endl;
-        return false;
-    }
-    */
-    
-    //case 2: gora/dol
-/*
-    if(odleglosc >= y)
-    {
-        std::cout<<"Wolne na osi y gzdg"<<std::endl;
-        return false;
-    }
-*/
-    //if(odleglosc < x || odleglosc < y) return true;
 
     //case 3,4,5,6: odleglosci od wierzcholkow
     for(unsigned int idx=0; idx<wsp_wierzcholkow_2D.size(); ++idx)
@@ -269,8 +275,6 @@ bool GoraZDlugaGrania::CzyZajete(const Wektor3D& Polozenie_drona, double Promien
         if(odleglosc <= Promien) return true;
         //std::cout<<"Wolne, odleglosc gzdg"<< odleglosc <<std::endl;
     }
-
-    //if(licznik == wsp_wierzcholkow_2D.size()) return false;
 
     
     return true;

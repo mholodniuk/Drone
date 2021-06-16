@@ -22,7 +22,8 @@
  * LaczeDoGNUPlota, listy poszczegolnych jej elementow
  * (drony oraz przeszkody) oraz jeden wskaznik na aktualnie
  * aktywnego drona. Umozliwione jest dodawanie nowych przeszkod,
- * usuwanie ich, wybor drona oraz wykonanie jego lotu.
+ * usuwanie ich, wybor drona oraz wykonanie jego lotu wraz z sprawdzeniem
+ * czy miejsce ladowania jest wolne
  */
 
 class Scena
@@ -63,6 +64,8 @@ public:
     //!\brief metody dodajace drony
     std::shared_ptr<Dron> DodajDrona(unsigned int ID, const Wektor3D& wek);
     void UstawDrony();
+    void DodajDrona();
+    void WyswietlDrony();
 
     //!\brief Metody animujace lot drona
     void LotDrona(std::shared_ptr<Dron> &Dr);
