@@ -441,11 +441,12 @@ void Dron::PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPl
   {
     std::cerr<<"Nie udalo sie otworzyc pliku"<<PLIK_TRASY_PRZELOTU<<std::endl;
   }
+  
   for(auto i = PunktySciezki.cbegin(); i != PunktySciezki.cend(); ++i)
   {
     Plik_Trasa<<*i;
   }
-  //Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
+
   Lacze.Rysuj();
   Plik_Trasa.close();
 }

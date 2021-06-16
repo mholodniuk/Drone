@@ -12,6 +12,7 @@ var a00125 =
     [ "TworzNazweGoryZGrania", "a00125.html#a04b69f8a32c51c8703baabafd8da7b02", null ],
     [ "TworzOpisGoryZDlugaGrania", "a00125.html#addc73d834785a19740ed43e094720257", null ],
     [ "UstawPolozenie", "a00125.html#a42506c753d82e719e5dd85ea2067ece1", null ],
+    [ "ZwrocNazwePlikuFinalnego", "a00125.html#a774cdf9996ecac35e31b81c790267d48", null ],
     [ "id", "a00125.html#a02f35de77cba2b31b262d1f733c1f3e8", null ],
     [ "kat_or", "a00125.html#a6d51d88f86d61852bc6eb54ce8119f8b", null ],
     [ "Polozenie", "a00125.html#a2c660920b5662d2d202c64accb567a6f", null ]

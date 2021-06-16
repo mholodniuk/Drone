@@ -4,18 +4,18 @@ Otherwise you run the risk that the wrong font is being used for dot generated g
 warning: The selected output language "polish" has not been updated
 since release 1.8.2.  As a result some sentences may appear in English.
 
-/home/maciek/dron3/prj/src/Dron.cpp:313: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota &Lacze)
+/home/maciek/dron3/prj/src/Dron.cpp:326: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota &Lacze)
 /home/maciek/dron3/prj/inc/Dron.hh:87: warning: The following parameter of Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
 /home/maciek/dron3/prj/inc/Dron.hh:85: warning: The following parameter of Dron::LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
-/home/maciek/dron3/prj/src/Dron.cpp:336: warning: argument 'dlugosc_lotu' of command @param is not found in the argument list of Dron::ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const
+/home/maciek/dron3/prj/src/Dron.cpp:349: warning: argument 'dlugosc_lotu' of command @param is not found in the argument list of Dron::ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const
 /home/maciek/dron3/prj/inc/Dron.hh:80: warning: The following parameter of Dron::ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const is not documented:
   parameter 'Dlugosc_lotu'
-/home/maciek/dron3/prj/src/Dron.cpp:414: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::PlanujSciezke(std::vector< Wektor3D > &PunktySciezki, PzG::LaczeDoGNUPlota &Lacze) const
+/home/maciek/dron3/prj/src/Dron.cpp:427: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::PlanujSciezke(std::vector< Wektor3D > &PunktySciezki, PzG::LaczeDoGNUPlota &Lacze) const
 /home/maciek/dron3/prj/inc/Dron.hh:77: warning: The following parameter of Dron::PlanujSciezke(std::vector< Wektor3D > &PunktySciezki, PzG::LaczeDoGNUPlota &Lacze) const is not documented:
   parameter 'Lacze'
-/home/maciek/dron3/prj/src/Dron.cpp:195: warning: argument 'lacze' of command @param is not found in the argument list of Dron::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze)
+/home/maciek/dron3/prj/src/Dron.cpp:208: warning: argument 'lacze' of command @param is not found in the argument list of Dron::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze)
 /home/maciek/dron3/prj/inc/Dron.hh:71: warning: The following parameter of Dron::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
 /home/maciek/dron3/prj/src/Dron.cpp:46: warning: argument 'id_drona' of command @param is not found in the argument list of Dron::TworzNazweKorpusu(unsigned int id_Drona)
@@ -26,20 +26,20 @@ since release 1.8.2.  As a result some sentences may appear in English.
 /home/maciek/dron3/prj/inc/Dron.hh:46: warning: The following parameters of Dron::TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora) are not documented:
   parameter 'id_Drona'
   parameter 'nrRotora'
-/home/maciek/dron3/prj/src/Dron.cpp:363: warning: argument 'dlugosc_lotu' of command @param is not found in the argument list of Dron::UstalSciezke(const Wektor3D &Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu) const
+/home/maciek/dron3/prj/src/Dron.cpp:376: warning: argument 'dlugosc_lotu' of command @param is not found in the argument list of Dron::UstalSciezke(const Wektor3D &Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu) const
 /home/maciek/dron3/prj/inc/Dron.hh:78: warning: The following parameters of Dron::UstalSciezke(const Wektor3D &Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu) const are not documented:
   parameter 'Polozenie_poczatkowe'
   parameter 'Dlugosc_lotu'
-/home/maciek/dron3/prj/src/Dron.cpp:396: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::WyczyscSciezke(std::vector< Wektor3D > &Sciezka, PzG::LaczeDoGNUPlota &Lacze) const
+/home/maciek/dron3/prj/src/Dron.cpp:409: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::WyczyscSciezke(std::vector< Wektor3D > &Sciezka, PzG::LaczeDoGNUPlota &Lacze) const
 /home/maciek/dron3/prj/inc/Dron.hh:79: warning: The following parameter of Dron::WyczyscSciezke(std::vector< Wektor3D > &Sciezka, PzG::LaczeDoGNUPlota &Lacze) const is not documented:
   parameter 'Lacze'
-/home/maciek/dron3/prj/inc/GoraZDlugaGrania.hh:41: warning: The following parameter of GoraZDlugaGrania::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
+/home/maciek/dron3/prj/inc/GoraZDlugaGrania.hh:42: warning: The following parameter of GoraZDlugaGrania::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
 /home/maciek/dron3/prj/src/GoraZDlugaGrania.cpp:14: warning: argument 'Trans' of command @param is not found in the argument list of GoraZDlugaGrania::Transformacja(const Wektor3D &trans)
-/home/maciek/dron3/prj/inc/GoraZDlugaGrania.hh:39: warning: The following parameter of GoraZDlugaGrania::Transformacja(const Wektor3D &trans) is not documented:
+/home/maciek/dron3/prj/inc/GoraZDlugaGrania.hh:40: warning: The following parameter of GoraZDlugaGrania::Transformacja(const Wektor3D &trans) is not documented:
   parameter 'trans'
 /home/maciek/dron3/prj/src/GoraZDlugaGrania.cpp:31: warning: argument 'Trans' of command @param is not found in the argument list of GoraZDlugaGrania::TworzOpisGoryZDlugaGrania(const Wektor3D &Wek)
-/home/maciek/dron3/prj/inc/GoraZDlugaGrania.hh:44: warning: The following parameter of GoraZDlugaGrania::TworzOpisGoryZDlugaGrania(const Wektor3D &Wek) is not documented:
+/home/maciek/dron3/prj/inc/GoraZDlugaGrania.hh:45: warning: The following parameter of GoraZDlugaGrania::TworzOpisGoryZDlugaGrania(const Wektor3D &Wek) is not documented:
   parameter 'Wek'
 /home/maciek/dron3/prj/inc/GoraZOstrymSzczytem.hh:42: warning: The following parameter of GoraZOstrymSzczytem::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
@@ -77,308 +77,308 @@ sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
 
 
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00043.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00043.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00075.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00075.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00120.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00120.png"'
-sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a5aaddcfaedfda012a98efd175c139227_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a5aaddcfaedfda012a98efd175c139227_cgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00075.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00075.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00043.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00043.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00042.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00042.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a524ac639a8470d7552dbcb2d7ec19387_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a524ac639a8470d7552dbcb2d7ec19387_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00096.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00096.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00058.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00058.png"'
-sh: 1: sh: 1: dot: not found
-sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a46ef0ef79e273d707017f59bc5512548_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a46ef0ef79e273d707017f59bc5512548_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a583a45b40682871dea28126134a81e78_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a583a45b40682871dea28126134a81e78_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_aba5cd9be3daabe70b47768fb56d9484f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_aba5cd9be3daabe70b47768fb56d9484f_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00042.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00042.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a524ac639a8470d7552dbcb2d7ec19387_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a524ac639a8470d7552dbcb2d7ec19387_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_aba5cd9be3daabe70b47768fb56d9484f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_aba5cd9be3daabe70b47768fb56d9484f_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00148.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00148.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a583a45b40682871dea28126134a81e78_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a583a45b40682871dea28126134a81e78_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a46ef0ef79e273d707017f59bc5512548_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a46ef0ef79e273d707017f59bc5512548_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00057.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00057.png"'
-sh: 1: dot: not found
-sh: 1: sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a208ac88d3fd9922ed9009152ae5421b6_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a208ac88d3fd9922ed9009152ae5421b6_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a8f37c33d08de805c7855b66fe46e901a_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a8f37c33d08de805c7855b66fe46e901a_icgraph.png"'
 sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
 
 
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00072.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00072.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00061.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00061.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a208ac88d3fd9922ed9009152ae5421b6_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a208ac88d3fd9922ed9009152ae5421b6_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a8f37c33d08de805c7855b66fe46e901a_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a8f37c33d08de805c7855b66fe46e901a_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a93c4b60ab40bdb5a9247add7fb487155_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a93c4b60ab40bdb5a9247add7fb487155_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00147.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00147.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a93c4b60ab40bdb5a9247add7fb487155_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a93c4b60ab40bdb5a9247add7fb487155_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00072.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00072.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00061.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00061.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_0.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_0.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_1.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_1.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00034.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00034.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00060.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00060.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00033.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00033.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/graph_legend.dot" -Tpng -o "/home/maciek/dron3/dox/html/graph_legend.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00124.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00124.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
-
-
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a9cea5ba789e3ac0961846a77d909b552_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a9cea5ba789e3ac0961846a77d909b552_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a85043c9ab654565bb109585b676ca20f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a85043c9ab654565bb109585b676ca20f_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00123.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00123.png"'
-sh: 1: dot: not found
 sh: 1: sh: 1: dot: not founddot: not found
 
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a2990e16281cd755315f30fdd1c93741d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a2990e16281cd755315f30fdd1c93741d_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00060.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00060.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_aa31a5bf6d996451c9fac66875527f349_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_aa31a5bf6d996451c9fac66875527f349_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_1.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_1.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00034.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00034.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00124.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00124.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00033.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00033.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/graph_legend.dot" -Tpng -o "/home/maciek/dron3/dox/html/graph_legend.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00123.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00123.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a85043c9ab654565bb109585b676ca20f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a85043c9ab654565bb109585b676ca20f_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a9cea5ba789e3ac0961846a77d909b552_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a9cea5ba789e3ac0961846a77d909b552_icgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00087.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00087.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_aa31a5bf6d996451c9fac66875527f349_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_aa31a5bf6d996451c9fac66875527f349_cgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a97065b4375d19d6f2bee4a610a425b4e_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a97065b4375d19d6f2bee4a610a425b4e_cgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a2990e16281cd755315f30fdd1c93741d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a2990e16281cd755315f30fdd1c93741d_icgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_ad002585dbdd2d98063a577a63c1da145_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_ad002585dbdd2d98063a577a63c1da145_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a3631a29ba93b0235069a0c57879a854b_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a3631a29ba93b0235069a0c57879a854b_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ad5078558b323936a82982880d4013da8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ad5078558b323936a82982880d4013da8_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00049.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00049.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00090.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00090.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ad5078558b323936a82982880d4013da8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ad5078558b323936a82982880d4013da8_icgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a3631a29ba93b0235069a0c57879a854b_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a3631a29ba93b0235069a0c57879a854b_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_ad002585dbdd2d98063a577a63c1da145_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_ad002585dbdd2d98063a577a63c1da145_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a95a97faff0de26090510d6a32eb66295_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a95a97faff0de26090510d6a32eb66295_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a80691e151f45065f7cd520bea08406a5_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a80691e151f45065f7cd520bea08406a5_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a95a97faff0de26090510d6a32eb66295_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a95a97faff0de26090510d6a32eb66295_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_4.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_4.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a80691e151f45065f7cd520bea08406a5_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a80691e151f45065f7cd520bea08406a5_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a95a97faff0de26090510d6a32eb66295_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a95a97faff0de26090510d6a32eb66295_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a95a97faff0de26090510d6a32eb66295_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a95a97faff0de26090510d6a32eb66295_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00044_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00044_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.png"'
-sh: 1: sh: 1: dot: not found
-sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00051.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00051.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00115.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00115.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a0e67fffddcdc291ba6234949caa173a0_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a0e67fffddcdc291ba6234949caa173a0_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ab40952b8aec13ed7d6d340b32f219e7a_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ab40952b8aec13ed7d6d340b32f219e7a_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00051.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00051.png"'
 sh: 1: sh: 1: dot: not found
-sh: 1: dot: not founddot: not found
-
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00115.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00115.png"'
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a0e67fffddcdc291ba6234949caa173a0_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a0e67fffddcdc291ba6234949caa173a0_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00064.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00064.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_a94baa09555c3471f3f775dfebdfe8e86_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_a94baa09555c3471f3f775dfebdfe8e86_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a07850699dbf34c249b4d7240394e49fa_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a07850699dbf34c249b4d7240394e49fa_icgraph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00117_acc96bfdcd122da809e00ce225f5c5238_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00117_acc96bfdcd122da809e00ce225f5c5238_icgraph.png"'
-sh: 1: sh: 1: dot: not found
-sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00063.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00063.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a2643745b8ed7125e4caf1b9e56a4aa1f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a2643745b8ed7125e4caf1b9e56a4aa1f_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00157_a0e87b310ac7caa6827d71ba26c49c738_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00157_a0e87b310ac7caa6827d71ba26c49c738_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00063.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00063.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_2.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_2.png"'
-sh: 1: sh: 1: dot: not found
 sh: 1: dot: not found
-dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00140.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00140.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a25f42d02fc5b27f30e872d444ffb5230_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a25f42d02fc5b27f30e872d444ffb5230_cgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a8bbbd92a6d80a62ce19808f6d985c1b5_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a8bbbd92a6d80a62ce19808f6d985c1b5_icgraph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_2.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_2.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00157_a0e87b310ac7caa6827d71ba26c49c738_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00157_a0e87b310ac7caa6827d71ba26c49c738_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a25f42d02fc5b27f30e872d444ffb5230_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a25f42d02fc5b27f30e872d444ffb5230_cgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a0c8aa2b5c986329da5becc2b446d1866_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a0c8aa2b5c986329da5becc2b446d1866_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00140.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00140.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00078.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00078.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00046.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00046.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not found
-dot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_3.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_3.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00078.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00078.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a46ef0ef79e273d707017f59bc5512548_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a46ef0ef79e273d707017f59bc5512548_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a9cea5ba789e3ac0961846a77d909b552_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a9cea5ba789e3ac0961846a77d909b552_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_3.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_3.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.png"'
+sh: 1: dot: not foundsh: 1: 
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a73e0a729daf06e3a66eb1d3484b3433d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a73e0a729daf06e3a66eb1d3484b3433d_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a46ef0ef79e273d707017f59bc5512548_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a46ef0ef79e273d707017f59bc5512548_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_ab057d70681a544f6968fb3a31e24b70e_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_ab057d70681a544f6968fb3a31e24b70e_cgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
-dot: not found
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_addc73d834785a19740ed43e094720257_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_addc73d834785a19740ed43e094720257_cgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_20980d61131da5791df5245c2ae7cc9b_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_20980d61131da5791df5245c2ae7cc9b_dep.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00086_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00086_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a9cea5ba789e3ac0961846a77d909b552_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a9cea5ba789e3ac0961846a77d909b552_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_addc73d834785a19740ed43e094720257_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_addc73d834785a19740ed43e094720257_cgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_af50957f9bd12f9f066bb444759d92654_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_af50957f9bd12f9f066bb444759d92654_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_a04b69f8a32c51c8703baabafd8da7b02_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_a04b69f8a32c51c8703baabafd8da7b02_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00157_aca086c1c63c38e4749c86674d655e737_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00157_aca086c1c63c38e4749c86674d655e737_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00086_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00086_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00093.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00093.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00039.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00039.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a3631a29ba93b0235069a0c57879a854b_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a3631a29ba93b0235069a0c57879a854b_cgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_db1df6b390d8921f22601c9f1cca779d_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_db1df6b390d8921f22601c9f1cca779d_dep.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_a04b69f8a32c51c8703baabafd8da7b02_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_a04b69f8a32c51c8703baabafd8da7b02_icgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a3631a29ba93b0235069a0c57879a854b_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a3631a29ba93b0235069a0c57879a854b_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-
-
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00093.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00093.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00055.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00055.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133_a0c0db45c90aec72ad2d6e97a95f72ea7_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133_a0c0db45c90aec72ad2d6e97a95f72ea7_cgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a1a8b40155664055a6e6c167907c965b2_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a1a8b40155664055a6e6c167907c965b2_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_aca7c226602e49d6c233df6fdadaa8b4f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_aca7c226602e49d6c233df6fdadaa8b4f_cgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not found
-dot: not founddot: not found
+sh: 1: sh: 1: dot: not founddot: not found
 
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a208ac88d3fd9922ed9009152ae5421b6_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a208ac88d3fd9922ed9009152ae5421b6_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00081.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00081.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a208ac88d3fd9922ed9009152ae5421b6_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a208ac88d3fd9922ed9009152ae5421b6_icgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_89cc6af6a5c529de3d807223897445ec_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_89cc6af6a5c529de3d807223897445ec_dep.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00054.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00054.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a70329a1e382c3c78f88f79328d525c88_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a70329a1e382c3c78f88f79328d525c88_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00128.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00128.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00037.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00037.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a246caac7fba0c0cb58b49ae896cb6305_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a246caac7fba0c0cb58b49ae896cb6305_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_89cc6af6a5c529de3d807223897445ec_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_89cc6af6a5c529de3d807223897445ec_dep.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a70329a1e382c3c78f88f79328d525c88_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a70329a1e382c3c78f88f79328d525c88_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00145_adc175de766b12dbbf889bd33c51cd887_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00145_adc175de766b12dbbf889bd33c51cd887_cgraph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a246caac7fba0c0cb58b49ae896cb6305_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a246caac7fba0c0cb58b49ae896cb6305_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00144.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00144.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00052.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00052.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00105.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00105.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a583a45b40682871dea28126134a81e78_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a583a45b40682871dea28126134a81e78_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00143.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00143.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00037.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00037.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00036.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00036.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a524ac639a8470d7552dbcb2d7ec19387_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a524ac639a8470d7552dbcb2d7ec19387_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00040.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00040.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00143.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00143.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00105.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00105.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00052.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00052.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ad5078558b323936a82982880d4013da8_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ad5078558b323936a82982880d4013da8_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a583a45b40682871dea28126134a81e78_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a583a45b40682871dea28126134a81e78_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_ae72678ebd84f521a70ecfc59fdf0ca68_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_ae72678ebd84f521a70ecfc59fdf0ca68_icgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00119.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00119.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00040.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00040.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a524ac639a8470d7552dbcb2d7ec19387_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a524ac639a8470d7552dbcb2d7ec19387_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00069.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00069.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_aeca659dd59433366298ce1a828208d62_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_aeca659dd59433366298ce1a828208d62_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00119.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00119.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_addc73d834785a19740ed43e094720257_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_addc73d834785a19740ed43e094720257_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a4d1aa29cabcee8554a4712824fba7ede_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a4d1aa29cabcee8554a4712824fba7ede_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00069.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00069.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00089_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00089_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_addc73d834785a19740ed43e094720257_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_addc73d834785a19740ed43e094720257_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00156.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00156.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_aeca659dd59433366298ce1a828208d62_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_aeca659dd59433366298ce1a828208d62_cgraph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00089_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00089_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00156.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00156.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_ae1fb7dd84aff0aee71199ab6e2ee2949_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_ae1fb7dd84aff0aee71199ab6e2ee2949_icgraph.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
-
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00137_ab0699c8f99fa17bbcc4a7c400bed506d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00137_ab0699c8f99fa17bbcc4a7c400bed506d_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_a95fb76862b8cc8e17ff4ef8e93123a20_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_a95fb76862b8cc8e17ff4ef8e93123a20_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00084.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00084.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00102.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00102.png"'
-sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
-
-
+sh: 1: sh: 1: dot: not founddot: not found
 
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a0c8aa2b5c986329da5becc2b446d1866_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a0c8aa2b5c986329da5becc2b446d1866_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00099.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00099.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00067.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00067.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00045.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00045.png"'
-sh: 1: sh: 1: sh: 1: dot: not found
-dot: not founddot: not found
-
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_aba5cd9be3daabe70b47768fb56d9484f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_aba5cd9be3daabe70b47768fb56d9484f_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00028.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00028.png"'
+dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00066.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00066.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153_aba5cd9be3daabe70b47768fb56d9484f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153_aba5cd9be3daabe70b47768fb56d9484f_cgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00031.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00031.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00028.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00028.png"'
-sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a86d7fab7b926930274de0ee8eebbb0f0_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a86d7fab7b926930274de0ee8eebbb0f0_cgraph.png"'
-sh: 1: dot: not found
-sh: 1: dot: not found
+sh: 1: sh: 1: dot: not found
+dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_3f1d4c8d71d368e93a6ec580db2c627d_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_3f1d4c8d71d368e93a6ec580db2c627d_dep.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00116.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00116.png"'
-sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_a73e0a729daf06e3a66eb1d3484b3433d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_a73e0a729daf06e3a66eb1d3484b3433d_icgraph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00116.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00116.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121_aa0e058c1c55a73cccb4098d2b02bba27_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121_aa0e058c1c55a73cccb4098d2b02bba27_icgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
-
-
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00027.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00027.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00030.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00030.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149_a8f37c33d08de805c7855b66fe46e901a_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149_a8f37c33d08de805c7855b66fe46e901a_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00030.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00030.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00132.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00132.png"'
 error: problems opening map file /home/maciek/dron3/dox/html/a00027.map for inclusion in the docs!

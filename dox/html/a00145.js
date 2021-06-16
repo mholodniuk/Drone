@@ -12,6 +12,7 @@ var a00145 =
     [ "TworzOpisPlaskowyzu", "a00145.html#a208ac88d3fd9922ed9009152ae5421b6", null ],
     [ "TworzPlaskowyz", "a00145.html#aed9175cc8addd3c0011ca4da347a8b2d", null ],
     [ "UstawPolozenie", "a00145.html#ac627ce89e541a31ed6150d5bbede2a8c", null ],
+    [ "ZwrocNazwePlikuFinalnego", "a00145.html#a55f8bb38297ebe2ddc6afce26c0ebcea", null ],
     [ "id", "a00145.html#a6494db37ad76c922fda1f917f7e9a027", null ],
     [ "kat_or", "a00145.html#aa928acb1d24bb50ed02e8c1af0d19a12", null ],
     [ "Polozenie", "a00145.html#acd81f21bca44782f8acd685bafe12587", null ]

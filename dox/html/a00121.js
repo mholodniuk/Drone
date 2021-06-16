@@ -27,6 +27,7 @@ var a00121 =
     [ "ZmienPolozenieDrona", "a00121.html#a70329a1e382c3c78f88f79328d525c88", null ],
     [ "ZwrocID", "a00121.html#ab07656a739af0020ec28c25d97c6a082", null ],
     [ "ZwrocKat_st", "a00121.html#afecfb0521a6a67c4cc757d732628b499", null ],
+    [ "ZwrocNazwePlikuFinalnego", "a00121.html#a97d909cb2a411bbee1aa8f18af31f2e7", null ],
     [ "ZwrocPolozenie", "a00121.html#a246caac7fba0c0cb58b49ae896cb6305", null ],
     [ "ZwrocPromien", "a00121.html#a590f745a6532f07c135655798ce6d7e0", null ],
     [ "id", "a00121.html#a15af39fc5ea76182fea9cc1ef3ac3427", null ],

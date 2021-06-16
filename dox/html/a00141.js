@@ -7,5 +7,5 @@ var a00141 =
     [ "Identyfikuj", "a00141.html#a858b586d647b74ea8ed28e637fe8be02", null ],
     [ "PokazID", "a00141.html#a3c76e365f0b358411fcff4145bb5685a", null ],
     [ "SprawdzID", "a00141.html#ade112abf734977f07ffa42ddab1a39dc", null ],
-    [ "ZwrocNazwePlikuFinalnego", "a00141.html#a197ea3102f176ea216c557eb13c4b9f2", null ]
+    [ "ZwrocNazwePlikuFinalnego", "a00141.html#adb373f9316b027eed953da8d7a06eb43", null ]
 ];
