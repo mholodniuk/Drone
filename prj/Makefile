@@ -16,10 +16,10 @@ dat:
 
 ./${APP}: obj/main.o obj/lacze_do_gnuplota.o obj/Wektor3D.o obj/Macierz3x3.o \
 			obj/Dron.o obj/Menu.o obj/Scena.o obj/Prostopadloscian.o obj/Graniastoslup.o obj/BrylaGeometryczna.o \
-				obj/GoraZDlugaGrania.o obj/GoraZOstrymSzczytem.o obj/Plaskowyz.o obj/ObiektSceny.o
+				obj/GoraZDlugaGrania.o obj/GoraZOstrymSzczytem.o obj/Plaskowyz.o obj/ObiektSceny.o obj/Sciezka.o
 	g++ -g -Wall -pedantic -std=c++17 -o ./${APP} obj/main.o obj/lacze_do_gnuplota.o obj/Wektor3D.o obj/Macierz3x3.o \
 				obj/Dron.o obj/Menu.o obj/Scena.o obj/Prostopadloscian.o obj/Graniastoslup.o obj/BrylaGeometryczna.o \
-					obj/GoraZDlugaGrania.o obj/GoraZOstrymSzczytem.o obj/Plaskowyz.o obj/ObiektSceny.o
+					obj/GoraZDlugaGrania.o obj/GoraZOstrymSzczytem.o obj/Plaskowyz.o obj/ObiektSceny.o obj/Sciezka.o
 
 ext: ./${APP}_rozszerzony
 	rm -f core.* core; echo "2i 1+3.1i 2 ? / + ?" | ./${APP}_rozszerzony
@@ -68,6 +68,9 @@ obj/Plaskowyz.o: src/Plaskowyz.cpp inc/Plaskowyz.hh inc/BrylaGeometryczna.hh
 
 obj/ObiektSceny.o: src/ObiektSceny.cpp inc/ObiektSceny.hh
 	g++  -Iinc -W -Wall -pedantic -c -o obj/ObiektSceny.o src/ObiektSceny.cpp
+
+obj/Sciezka.o: src/Sciezka.cpp inc/Sciezka.hh inc/Wektor3D.hh inc/lacze_do_gnuplota.hh
+	g++  -Iinc -W -Wall -pedantic -c -o obj/Sciezka.o src/Sciezka.cpp
 
 clean:
 	rm -f obj/* ./${APP} core.* core

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <memory>
 #include "lacze_do_gnuplota.hh"
+#include "Sciezka.hh"
 
 /*!
  * \file Dron.hh
@@ -31,6 +32,7 @@ class Dron: public ObiektSceny
   double Kat_OrDrona;
   std::shared_ptr<Prostopadloscian> KorpusDrona;
   std::shared_ptr<Graniastoslup> RotorDrona[4];
+  Sciezka sciezka_poruszania;
   
   unsigned int id;
   int pojedynczy_krok = 2;
@@ -74,10 +76,11 @@ public:
   void Oblicz_i_ZapiszWspDrona();
 
   //! \brief Metody Ocliczajace i generujace sciezke lotu 
-  void PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const;
-  std::vector<Wektor3D> UstalSciezke(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu) const;
-  void WyczyscSciezke(std::vector<Wektor3D>& Sciezka, PzG::LaczeDoGNUPlota& Lacze) const;
-  void WyswietlSciezke(std::vector<Wektor3D>& Sciezka, std::ofstream& Plik) const;
+  void InicjalizujSciezke(PzG::LaczeDoGNUPlota& Lacze) const;
+  void PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze);
+  void UstalSciezke(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
+  void WyczyscSciezke(PzG::LaczeDoGNUPlota& Lacze);
+  void WyswietlSciezke(std::ofstream& Plik) const;
   Wektor3D ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const;
 
   //! \brief Metody Animujace ruch drona

@@ -388,22 +388,9 @@ Wektor3D Dron::ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const
  * \return Sciezka - kontener z kolejnymi wektorami3D sciezki ruchu
  * 
  */
-std::vector<Wektor3D> Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu) const
+void Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
 {
-  std::vector<Wektor3D> Sciezka;
-  Wektor3D pomoc;
-
-  Sciezka.push_back(Polozenie_poczatkowe);
-  pomoc = ZwrocPolozenie();
-  pomoc[2] += 80;
-  Sciezka.push_back(pomoc);
-  pomoc = ObliczNoweWsp(kat_skretu, Dlugosc_lotu);
-  pomoc[2] += 80;
-  Sciezka.push_back(pomoc);
-  pomoc[2] -= 80;
-  Sciezka.push_back(pomoc);
-
-  return Sciezka;
+  sciezka_poruszania.UstalSciezke(Polozenie_poczatkowe, kat_skretu, Dlugosc_lotu);
 }
 
 /*!
@@ -417,11 +404,9 @@ std::vector<Wektor3D> Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, d
  * \param[in] LaczeDoGNUPlota
  * 
  */
-void Dron::WyczyscSciezke(std::vector<Wektor3D>& Sciezka, PzG::LaczeDoGNUPlota& Lacze) const
+void Dron::WyczyscSciezke(PzG::LaczeDoGNUPlota& Lacze)
 {
-  Sciezka.clear();
-  Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
-  Lacze.Rysuj();
+  sciezka_poruszania.WyczyscSciezke(Lacze);
 }
 
 /*!
@@ -434,18 +419,9 @@ void Dron::WyczyscSciezke(std::vector<Wektor3D>& Sciezka, PzG::LaczeDoGNUPlota& 
  * \param[in] LaczeDoGNUPlota
  * 
  */
-void Dron::PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPlota& Lacze) const
+void Dron::PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze)
 {
-  std::ofstream Plik_Trasa(PLIK_TRASY_PRZELOTU);
-  
-  if(!Plik_Trasa.is_open())
-  {
-    std::cerr << "Nie udalo sie otworzyc pliku" << PLIK_TRASY_PRZELOTU << std::endl;
-  }
-  WyswietlSciezke(PunktySciezki, Plik_Trasa);
-
-  Lacze.Rysuj();
-  Plik_Trasa.close();
+  sciezka_poruszania.PlanujSciezke(Lacze);
 }
 
 /*!
@@ -458,13 +434,16 @@ void Dron::PlanujSciezke(std::vector<Wektor3D>& PunktySciezki, PzG::LaczeDoGNUPl
  * \param[in] Plik - strumien plikowy
  * 
  */
-void Dron::WyswietlSciezke(std::vector<Wektor3D>& PunktySciezki, std::ofstream& Plik) const
+void Dron::WyswietlSciezke(std::ofstream& Plik) const
 {
-  for(auto i = PunktySciezki.cbegin(); i != PunktySciezki.cend(); ++i)
-  {
-    Plik << *i;
-  }
+  sciezka_poruszania.WyswietlSciezke(Plik);
 }
+
+void Dron::InicjalizujSciezke(PzG::LaczeDoGNUPlota& Lacze) const
+{
+  Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
+}
+
 /*!
  * \brief Metoda sprawdzajaca czy dane polozenie jest zajete przez obiekt klasy Dron
  *

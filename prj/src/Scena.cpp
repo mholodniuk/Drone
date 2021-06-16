@@ -440,7 +440,7 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
 void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 {
   double kat, dlugosc;
-  std::vector<Wektor3D> Sciezka;
+  //std::vector<Wektor3D> Sciezka;
   Wektor3D Polozenie_poczatkowe = Dr->ZwrocPolozenie();
   
   std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
@@ -448,10 +448,9 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
   std::cout<<"Podaj dlugosc lotu: ";
   std::cin>>dlugosc;
 
-  Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
-
-  Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc);
-  Dr->PlanujSciezke(Sciezka, Lacze);
+  Dr->InicjalizujSciezke(Lacze);
+  Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc);
+  Dr->PlanujSciezke(Lacze);
 
   Dr->LotPionowy(80, Lacze);
   Dr->Obrot(kat, Lacze);
@@ -459,17 +458,16 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 
   while(CzyZajete(Dr))
   {
-    Sciezka.clear();
-    Sciezka = Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc+30);
-    Dr->PlanujSciezke(Sciezka, Lacze);
-    
-    Dr->Czekaj(5, Lacze);
+    Dr->WyczyscSciezke(Lacze);
+    Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc+30);
+    Dr->PlanujSciezke(Lacze);
+    Dr->Czekaj(2, Lacze);
     Dr->LotDoPrzodu(30, Lacze);
   }
   
   Dr->LotPionowy(-80 ,Lacze);
-
+  Dr->WyczyscSciezke(Lacze);
   Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
-  Lacze.Rysuj();
+
   Dr->PodajWspolrzedne();
 }
