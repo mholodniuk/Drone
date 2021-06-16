@@ -370,9 +370,6 @@ std::vector<Wektor3D> Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, d
 {
   std::vector<Wektor3D> Sciezka;
   Wektor3D pomoc;
-  Macierz3x3 MacierzRot;
-
-  std::cout<<std::endl<<std::endl<<"Planuje sciezke ruchu drona..."<<std::endl;
 
   Sciezka.push_back(Polozenie_poczatkowe);
   pomoc = ZwrocPolozenie();

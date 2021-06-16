@@ -31,6 +31,7 @@ Wektor3D BrylaGeometryczna::UstawSkale(const Wektor3D& SkalaZadana)
     return Skala;
 }
 
+
 bool BrylaGeometryczna::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 {
     Wektor3D temp;

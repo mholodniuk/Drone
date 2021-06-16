@@ -269,7 +269,7 @@ void Scena::UstawPrzeszkody()
 
   _GoraZOstrymSzczytem->UstawSkale(skala);
   _GoraZOstrymSzczytem->TworzGoreZOstrymSzczytem(++lPrzeszkod, Lacze);
-  _GoraZOstrymSzczytem->TransDoUklRodzica({100, 100}, Lacze);
+  _GoraZOstrymSzczytem->TransDoUklRodzica(tab[2], Lacze);
   ListaObiektow.push_back(_GoraZOstrymSzczytem);
 }
 
@@ -367,7 +367,7 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
     if(Ob == Dr) continue;
     if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
     {
-      std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identyfikuj() << std::endl << 
+      std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identyfikuj() << 
       std:: endl << "Przedluzam lot..... Wcisnij ENTER aby pokazac nowa trase" << std::endl << std::endl;
 
       return true;
@@ -407,6 +407,5 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
   
   Dr->LotPionowy(-80 ,Lacze);
 
-  
   Dr->PodajWspolrzedne();
 }

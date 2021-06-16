@@ -42,6 +42,9 @@ class Dron: public ObiektSceny
   void PrzesunDrona(const Wektor3D& Wek) { Polozenie += Wek; }
   //! \brief Metoda przemieszczajaca drona do zadanego wektora polozenia
   void ZmienPolozenieDrona(const Wektor3D& nPolozenie) { Polozenie = nPolozenie; }
+  //! \brief Metody generujace nazwy plikow
+  std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);
+  std::string TworzNazweKorpusu(unsigned int id_Drona);
 
 public:
 
@@ -56,10 +59,6 @@ public:
   double ZwrocID() { return id; }
   void ZadajKat_st(double kat) { Kat_OrDrona = kat; }
   virtual bool CzyDron() const override { return true; }
-
-  //! \brief Metody generujace nazwy plikow
-  std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);
-  std::string TworzNazweKorpusu(unsigned int id_Drona);
 
   //! \brief Metody zwracajace/wyswietlajace polozenie
   void PodajWspolrzedne() const;
