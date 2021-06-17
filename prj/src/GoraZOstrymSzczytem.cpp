@@ -226,6 +226,7 @@ std::vector<Wektor<2>> GoraZOstrymSzczytem::ObliczeGraniczneWsp() const
     std::vector<Wektor<2>> wsp_wierzcholkow;
 
     Wektor<2> x_min, x_max, y_min, y_max;
+    //nazewnictwo nie jest zbytnio istotne
     x_min[0] = Polozenie[0] - Skala[0]/2;
     x_min[1] = Polozenie[1] - Skala[1]/2;
 
@@ -237,6 +238,11 @@ std::vector<Wektor<2>> GoraZOstrymSzczytem::ObliczeGraniczneWsp() const
 
     y_min[0] = Polozenie[0] - Skala[0]/2;
     y_min[1] = y_max[1];
+
+    //  4.---------2.
+    //  |          |
+    //  |          |
+    //  1.---------3.
 
     wsp_wierzcholkow.push_back(x_min);
     wsp_wierzcholkow.push_back(y_max);
@@ -263,7 +269,8 @@ std::vector<Wektor<2>> GoraZOstrymSzczytem::ObliczeGraniczneWsp() const
 bool GoraZOstrymSzczytem::CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const
 {
     std::vector<Wektor<2>> wsp_wierzcholkow_2D =  ObliczeGraniczneWsp();
-    double odleglosc, x, y; //x to zmienna pomocnicza
+    double odleglosc, x, y; 
+    //x i y sluza do porownywania zajetosci na odpowiednich osiach
     Wektor<2> Polozenie_drona_2D = Polozenie_drona;
     Wektor<2> Polozenie_Plaskowyzu_2D = Polozenie;
 

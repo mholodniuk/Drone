@@ -457,7 +457,7 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 
   while(CzyZajete(Dr))
   {
-    dlugosc+=30;
+    dlugosc += 30;
     Dr->WyczyscSciezke(Lacze);
     Dr->UstalSciezke(Polozenie_poczatkowe, 0, dlugosc);
     Dr->PlanujSciezke(Lacze);

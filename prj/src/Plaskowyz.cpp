@@ -219,6 +219,7 @@ std::vector<Wektor<2>> Plaskowyz::ObliczeGraniczneWsp() const
     std::vector<Wektor<2>> wsp_wierzcholkow;
 
     Wektor<2> x_min, x_max, y_min, y_max;
+    //nazewnictwo nie jest zbytnio istotne
     x_min[0] = Polozenie[0] - Skala[0]/2;
     x_min[1] = Polozenie[1] - Skala[1]/2;
 
@@ -230,6 +231,11 @@ std::vector<Wektor<2>> Plaskowyz::ObliczeGraniczneWsp() const
 
     y_min[0] = Polozenie[0] - Skala[0]/2;
     y_min[1] = y_max[1];
+
+    //  4.---------2.
+    //  |          |
+    //  |          |
+    //  1.---------3.
 
     wsp_wierzcholkow.push_back(x_min);
     wsp_wierzcholkow.push_back(y_max);

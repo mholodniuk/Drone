@@ -13,7 +13,7 @@
  *
  * Zawiera definicję klasy ObiektSceny Uzywana jest, aby zdefiniowac
  * liste obiektow w klasie Scena. Jest rodzicem klasy Dron oraz
- * wszystkich przeszkod (Plaskowyz, gora z dlyga grania oraz gora z ostrym szczytem). 
+ * wszystkich przeszkod (Plaskowyz, gora z dluga grania oraz gora z ostrym szczytem). 
  * Zdefiniowane sa metody wirtualne pozwalajace na
  * sprawdzenie czy obiekt jest dronem, czy dane miejsce jest zajete, oraz
  * metody pozwalajace odpowiednio identyfikowac obiekty
