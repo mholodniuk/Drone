@@ -8,11 +8,14 @@ digraph "Dron::TransDoUklRodzica"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node2 [label="Dron::Oblicz_i_ZapiszWsp\lDrona",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a9cea5ba789e3ac0961846a77d909b552",tooltip="Metoda zapisujaca polozenie poszczegolnych wierzcholkow."];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node3 [label="Dron::Oblicz_i_Zapisz\l_WspKorpusu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#ae1fb7dd84aff0aee71199ab6e2ee2949",tooltip="Obliczajaca wspolrzedne korpusu drona."];
+  Node3 [label="Dron::Oblicz_i_Zapisz\l_WspKorpusu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#ae1fb7dd84aff0aee71199ab6e2ee2949",tooltip="Metody ustawiajace poszczegolne elementy."];
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node4 [label="Dron::Oblicz_i_Zapisz\l_WspRotorow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#aca7c226602e49d6c233df6fdadaa8b4f",tooltip="Obliczajaca wspolrzedne rotorow drona."];
   Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node5 [label="Macierz3x3::ObrotZ",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00143.html#ab0699c8f99fa17bbcc4a7c400bed506d",tooltip="Metoda generujaca macierz obrotu wokol osi OZ."];
   Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
-  Node6 [label="Dron::ZakrecRotorami",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a5b9d0c10ff51cd0fb749372277dbe017",tooltip=" "];
+  Node6 [label="Dron::UstawRotory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a0b811a5347c55562de665dfe45df2040",tooltip="Metoda obliczajaca polozenie rotorow."];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Dron::ZakrecRotorami",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a5b9d0c10ff51cd0fb749372277dbe017",tooltip="Metoda realizujaca obrot rotorow wokol wlasnej osi."];
 }

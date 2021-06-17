@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/src/BrylaGeometryczna.cpp</title>
+<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/inc/Wektor3D.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,37 +61,22 @@ $(document).ready(function(){initNavTree('a00071_source.html',''); initResizable
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">BrylaGeometryczna.cpp</div>  </div>
+<div class="title">Wektor3D.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00071.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00026.html">BrylaGeometryczna.hh</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00123.html#acc96bfdcd122da809e00ce225f5c5238">   13</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00123.html#acc96bfdcd122da809e00ce225f5c5238">BrylaGeometryczna::UstawNazwaPlikuWlasciwego</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* NazwaPliku)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="a00123.html#a454acc498ef67a897cfa709bdc52a209">NazwaPliku_Finalny</a> = NazwaPliku;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00123.html#a9740f61b9dc0c3f8ca9fe2f3414e1e42">   28</a></span>&#160;<a class="code" href="a00167.html">Wektor3D</a> <a class="code" href="a00123.html#a9740f61b9dc0c3f8ca9fe2f3414e1e42">BrylaGeometryczna::UstawSkale</a>(<span class="keyword">const</span> <a class="code" href="a00167.html">Wektor3D</a>&amp; SkalaZadana)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="a00123.html#ad8cdadc75419691a95b55d0459f0abaf">Skala</a> = SkalaZadana;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00123.html#ad8cdadc75419691a95b55d0459f0abaf">Skala</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<a href="a00071.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00068.html">Wektor.hh</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a00071.html#ac353a272b38b4ad342f7181ad7bdb91a">   15</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00170.html">Wektor&lt;3&gt;</a> <a class="code" href="a00071.html#ac353a272b38b4ad342f7181ad7bdb91a">Wektor3D</a>;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00123_html_a454acc498ef67a897cfa709bdc52a209"><div class="ttname"><a href="a00123.html#a454acc498ef67a897cfa709bdc52a209">BrylaGeometryczna::NazwaPliku_Finalny</a></div><div class="ttdeci">std::string NazwaPliku_Finalny</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00034">BrylaGeometryczna.hh:34</a></div></div>
-<div class="ttc" id="aa00123_html_a9740f61b9dc0c3f8ca9fe2f3414e1e42"><div class="ttname"><a href="a00123.html#a9740f61b9dc0c3f8ca9fe2f3414e1e42">BrylaGeometryczna::UstawSkale</a></div><div class="ttdeci">Wektor3D UstawSkale(const Wektor3D &amp;skala)</div><div class="ttdoc">Metoda ustawiajaca skale bryly.</div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00028">BrylaGeometryczna.cpp:28</a></div></div>
-<div class="ttc" id="aa00167_html"><div class="ttname"><a href="a00167.html">Wektor&lt; 3 &gt;</a></div></div>
-<div class="ttc" id="aa00123_html_acc96bfdcd122da809e00ce225f5c5238"><div class="ttname"><a href="a00123.html#acc96bfdcd122da809e00ce225f5c5238">BrylaGeometryczna::UstawNazwaPlikuWlasciwego</a></div><div class="ttdeci">void UstawNazwaPlikuWlasciwego(const char *NazwaPliku)</div><div class="ttdoc">Metoda Ustawiajaca Nazwe Pliku Docelowego.</div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00013">BrylaGeometryczna.cpp:13</a></div></div>
-<div class="ttc" id="aa00026_html"><div class="ttname"><a href="a00026.html">BrylaGeometryczna.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy BrylaGeometryczna.</div></div>
-<div class="ttc" id="aa00123_html_ad8cdadc75419691a95b55d0459f0abaf"><div class="ttname"><a href="a00123.html#ad8cdadc75419691a95b55d0459f0abaf">BrylaGeometryczna::Skala</a></div><div class="ttdeci">Wektor3D Skala</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00035">BrylaGeometryczna.hh:35</a></div></div>
+<div class="ttc" id="aa00071_html_ac353a272b38b4ad342f7181ad7bdb91a"><div class="ttname"><a href="a00071.html#ac353a272b38b4ad342f7181ad7bdb91a">Wektor3D</a></div><div class="ttdeci">Wektor&lt; 3 &gt; Wektor3D</div><div class="ttdoc">Klasa Wektor3D jest instancja szablonu wektor o wymiarze 3.</div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00015">Wektor3D.hh:15</a></div></div>
+<div class="ttc" id="aa00068_html"><div class="ttname"><a href="a00068.html">Wektor.hh</a></div><div class="ttdoc">Ten plik zawiera definicję szablonu Wektor&lt;&gt;</div></div>
+<div class="ttc" id="aa00170_html"><div class="ttname"><a href="a00170.html">Wektor&lt; 3 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_89cc6af6a5c529de3d807223897445ec.html">src</a></li><li class="navelem"><a class="el" href="a00071.html">BrylaGeometryczna.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_bcde68eed882c7962dccf680e22ff87b.html">inc</a></li><li class="navelem"><a class="el" href="a00071.html">Wektor3D.hh</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

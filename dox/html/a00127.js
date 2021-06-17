@@ -22,6 +22,7 @@ var a00127 =
     [ "TworzNazweKorpusu", "a00127.html#a85043c9ab654565bb109585b676ca20f", null ],
     [ "TworzNazweRotora", "a00127.html#a10e3f7aeae3b22d76e9b79ae216e9e77", null ],
     [ "UstalSciezke", "a00127.html#ad0fbaa8d3735621d2da755e2e43772c6", null ],
+    [ "UstawRotory", "a00127.html#a0b811a5347c55562de665dfe45df2040", null ],
     [ "WyczyscSciezke", "a00127.html#a564693f4bada82b98d5c172d407e7c61", null ],
     [ "WyswietlSciezke", "a00127.html#a4e95d386cc2ff7fd1ae7c94530a8bde6", null ],
     [ "ZadajKat_st", "a00127.html#a44554f10e3a7ae27e051ffce9cfd56fc", null ],

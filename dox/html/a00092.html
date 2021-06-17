@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Dokumentacja pliku /home/maciek/dron3/prj/src/Menu.cpp</title>
+<title>Dragonfly: Dokumentacja pliku /home/maciek/dron3/prj/src/main.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,70 +63,76 @@ $(document).ready(function(){initNavTree('a00092.html',''); initResizable(); });
   <div class="summary">
 <a href="#func-members">Funkcje</a>  </div>
   <div class="headertitle">
-<div class="title">Dokumentacja pliku Menu.cpp</div>  </div>
+<div class="title">Dokumentacja pliku main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00044_source.html">Menu.hh</a>&quot;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00047_source.html">Nazwy.hh</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00071_source.html">Wektor3D.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00062_source.html">Scena.hh</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Wykres zależności załączania dla Menu.cpp:</div>
+Wykres zależności załączania dla main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00093.png" border="0" usemap="#_2home_2maciek_2dron3_2prj_2src_2_menu_8cpp" alt=""/></div>
+<div class="center"><img src="a00093.png" border="0" usemap="#_2home_2maciek_2dron3_2prj_2src_2main_8cpp" alt=""/></div>
 </div>
 </div>
 <p><a href="a00092_source.html">Idź do kodu źródłowego tego pliku.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funkcje</h2></td></tr>
-<tr class="memitem:a93c8997213d37d9cf5f08446aa8f2ed8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092.html#a93c8997213d37d9cf5f08446aa8f2ed8">UstawGNUPlot</a> (PzG::LaczeDoGNUPlota &amp;Lacze)</td></tr>
-<tr class="memdesc:a93c8997213d37d9cf5f08446aa8f2ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funckja ustwiajaca odpowiednie parametry gnuplota.  <a href="a00092.html#a93c8997213d37d9cf5f08446aa8f2ed8">Więcej...</a><br /></td></tr>
-<tr class="separator:a93c8997213d37d9cf5f08446aa8f2ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentacja funkcji</h2>
-<a id="a93c8997213d37d9cf5f08446aa8f2ed8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93c8997213d37d9cf5f08446aa8f2ed8">&#9670;&nbsp;</a></span>UstawGNUPlot()</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void UstawGNUPlot </td>
+          <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype">PzG::LaczeDoGNUPlota &amp;&#160;</td>
-          <td class="paramname"><em>Lacze</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="a00092_source.html#l00009">9</a> pliku <a class="el" href="a00092_source.html">Menu.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="a00092_source.html#l00009">9</a> pliku <a class="el" href="a00092_source.html">main.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  Lacze.DodajNazwePliku(<span class="stringliteral">&quot;bryly_wzorcowe/plaszczyzna.dat&quot;</span>);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  Lacze.ZmienTrybRys(PzG::TR_3D);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  Lacze.Inicjalizuj();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  Lacze.UstawZakresX(0, 200);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  Lacze.UstawZakresY(0, 200);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  Lacze.UstawZakresZ(0, 120);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  Lacze.UstawRotacjeXZ(64,65);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="a00162.html">Scena</a> S;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">char</span> input = <span class="charliteral">&#39;m&#39;</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  S.<a class="code" href="a00162.html#aeca659dd59433366298ce1a828208d62">TworzScene</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="a00170.html#aca086c1c63c38e4749c86674d655e737">Wektor3D::ZwrocIloscWektorow</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">while</span> (input != <span class="charliteral">&#39;k&#39;</span>)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::cout&lt;&lt;<span class="stringliteral">&quot;Twoj wybor (m - menu) &gt; &quot;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    cin&gt;&gt;input;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    S.<a class="code" href="a00162.html#aba5cd9be3daabe70b47768fb56d9484f">Menu</a>(input);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
-Oto graf wywoływań tej funkcji:</div>
+Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00092_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.png" border="0" usemap="#a00092_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph" alt=""/></div>
+<div class="center"><img src="a00092_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#a00092_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
 </div>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aa00162_html_aba5cd9be3daabe70b47768fb56d9484f"><div class="ttname"><a href="a00162.html#aba5cd9be3daabe70b47768fb56d9484f">Scena::Menu</a></div><div class="ttdeci">void Menu(char &amp;wybor)</div><div class="ttdoc">Metody obslugujace dzialanie sceny.</div><div class="ttdef"><b>Definition:</b> <a href="a00107_source.html#l00067">Scena.cpp:67</a></div></div>
+<div class="ttc" id="aa00170_html_aca086c1c63c38e4749c86674d655e737"><div class="ttname"><a href="a00170.html#aca086c1c63c38e4749c86674d655e737">Wektor::ZwrocIloscWektorow</a></div><div class="ttdeci">static void ZwrocIloscWektorow()</div><div class="ttdoc">Metody zwracajace ilosc obiektow.</div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00088">Wektor.hh:88</a></div></div>
+<div class="ttc" id="aa00162_html"><div class="ttname"><a href="a00162.html">Scena</a></div><div class="ttdoc">modeluje pojecie Sceny</div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00029">Scena.hh:29</a></div></div>
+<div class="ttc" id="aa00162_html_aeca659dd59433366298ce1a828208d62"><div class="ttname"><a href="a00162.html#aeca659dd59433366298ce1a828208d62">Scena::TworzScene</a></div><div class="ttdeci">void TworzScene()</div><div class="ttdoc">Metoda tworzaca uklad sceny.</div><div class="ttdef"><b>Definition:</b> <a href="a00107_source.html#l00013">Scena.cpp:13</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_89cc6af6a5c529de3d807223897445ec.html">src</a></li><li class="navelem"><a class="el" href="a00092.html">Menu.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_89cc6af6a5c529de3d807223897445ec.html">src</a></li><li class="navelem"><a class="el" href="a00092.html">main.cpp</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

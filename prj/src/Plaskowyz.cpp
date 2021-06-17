@@ -209,10 +209,7 @@ bool Plaskowyz::SprawdzID(unsigned int _id) const
  * wierzcholkow, zgodnie z ponizszym rysunkiem (x_min, y_max, x_max, y_min)
  * Jednoczesnie, niejawnie zostaje dokonana konwersja z wektorow 3D na 2D
  * 
- *    4.------------2.
- *    |             |
- *    |             |
- *    1.----------- 3.
+ * \image html obszar.jpg (kolejnosc wierzcholkow w vectorze)
  * 
  * \return wsp_wierzcholkow - vector zawierajacy wspolrzedne wierzcholkow
  * 

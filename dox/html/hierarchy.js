@@ -1,21 +1,21 @@
 var hierarchy =
 [
-    [ "BrylaGeometryczna", "a00123.html", [
-      [ "GoraZDlugaGrania", "a00131.html", null ],
-      [ "GoraZOstrymSzczytem", "a00135.html", null ],
-      [ "Graniastoslup", "a00139.html", null ],
-      [ "Plaskowyz", "a00151.html", null ],
-      [ "Prostopadloscian", "a00155.html", null ]
+    [ "BrylaGeometryczna", "a00126.html", [
+      [ "GoraZDlugaGrania", "a00134.html", null ],
+      [ "GoraZOstrymSzczytem", "a00138.html", null ],
+      [ "Graniastoslup", "a00142.html", null ],
+      [ "Plaskowyz", "a00154.html", null ],
+      [ "Prostopadloscian", "a00158.html", null ]
     ] ],
-    [ "Macierz3x3", "a00143.html", null ],
-    [ "ObiektSceny", "a00147.html", [
-      [ "Dron", "a00127.html", null ],
-      [ "GoraZDlugaGrania", "a00131.html", null ],
-      [ "GoraZOstrymSzczytem", "a00135.html", null ],
-      [ "Plaskowyz", "a00151.html", null ]
+    [ "Macierz3x3", "a00146.html", null ],
+    [ "ObiektSceny", "a00150.html", [
+      [ "Dron", "a00130.html", null ],
+      [ "GoraZDlugaGrania", "a00134.html", null ],
+      [ "GoraZOstrymSzczytem", "a00138.html", null ],
+      [ "Plaskowyz", "a00154.html", null ]
     ] ],
-    [ "Scena", "a00159.html", null ],
-    [ "Sciezka", "a00163.html", null ],
-    [ "Wektor< wymiar >", "a00167.html", null ],
-    [ "Wektor< 3 >", "a00167.html", null ]
+    [ "Scena", "a00162.html", null ],
+    [ "Sciezka", "a00166.html", null ],
+    [ "Wektor< wymiar >", "a00170.html", null ],
+    [ "Wektor< 3 >", "a00170.html", null ]
 ];

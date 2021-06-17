@@ -4,24 +4,24 @@ Otherwise you run the risk that the wrong font is being used for dot generated g
 warning: The selected output language "polish" has not been updated
 since release 1.8.2.  As a result some sentences may appear in English.
 
-/home/maciek/dron3/prj/src/Dron.cpp:343: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota &Lacze)
-/home/maciek/dron3/prj/inc/Dron.hh:91: warning: The following parameter of Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
+/home/maciek/dron3/prj/src/Dron.cpp:362: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota &Lacze)
+/home/maciek/dron3/prj/inc/Dron.hh:96: warning: The following parameter of Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
-/home/maciek/dron3/prj/src/Dron.cpp:267: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze)
-/home/maciek/dron3/prj/inc/Dron.hh:89: warning: The following parameter of Dron::LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze) is not documented:
+/home/maciek/dron3/prj/src/Dron.cpp:286: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze)
+/home/maciek/dron3/prj/inc/Dron.hh:94: warning: The following parameter of Dron::LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
-/home/maciek/dron3/prj/src/Dron.cpp:290: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::LotPionowy(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze)
-/home/maciek/dron3/prj/inc/Dron.hh:90: warning: The following parameter of Dron::LotPionowy(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze) is not documented:
+/home/maciek/dron3/prj/src/Dron.cpp:309: warning: argument 'LaczeDoGNUPlota' of command @param is not found in the argument list of Dron::LotPionowy(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze)
+/home/maciek/dron3/prj/inc/Dron.hh:95: warning: The following parameter of Dron::LotPionowy(double dlugosc_lotu, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
-/home/maciek/dron3/prj/src/Dron.cpp:215: warning: argument 'lacze' of command @param is not found in the argument list of Dron::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze)
-/home/maciek/dron3/prj/inc/Dron.hh:74: warning: The following parameter of Dron::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
+/home/maciek/dron3/prj/src/Dron.cpp:234: warning: argument 'lacze' of command @param is not found in the argument list of Dron::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze)
+/home/maciek/dron3/prj/inc/Dron.hh:79: warning: The following parameter of Dron::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
   parameter 'Lacze'
 /home/maciek/dron3/prj/src/Dron.cpp:46: warning: argument 'id_drona' of command @param is not found in the argument list of Dron::TworzNazweKorpusu(unsigned int id_Drona)
-/home/maciek/dron3/prj/inc/Dron.hh:50: warning: The following parameter of Dron::TworzNazweKorpusu(unsigned int id_Drona) is not documented:
+/home/maciek/dron3/prj/inc/Dron.hh:55: warning: The following parameter of Dron::TworzNazweKorpusu(unsigned int id_Drona) is not documented:
   parameter 'id_Drona'
 /home/maciek/dron3/prj/src/Dron.cpp:25: warning: argument 'id_drona' of command @param is not found in the argument list of Dron::TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora)
 /home/maciek/dron3/prj/src/Dron.cpp:25: warning: argument 'nrRotota' of command @param is not found in the argument list of Dron::TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora)
-/home/maciek/dron3/prj/inc/Dron.hh:49: warning: The following parameters of Dron::TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora) are not documented:
+/home/maciek/dron3/prj/inc/Dron.hh:54: warning: The following parameters of Dron::TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora) are not documented:
   parameter 'id_Drona'
   parameter 'nrRotora'
 /home/maciek/dron3/prj/inc/GoraZDlugaGrania.hh:42: warning: The following parameter of GoraZDlugaGrania::TransDoUklRodzica(const Wektor3D &Wek, PzG::LaczeDoGNUPlota &Lacze) is not documented:
@@ -81,346 +81,344 @@ since release 1.8.2.  As a result some sentences may appear in English.
 /home/maciek/dron3/prj/inc/Wektor.hh:262: warning: argument 'czynnik' of command @param is not found in the argument list of Wektor< wymiar >::operator==(const Wektor &wektor) const
 /home/maciek/dron3/prj/inc/Wektor.hh:67: warning: The following parameter of Wektor::operator==(const Wektor &wektor) const is not documented:
   parameter 'wektor'
-sh: 1: sh: 1: dot: not founddot: not found
-
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00043.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00043.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_ad0fbaa8d3735621d2da755e2e43772c6_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_ad0fbaa8d3735621d2da755e2e43772c6_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a564693f4bada82b98d5c172d407e7c61_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a564693f4bada82b98d5c172d407e7c61_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a70329a1e382c3c78f88f79328d525c88_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a70329a1e382c3c78f88f79328d525c88_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00075.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00075.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00058.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00058.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a85043c9ab654565bb109585b676ca20f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a85043c9ab654565bb109585b676ca20f_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00142_a3631a29ba93b0235069a0c57879a854b_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00142_a3631a29ba93b0235069a0c57879a854b_cgraph.png"'
+sh: 1: dot: not found
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00096.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00096.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00149.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00149.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a2643745b8ed7125e4caf1b9e56a4aa1f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a2643745b8ed7125e4caf1b9e56a4aa1f_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00058.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00058.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00139_a3631a29ba93b0235069a0c57879a854b_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00139_a3631a29ba93b0235069a0c57879a854b_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a4e95d386cc2ff7fd1ae7c94530a8bde6_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a4e95d386cc2ff7fd1ae7c94530a8bde6_cgraph.png"'
 sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_ae72678ebd84f521a70ecfc59fdf0ca68_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_ae72678ebd84f521a70ecfc59fdf0ca68_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00042.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00042.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00135_a1a8b40155664055a6e6c167907c965b2_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00135_a1a8b40155664055a6e6c167907c965b2_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00158_a0c8aa2b5c986329da5becc2b446d1866_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00158_a0c8aa2b5c986329da5becc2b446d1866_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138_a583a45b40682871dea28126134a81e78_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138_a583a45b40682871dea28126134a81e78_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00158_a95a97faff0de26090510d6a32eb66295_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00158_a95a97faff0de26090510d6a32eb66295_cgraph.png"'
 sh: 1: sh: 1: dot: not founddot: not found
 
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_ab40952b8aec13ed7d6d340b32f219e7a_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_ab40952b8aec13ed7d6d340b32f219e7a_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00057.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00057.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134_addc73d834785a19740ed43e094720257_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134_addc73d834785a19740ed43e094720257_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00142_a0c0db45c90aec72ad2d6e97a95f72ea7_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00142_a0c0db45c90aec72ad2d6e97a95f72ea7_cgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00163_a207ed254ed8af8180d29f20c6c843380_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00163_a207ed254ed8af8180d29f20c6c843380_cgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00089_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00089_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a70329a1e382c3c78f88f79328d525c88_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a70329a1e382c3c78f88f79328d525c88_icgraph.png"'
-dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00150.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00150.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00166_a207ed254ed8af8180d29f20c6c843380_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00166_a207ed254ed8af8180d29f20c6c843380_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00151_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00151_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_ad5078558b323936a82982880d4013da8_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_ad5078558b323936a82982880d4013da8_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a524ac639a8470d7552dbcb2d7ec19387_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a524ac639a8470d7552dbcb2d7ec19387_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00073.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00073.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a8bbbd92a6d80a62ce19808f6d985c1b5_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a8bbbd92a6d80a62ce19808f6d985c1b5_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138_a2990e16281cd755315f30fdd1c93741d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138_a2990e16281cd755315f30fdd1c93741d_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00061.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00061.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_0.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_0.png"'
 sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00061.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00061.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00135_ad002585dbdd2d98063a577a63c1da145_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00135_ad002585dbdd2d98063a577a63c1da145_cgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00125.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00125.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not found
-
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00034.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00034.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00072.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00072.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00146.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00146.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00034.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00034.png"'
-dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_aeca659dd59433366298ce1a828208d62_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_aeca659dd59433366298ce1a828208d62_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131_ab057d70681a544f6968fb3a31e24b70e_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131_ab057d70681a544f6968fb3a31e24b70e_cgraph.png"'
-sh: 1: dot: not found
-sh: 1: dot: not foundsh: 1: 
-dot: not found
-sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00060.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00060.png"'
-dot: not founderror: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_1.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_1.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00139_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00139_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00111.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00111.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00108.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00108.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a95fb76862b8cc8e17ff4ef8e93123a20_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a95fb76862b8cc8e17ff4ef8e93123a20_icgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00139_a80691e151f45065f7cd520bea08406a5_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00139_a80691e151f45065f7cd520bea08406a5_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00167_a0e87b310ac7caa6827d71ba26c49c738_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00167_a0e87b310ac7caa6827d71ba26c49c738_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00124.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00124.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00060.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00060.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_1.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_1.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138_aa31a5bf6d996451c9fac66875527f349_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138_aa31a5bf6d996451c9fac66875527f349_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00033.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00033.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00135_af50957f9bd12f9f066bb444759d92654_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00135_af50957f9bd12f9f066bb444759d92654_cgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not found
-dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00155_a0c8aa2b5c986329da5becc2b446d1866_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00155_a0c8aa2b5c986329da5becc2b446d1866_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00092_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00092_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.png"'
-dot: not found
+sh: 1: sh: 1: dot: not founddot: not found
+
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/graph_legend.dot" -Tpng -o "/home/maciek/dron3/dox/html/graph_legend.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154_adc175de766b12dbbf889bd33c51cd887_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154_adc175de766b12dbbf889bd33c51cd887_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a524ac639a8470d7552dbcb2d7ec19387_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a524ac639a8470d7552dbcb2d7ec19387_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00151_a208ac88d3fd9922ed9009152ae5421b6_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00151_a208ac88d3fd9922ed9009152ae5421b6_cgraph.png"'
-sh: 1: sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00163_a040abafcd373b0fb3c0e8c59c7658db6_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00163_a040abafcd373b0fb3c0e8c59c7658db6_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a524ac639a8470d7552dbcb2d7ec19387_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a524ac639a8470d7552dbcb2d7ec19387_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00122.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00122.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_aba5cd9be3daabe70b47768fb56d9484f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_aba5cd9be3daabe70b47768fb56d9484f_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_abb35041f520091427ddc3ca4cdd9b4ad_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_abb35041f520091427ddc3ca4cdd9b4ad_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154_a07850699dbf34c249b4d7240394e49fa_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154_a07850699dbf34c249b4d7240394e49fa_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138_a1a8b40155664055a6e6c167907c965b2_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138_a1a8b40155664055a6e6c167907c965b2_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00166_a5452e1e8dbdb8c70dd7893aff35b847d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00166_a5452e1e8dbdb8c70dd7893aff35b847d_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00087.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00087.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
 
-
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_ae72678ebd84f521a70ecfc59fdf0ca68_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_ae72678ebd84f521a70ecfc59fdf0ca68_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00090.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00090.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00049.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00049.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00137.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00137.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
-
-
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138_ad002585dbdd2d98063a577a63c1da145_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138_ad002585dbdd2d98063a577a63c1da145_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00166_a207ed254ed8af8180d29f20c6c843380_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00166_a207ed254ed8af8180d29f20c6c843380_cgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_4.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_4.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00137.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00137.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_aeca659dd59433366298ce1a828208d62_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_aeca659dd59433366298ce1a828208d62_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00048.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00048.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00153.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00153.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a8bbbd92a6d80a62ce19808f6d985c1b5_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a8bbbd92a6d80a62ce19808f6d985c1b5_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00044_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00044_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00136.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00136.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00155_a8f37c33d08de805c7855b66fe46e901a_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00155_a8f37c33d08de805c7855b66fe46e901a_icgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not foundsh: 1: dot: not found
-dot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_aba5cd9be3daabe70b47768fb56d9484f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_aba5cd9be3daabe70b47768fb56d9484f_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00051.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00051.png"'
-dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_ad5078558b323936a82982880d4013da8_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_ad5078558b323936a82982880d4013da8_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134_a04b69f8a32c51c8703baabafd8da7b02_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134_a04b69f8a32c51c8703baabafd8da7b02_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00064.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00064.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00139_a0c0db45c90aec72ad2d6e97a95f72ea7_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00139_a0c0db45c90aec72ad2d6e97a95f72ea7_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00146_ab0699c8f99fa17bbcc4a7c400bed506d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00146_ab0699c8f99fa17bbcc4a7c400bed506d_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_5.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_5.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00152.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00152.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00141.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00141.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138_af50957f9bd12f9f066bb444759d92654_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138_af50957f9bd12f9f066bb444759d92654_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00114.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00114.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00063.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00063.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_2.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_2.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00155_a97065b4375d19d6f2bee4a610a425b4e_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00155_a97065b4375d19d6f2bee4a610a425b4e_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a0b811a5347c55562de665dfe45df2040_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a0b811a5347c55562de665dfe45df2040_icgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00166_a040abafcd373b0fb3c0e8c59c7658db6_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00166_a040abafcd373b0fb3c0e8c59c7658db6_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00046.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00046.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00140.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00140.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00169.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00169.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00078.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00078.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134_a94baa09555c3471f3f775dfebdfe8e86_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134_a94baa09555c3471f3f775dfebdfe8e86_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_3.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_3.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a0b811a5347c55562de665dfe45df2040_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a0b811a5347c55562de665dfe45df2040_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00166_a660271a990c2fad2e4d1ce94bce80b39_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00166_a660271a990c2fad2e4d1ce94bce80b39_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a0e67fffddcdc291ba6234949caa173a0_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a0e67fffddcdc291ba6234949caa173a0_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00158_a8f37c33d08de805c7855b66fe46e901a_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00158_a8f37c33d08de805c7855b66fe46e901a_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a564693f4bada82b98d5c172d407e7c61_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a564693f4bada82b98d5c172d407e7c61_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.png"'
+sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not founddot: not found
+
+
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134_ab057d70681a544f6968fb3a31e24b70e_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134_ab057d70681a544f6968fb3a31e24b70e_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154_a208ac88d3fd9922ed9009152ae5421b6_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154_a208ac88d3fd9922ed9009152ae5421b6_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_ad0fbaa8d3735621d2da755e2e43772c6_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_ad0fbaa8d3735621d2da755e2e43772c6_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_20980d61131da5791df5245c2ae7cc9b_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_20980d61131da5791df5245c2ae7cc9b_dep.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00170_a0e87b310ac7caa6827d71ba26c49c738_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00170_a0e87b310ac7caa6827d71ba26c49c738_icgraph.png"'
+sh: 1: sh: 1: sh: 1: dot: not founddot: not found
+
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138_a583a45b40682871dea28126134a81e78_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138_a583a45b40682871dea28126134a81e78_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00039.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00039.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_db1df6b390d8921f22601c9f1cca779d_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_db1df6b390d8921f22601c9f1cca779d_dep.png"'
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a25f42d02fc5b27f30e872d444ffb5230_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a25f42d02fc5b27f30e872d444ffb5230_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00142_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00142_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.png"'
 sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
 
 
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_aeca659dd59433366298ce1a828208d62_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_aeca659dd59433366298ce1a828208d62_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00078.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00078.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00135_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00135_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00046.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00046.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00123_acc96bfdcd122da809e00ce225f5c5238_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00123_acc96bfdcd122da809e00ce225f5c5238_icgraph.png"'
-sh: 1: sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/inherit_graph_3.dot" -Tpng -o "/home/maciek/dron3/dox/html/inherit_graph_3.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a0e67fffddcdc291ba6234949caa173a0_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a0e67fffddcdc291ba6234949caa173a0_icgraph.png"'
-sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a4e95d386cc2ff7fd1ae7c94530a8bde6_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a4e95d386cc2ff7fd1ae7c94530a8bde6_cgraph.png"'
-sh: 1: sh: 1: dot: not founddot: not found
-
-sh: 1: dot: not founderror: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_20980d61131da5791df5245c2ae7cc9b_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_20980d61131da5791df5245c2ae7cc9b_dep.png"'
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_ae1fb7dd84aff0aee71199ab6e2ee2949_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_ae1fb7dd84aff0aee71199ab6e2ee2949_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.png"'
-sh: 1: sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00155_a0c8aa2b5c986329da5becc2b446d1866_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00155_a0c8aa2b5c986329da5becc2b446d1866_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00039.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00039.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_db1df6b390d8921f22601c9f1cca779d_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_db1df6b390d8921f22601c9f1cca779d_dep.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_aba5cd9be3daabe70b47768fb56d9484f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_aba5cd9be3daabe70b47768fb56d9484f_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_aeca659dd59433366298ce1a828208d62_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_aeca659dd59433366298ce1a828208d62_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a9cea5ba789e3ac0961846a77d909b552_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a9cea5ba789e3ac0961846a77d909b552_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00093.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00093.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00142_a3631a29ba93b0235069a0c57879a854b_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00142_a3631a29ba93b0235069a0c57879a854b_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a2643745b8ed7125e4caf1b9e56a4aa1f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a2643745b8ed7125e4caf1b9e56a4aa1f_cgraph.png"'
 sh: 1: sh: 1: dot: not founddot: not found
 
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00129.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00129.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a86d7fab7b926930274de0ee8eebbb0f0_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a86d7fab7b926930274de0ee8eebbb0f0_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a95fb76862b8cc8e17ff4ef8e93123a20_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a95fb76862b8cc8e17ff4ef8e93123a20_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00166_a000ad322c38cf2061f076814838fc6eb_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00166_a000ad322c38cf2061f076814838fc6eb_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00055.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00055.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.png"'
-sh: 1: sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00151_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00151_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_aa0e058c1c55a73cccb4098d2b02bba27_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_aa0e058c1c55a73cccb4098d2b02bba27_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00166.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00166.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00047_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00047_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.png"'
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00081.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00081.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00054.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00054.png"'
-sh: 1: sh: 1: dot: not founddot: not found
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00037.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00037.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_ad5078558b323936a82982880d4013da8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_ad5078558b323936a82982880d4013da8_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a73e0a729daf06e3a66eb1d3484b3433d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a73e0a729daf06e3a66eb1d3484b3433d_cgraph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00138_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00138_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00054.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00054.png"'
+sh: 1: dot: not found
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.png"'
+dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_89cc6af6a5c529de3d807223897445ec_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_89cc6af6a5c529de3d807223897445ec_dep.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a524ac639a8470d7552dbcb2d7ec19387_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a524ac639a8470d7552dbcb2d7ec19387_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00128.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00128.png"'
+sh: 1: sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
+
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a73e0a729daf06e3a66eb1d3484b3433d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a73e0a729daf06e3a66eb1d3484b3433d_icgraph.png"'
-sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00036.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00036.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_aa0e058c1c55a73cccb4098d2b02bba27_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_aa0e058c1c55a73cccb4098d2b02bba27_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a5b9d0c10ff51cd0fb749372277dbe017_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a5b9d0c10ff51cd0fb749372277dbe017_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00135_a583a45b40682871dea28126134a81e78_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00135_a583a45b40682871dea28126134a81e78_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00158_a8f37c33d08de805c7855b66fe46e901a_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00158_a8f37c33d08de805c7855b66fe46e901a_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_ae1fb7dd84aff0aee71199ab6e2ee2949_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_ae1fb7dd84aff0aee71199ab6e2ee2949_icgraph.png"'
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a73e0a729daf06e3a66eb1d3484b3433d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a73e0a729daf06e3a66eb1d3484b3433d_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00037.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00037.png"'
 sh: 1: sh: 1: dot: not founddot: not found
 
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00163_a207ed254ed8af8180d29f20c6c843380_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00163_a207ed254ed8af8180d29f20c6c843380_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00139_a46ef0ef79e273d707017f59bc5512548_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00139_a46ef0ef79e273d707017f59bc5512548_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00163_a5452e1e8dbdb8c70dd7893aff35b847d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00163_a5452e1e8dbdb8c70dd7893aff35b847d_icgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not found
-
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00105.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00105.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131_addc73d834785a19740ed43e094720257_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131_addc73d834785a19740ed43e094720257_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00126.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00126.png"'
-dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00036.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00036.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00142_a46ef0ef79e273d707017f59bc5512548_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00142_a46ef0ef79e273d707017f59bc5512548_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a5b9d0c10ff51cd0fb749372277dbe017_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a5b9d0c10ff51cd0fb749372277dbe017_icgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00052.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00052.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00158_a95a97faff0de26090510d6a32eb66295_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00158_a95a97faff0de26090510d6a32eb66295_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a9cea5ba789e3ac0961846a77d909b552_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a9cea5ba789e3ac0961846a77d909b552_cgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00151_a07850699dbf34c249b4d7240394e49fa_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00151_a07850699dbf34c249b4d7240394e49fa_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00166_a660271a990c2fad2e4d1ce94bce80b39_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00166_a660271a990c2fad2e4d1ce94bce80b39_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_ab40952b8aec13ed7d6d340b32f219e7a_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_ab40952b8aec13ed7d6d340b32f219e7a_icgraph.png"'
 sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
 
 
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00167_aca086c1c63c38e4749c86674d655e737_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00167_aca086c1c63c38e4749c86674d655e737_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a9cea5ba789e3ac0961846a77d909b552_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a9cea5ba789e3ac0961846a77d909b552_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00040.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00040.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00158_a97065b4375d19d6f2bee4a610a425b4e_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00158_a97065b4375d19d6f2bee4a610a425b4e_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00095_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00095_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00151_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00151_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_a86d7fab7b926930274de0ee8eebbb0f0_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_a86d7fab7b926930274de0ee8eebbb0f0_cgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00069.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00069.png"'
-sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00143_ab0699c8f99fa17bbcc4a7c400bed506d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00143_ab0699c8f99fa17bbcc4a7c400bed506d_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00139_a46ef0ef79e273d707017f59bc5512548_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00139_a46ef0ef79e273d707017f59bc5512548_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131_a94baa09555c3471f3f775dfebdfe8e86_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131_a94baa09555c3471f3f775dfebdfe8e86_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134_addc73d834785a19740ed43e094720257_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134_addc73d834785a19740ed43e094720257_cgraph.png"'
 sh: 1: sh: 1: dot: not founddot: not found
 
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00155_a8f37c33d08de805c7855b66fe46e901a_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00155_a8f37c33d08de805c7855b66fe46e901a_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00084.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00084.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154_a208ac88d3fd9922ed9009152ae5421b6_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154_a208ac88d3fd9922ed9009152ae5421b6_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00170_aca086c1c63c38e4749c86674d655e737_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00170_aca086c1c63c38e4749c86674d655e737_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00040.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00040.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_aba5cd9be3daabe70b47768fb56d9484f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_aba5cd9be3daabe70b47768fb56d9484f_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00069.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00069.png"'
+sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
+
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00157.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00157.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_aca7c226602e49d6c233df6fdadaa8b4f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_aca7c226602e49d6c233df6fdadaa8b4f_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00142_a46ef0ef79e273d707017f59bc5512548_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00142_a46ef0ef79e273d707017f59bc5512548_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00102.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00102.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00158_a0c8aa2b5c986329da5becc2b446d1866_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00158_a0c8aa2b5c986329da5becc2b446d1866_cgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a25f42d02fc5b27f30e872d444ffb5230_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a25f42d02fc5b27f30e872d444ffb5230_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00156.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00156.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00084.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00084.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00142_a80691e151f45065f7cd520bea08406a5_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00142_a80691e151f45065f7cd520bea08406a5_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00126_acc96bfdcd122da809e00ce225f5c5238_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00126_acc96bfdcd122da809e00ce225f5c5238_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00067.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00067.png"'
-sh: 1: sh: 1: dot: not found
-dot: not found
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00070.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00070.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00155_a95a97faff0de26090510d6a32eb66295_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00155_a95a97faff0de26090510d6a32eb66295_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00159_a93c4b60ab40bdb5a9247add7fb487155_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00159_a93c4b60ab40bdb5a9247add7fb487155_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00155_a95a97faff0de26090510d6a32eb66295_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00155_a95a97faff0de26090510d6a32eb66295_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00135_a583a45b40682871dea28126134a81e78_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00135_a583a45b40682871dea28126134a81e78_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a9cea5ba789e3ac0961846a77d909b552_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a9cea5ba789e3ac0961846a77d909b552_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00134.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00134.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00099.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00099.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00045.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00045.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00151_a208ac88d3fd9922ed9009152ae5421b6_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00151_a208ac88d3fd9922ed9009152ae5421b6_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00135_a2990e16281cd755315f30fdd1c93741d_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00135_a2990e16281cd755315f30fdd1c93741d_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a73e0a729daf06e3a66eb1d3484b3433d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a73e0a729daf06e3a66eb1d3484b3433d_cgraph.png"'
-sh: 1: sh: 1: dot: not founddot: not found
-
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00066.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00066.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131_a04b69f8a32c51c8703baabafd8da7b02_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131_a04b69f8a32c51c8703baabafd8da7b02_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00139_a3631a29ba93b0235069a0c57879a854b_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00139_a3631a29ba93b0235069a0c57879a854b_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.png"'
-sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00135_aa31a5bf6d996451c9fac66875527f349_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00135_aa31a5bf6d996451c9fac66875527f349_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00151_adc175de766b12dbbf889bd33c51cd887_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00151_adc175de766b12dbbf889bd33c51cd887_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00163_a660271a990c2fad2e4d1ce94bce80b39_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00163_a660271a990c2fad2e4d1ce94bce80b39_icgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00131_addc73d834785a19740ed43e094720257_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00131_addc73d834785a19740ed43e094720257_cgraph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00133.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00133.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00028.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00028.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_3f1d4c8d71d368e93a6ec580db2c627d_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_3f1d4c8d71d368e93a6ec580db2c627d_dep.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00031.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00031.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00163_a000ad322c38cf2061f076814838fc6eb_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00163_a000ad322c38cf2061f076814838fc6eb_icgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
-
-
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00163_a660271a990c2fad2e4d1ce94bce80b39_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00163_a660271a990c2fad2e4d1ce94bce80b39_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/dir_3f1d4c8d71d368e93a6ec580db2c627d_dep.dot" -Tpng -o "/home/maciek/dron3/dox/html/dir_3f1d4c8d71d368e93a6ec580db2c627d_dep.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a93c4b60ab40bdb5a9247add7fb487155_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a93c4b60ab40bdb5a9247add7fb487155_icgraph.png"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00132.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00132.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00151_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00151_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00130_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00130_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_abb35041f520091427ddc3ca4cdd9b4ad_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_abb35041f520091427ddc3ca4cdd9b4ad_cgraph.png"'
-sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
-
-
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00030.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00030.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_a85043c9ab654565bb109585b676ca20f_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_a85043c9ab654565bb109585b676ca20f_icgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00027.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00027.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00121.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00121.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00154_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00154_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00127_aca7c226602e49d6c233df6fdadaa8b4f_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00127_aca7c226602e49d6c233df6fdadaa8b4f_cgraph.png"'
-error: problems opening map file /home/maciek/dron3/dox/html/a00027.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00028.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00092_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00092_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/maciek/dron3/dox/html/a00162_ad5078558b323936a82982880d4013da8_icgraph.dot" -Tpng -o "/home/maciek/dron3/dox/html/a00162_ad5078558b323936a82982880d4013da8_icgraph.png"'
 error: problems opening map file /home/maciek/dron3/dox/html/a00030.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
@@ -457,13 +455,13 @@ try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00046.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00044_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00048.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00049.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00051.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00047_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00052.map for inclusion in the docs!
@@ -508,6 +506,9 @@ try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00072.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00073.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00075.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
@@ -526,16 +527,16 @@ try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00090.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00089_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00093.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00092_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00092_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00096.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00095_a93c8997213d37d9cf5f08446aa8f2ed8_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00099.map for inclusion in the docs!
@@ -553,331 +554,340 @@ try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00111.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00122.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00121.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00123_acc96bfdcd122da809e00ce225f5c5238_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00126.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00114.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00125.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a2643745b8ed7125e4caf1b9e56a4aa1f_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00124.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a73e0a729daf06e3a66eb1d3484b3433d_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a73e0a729daf06e3a66eb1d3484b3433d_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a86d7fab7b926930274de0ee8eebbb0f0_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_ae1fb7dd84aff0aee71199ab6e2ee2949_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_aca7c226602e49d6c233df6fdadaa8b4f_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a9cea5ba789e3ac0961846a77d909b552_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a9cea5ba789e3ac0961846a77d909b552_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a25f42d02fc5b27f30e872d444ffb5230_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_abb35041f520091427ddc3ca4cdd9b4ad_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_aa0e058c1c55a73cccb4098d2b02bba27_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a85043c9ab654565bb109585b676ca20f_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_ad0fbaa8d3735621d2da755e2e43772c6_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a564693f4bada82b98d5c172d407e7c61_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a4e95d386cc2ff7fd1ae7c94530a8bde6_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a5b9d0c10ff51cd0fb749372277dbe017_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00127_a70329a1e382c3c78f88f79328d525c88_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00130.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00126_acc96bfdcd122da809e00ce225f5c5238_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00129.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00131_ab057d70681a544f6968fb3a31e24b70e_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00128.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00131_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a2643745b8ed7125e4caf1b9e56a4aa1f_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00131_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a73e0a729daf06e3a66eb1d3484b3433d_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00131_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a73e0a729daf06e3a66eb1d3484b3433d_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00131_a94baa09555c3471f3f775dfebdfe8e86_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00131_a04b69f8a32c51c8703baabafd8da7b02_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a86d7fab7b926930274de0ee8eebbb0f0_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00131_addc73d834785a19740ed43e094720257_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_ae1fb7dd84aff0aee71199ab6e2ee2949_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00131_addc73d834785a19740ed43e094720257_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_aca7c226602e49d6c233df6fdadaa8b4f_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00134.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_aca7c226602e49d6c233df6fdadaa8b4f_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a9cea5ba789e3ac0961846a77d909b552_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a9cea5ba789e3ac0961846a77d909b552_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a25f42d02fc5b27f30e872d444ffb5230_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_abb35041f520091427ddc3ca4cdd9b4ad_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_aa0e058c1c55a73cccb4098d2b02bba27_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_aa0e058c1c55a73cccb4098d2b02bba27_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_ae8449c4acc9e1de1819b7db69f8665fe_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a85043c9ab654565bb109585b676ca20f_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a10e3f7aeae3b22d76e9b79ae216e9e77_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_ad0fbaa8d3735621d2da755e2e43772c6_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a0b811a5347c55562de665dfe45df2040_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a0b811a5347c55562de665dfe45df2040_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a564693f4bada82b98d5c172d407e7c61_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a4e95d386cc2ff7fd1ae7c94530a8bde6_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a5b9d0c10ff51cd0fb749372277dbe017_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00130_a70329a1e382c3c78f88f79328d525c88_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00133.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00135_af50957f9bd12f9f066bb444759d92654_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00132.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00135_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00134_ab057d70681a544f6968fb3a31e24b70e_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00135_aa31a5bf6d996451c9fac66875527f349_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00134_acc9cd64af5c1a35f1385662a6fb5bdd4_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00135_a2990e16281cd755315f30fdd1c93741d_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00134_a0ea5d70a372d56a8e1d82450071d1d8d_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00135_ad002585dbdd2d98063a577a63c1da145_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00134_a65b6da0510eba9d358186f5c9d3f9ef4_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00135_a1a8b40155664055a6e6c167907c965b2_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00134_a94baa09555c3471f3f775dfebdfe8e86_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00135_a583a45b40682871dea28126134a81e78_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00134_a04b69f8a32c51c8703baabafd8da7b02_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00135_a583a45b40682871dea28126134a81e78_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00134_addc73d834785a19740ed43e094720257_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00138.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00134_addc73d834785a19740ed43e094720257_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00137.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00139_a46ef0ef79e273d707017f59bc5512548_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00136.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00139_a46ef0ef79e273d707017f59bc5512548_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00138_af50957f9bd12f9f066bb444759d92654_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00139_a80691e151f45065f7cd520bea08406a5_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00138_a9fac0d1e5b5b0e205a84110b13e55563_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00139_a0c0db45c90aec72ad2d6e97a95f72ea7_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00138_aa31a5bf6d996451c9fac66875527f349_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00139_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00138_a2990e16281cd755315f30fdd1c93741d_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00139_a3631a29ba93b0235069a0c57879a854b_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00138_ad002585dbdd2d98063a577a63c1da145_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00139_a3631a29ba93b0235069a0c57879a854b_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00138_a1a8b40155664055a6e6c167907c965b2_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00143_ab0699c8f99fa17bbcc4a7c400bed506d_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00138_a583a45b40682871dea28126134a81e78_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00146.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00138_a583a45b40682871dea28126134a81e78_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00150.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00141.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00140.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00142_a46ef0ef79e273d707017f59bc5512548_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00142_a46ef0ef79e273d707017f59bc5512548_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00142_a80691e151f45065f7cd520bea08406a5_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00142_a0c0db45c90aec72ad2d6e97a95f72ea7_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00142_a0c0db45c90aec72ad2d6e97a95f72ea7_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00142_a3631a29ba93b0235069a0c57879a854b_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00142_a3631a29ba93b0235069a0c57879a854b_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00146_ab0699c8f99fa17bbcc4a7c400bed506d_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00149.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00151_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00151_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00151_adc175de766b12dbbf889bd33c51cd887_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00151_a07850699dbf34c249b4d7240394e49fa_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00151_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00151_a208ac88d3fd9922ed9009152ae5421b6_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00151_a208ac88d3fd9922ed9009152ae5421b6_icgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00151_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00154.map for inclusion in the docs!
-If you installed Graphviz/dot after a previous failing run, 
-try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/a00153.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00155_a0c8aa2b5c986329da5becc2b446d1866_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00152.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00155_a0c8aa2b5c986329da5becc2b446d1866_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00154_a00b036ffe0b8b1af2ddfaddbfe143bea_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00155_a97065b4375d19d6f2bee4a610a425b4e_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00154_a61505a62183ba4ee34ba6cd44820a5fb_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00155_a95a97faff0de26090510d6a32eb66295_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00154_adc175de766b12dbbf889bd33c51cd887_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00155_a95a97faff0de26090510d6a32eb66295_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00154_a07850699dbf34c249b4d7240394e49fa_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00155_a8f37c33d08de805c7855b66fe46e901a_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00154_a8d0f64a508fb2c2d0dbabb1e2dc1e59b_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00155_a8f37c33d08de805c7855b66fe46e901a_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00154_a208ac88d3fd9922ed9009152ae5421b6_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a95fb76862b8cc8e17ff4ef8e93123a20_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00154_a208ac88d3fd9922ed9009152ae5421b6_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00154_aed9175cc8addd3c0011ca4da347a8b2d_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_ab40952b8aec13ed7d6d340b32f219e7a_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00157.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00156.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_ae72678ebd84f521a70ecfc59fdf0ca68_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00158_a0c8aa2b5c986329da5becc2b446d1866_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00158_a0c8aa2b5c986329da5becc2b446d1866_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00158_a97065b4375d19d6f2bee4a610a425b4e_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00158_a95a97faff0de26090510d6a32eb66295_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00158_a95a97faff0de26090510d6a32eb66295_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_aba5cd9be3daabe70b47768fb56d9484f_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00158_a8f37c33d08de805c7855b66fe46e901a_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_aba5cd9be3daabe70b47768fb56d9484f_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00158_a8f37c33d08de805c7855b66fe46e901a_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a0e67fffddcdc291ba6234949caa173a0_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a95fb76862b8cc8e17ff4ef8e93123a20_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_aeca659dd59433366298ce1a828208d62_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_ac4877c70e5361e3cba1ea25ea2e48663_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_aeca659dd59433366298ce1a828208d62_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_ab40952b8aec13ed7d6d340b32f219e7a_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_ad5078558b323936a82982880d4013da8_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a4be9ff121b9dc9fe1ce0707fea9d44b4_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_ad5078558b323936a82982880d4013da8_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_ae72678ebd84f521a70ecfc59fdf0ca68_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a8bbbd92a6d80a62ce19808f6d985c1b5_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a6faca9a9cb055f76ea492826cf77cbe4_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a524ac639a8470d7552dbcb2d7ec19387_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a6faca9a9cb055f76ea492826cf77cbe4_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a524ac639a8470d7552dbcb2d7ec19387_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a436531fb0912fd07d0c0ab08418cb3f9_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_a93c4b60ab40bdb5a9247add7fb487155_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a436531fb0912fd07d0c0ab08418cb3f9_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_aba5cd9be3daabe70b47768fb56d9484f_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00159_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_aba5cd9be3daabe70b47768fb56d9484f_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00163_a5452e1e8dbdb8c70dd7893aff35b847d_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a0e67fffddcdc291ba6234949caa173a0_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00163_a660271a990c2fad2e4d1ce94bce80b39_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_aeca659dd59433366298ce1a828208d62_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00163_a660271a990c2fad2e4d1ce94bce80b39_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_aeca659dd59433366298ce1a828208d62_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00163_a207ed254ed8af8180d29f20c6c843380_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_ad5078558b323936a82982880d4013da8_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00163_a207ed254ed8af8180d29f20c6c843380_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_ad5078558b323936a82982880d4013da8_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00163_a000ad322c38cf2061f076814838fc6eb_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a8bbbd92a6d80a62ce19808f6d985c1b5_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00163_a040abafcd373b0fb3c0e8c59c7658db6_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a524ac639a8470d7552dbcb2d7ec19387_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00166.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a524ac639a8470d7552dbcb2d7ec19387_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00167_a0e87b310ac7caa6827d71ba26c49c738_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_a93c4b60ab40bdb5a9247add7fb487155_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/maciek/dron3/dox/html/a00167_aca086c1c63c38e4749c86674d655e737_icgraph.map for inclusion in the docs!
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_ac9f1a3bce32dd78653ab68b2d2ef2669_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00162_ab4c786d9def8a483b9873c27b5bd7f13_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00166_a5452e1e8dbdb8c70dd7893aff35b847d_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00166_a660271a990c2fad2e4d1ce94bce80b39_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00166_a660271a990c2fad2e4d1ce94bce80b39_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00166_a207ed254ed8af8180d29f20c6c843380_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00166_a207ed254ed8af8180d29f20c6c843380_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00166_a000ad322c38cf2061f076814838fc6eb_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00166_a040abafcd373b0fb3c0e8c59c7658db6_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00169.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00170_a0e87b310ac7caa6827d71ba26c49c738_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/maciek/dron3/dox/html/a00170_aca086c1c63c38e4749c86674d655e737_icgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/maciek/dron3/dox/html/dir_3f1d4c8d71d368e93a6ec580db2c627d_dep.map for inclusion in the docs!

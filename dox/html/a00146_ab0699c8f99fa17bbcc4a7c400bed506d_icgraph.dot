@@ -1,0 +1,44 @@
+digraph "Macierz3x3::ObrotZ"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Macierz3x3::ObrotZ",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Metoda generujaca macierz obrotu wokol osi OZ."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Dron::LotDoPrzodu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb",tooltip="Metoda realizujaca lot do przodu drona."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Dron::Oblicz_i_Zapisz\l_WspRotorow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#aca7c226602e49d6c233df6fdadaa8b4f",tooltip="Obliczajaca wspolrzedne rotorow drona."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Dron::Oblicz_i_ZapiszWsp\lDrona",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#a9cea5ba789e3ac0961846a77d909b552",tooltip="Metoda zapisujaca polozenie poszczegolnych wierzcholkow."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Dron::Czekaj",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#a2643745b8ed7125e4caf1b9e56a4aa1f",tooltip="Metoda animujaca lot w miejscu."];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Dron::Obrot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#a25f42d02fc5b27f30e872d444ffb5230",tooltip="Metody Animujace ruch drona."];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Dron::TransDoUklRodzica",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#aa0e058c1c55a73cccb4098d2b02bba27",tooltip="!"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Dron::Lec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#a73e0a729daf06e3a66eb1d3484b3433d",tooltip="Metoda realizujaca lot drona."];
+  Node8 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="Dron::LotPionowy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#a86d7fab7b926930274de0ee8eebbb0f0",tooltip="Metoda realizujaca lot pionowy drona."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node10 [label="Graniastoslup::Obrot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00142.html#a46ef0ef79e273d707017f59bc5512548",tooltip="Metoda Obracajaca Prostopadloscian."];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node11 [label="Graniastoslup::Transformacja",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00142.html#a0c0db45c90aec72ad2d6e97a95f72ea7",tooltip="Metoda transformujaca prostopadloscia."];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node12 [label="Graniastoslup::TworzOpis\lGraniastoslupu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00142.html#a3631a29ba93b0235069a0c57879a854b",tooltip="Metoda tworzaca opis prostopadloscianu."];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 [label="Graniastoslup::TransDoUkl\lRodzica",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00142.html#a80691e151f45065f7cd520bea08406a5",tooltip="Metoda przesuwajaca Prostopadloscian wzgledem Drona."];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node14 [label="Prostopadloscian::Obrot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00158.html#a0c8aa2b5c986329da5becc2b446d1866",tooltip="Metoda Obracajaca Prostopadloscian."];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node15 [label="Prostopadloscian::Transformacja",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00158.html#a95a97faff0de26090510d6a32eb66295",tooltip="Metoda transformujaca prostopadloscia."];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node16 [label="Prostopadloscian::TworzOpis\lProstopadloscianu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00158.html#a8f37c33d08de805c7855b66fe46e901a",tooltip="Metoda tworzaca opis prostopadloscianu."];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node17 [label="Prostopadloscian::TransDo\lUklRodzica",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00158.html#a97065b4375d19d6f2bee4a610a425b4e",tooltip="Metoda przesuwajaca Prostopadloscian wzgledem Drona."];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node18 [label="Dron::UstawRotory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00130.html#a0b811a5347c55562de665dfe45df2040",tooltip="Metoda obliczajaca polozenie rotorow."];
+  Node18 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+}

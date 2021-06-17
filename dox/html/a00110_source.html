@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/src/Wektor3D.cpp</title>
+<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/src/Sciezka.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,17 +61,89 @@ $(document).ready(function(){initNavTree('a00110_source.html',''); initResizable
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">Wektor3D.cpp</div>  </div>
+<div class="title">Sciezka.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00110.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00068.html">Wektor3D.hh</a>&quot;</span></div>
+<a href="a00110.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00065.html">Sciezka.hh</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00166.html#a5452e1e8dbdb8c70dd7893aff35b847d">   19</a></span>&#160;<a class="code" href="a00170.html">Wektor3D</a> <a class="code" href="a00166.html#a5452e1e8dbdb8c70dd7893aff35b847d">Sciezka::ObliczNoweWsp</a>(<span class="keyword">const</span> <a class="code" href="a00170.html">Wektor3D</a>&amp; Polozenie_poczatkowe, <span class="keywordtype">double</span> kat_skretu, <span class="keywordtype">double</span> Dlugosc_lotu)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="a00170.html">Wektor3D</a> Wsp;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">double</span> kat_rad = kat_skretu*M_PI/180;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  Wsp[0] = Dlugosc_lotu * cos(kat_rad);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  Wsp[1] = Dlugosc_lotu * sin(kat_rad);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  Wsp += Polozenie_poczatkowe;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">return</span> Wsp;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00166.html#a207ed254ed8af8180d29f20c6c843380">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00166.html#a207ed254ed8af8180d29f20c6c843380">Sciezka::UstalSciezke</a>(<span class="keyword">const</span> <a class="code" href="a00170.html">Wektor3D</a>&amp; Polozenie_poczatkowe, <span class="keywordtype">double</span> kat_skretu_st, <span class="keywordtype">double</span> Dlugosc_lotu)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="a00170.html">Wektor3D</a> pomoc;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="a00166.html#ac66fadde7945755f8dbfaeb393ab8e59">ZestawPunktow</a>.push_back(Polozenie_poczatkowe);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  pomoc = Polozenie_poczatkowe;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  pomoc[2] += 80;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00166.html#ac66fadde7945755f8dbfaeb393ab8e59">ZestawPunktow</a>.push_back(pomoc);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  pomoc = <a class="code" href="a00166.html#a5452e1e8dbdb8c70dd7893aff35b847d">ObliczNoweWsp</a>(Polozenie_poczatkowe, kat_skretu_st, Dlugosc_lotu);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  pomoc[2] += 80;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="a00166.html#ac66fadde7945755f8dbfaeb393ab8e59">ZestawPunktow</a>.push_back(pomoc);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  pomoc[2] -= 80;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="a00166.html#ac66fadde7945755f8dbfaeb393ab8e59">ZestawPunktow</a>.push_back(pomoc);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a00166.html#a000ad322c38cf2061f076814838fc6eb">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00166.html#a000ad322c38cf2061f076814838fc6eb">Sciezka::WyczyscSciezke</a>(PzG::LaczeDoGNUPlota&amp; Lacze)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="a00166.html#ac66fadde7945755f8dbfaeb393ab8e59">ZestawPunktow</a>.clear();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  std::ofstream Plik_Trasa(<a class="code" href="a00029.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">if</span>(!Plik_Trasa.is_open())</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Nie udalo sie otworzyc pliku&quot;</span> &lt;&lt; <a class="code" href="a00029.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  Plik_Trasa &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  Lacze.Rysuj();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  Plik_Trasa.close();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="a00166.html#a040abafcd373b0fb3c0e8c59c7658db6">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00166.html#a040abafcd373b0fb3c0e8c59c7658db6">Sciezka::WyswietlSciezke</a>(std::ofstream&amp; Plik)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = <a class="code" href="a00166.html#ac66fadde7945755f8dbfaeb393ab8e59">ZestawPunktow</a>.cbegin(); i != <a class="code" href="a00166.html#ac66fadde7945755f8dbfaeb393ab8e59">ZestawPunktow</a>.cend(); ++i)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    Plik &lt;&lt; *i;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="a00166.html#a660271a990c2fad2e4d1ce94bce80b39">  113</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00166.html#a660271a990c2fad2e4d1ce94bce80b39">Sciezka::PlanujSciezke</a>(PzG::LaczeDoGNUPlota&amp; Lacze)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  std::ofstream Plik_Trasa(<a class="code" href="a00029.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">if</span>(!Plik_Trasa.is_open())</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Nie udalo sie otworzyc pliku&quot;</span> &lt;&lt; <a class="code" href="a00029.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="a00166.html#a040abafcd373b0fb3c0e8c59c7658db6">WyswietlSciezke</a>(Plik_Trasa);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  Lacze.Rysuj();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  Plik_Trasa.close();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00068_html"><div class="ttname"><a href="a00068.html">Wektor3D.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy Wektor3D.</div></div>
+<div class="ttc" id="aa00166_html_a207ed254ed8af8180d29f20c6c843380"><div class="ttname"><a href="a00166.html#a207ed254ed8af8180d29f20c6c843380">Sciezka::UstalSciezke</a></div><div class="ttdeci">void UstalSciezke(const Wektor3D &amp;Polozenie_poczatkowe, double kat_skretu_st, double dlugosc)</div><div class="ttdoc">Metoda obliczajace punkty sciezki.</div><div class="ttdef"><b>Definition:</b> <a href="a00110_source.html#l00046">Sciezka.cpp:46</a></div></div>
+<div class="ttc" id="aa00166_html_a040abafcd373b0fb3c0e8c59c7658db6"><div class="ttname"><a href="a00166.html#a040abafcd373b0fb3c0e8c59c7658db6">Sciezka::WyswietlSciezke</a></div><div class="ttdeci">void WyswietlSciezke(std::ofstream &amp;Plik) const</div><div class="ttdoc">Metoda zapisujaca wspolrzedne sciezki do pliku.</div><div class="ttdef"><b>Definition:</b> <a href="a00110_source.html#l00096">Sciezka.cpp:96</a></div></div>
+<div class="ttc" id="aa00166_html_a000ad322c38cf2061f076814838fc6eb"><div class="ttname"><a href="a00166.html#a000ad322c38cf2061f076814838fc6eb">Sciezka::WyczyscSciezke</a></div><div class="ttdeci">void WyczyscSciezke(PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metoda czyszczaca sciezke.</div><div class="ttdef"><b>Definition:</b> <a href="a00110_source.html#l00070">Sciezka.cpp:70</a></div></div>
+<div class="ttc" id="aa00170_html"><div class="ttname"><a href="a00170.html">Wektor</a></div><div class="ttdoc">modeluje pojecie Wektora o dowolnym rozmiarze</div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00024">Wektor.hh:24</a></div></div>
+<div class="ttc" id="aa00029_html_a346a5da43df2b2a2038e95c893ccb129"><div class="ttname"><a href="a00029.html#a346a5da43df2b2a2038e95c893ccb129">PLIK_TRASY_PRZELOTU</a></div><div class="ttdeci">#define PLIK_TRASY_PRZELOTU</div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00032">Nazwy.hh:32</a></div></div>
+<div class="ttc" id="aa00166_html_a660271a990c2fad2e4d1ce94bce80b39"><div class="ttname"><a href="a00166.html#a660271a990c2fad2e4d1ce94bce80b39">Sciezka::PlanujSciezke</a></div><div class="ttdeci">void PlanujSciezke(PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Metody odpowiedzialne za wizualizacje.</div><div class="ttdef"><b>Definition:</b> <a href="a00110_source.html#l00113">Sciezka.cpp:113</a></div></div>
+<div class="ttc" id="aa00166_html_a5452e1e8dbdb8c70dd7893aff35b847d"><div class="ttname"><a href="a00166.html#a5452e1e8dbdb8c70dd7893aff35b847d">Sciezka::ObliczNoweWsp</a></div><div class="ttdeci">Wektor3D ObliczNoweWsp(const Wektor3D &amp;Polozenie_poczatkowe, double kat_skretu_st, double dlugosc)</div><div class="ttdoc">Metoda obliczajace punkt koncowy sciezki.</div><div class="ttdef"><b>Definition:</b> <a href="a00110_source.html#l00019">Sciezka.cpp:19</a></div></div>
+<div class="ttc" id="aa00065_html"><div class="ttname"><a href="a00065.html">Sciezka.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy Sciezka.</div></div>
+<div class="ttc" id="aa00166_html_ac66fadde7945755f8dbfaeb393ab8e59"><div class="ttname"><a href="a00166.html#ac66fadde7945755f8dbfaeb393ab8e59">Sciezka::ZestawPunktow</a></div><div class="ttdeci">std::vector&lt; Wektor3D &gt; ZestawPunktow</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00031">Sciezka.hh:31</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_89cc6af6a5c529de3d807223897445ec.html">src</a></li><li class="navelem"><a class="el" href="a00110.html">Wektor3D.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_89cc6af6a5c529de3d807223897445ec.html">src</a></li><li class="navelem"><a class="el" href="a00110.html">Sciezka.cpp</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

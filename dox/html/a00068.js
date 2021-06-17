@@ -1,4 +1,6 @@
 var a00068 =
 [
-    [ "Wektor3D", "a00068.html#ac353a272b38b4ad342f7181ad7bdb91a", null ]
+    [ "Wektor", "a00170.html", "a00170" ],
+    [ "operator<<", "a00068.html#ad9987426ab232623d89f9e688dba757b", null ],
+    [ "operator>>", "a00068.html#a3d2ef8f21b2d0131978fd1b73cfb4c66", null ]
 ];

@@ -1,0 +1,24 @@
+digraph "Dron::UstawRotory"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Dron::UstawRotory",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Metoda obliczajaca polozenie rotorow."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Dron::Oblicz_i_Zapisz\l_WspRotorow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#aca7c226602e49d6c233df6fdadaa8b4f",tooltip="Obliczajaca wspolrzedne rotorow drona."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Dron::Oblicz_i_ZapiszWsp\lDrona",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a9cea5ba789e3ac0961846a77d909b552",tooltip="Metoda zapisujaca polozenie poszczegolnych wierzcholkow."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Dron::Czekaj",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a2643745b8ed7125e4caf1b9e56a4aa1f",tooltip="Metoda animujaca lot w miejscu."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Dron::Obrot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a25f42d02fc5b27f30e872d444ffb5230",tooltip="Metody Animujace ruch drona."];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Dron::TransDoUklRodzica",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#aa0e058c1c55a73cccb4098d2b02bba27",tooltip="!"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Dron::Lec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a73e0a729daf06e3a66eb1d3484b3433d",tooltip="Metoda realizujaca lot drona."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Dron::LotDoPrzodu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a9e450b22aa3c1fc6ebb9f7ed1ee2dbeb",tooltip="Metoda realizujaca lot do przodu drona."];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="Dron::LotPionowy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a86d7fab7b926930274de0ee8eebbb0f0",tooltip="Metoda realizujaca lot pionowy drona."];
+}

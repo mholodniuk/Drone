@@ -1,0 +1,34 @@
+digraph "Scena::Menu"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Scena::Menu",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Metody obslugujace dzialanie sceny."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Scena::DodajDrona",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#ac4877c70e5361e3cba1ea25ea2e48663",tooltip="Metoda Dodajaca drona."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Scena::DodajPrzeszkode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#a6faca9a9cb055f76ea492826cf77cbe4",tooltip="Metoda pozwalajaca dodanie nowej przeszkody do listy sceny."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Scena::DodajGoreZDlugaGrania",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#ab40952b8aec13ed7d6d340b32f219e7a",tooltip="Metody dodajace przeszkody."];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="Scena::DodajGoreZOstrymSzczytem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#a4be9ff121b9dc9fe1ce0707fea9d44b4",tooltip="Metoda Dodajaca gore z ostrym szczytem do sceny."];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Scena::DodajPlaskowyz",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#ae72678ebd84f521a70ecfc59fdf0ca68",tooltip="Metoda Dodajaca Plaskowyz do sceny."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Scena::LotDrona",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#a436531fb0912fd07d0c0ab08418cb3f9",tooltip="Metody animujace lot drona."];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Scena::CzyZajete",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#a95fb76862b8cc8e17ff4ef8e93123a20",tooltip="!"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="Scena::UsunPrzeszkode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#a524ac639a8470d7552dbcb2d7ec19387",tooltip="Metoda umozliwiajaca usuniecie danej przeszkody ze sceny."];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node10 [label="Scena::PokazPrzeszkody",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#a0e67fffddcdc291ba6234949caa173a0",tooltip="Metody usuwajace przeszkody."];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node11 [label="Scena::WyborDrona",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#a93c4b60ab40bdb5a9247add7fb487155",tooltip="Metoda pozwalajaca na wybor drona."];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node12 [label="Scena::WyswietlDrony",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#ac9f1a3bce32dd78653ab68b2d2ef2669",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 [label="Scena::WyswietlMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00162.html#ab4c786d9def8a483b9873c27b5bd7f13",tooltip="Metoda wyswietlajaca menu programu."];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node14 [label="Wektor::ZwrocIloscWektorow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00170.html#aca086c1c63c38e4749c86674d655e737",tooltip="Metody zwracajace ilosc obiektow."];
+}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/src/ObiektSceny.cpp</title>
+<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/src/Menu.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,17 +61,36 @@ $(document).ready(function(){initNavTree('a00095_source.html',''); initResizable
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">ObiektSceny.cpp</div>  </div>
+<div class="title">Menu.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00095.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00050.html">ObiektSceny.hh</a>&quot;</span></div>
+<a href="a00095.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00047.html">Menu.hh</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00050.html">Nazwy.hh</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00095.html#a93c8997213d37d9cf5f08446aa8f2ed8">    9</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00095.html#a93c8997213d37d9cf5f08446aa8f2ed8">UstawGNUPlot</a>(PzG::LaczeDoGNUPlota &amp; Lacze)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  Lacze.DodajNazwePliku(<span class="stringliteral">&quot;bryly_wzorcowe/plaszczyzna.dat&quot;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  Lacze.ZmienTrybRys(PzG::TR_3D);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  Lacze.Inicjalizuj();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  Lacze.UstawZakresX(0, 200);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  Lacze.UstawZakresY(0, 200);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  Lacze.UstawZakresZ(0, 120);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  Lacze.UstawRotacjeXZ(64,65);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00050_html"><div class="ttname"><a href="a00050.html">ObiektSceny.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy ObiektSceny.</div></div>
+<div class="ttc" id="aa00047_html"><div class="ttname"><a href="a00047.html">Menu.hh</a></div><div class="ttdoc">Ten plik zawiera funkcje pomocnicza.</div></div>
+<div class="ttc" id="aa00050_html"><div class="ttname"><a href="a00050.html">Nazwy.hh</a></div><div class="ttdoc">Ten plik zawiera nazwy poszczegolnych plikow jako makra.</div></div>
+<div class="ttc" id="aa00095_html_a93c8997213d37d9cf5f08446aa8f2ed8"><div class="ttname"><a href="a00095.html#a93c8997213d37d9cf5f08446aa8f2ed8">UstawGNUPlot</a></div><div class="ttdeci">void UstawGNUPlot(PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Funckja ustwiajaca odpowiednie parametry gnuplota.</div><div class="ttdef"><b>Definition:</b> <a href="a00095_source.html#l00009">Menu.cpp:9</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_89cc6af6a5c529de3d807223897445ec.html">src</a></li><li class="navelem"><a class="el" href="a00095.html">ObiektSceny.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_89cc6af6a5c529de3d807223897445ec.html">src</a></li><li class="navelem"><a class="el" href="a00095.html">Menu.cpp</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

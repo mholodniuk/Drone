@@ -24,8 +24,8 @@ var NAVTREE =
 [
   [ "Dragonfly", "index.html", [
     [ "Dron", "index.html", null ],
-    [ "Diagram klas", "a00172.html", [
-      [ "Diagram zależności między klasami", "a00172.html#s", null ]
+    [ "Diagram klas", "a00175.html", [
+      [ "Diagram zależności między klasami", "a00175.html#s", null ]
     ] ],
     [ "Klasy", "annotated.html", [
       [ "Lista klas", "annotated.html", "annotated_dup" ],
@@ -50,8 +50,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"a00026.html",
-"a00163.html#a000ad322c38cf2061f076814838fc6eb"
+"a00029.html",
+"a00166.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

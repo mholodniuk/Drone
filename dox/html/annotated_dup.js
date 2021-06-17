@@ -1,15 +1,15 @@
 var annotated_dup =
 [
-    [ "BrylaGeometryczna", "a00123.html", "a00123" ],
-    [ "Dron", "a00127.html", "a00127" ],
-    [ "GoraZDlugaGrania", "a00131.html", "a00131" ],
-    [ "GoraZOstrymSzczytem", "a00135.html", "a00135" ],
-    [ "Graniastoslup", "a00139.html", "a00139" ],
-    [ "Macierz3x3", "a00143.html", "a00143" ],
-    [ "ObiektSceny", "a00147.html", "a00147" ],
-    [ "Plaskowyz", "a00151.html", "a00151" ],
-    [ "Prostopadloscian", "a00155.html", "a00155" ],
-    [ "Scena", "a00159.html", "a00159" ],
-    [ "Sciezka", "a00163.html", "a00163" ],
-    [ "Wektor", "a00167.html", "a00167" ]
+    [ "BrylaGeometryczna", "a00126.html", "a00126" ],
+    [ "Dron", "a00130.html", "a00130" ],
+    [ "GoraZDlugaGrania", "a00134.html", "a00134" ],
+    [ "GoraZOstrymSzczytem", "a00138.html", "a00138" ],
+    [ "Graniastoslup", "a00142.html", "a00142" ],
+    [ "Macierz3x3", "a00146.html", "a00146" ],
+    [ "ObiektSceny", "a00150.html", "a00150" ],
+    [ "Plaskowyz", "a00154.html", "a00154" ],
+    [ "Prostopadloscian", "a00158.html", "a00158" ],
+    [ "Scena", "a00162.html", "a00162" ],
+    [ "Sciezka", "a00166.html", "a00166" ],
+    [ "Wektor", "a00170.html", "a00170" ]
 ];

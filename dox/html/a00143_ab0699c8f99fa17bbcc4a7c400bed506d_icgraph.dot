@@ -38,4 +38,7 @@ digraph "Macierz3x3::ObrotZ"
   Node16 [label="Prostopadloscian::TworzOpis\lProstopadloscianu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00155.html#a8f37c33d08de805c7855b66fe46e901a",tooltip="Metoda tworzaca opis prostopadloscianu."];
   Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node17 [label="Prostopadloscian::TransDo\lUklRodzica",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00155.html#a97065b4375d19d6f2bee4a610a425b4e",tooltip="Metoda przesuwajaca Prostopadloscian wzgledem Drona."];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node18 [label="Dron::UstawRotory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00127.html#a0b811a5347c55562de665dfe45df2040",tooltip="Metoda obliczajaca polozenie rotorow."];
+  Node18 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
 }

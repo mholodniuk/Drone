@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/inc/Macierz3x3.hh</title>
+<title>Dragonfly: Plik źródłowy /home/maciek/dron3/prj/inc/Graniastoslup.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,61 +61,49 @@ $(document).ready(function(){initNavTree('a00041_source.html',''); initResizable
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">Macierz3x3.hh</div>  </div>
+<div class="title">Graniastoslup.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00041.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00068.html">Wektor3D.hh</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00029.html">BrylaGeometryczna.hh</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">   11</a></span>&#160;<span class="preprocessor">#define WYMIAR 3</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00143.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00143.html">Macierz3x3</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a00143.html#a1aab20b00d59d57bf85c4ff39145d39a">   15</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="a00143.html#a1aab20b00d59d57bf85c4ff39145d39a">wart</a>[<a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>][<a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>];</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="a00143.html#a1ad366312dfea47fa4b94f43fa32be46">Macierz3x3</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="a00143.html#a1ad366312dfea47fa4b94f43fa32be46">Macierz3x3</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a00142.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00142.html">Graniastoslup</a>: <span class="keyword">public</span> <a class="code" href="a00126.html">BrylaGeometryczna</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00142.html#a1e53ebfe9a73ba689c56781f8a631782">   22</a></span>&#160;    <a class="code" href="a00170.html">Wektor3D</a> <a class="code" href="a00142.html#a1e53ebfe9a73ba689c56781f8a631782">Polozenie</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00142.html#a5b006140f54f993df963dd8a7bf53210">   23</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="a00142.html#a5b006140f54f993df963dd8a7bf53210">Kat_Or</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00143.html#ad344bfc44ea1b2017e8452f9df942728">   29</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="a00143.html#ad344bfc44ea1b2017e8452f9df942728">operator () </a>(<span class="keywordtype">int</span> wiersz, <span class="keywordtype">int</span> kolumna)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    assert(wiersz &gt;= 0 &amp;&amp; wiersz &lt; <a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    assert((kolumna &gt;= 0 &amp;&amp; kolumna &lt; <a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>));</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00143.html#a1aab20b00d59d57bf85c4ff39145d39a">wart</a>[wiersz][kolumna];</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00143.html#a0270c1d08ba22aaeb5fa994336d7f96f">   40</a></span>&#160;  <span class="keywordtype">double</span> &amp;<a class="code" href="a00143.html#ad344bfc44ea1b2017e8452f9df942728">operator () </a>(<span class="keywordtype">int</span> wiersz, <span class="keywordtype">int</span> kolumna)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    assert(wiersz &gt;= 0 &amp;&amp; wiersz &lt;= <a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    assert((kolumna &gt;= 0 &amp;&amp; kolumna &lt;= <a class="code" href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a>));</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00143.html#a1aab20b00d59d57bf85c4ff39145d39a">wart</a>[wiersz][kolumna];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00143.html#ab0699c8f99fa17bbcc4a7c400bed506d">ObrotZ</a>(<span class="keywordtype">double</span> kat);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00167.html">Wektor3D</a> <a class="code" href="a00143.html#a35fd1849f96a5b13fcf8e75aa4747cec">operator*</a>(<span class="keyword">const</span> <a class="code" href="a00167.html">Wektor3D</a>&amp; <a class="code" href="a00167.html">Wektor</a>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="a00143.html">Macierz3x3</a> <a class="code" href="a00143.html#a35fd1849f96a5b13fcf8e75aa4747cec">operator*</a>(<span class="keyword">const</span> <a class="code" href="a00143.html">Macierz3x3</a>&amp; Macierz) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="a00142.html#a1bc529dd6c0e18a1ae30ac5f7a0836e3">Graniastoslup</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00142.html#a38ed7e121d2b7a78650d1deee3fe1035">ZadajKatObrotu</a>(<span class="keywordtype">double</span> kat);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00142.html#a46ef0ef79e273d707017f59bc5512548">Obrot</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00142.html#a0c0db45c90aec72ad2d6e97a95f72ea7">Transformacja</a>(<span class="keyword">const</span> <a class="code" href="a00170.html">Wektor3D</a>&amp; Trans);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00142.html#a3631a29ba93b0235069a0c57879a854b">TworzOpisGraniastoslupu</a>(<span class="keyword">const</span> <a class="code" href="a00170.html">Wektor3D</a>&amp; Trans);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00142.html#a80691e151f45065f7cd520bea08406a5">TransDoUklRodzica</a>(<span class="keyword">const</span> <a class="code" href="a00170.html">Wektor3D</a>&amp; Wek);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//virtual bool CzyZajete(const Wektor3D&amp; Polozenie_drona, double Promien) const override;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00167_html"><div class="ttname"><a href="a00167.html">Wektor</a></div><div class="ttdoc">modeluje pojecie Wektora o dowolnym rozmiarze</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00024">Wektor.hh:24</a></div></div>
-<div class="ttc" id="aa00143_html_a1aab20b00d59d57bf85c4ff39145d39a"><div class="ttname"><a href="a00143.html#a1aab20b00d59d57bf85c4ff39145d39a">Macierz3x3::wart</a></div><div class="ttdeci">double wart[WYMIAR][WYMIAR]</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00015">Macierz3x3.hh:15</a></div></div>
-<div class="ttc" id="aa00143_html_ad344bfc44ea1b2017e8452f9df942728"><div class="ttname"><a href="a00143.html#ad344bfc44ea1b2017e8452f9df942728">Macierz3x3::operator()</a></div><div class="ttdeci">double operator()(int wiersz, int kolumna) const</div><div class="ttdoc">operator indeksowania dla odczytu sprawdzane jest czy &quot;przekroczono&quot; zakresu macierzy</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00029">Macierz3x3.hh:29</a></div></div>
-<div class="ttc" id="aa00143_html_a1ad366312dfea47fa4b94f43fa32be46"><div class="ttname"><a href="a00143.html#a1ad366312dfea47fa4b94f43fa32be46">Macierz3x3::Macierz3x3</a></div><div class="ttdeci">Macierz3x3()</div><div class="ttdoc">Konstruktory bezparamentryczny (macierz jednostkowa) i parametryczny.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00014">Macierz3x3.cpp:14</a></div></div>
-<div class="ttc" id="aa00068_html"><div class="ttname"><a href="a00068.html">Wektor3D.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy Wektor3D.</div></div>
-<div class="ttc" id="aa00143_html_ab0699c8f99fa17bbcc4a7c400bed506d"><div class="ttname"><a href="a00143.html#ab0699c8f99fa17bbcc4a7c400bed506d">Macierz3x3::ObrotZ</a></div><div class="ttdeci">void ObrotZ(double kat)</div><div class="ttdoc">Metoda generujaca macierz obrotu wokol osi OZ.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00055">Macierz3x3.cpp:55</a></div></div>
-<div class="ttc" id="aa00041_html_a07b7c303dc8ee0c5b01ad75bbeacc2a5"><div class="ttname"><a href="a00041.html#a07b7c303dc8ee0c5b01ad75bbeacc2a5">WYMIAR</a></div><div class="ttdeci">#define WYMIAR</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00011">Macierz3x3.hh:11</a></div></div>
-<div class="ttc" id="aa00143_html"><div class="ttname"><a href="a00143.html">Macierz3x3</a></div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00013">Macierz3x3.hh:13</a></div></div>
-<div class="ttc" id="aa00143_html_a35fd1849f96a5b13fcf8e75aa4747cec"><div class="ttname"><a href="a00143.html#a35fd1849f96a5b13fcf8e75aa4747cec">Macierz3x3::operator*</a></div><div class="ttdeci">Wektor3D operator*(const Wektor3D &amp;Wektor) const</div><div class="ttdoc">Operatory poszczegolnych dzialan.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00074">Macierz3x3.cpp:74</a></div></div>
+<div class="ttc" id="aa00142_html_a0c0db45c90aec72ad2d6e97a95f72ea7"><div class="ttname"><a href="a00142.html#a0c0db45c90aec72ad2d6e97a95f72ea7">Graniastoslup::Transformacja</a></div><div class="ttdeci">void Transformacja(const Wektor3D &amp;Trans)</div><div class="ttdoc">Metoda transformujaca prostopadloscia.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00056">Graniastoslup.cpp:56</a></div></div>
+<div class="ttc" id="aa00142_html"><div class="ttname"><a href="a00142.html">Graniastoslup</a></div><div class="ttdoc">modeluje pojecie Graniastoslupa</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00020">Graniastoslup.hh:20</a></div></div>
+<div class="ttc" id="aa00029_html"><div class="ttname"><a href="a00029.html">BrylaGeometryczna.hh</a></div><div class="ttdoc">Ten plik zawiera definicję klasy BrylaGeometryczna.</div></div>
+<div class="ttc" id="aa00142_html_a5b006140f54f993df963dd8a7bf53210"><div class="ttname"><a href="a00142.html#a5b006140f54f993df963dd8a7bf53210">Graniastoslup::Kat_Or</a></div><div class="ttdeci">double Kat_Or</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00023">Graniastoslup.hh:23</a></div></div>
+<div class="ttc" id="aa00142_html_a38ed7e121d2b7a78650d1deee3fe1035"><div class="ttname"><a href="a00142.html#a38ed7e121d2b7a78650d1deee3fe1035">Graniastoslup::ZadajKatObrotu</a></div><div class="ttdeci">void ZadajKatObrotu(double kat)</div><div class="ttdoc">Metody Transformujace.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00026">Graniastoslup.cpp:26</a></div></div>
+<div class="ttc" id="aa00142_html_a46ef0ef79e273d707017f59bc5512548"><div class="ttname"><a href="a00142.html#a46ef0ef79e273d707017f59bc5512548">Graniastoslup::Obrot</a></div><div class="ttdeci">void Obrot()</div><div class="ttdoc">Metoda Obracajaca Prostopadloscian.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00038">Graniastoslup.cpp:38</a></div></div>
+<div class="ttc" id="aa00126_html"><div class="ttname"><a href="a00126.html">BrylaGeometryczna</a></div><div class="ttdoc">modeluje pojecie Bryly geometrycznej</div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00029">BrylaGeometryczna.hh:29</a></div></div>
+<div class="ttc" id="aa00170_html"><div class="ttname"><a href="a00170.html">Wektor&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="aa00142_html_a80691e151f45065f7cd520bea08406a5"><div class="ttname"><a href="a00142.html#a80691e151f45065f7cd520bea08406a5">Graniastoslup::TransDoUklRodzica</a></div><div class="ttdeci">bool TransDoUklRodzica(const Wektor3D &amp;Wek)</div><div class="ttdoc">Metoda przesuwajaca Prostopadloscian wzgledem Drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00127">Graniastoslup.cpp:127</a></div></div>
+<div class="ttc" id="aa00142_html_a1e53ebfe9a73ba689c56781f8a631782"><div class="ttname"><a href="a00142.html#a1e53ebfe9a73ba689c56781f8a631782">Graniastoslup::Polozenie</a></div><div class="ttdeci">Wektor3D Polozenie</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00022">Graniastoslup.hh:22</a></div></div>
+<div class="ttc" id="aa00142_html_a1bc529dd6c0e18a1ae30ac5f7a0836e3"><div class="ttname"><a href="a00142.html#a1bc529dd6c0e18a1ae30ac5f7a0836e3">Graniastoslup::Graniastoslup</a></div><div class="ttdeci">Graniastoslup()</div><div class="ttdoc">Konstruktor bezparametryczny.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00010">Graniastoslup.cpp:10</a></div></div>
+<div class="ttc" id="aa00142_html_a3631a29ba93b0235069a0c57879a854b"><div class="ttname"><a href="a00142.html#a3631a29ba93b0235069a0c57879a854b">Graniastoslup::TworzOpisGraniastoslupu</a></div><div class="ttdeci">bool TworzOpisGraniastoslupu(const Wektor3D &amp;Trans)</div><div class="ttdoc">Metoda tworzaca opis prostopadloscianu.</div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00078">Graniastoslup.cpp:78</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_bcde68eed882c7962dccf680e22ff87b.html">inc</a></li><li class="navelem"><a class="el" href="a00041.html">Macierz3x3.hh</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_bcde68eed882c7962dccf680e22ff87b.html">inc</a></li><li class="navelem"><a class="el" href="a00041.html">Graniastoslup.hh</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

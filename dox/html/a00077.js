@@ -1,4 +1,4 @@
 var a00077 =
 [
-    [ "main", "a00077.html#ae66f6b31b5ad750f1fe042a706a4e3d4", null ]
+    [ "BLAD_OBLICZEN", "a00077.html#a194f9a557b404b2955f51a3e7cb28569", null ]
 ];
