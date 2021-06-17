@@ -1,4 +1,4 @@
 var a00089 =
 [
-    [ "UstawGNUPlot", "a00089.html#a93c8997213d37d9cf5f08446aa8f2ed8", null ]
+    [ "main", "a00089.html#ae66f6b31b5ad750f1fe042a706a4e3d4", null ]
 ];

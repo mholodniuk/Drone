@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dragonfly: Dokumentacja pliku /home/maciek/dron3/prj/inc/Wektor.hh</title>
+<title>Dragonfly: Dokumentacja pliku /home/maciek/dron3/prj/inc/Sciezka.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,165 +61,45 @@ $(document).ready(function(){initNavTree('a00062.html',''); initResizable(); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Komponenty</a> &#124;
-<a href="#func-members">Funkcje</a>  </div>
+<a href="#nested-classes">Komponenty</a>  </div>
   <div class="headertitle">
-<div class="title">Dokumentacja pliku Wektor.hh</div>  </div>
+<div class="title">Dokumentacja pliku Sciezka.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Ten plik zawiera definicję szablonu Wektor&lt;&gt;  
+<p>Ten plik zawiera definicję klasy <a class="el" href="a00163.html" title="modeluje pojecie Sciezki lotu Drona">Sciezka</a>.  
 <a href="#details">Więcej...</a></p>
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
-<code>#include &lt;iomanip&gt;</code><br />
-<code>#include &lt;cmath&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00068_source.html">Wektor3D.hh</a>&quot;</code><br />
+<code>#include &quot;lacze_do_gnuplota.hh&quot;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00047_source.html">Nazwy.hh</a>&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Wykres zależności załączania dla Wektor.hh:</div>
+Wykres zależności załączania dla Sciezka.hh:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00063.png" border="0" usemap="#_2home_2maciek_2dron3_2prj_2inc_2_wektor_8hh" alt=""/></div>
+<div class="center"><img src="a00063.png" border="0" usemap="#_2home_2maciek_2dron3_2prj_2inc_2_sciezka_8hh" alt=""/></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00064.png" border="0" usemap="#_2home_2maciek_2dron3_2prj_2inc_2_wektor_8hhdep" alt=""/></div>
+<div class="center"><img src="a00064.png" border="0" usemap="#_2home_2maciek_2dron3_2prj_2inc_2_sciezka_8hhdep" alt=""/></div>
 </div>
 </div>
 <p><a href="a00062_source.html">Idź do kodu źródłowego tego pliku.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Komponenty</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00157.html">Wektor&lt; wymiar &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">modeluje pojecie Wektora o dowolnym rozmiarze  <a href="a00157.html#details">Więcej...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00163.html">Sciezka</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">modeluje pojecie Sciezki lotu Drona  <a href="a00163.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Funkcje</h2></td></tr>
-<tr class="memitem:ad9987426ab232623d89f9e688dba757b"><td class="memTemplParams" colspan="2">template&lt;int wymiar&gt; </td></tr>
-<tr class="memitem:ad9987426ab232623d89f9e688dba757b"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00062.html#ad9987426ab232623d89f9e688dba757b">operator&lt;&lt;</a> (std::ostream &amp;Strm, const <a class="el" href="a00157.html">Wektor</a>&lt; wymiar &gt; &amp;Wek)</td></tr>
-<tr class="memdesc:ad9987426ab232623d89f9e688dba757b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciazenie operatora przesuniecia bitowego w lewo dla obiektow klasy <a class="el" href="a00157.html" title="modeluje pojecie Wektora o dowolnym rozmiarze">Wektor</a>.  <a href="a00062.html#ad9987426ab232623d89f9e688dba757b">Więcej...</a><br /></td></tr>
-<tr class="separator:ad9987426ab232623d89f9e688dba757b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d2ef8f21b2d0131978fd1b73cfb4c66"><td class="memTemplParams" colspan="2">template&lt;int wymiar&gt; </td></tr>
-<tr class="memitem:a3d2ef8f21b2d0131978fd1b73cfb4c66"><td class="memTemplItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00062.html#a3d2ef8f21b2d0131978fd1b73cfb4c66">operator&gt;&gt;</a> (std::istream &amp;Strm, <a class="el" href="a00157.html">Wektor</a>&lt; wymiar &gt; &amp;Wek)</td></tr>
-<tr class="memdesc:a3d2ef8f21b2d0131978fd1b73cfb4c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciazenie operatora przesuniecia bitowego w prawo dla obiektow klasy <a class="el" href="a00157.html" title="modeluje pojecie Wektora o dowolnym rozmiarze">Wektor</a>.  <a href="a00062.html#a3d2ef8f21b2d0131978fd1b73cfb4c66">Więcej...</a><br /></td></tr>
-<tr class="separator:a3d2ef8f21b2d0131978fd1b73cfb4c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Dokumentacja funkcji</h2>
-<a id="ad9987426ab232623d89f9e688dba757b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9987426ab232623d89f9e688dba757b">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int wymiar&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>Strm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00157.html">Wektor</a>&lt; wymiar &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Wek</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="tparams"><dt>Parametry Szablonu</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">wymiar</td><td>- rozmiar</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">Strm</td><td>- strumien </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Wek</td><td>- wektor do wypisania</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Zwraca</dt><dd>strumien z odpowiednio sformatowanym wektorem </dd></dl>
-
-<p class="definition">Definicja w linii <a class="el" href="a00062_source.html#l00339">339</a> pliku <a class="el" href="a00062_source.html">Wektor.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;{</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;wymiar; ++i)</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      Strm &lt;&lt; std::setw(16) &lt;&lt; std::fixed &lt;&lt; std::setprecision(10) &lt;&lt; Wek[i];</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  Strm&lt;&lt;std::endl;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keywordflow">return</span> Strm;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a3d2ef8f21b2d0131978fd1b73cfb4c66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d2ef8f21b2d0131978fd1b73cfb4c66">&#9670;&nbsp;</a></span>operator&gt;&gt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int wymiar&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::istream&amp; operator&gt;&gt; </td>
-          <td>(</td>
-          <td class="paramtype">std::istream &amp;&#160;</td>
-          <td class="paramname"><em>Strm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00157.html">Wektor</a>&lt; wymiar &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Wek</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="tparams"><dt>Parametry Szablonu</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">wymiar</td><td>- rozmiar</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">Strm</td><td>- strumien </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Wek</td><td>- wektor do wczytania</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Zwraca</dt><dd>strumien z odpowiednio sformatowanym wektorem </dd></dl>
-
-<p class="definition">Definicja w linii <a class="el" href="a00062_source.html#l00361">361</a> pliku <a class="el" href="a00062_source.html">Wektor.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;{</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;wymiar; ++i)</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  {</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    Strm &gt;&gt; Wek[i];</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">if</span>(Strm.fail())</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;      <span class="keywordflow">return</span> Strm;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  <span class="keywordflow">return</span> Strm;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_bcde68eed882c7962dccf680e22ff87b.html">inc</a></li><li class="navelem"><a class="el" href="a00062.html">Wektor.hh</a></li>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_db1df6b390d8921f22601c9f1cca779d.html">maciek</a></li><li class="navelem"><a class="el" href="dir_3f1d4c8d71d368e93a6ec580db2c627d.html">dron3</a></li><li class="navelem"><a class="el" href="dir_20980d61131da5791df5245c2ae7cc9b.html">prj</a></li><li class="navelem"><a class="el" href="dir_bcde68eed882c7962dccf680e22ff87b.html">inc</a></li><li class="navelem"><a class="el" href="a00062.html">Sciezka.hh</a></li>
     <li class="footer">Wygenerowano przez
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

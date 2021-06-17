@@ -2,32 +2,35 @@ var dir_bcde68eed882c7962dccf680e22ff87b =
 [
     [ "BrylaGeometryczna.hh", "a00026.html", "a00026" ],
     [ "Dron.hh", "a00029.html", [
-      [ "Dron", "a00121.html", "a00121" ]
+      [ "Dron", "a00127.html", "a00127" ]
     ] ],
     [ "GoraZDlugaGrania.hh", "a00032.html", [
-      [ "GoraZDlugaGrania", "a00125.html", "a00125" ]
+      [ "GoraZDlugaGrania", "a00131.html", "a00131" ]
     ] ],
     [ "GoraZOstrymSzczytem.hh", "a00035.html", [
-      [ "GoraZOstrymSzczytem", "a00129.html", "a00129" ]
+      [ "GoraZOstrymSzczytem", "a00135.html", "a00135" ]
     ] ],
     [ "Graniastoslup.hh", "a00038.html", [
-      [ "Graniastoslup", "a00133.html", "a00133" ]
+      [ "Graniastoslup", "a00139.html", "a00139" ]
     ] ],
     [ "Macierz3x3.hh", "a00041.html", "a00041" ],
     [ "Menu.hh", "a00044.html", "a00044" ],
     [ "Nazwy.hh", "a00047.html", "a00047" ],
     [ "ObiektSceny.hh", "a00050.html", [
-      [ "ObiektSceny", "a00141.html", "a00141" ]
+      [ "ObiektSceny", "a00147.html", "a00147" ]
     ] ],
     [ "Plaskowyz.hh", "a00053.html", [
-      [ "Plaskowyz", "a00145.html", "a00145" ]
+      [ "Plaskowyz", "a00151.html", "a00151" ]
     ] ],
     [ "Prostopadloscian.hh", "a00056.html", [
-      [ "Prostopadloscian", "a00149.html", "a00149" ]
+      [ "Prostopadloscian", "a00155.html", "a00155" ]
     ] ],
     [ "Scena.hh", "a00059.html", [
-      [ "Scena", "a00153.html", "a00153" ]
+      [ "Scena", "a00159.html", "a00159" ]
     ] ],
-    [ "Wektor.hh", "a00062.html", "a00062" ],
-    [ "Wektor3D.hh", "a00065.html", "a00065" ]
+    [ "Sciezka.hh", "a00062.html", [
+      [ "Sciezka", "a00163.html", "a00163" ]
+    ] ],
+    [ "Wektor.hh", "a00065.html", "a00065" ],
+    [ "Wektor3D.hh", "a00068.html", "a00068" ]
 ];

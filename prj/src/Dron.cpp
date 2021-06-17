@@ -146,6 +146,12 @@ void Dron::Oblicz_i_Zapisz_WspKorpusu()
   KorpusDrona->TransDoUklRodzica(w);
 }
 
+/*!
+ * \brief Metoda realizujaca obrot rotorow wokol wlasnej osi
+ * 
+ * Co klatke rotory obracaja sie o 15 stopni
+ * 
+ */
 void Dron::ZakrecRotorami()
 {
   static double kat_obr = 0;
@@ -159,17 +165,16 @@ void Dron::ZakrecRotorami()
 }
 
 /*!
- * \brief Obliczajaca wspolrzedne rotorow drona
+ * \brief Metoda obliczajaca polozenie rotorow
  * 
- * Zadawana jest odpowiednia skala, kat oraz przesuniecie
- * wzgledem rodzica
+ * Obliczane jest polozenie kazdego z rotorow wzgledem
+ * srodka polozenia drona
  * 
  */
-void Dron::Oblicz_i_Zapisz_WspRotorow()
+void Dron::UstawRotory(double kat_rad)
 {
   Macierz3x3 MacierzRot;
-  double Rad = Kat_OrDrona*M_PI/180;
-  MacierzRot.ObrotZ(Rad);
+  MacierzRot.ObrotZ(kat_rad);
 
   Wektor3D TranslacjaRotorLewyPrzedni = {5, 4, 5};
   TranslacjaRotorLewyPrzedni = MacierzRot * TranslacjaRotorLewyPrzedni;
@@ -187,6 +192,25 @@ void Dron::Oblicz_i_Zapisz_WspRotorow()
   TranslacjaRotorPrawyTylny = MacierzRot * TranslacjaRotorPrawyTylny;
   Wektor3D w4 = Polozenie + TranslacjaRotorPrawyTylny;
 
+  RotorDrona[0]->TransDoUklRodzica(w1);
+  RotorDrona[1]->TransDoUklRodzica(w2);  
+  RotorDrona[2]->TransDoUklRodzica(w3);
+  RotorDrona[3]->TransDoUklRodzica(w4);
+}
+
+/*!
+ * \brief Obliczajaca wspolrzedne rotorow drona
+ * 
+ * Zadawana jest odpowiednia skala, kat oraz przesuniecie
+ * wzgledem rodzica
+ * 
+ */
+void Dron::Oblicz_i_Zapisz_WspRotorow()
+{
+  Macierz3x3 MacierzRot;
+  double Rad = Kat_OrDrona*M_PI/180;
+  MacierzRot.ObrotZ(Rad);
+  
   Wektor3D SkalaRotora = {8,8,4};
   
   for(int idx=0; idx<ILOSC_ROTOROW; ++idx)
@@ -194,13 +218,8 @@ void Dron::Oblicz_i_Zapisz_WspRotorow()
     RotorDrona[idx]->UstawSkale(SkalaRotora);
   }
 
+  UstawRotory(Rad);
   ZakrecRotorami();
-
-  RotorDrona[0]->TransDoUklRodzica(w1);
-  RotorDrona[1]->TransDoUklRodzica(w2);  
-  RotorDrona[2]->TransDoUklRodzica(w3);
-  RotorDrona[3]->TransDoUklRodzica(w4);
-
 }
 
 /*!
@@ -222,7 +241,7 @@ void Dron::Oblicz_i_ZapiszWspDrona()
  * \param[in] lacze
  * 
  */
-void Dron::TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota & Lacze)
+void Dron::TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze)
 {
   Polozenie += Wek;
   

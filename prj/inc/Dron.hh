@@ -38,13 +38,18 @@ class Dron: public ObiektSceny
   int pojedynczy_krok = 2;
   unsigned int Promien_drona = 10;
 
+  //!\brief Metody ustawiajace poszczegolne elementy
   void Oblicz_i_Zapisz_WspKorpusu();
   void Oblicz_i_Zapisz_WspRotorow();
   void ZakrecRotorami();
+  void UstawRotory(double kat_rad);
+
   //! \brief Metoda przesuwajaca drona o zadany wektor przesuniecia
   void PrzesunDrona(const Wektor3D& Wek) { Polozenie += Wek; }
+
   //! \brief Metoda przemieszczajaca drona do zadanego wektora polozenia
   void ZmienPolozenieDrona(const Wektor3D& nPolozenie) { Polozenie = nPolozenie; }
+
   //! \brief Metody generujace nazwy plikow
   std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);
   std::string TworzNazweKorpusu(unsigned int id_Drona);
@@ -56,7 +61,7 @@ public:
   //!\brief Destrkutor wirtualny
   virtual ~Dron() { }
 
-  //! \brief Metody zwracajace kat orientacji oraz ID
+  //! \brief Metody zwracajace oraz ustawiajace kat orientacji oraz ID
   double ZwrocKat_st() { return Kat_OrDrona; }
   double ZwrocPromien() { return Promien_drona; }
   double ZwrocID() { return id; }
@@ -93,7 +98,7 @@ public:
   //! \brief Metoda sprawdzajaca czy pod dronem jest wolne miejsce
   virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
   
-  //! \brief Metoda identyfikujaca
+  //! \brief Metody identyfikujace
   virtual std::string Identyfikuj() const override;
   virtual const char* ZwrocNazwePlikuFinalnego() const override;
 
