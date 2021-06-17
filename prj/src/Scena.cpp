@@ -440,7 +440,6 @@ bool Scena::CzyZajete(std::shared_ptr<Dron>& Dr)
 void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 {
   double kat, dlugosc;
-  //std::vector<Wektor3D> Sciezka;
   Wektor3D Polozenie_poczatkowe = Dr->ZwrocPolozenie();
   
   std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
@@ -458,8 +457,9 @@ void Scena::LotDrona(std::shared_ptr<Dron> &Dr)
 
   while(CzyZajete(Dr))
   {
+    dlugosc+=30;
     Dr->WyczyscSciezke(Lacze);
-    Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc+30);
+    Dr->UstalSciezke(Polozenie_poczatkowe, 0, dlugosc);
     Dr->PlanujSciezke(Lacze);
     Dr->Czekaj(2, Lacze);
     Dr->LotDoPrzodu(30, Lacze);

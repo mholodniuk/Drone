@@ -40,6 +40,7 @@ class Dron: public ObiektSceny
 
   void Oblicz_i_Zapisz_WspKorpusu();
   void Oblicz_i_Zapisz_WspRotorow();
+  void ZakrecRotorami();
   //! \brief Metoda przesuwajaca drona o zadany wektor przesuniecia
   void PrzesunDrona(const Wektor3D& Wek) { Polozenie += Wek; }
   //! \brief Metoda przemieszczajaca drona do zadanego wektora polozenia
@@ -52,7 +53,7 @@ public:
 
   //! \brief Konstruktor bezparametryczny 
   Dron();
-  //Destrkutor
+  //!\brief Destrkutor wirtualny
   virtual ~Dron() { }
 
   //! \brief Metody zwracajace kat orientacji oraz ID
@@ -75,13 +76,12 @@ public:
   //! \brief Metoda zapisujaca polozenie poszczegolnych wierzcholkow
   void Oblicz_i_ZapiszWspDrona();
 
-  //! \brief Metody Ocliczajace i generujace sciezke lotu 
+  //! \brief Metody Obliczajace i generujace sciezke lotu 
   void InicjalizujSciezke(PzG::LaczeDoGNUPlota& Lacze) const;
   void PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze);
   void UstalSciezke(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
   void WyczyscSciezke(PzG::LaczeDoGNUPlota& Lacze);
   void WyswietlSciezke(std::ofstream& Plik) const;
-  Wektor3D ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const;
 
   //! \brief Metody Animujace ruch drona
   void Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);

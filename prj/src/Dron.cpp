@@ -146,6 +146,18 @@ void Dron::Oblicz_i_Zapisz_WspKorpusu()
   KorpusDrona->TransDoUklRodzica(w);
 }
 
+void Dron::ZakrecRotorami()
+{
+  static double kat_obr = 0;
+
+  RotorDrona[0]->ZadajKatObrotu(kat_obr);
+  RotorDrona[1]->ZadajKatObrotu(-kat_obr);
+  RotorDrona[2]->ZadajKatObrotu(-kat_obr);
+  RotorDrona[3]->ZadajKatObrotu(kat_obr);
+
+  kat_obr+=15;
+}
+
 /*!
  * \brief Obliczajaca wspolrzedne rotorow drona
  * 
@@ -155,7 +167,6 @@ void Dron::Oblicz_i_Zapisz_WspKorpusu()
  */
 void Dron::Oblicz_i_Zapisz_WspRotorow()
 {
-  static double kat_obr = 0;
   Macierz3x3 MacierzRot;
   double Rad = Kat_OrDrona*M_PI/180;
   MacierzRot.ObrotZ(Rad);
@@ -183,17 +194,13 @@ void Dron::Oblicz_i_Zapisz_WspRotorow()
     RotorDrona[idx]->UstawSkale(SkalaRotora);
   }
 
-  RotorDrona[0]->ZadajKatObrotu(kat_obr);
-  RotorDrona[1]->ZadajKatObrotu(-kat_obr);
-  RotorDrona[2]->ZadajKatObrotu(-kat_obr);
-  RotorDrona[3]->ZadajKatObrotu(kat_obr);
+  ZakrecRotorami();
 
   RotorDrona[0]->TransDoUklRodzica(w1);
   RotorDrona[1]->TransDoUklRodzica(w2);  
   RotorDrona[2]->TransDoUklRodzica(w3);
   RotorDrona[3]->TransDoUklRodzica(w4);
 
-  kat_obr+=15;
 }
 
 /*!
@@ -261,6 +268,7 @@ void Dron::Lec(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDo
  * \brief Metoda realizujaca lot do przodu drona
  *
  * \param[in] dlugosc_lotu - odleglosc lotu drona
+ * \param[in] LaczeDoGNUPlota
  * 
  * \pre dlugosc_lotu musi byc liczba dodatnia
  * 
@@ -279,6 +287,13 @@ void Dron::LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
   Lec(Kierunek_lotu, fabs(dlugosc_lotu), Lacze);
 }
 
+/*!
+ * \brief Metoda realizujaca lot pionowy drona
+ *
+ * \param[in] dlugosc_lotu - odleglosc lotu drona
+ * \param[in] LaczeDoGNUPlota
+ * 
+ */
 void Dron::LotPionowy(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
 {
   double kierunek = 0;
@@ -291,7 +306,7 @@ void Dron::LotPionowy(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
 }
 
 /*!
- * \brief Metoda realizujaca obrot drona    COS JEST NIE TAK
+ * \brief Metoda realizujaca obrot drona
  * 
  * \pre kat obrotu musi byc podany w stopniach
  * 
@@ -301,6 +316,8 @@ void Dron::LotPionowy(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
  */
 void Dron::Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
 {
+  kat_obrotu += Kat_OrDrona;
+
   if(kat_obrotu>0)
   {
     for(; Kat_OrDrona <= kat_obrotu; Kat_OrDrona += 1)
@@ -347,61 +364,24 @@ void Dron::Czekaj(double czas_sek, PzG::LaczeDoGNUPlota& Lacze)
 }
 
 /*!
- * \brief Metoda obliczajca wspolrzedne drona
- *
- * Metoda obliczajca wspolrzedne drona po zadaniu odpowienich
- * wartosci dlugosci lotu i katu skretu
- * 
- * \pre dlugosc lotu musi byc dodatnia
- * \pre kat skretu musi byc podany w stopniach
- * 
- * \param[in] dlugosc_lotu
- * \param[in] kat_skretu 
- * 
- * \return Wsp - nowe (finalne) polozenie drona
- * 
- */
-Wektor3D Dron::ObliczNoweWsp(double kat_skretu, double Dlugosc_lotu) const
-{
-  Wektor3D Wsp;
-  double kat_rad = kat_skretu*M_PI/180;
-  Wsp[0] = Dlugosc_lotu * cos(kat_rad);
-  Wsp[1] = Dlugosc_lotu * sin(kat_rad);
-
-  Wsp += Polozenie;
-
-  return Wsp;
-}
-
-/*!
  * \brief Metoda ustalajaca sciezke lotu drona
- *
- * Metoda obliczajca  odpowiednie punkty sciezki lotu, a nastepnie
- * zapisuje je do kontenera vector<>
- *
- * \pre dlugosc lotu musi byc dodatnia
- * \pre kat skretu musi byc podany w stopniach
  * 
- * \param[in] dlugosc_lotu
- * \param[in] kat_skretu 
- * 
- * \return Sciezka - kontener z kolejnymi wektorami3D sciezki ruchu
+ * Wykorzystywany do tego jest argument typu Sciezka
+ * i jej jego metoda \e UstalSciezke po uprzednim
+ * odpowiednim zsumowaniu katow
  * 
  */
 void Dron::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
 {
+  kat_skretu += Kat_OrDrona;
   sciezka_poruszania.UstalSciezke(Polozenie_poczatkowe, kat_skretu, Dlugosc_lotu);
 }
 
 /*!
  * \brief Metoda czyszczaca sciezke lotu drona
  *
- * NA RAZIE COS NIE DZIALA.
- * Kontener z Wektorami3D zostaje wyczysczony, a nazwa pliku, ktory
- * zawiera Sciezke usuniety ze sledzenia
- * 
- * \param[in] Sciezka - kontener z kolejnymi punktami sciezki
- * \param[in] LaczeDoGNUPlota
+ * Wykorzystywany do tego jest argument typu Sciezka
+ * i jego metoda \e WyczyscSciezke
  * 
  */
 void Dron::WyczyscSciezke(PzG::LaczeDoGNUPlota& Lacze)
@@ -412,11 +392,8 @@ void Dron::WyczyscSciezke(PzG::LaczeDoGNUPlota& Lacze)
 /*!
  * \brief Metoda planujaca sciezke lotu drona
  *
- * Metoda kolejno zapisuje punkty sciezki do pliku
- * wyjsciowego w celu wizualizacji ich w gnuplocie
- * 
- * \param[in] PunktySciezki - kontener z kolejnymi punktami sciezki
- * \param[in] LaczeDoGNUPlota
+ * Wykorzystywany do tego jest argument typu Sciezka
+ * i jego metoda \e PlanujSciezke
  * 
  */
 void Dron::PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze)
@@ -427,11 +404,8 @@ void Dron::PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze)
 /*!
  * \brief Metoda wyswietlajaca Sciezke lotu
  *
- * Metoda kolejno zapisuje punkty sciezki do pliku
- * wyjsciowego w celu wizualizacji ich w gnuplocie
- * 
- * \param[in] PunktySciezki - kontener z kolejnymi punktami sciezki
- * \param[in] Plik - strumien plikowy
+ * Wykorzystywany do tego jest argument typu Sciezka
+ * i jego metoda \e WyswietlSciezke
  * 
  */
 void Dron::WyswietlSciezke(std::ofstream& Plik) const
@@ -439,6 +413,12 @@ void Dron::WyswietlSciezke(std::ofstream& Plik) const
   sciezka_poruszania.WyswietlSciezke(Plik);
 }
 
+/*!
+ * \brief Metoda inicjalizujaca sciezke lotu drona
+ *
+ * Do plikow sledzonych przez GNUPlota dodawany jest plik
+ * zawierajacy sciezke
+ */
 void Dron::InicjalizujSciezke(PzG::LaczeDoGNUPlota& Lacze) const
 {
   Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
