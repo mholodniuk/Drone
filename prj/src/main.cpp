@@ -1,25 +1,29 @@
 #include <iostream>
 
-#include "Wektor3D.hh"
-
-#include "Scena.hh"
+#include "../inc/Wektor3D.hh"
+#include "../inc/Menu.hh"
+#include <unistd.h>
+#include "../inc/Scena.hh"
 
 using namespace std;
 
 int main()
 {
-  Scena S;
-  char input = 'm';
+  PzG::LaczeDoGNUPlota lacze;
 
-  S.TworzScene();
-  Wektor3D::ZwrocIloscWektorow();
+  UstawGNUPlot(lacze);
 
-  while (input != 'k')
-  {
-    std::cout<<"Twoj wybor (m - menu) > ";
-    cin>>input;
-    S.Menu(input);
+  Prostopadloscian P("test.dat", {10,10,10});
+  P.TransDoUklRodzica({50,50,50});
+
+  lacze.DodajNazwePliku("test.dat");
+
+  lacze.Rysuj();
+
+  while(true) {
+
   }
+  
 
   return 0;
 }

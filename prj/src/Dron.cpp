@@ -1,5 +1,5 @@
-#include "Dron.hh"
-#include "Nazwy.hh"
+#include "../inc/Dron.hh"
+#include "../inc/Nazwy.hh"
 #include <cmath>
 #include <fstream>
 #include <iostream>
@@ -12,13 +12,25 @@
 #define BLAD_OBLICZEN 1e-8
 
 
-Dron::Dron()
-{
+Dron::Dron(unsigned int ID, PzG::LaczeDoGNUPlota& lacze)
+ : id(ID) {
+  std::string nazwapliku;
   Kat_OrDrona = 0;
-  KorpusDrona = std::make_shared<Prostopadloscian>();
+  Wektor3D SkalaKorpusu = {10, 8, 4};
+  Wektor3D SkalaRotorow = {8,8,4};
+
+  std::string NazwaPliku = TworzNazweKorpusu(ID);
+
+  KorpusDrona = std::make_shared<Prostopadloscian>(NazwaPliku, SkalaKorpusu);
+  KorpusDrona->ZadajKatObrotu(Kat_OrDrona);
+  lacze.DodajNazwePliku(NazwaPliku.c_str());
+  
+  int idx = -1;
   for(std::shared_ptr<Graniastoslup>& Rotor : RotorDrona)
   {
-    Rotor = std::make_shared<Graniastoslup>();
+    NazwaPliku = TworzNazweRotora(ID, ++idx);
+    Rotor = std::make_shared<Graniastoslup>(NazwaPliku, SkalaKorpusu);
+    lacze.DodajNazwePliku(NazwaPliku.c_str());
   }
 }
 
@@ -90,32 +102,6 @@ std::string Dron::Identyfikuj() const
 }
 
 /*!
- * \brief Metoda tworzaca odpowiedni zestaw plikow wynikowych
- * 
- * W zaleznosci od ID dronat worzony jest
- * odpowiedni zestaw plikow wynikowych
- * 
- * \param[in] ID - nr drona na scenie
- * \param[in] Lacze 
- * 
- */
-void Dron::TworzDrona(unsigned int ID, PzG::LaczeDoGNUPlota & Lacze)
-{
-  std::string NazwaPliku;
-  id = ID;
-
-  for(int i=0; i<4; ++i)
-  {
-    NazwaPliku = TworzNazweRotora(ID, i);
-    RotorDrona[i]->UstawNazwaPlikuWlasciwego(NazwaPliku.c_str());
-    Lacze.DodajNazwePliku(NazwaPliku.c_str());
-  }
-  NazwaPliku = TworzNazweKorpusu(ID);
-  KorpusDrona->UstawNazwaPlikuWlasciwego(NazwaPliku.c_str());
-  Lacze.DodajNazwePliku(NazwaPliku.c_str());
-}
-
-/*!
  * \brief Metoda zwracajca nazwe folderu docelowego
  * 
  * \note Zamiast nazwy pliku, metoda podaje nazwe folderu, w ktorym znajduje zestwa plikow
@@ -139,9 +125,7 @@ void Dron::Oblicz_i_Zapisz_WspKorpusu()
 {
   Wektor3D Translacja = {0, 0, 2};
   Wektor3D w = Polozenie + Translacja;
-  Wektor3D SkalaKorpusu = {10, 8, 4};
   KorpusDrona->ZadajKatObrotu(Kat_OrDrona);
-  KorpusDrona->UstawSkale(SkalaKorpusu);
   
   KorpusDrona->TransDoUklRodzica(w);
 }
@@ -210,13 +194,6 @@ void Dron::Oblicz_i_Zapisz_WspRotorow()
   Macierz3x3 MacierzRot;
   double Rad = Kat_OrDrona*M_PI/180;
   MacierzRot.ObrotZ(Rad);
-  
-  Wektor3D SkalaRotora = {8,8,4};
-  
-  for(int idx=0; idx<ILOSC_ROTOROW; ++idx)
-  {
-    RotorDrona[idx]->UstawSkale(SkalaRotora);
-  }
 
   UstawRotory(Rad);
   ZakrecRotorami();

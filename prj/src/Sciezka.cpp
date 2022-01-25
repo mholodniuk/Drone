@@ -1,4 +1,4 @@
-#include "Sciezka.hh"
+#include "../inc/Sciezka.hh"
 
 /*!
  * \brief Metoda obliczajca wspolrzedne

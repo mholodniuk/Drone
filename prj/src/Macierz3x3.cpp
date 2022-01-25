@@ -1,4 +1,4 @@
-#include "Macierz3x3.hh"
+#include "../inc/Macierz3x3.hh"
 
 #include <cmath>
 #include <iostream>

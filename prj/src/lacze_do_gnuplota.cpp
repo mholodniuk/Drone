@@ -14,7 +14,7 @@
 #pragma implementation
 #endif
 
-#include "lacze_do_gnuplota.hh"
+#include "../inc/lacze_do_gnuplota.hh"
 
 using namespace std;
 

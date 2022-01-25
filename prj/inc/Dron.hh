@@ -51,13 +51,13 @@ class Dron: public ObiektSceny
   void ZmienPolozenieDrona(const Wektor3D& nPolozenie) { Polozenie = nPolozenie; }
 
   //! \brief Metody generujace nazwy plikow
-  std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);
-  std::string TworzNazweKorpusu(unsigned int id_Drona);
+  inline std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);
+  inline std::string TworzNazweKorpusu(unsigned int id_Drona);
 
 public:
 
   //! \brief Konstruktor bezparametryczny 
-  Dron();
+  Dron(unsigned int id, PzG::LaczeDoGNUPlota& lacze);
   //!\brief Destrkutor wirtualny
   virtual ~Dron() { }
 

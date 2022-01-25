@@ -1,4 +1,4 @@
-#include "Graniastoslup.hh"
+#include "../inc/Graniastoslup.hh"
 
 
 /*!
@@ -7,26 +7,24 @@
  * Ustawia Nazwe pliku wzorcowego i nadaje kat orientacji 0
  * 
  */
-Graniastoslup::Graniastoslup()
-{
-    NazwaPliku_Wzorcowy = PLIK_WZORCOWEGO_GRANIASTOSLUPA6;
-    Kat_Or = 0;
+Graniastoslup::Graniastoslup(std::string NazwaPilku, const Wektor3D& skala)
+    : BrylaGeometryczna(NazwaPilku, skala), Kat_Or(0) {
+
+    std::ifstream PlikWzorcowy(PLIK_WZORCOWEGO_GRANIASTOSLUPA6);
+
+    if(!PlikWzorcowy.is_open()) {
+        std::cerr<<std::endl<<"Blad otwarcia pliku: "<<NazwaPliku_Wzorcowy<<std::endl;
+    }
+    wierzcholki.reserve(28);
+
+    for(Wektor3D& wierzcholek : wierzcholki) {
+        PlikWzorcowy >> wierzcholek;
+        std::cout<<wierzcholek;
+    }
+    PlikWzorcowy.close();
 }
 
-/*!
- * \brief Metoda zadajaca kat orientacji
- * 
- * Podany w argumencie kat ustawia jako Kat_Or
- * Jej wykonanie potrzebne jest w celu poprawnego
- * obrotu Graniastoslupa
- * 
- * \param[in] kat - kat obrotu
- * 
- */
-void Graniastoslup::ZadajKatObrotu(double kat)
-{
-    Kat_Or = kat;
-}
+
 
 /*!
  * \brief Metoda Obracajaca Prostopadloscian
@@ -41,7 +39,9 @@ void Graniastoslup::Obrot()
     Macierz3x3 MacierzRot;
     MacierzRot.ObrotZ(KatRad);
 
-    Polozenie = MacierzRot * Polozenie;
+    for(Wektor3D& wierzcholek : wierzcholki) {
+        wierzcholek = MacierzRot * wierzcholek;
+    }
 }
 
 /*!
@@ -56,9 +56,10 @@ void Graniastoslup::Obrot()
 void Graniastoslup::Transformacja(const Wektor3D& Trans)
 {
     Obrot();
-    for(int i=0; i<WYMIAR; ++i)
-    {
-        Polozenie[i] = Polozenie[i] * Skala[i] + Trans[i];
+    for(Wektor3D& wierzcholek : wierzcholki) {
+        for(int i=0; i<WYMIAR; ++i) {
+            wierzcholek[i] = wierzcholek[i] * Skala[i] + Trans[i];
+        }
     }
 }
 
@@ -77,41 +78,21 @@ void Graniastoslup::Transformacja(const Wektor3D& Trans)
  */
 bool Graniastoslup::TworzOpisGraniastoslupu(const Wektor3D& Trans)
 {
-    std::ifstream PlikWzorcowy(NazwaPliku_Wzorcowy);
     std::ofstream PlikFinalny(NazwaPliku_Finalny);
 
-    if(!PlikWzorcowy.is_open())
-    {
-        std::cerr<<std::endl<<"Blad otwarcia pliku: "<<NazwaPliku_Wzorcowy<<std::endl;
-        return false;
-    }
     if(!PlikFinalny.is_open())
     {
         std::cerr<<std::endl<<"Blad otwarcia pliku: "<<NazwaPliku_Finalny<<std::endl;
         return false;
     }
 
-    assert(PlikWzorcowy.good() && PlikFinalny.good());
-    
-    PlikWzorcowy >> Polozenie;
-
-    while(!PlikWzorcowy.fail())
-    {
-        for(unsigned int IloscWierzch=0; IloscWierzch<ILOSC_ROTOROW; ++IloscWierzch)
-        {
-            Transformacja(Trans);
-            PlikFinalny << Polozenie;
-            //PlikFinalny << Polozenie[0] << " " << Polozenie[1] << " " << Polozenie[2] << " " <<std::endl;
-            PlikWzorcowy >> Polozenie;
-            
-            assert(IloscWierzch == ILOSC_ROTOROW-1 || !PlikWzorcowy.fail());
-        }
-        PlikFinalny << std::endl;
+    for(const Wektor3D& wierzcholek : wierzcholki) {
+        Transformacja(Trans);
+        PlikFinalny << wierzcholek;
     }
-    PlikFinalny.close(); PlikWzorcowy.close();
+    PlikFinalny.close();
     return !PlikFinalny.fail();
 }
-
 /*!
  * \brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
  * 

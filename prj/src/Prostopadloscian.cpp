@@ -1,4 +1,4 @@
-#include "Prostopadloscian.hh"
+#include "../inc/Prostopadloscian.hh"
 
 /*!
  * \brief Konstruktor bezparametryczny
@@ -6,26 +6,25 @@
  * Ustawia Nazwe pliku wzorcowego i nadaje kat orientacji 0
  * 
  */
-Prostopadloscian::Prostopadloscian()
-{
-    NazwaPliku_Wzorcowy = PLIK_WZORCOWEGO_SZESCIANU;
-    Kat_Or = 0;
+Prostopadloscian::Prostopadloscian(std::string NazwaPilku, const Wektor3D& skala)
+    : BrylaGeometryczna(NazwaPilku, skala), Kat_Or(0) {
+    
+    std::ifstream PlikWzorcowy(PLIK_WZORCOWEGO_SZESCIANU);
+    std::stringstream buffer;
+    buffer << PlikWzorcowy.rdbuf();
+
+    if(!PlikWzorcowy.is_open()) {
+        std::cerr << std::endl << "Blad otwarcia pliku: " << PLIK_WZORCOWEGO_SZESCIANU << std::endl;
+    }
+
+    Wektor3D tmp;
+    while(buffer>>tmp) {
+        //std::cout<<tmp;
+        wierzcholki.push_back(tmp);
+    }
+    PlikWzorcowy.close();
 }
 
-/*!
- * \brief Metoda zadajaca kat orientacji
- * 
- * Podany w argumencie kat ustawia jako Kat_Or
- * Jej wykonanie potrzebne jest w celu poprawnego
- * obrotu Prostopadloscianu
- * 
- * \param[in] kat - kat obrotu
- * 
- */
-void Prostopadloscian::ZadajKatObrotu(double kat)
-{
-    Kat_Or = kat;
-}
 
 /*!
  * \brief Metoda Obracajaca Prostopadloscian
@@ -34,13 +33,14 @@ void Prostopadloscian::ZadajKatObrotu(double kat)
  * i na jej podstawie obliczane jest polozenie po obrocie
  *
  */
-void Prostopadloscian::Obrot()
-{
+void Prostopadloscian::Obrot() {
     double KatRad = Kat_Or*M_PI/180;
     Macierz3x3 MacierzRot;
     MacierzRot.ObrotZ(KatRad);
 
-    Polozenie = MacierzRot * Polozenie;
+    for(Wektor3D& wierzcholek : wierzcholki) {
+        wierzcholek = MacierzRot * wierzcholek;
+    }
 }
 
 /*!
@@ -52,13 +52,14 @@ void Prostopadloscian::Obrot()
  * \param[in] Trans - Wektor translacji
  * 
  */
-void Prostopadloscian::Transformacja(const Wektor3D& Trans)
-{
+void Prostopadloscian::Transformacja(const Wektor3D& Trans) {
     Obrot();
-    for(int i=0; i<WYMIAR; ++i)
-    {
-        Polozenie[i] = Polozenie[i] * Skala[i] + Trans[i];
+    for(Wektor3D& wierzcholek : wierzcholki) {
+        for(int i=0; i<WYMIAR; ++i) {
+            wierzcholek[i] = wierzcholek[i] * Skala[i] + Trans[i];
+        }
     }
+    
 }
 
 /*!
@@ -76,36 +77,22 @@ void Prostopadloscian::Transformacja(const Wektor3D& Trans)
  */
 bool Prostopadloscian::TworzOpisProstopadloscianu(const Wektor3D& Trans)
 {
-    std::ifstream PlikWzorcowy(NazwaPliku_Wzorcowy);
     std::ofstream PlikFinalny(NazwaPliku_Finalny);
 
-    if(!PlikWzorcowy.is_open())
-    {
-        std::cerr<<std::endl<<"Blad otwarcia pliku: "<<NazwaPliku_Wzorcowy<<std::endl;
-        return false;
-    }
     if(!PlikFinalny.is_open())
     {
         std::cerr<<std::endl<<"Blad otwarcia pliku: "<<NazwaPliku_Finalny<<std::endl;
         return false;
     }
-
-    assert(PlikWzorcowy.good() && PlikFinalny.good());
-    PlikWzorcowy >> Polozenie;
-    while(!PlikWzorcowy.fail())
-    {
-        for(unsigned int IloscWierzch=0; IloscWierzch<ILOSC_WIERZ_LINII_TWORZACEJ; ++IloscWierzch)
-        {
-            Transformacja(Trans);
-            PlikFinalny << Polozenie;
-            //PlikFinalny << Polozenie[0] << " " << Polozenie[1] << " " << Polozenie[2] << " " <<std::endl;
-            PlikWzorcowy >> Polozenie;
-            
-            assert(IloscWierzch == ILOSC_WIERZ_LINII_TWORZACEJ-1 || !PlikWzorcowy.fail());
-        }
-        PlikFinalny << std::endl;
+    Transformacja(Trans);
+    int i=0;
+    for(const auto& wierzcholek : wierzcholki) { 
+        if(i != 0 && i % 4 == 0) PlikFinalny << "\n";
+        i++;
+        PlikFinalny << wierzcholek;
     }
-    PlikFinalny.close(); PlikWzorcowy.close();
+
+    PlikFinalny.close();
     return !PlikFinalny.fail();
 }
 /*!
@@ -122,6 +109,10 @@ bool Prostopadloscian::TworzOpisProstopadloscianu(const Wektor3D& Trans)
  */
 bool Prostopadloscian::TransDoUklRodzica(const Wektor3D& Wek)
 {   
+    for(auto &wierzcholek : wierzcholki) {
+        std::cout << wierzcholek << std::endl;
+    }
+
     if(!TworzOpisProstopadloscianu(Wek)) return false;
     return true;
 }

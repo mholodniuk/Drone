@@ -19,16 +19,15 @@
 
 class Prostopadloscian: public BrylaGeometryczna
 {
-    Wektor3D Polozenie;
     double Kat_Or;
+    std::vector<Wektor3D> wierzcholki;
 
 public:
 
-    //!\brief Konstruktor bezparametryczny
-    Prostopadloscian();
+    Prostopadloscian(std::string NazwaPilku, const Wektor3D& skala);
 
     //!\brief Metody Transformujace
-    void ZadajKatObrotu(double kat);
+    inline void ZadajKatObrotu(double kat) { Kat_Or = kat; }
     void Obrot();
     void Transformacja(const Wektor3D& Trans);
     bool TworzOpisProstopadloscianu(const Wektor3D& Trans);

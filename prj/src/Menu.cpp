@@ -1,7 +1,7 @@
-#include "Menu.hh"
+#include "../inc/Menu.hh"
 
 #include <iostream>
-#include "Nazwy.hh"
+#include "../inc/Nazwy.hh"
 
 /*!
  * \brief Funckja ustwiajaca odpowiednie parametry gnuplota

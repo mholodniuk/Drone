@@ -1,1 +1,1 @@
-#include "ObiektSceny.hh"
+#include "../inc/ObiektSceny.hh"

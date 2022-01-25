@@ -3,11 +3,13 @@
 
 #include <iostream>
 #include <cmath>
+#include <vector>
 #include <fstream>
+#include <string>
 #include "Wektor3D.hh"
 #include "Macierz3x3.hh"
 #include "Nazwy.hh"
-
+ 
 
 #define WYMIAR 3
 
@@ -30,24 +32,17 @@ class BrylaGeometryczna
 {
 protected:
 
-    std::string NazwaPliku_Wzorcowy;
     std::string NazwaPliku_Finalny;
     Wektor3D Skala;
 
 public:
 
     //!\brief Konstruktor bezparametryczny 
-    BrylaGeometryczna() { };
+    BrylaGeometryczna(std::string NazwaPilku, const Wektor3D& skala);
     //!\brief Destruktor wirtualny
-    virtual ~BrylaGeometryczna() { }
-    
-    //!\brief Metoda Ustawiajaca Nazwe Pliku Docelowego
-    void UstawNazwaPlikuWlasciwego(const char* NazwaPliku);
-    
-    //!\brief Metoda ustawiajaca skale bryly
-    Wektor3D UstawSkale(const Wektor3D& skala);
+    virtual ~BrylaGeometryczna() {}
 
     //!\brief Metoda zwracajaca nazwe pliku docelowego
-    const char* ZwrocNazwePlikuFinalnego() const { return NazwaPliku_Finalny.c_str(); }
+    std::string ZwrocNazwePlikuFinalnego() const { return NazwaPliku_Finalny; }
 
 };

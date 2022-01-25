@@ -1,1 +1,1 @@
-#include "Wektor3D.hh"
+#include "../inc/Wektor3D.hh"

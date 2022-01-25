@@ -2,9 +2,6 @@
 
 #include "Dron.hh"
 #include "ObiektSceny.hh"
-#include "GoraZDlugaGrania.hh"
-#include "GoraZOstrymSzczytem.hh"
-#include "Plaskowyz.hh"
 #include "lacze_do_gnuplota.hh"
 #include "BrylaGeometryczna.hh"
 #include <list>
@@ -38,7 +35,7 @@ class Scena
 public:
 
     //!\brief konstruktor bezparametryczny
-    Scena() { };
+    Scena();
 
     //!\brief Metoda tworzaca uklad sceny
     void TworzScene();
@@ -47,19 +44,6 @@ public:
     void Menu(char& wybor);
     void WyswietlMenu();
     void WyborDrona();
-
-    //!\brief Metody dodajace przeszkody
-    void DodajGoreZDlugaGrania(unsigned int ID);
-    void DodajGoreZOstrymSzczytem(unsigned int ID);
-    void DodajPlaskowyz(unsigned int ID);
-    void DodajPrzeszkode();
-
-    //!\brief metoda ustawiajaca poczatkowy zestaw przeszkod
-    void UstawPrzeszkody();
-
-    //!\brief Metody usuwajace przeszkody
-    void PokazPrzeszkody();
-    void UsunPrzeszkode();
 
     //!\brief metody dodajace drony
     std::shared_ptr<Dron> DodajDrona(unsigned int ID, const Wektor3D& wek);
