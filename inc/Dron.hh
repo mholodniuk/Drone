@@ -26,13 +26,13 @@
  * planujace sciezke jego lotu oraz animujace jego lot
  */
 
-class Dron: public ObiektSceny
+class Drone: public ObiektSceny
 {
-  Wektor3D Polozenie;
-  double Kat_OrDrona;
-  std::shared_ptr<Prostopadloscian> KorpusDrona;
-  std::shared_ptr<Graniastoslup> RotorDrona[4];
-  Sciezka sciezka_poruszania;
+  Wektor3D Position;
+  double current_drone_rotation;
+  std::shared_ptr<Cuboid> Body;
+  std::shared_ptr<Prism> Rotors[4];
+  Sciezka path;
   
   unsigned int id;
   int pojedynczy_krok = 2;
@@ -45,10 +45,10 @@ class Dron: public ObiektSceny
   void UstawRotory(double kat_rad);
 
   //! \brief Metoda przesuwajaca drona o zadany wektor przesuniecia
-  void PrzesunDrona(const Wektor3D& Wek) { Polozenie += Wek; }
+  void PrzesunDrona(const Wektor3D& Wek) { Position += Wek; }
 
   //! \brief Metoda przemieszczajaca drona do zadanego wektora polozenia
-  void ZmienPolozenieDrona(const Wektor3D& nPolozenie) { Polozenie = nPolozenie; }
+  void ZmienPolozenieDrona(const Wektor3D& nPolozenie) { Position = nPolozenie; }
 
   //! \brief Metody generujace nazwy plikow
   inline std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);
@@ -57,20 +57,21 @@ class Dron: public ObiektSceny
 public:
 
   //! \brief Konstruktor bezparametryczny 
-  Dron(unsigned int id, PzG::LaczeDoGNUPlota& lacze);
+  Drone(unsigned int id, PzG::LaczeDoGNUPlota& lacze);
+  
   //!\brief Destrkutor wirtualny
-  virtual ~Dron() { }
+  virtual ~Drone() { }
 
   //! \brief Metody zwracajace oraz ustawiajace kat orientacji oraz ID
-  double ZwrocKat_st() { return Kat_OrDrona; }
-  double ZwrocPromien() { return Promien_drona; }
-  double ZwrocID() { return id; }
-  void ZadajKat_st(double kat) { Kat_OrDrona = kat; }
+  inline double ZwrocKat_st() { return current_drone_rotation; }
+  inline double ZwrocPromien() { return Promien_drona; }
+  inline double ZwrocID() { return id; }
+  inline void ZadajKat_st(double kat) { current_drone_rotation = kat; }
   virtual bool CzyDron() const override { return true; }
 
   //! \brief Metody zwracajace/wyswietlajace polozenie
   void PodajWspolrzedne() const;
-  Wektor3D ZwrocPolozenie() const;
+  inline Wektor3D ZwrocPolozenie() const { return Position; }
 
   //! \brief Metoda tworzaca zestaw plikow ze wspolrzednymi
   void TworzDrona(unsigned int ID, PzG::LaczeDoGNUPlota & Lacze);

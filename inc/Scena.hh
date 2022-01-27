@@ -29,8 +29,8 @@ class Scena
     unsigned int lPrzeszkod;
 
     std::list<std::shared_ptr<ObiektSceny>> ListaObiektow;
-    std::list<std::shared_ptr<Dron>> ListaDronow;
-    std::shared_ptr<Dron> Dron_wybrany;
+    std::list<std::shared_ptr<Drone>> ListaDronow;
+    std::shared_ptr<Drone> Dron_wybrany;
 
 public:
 
@@ -46,15 +46,15 @@ public:
     void WyborDrona();
 
     //!\brief metody dodajace drony
-    std::shared_ptr<Dron> DodajDrona(unsigned int ID, const Wektor3D& wek);
+    std::shared_ptr<Drone> DodajDrona(unsigned int ID, const Wektor3D& wek);
     void UstawDrony();
     void DodajDrona();
     void WyswietlDrony();
 
     //!\brief Metody animujace lot drona
-    void LotDrona(std::shared_ptr<Dron> &Dr);
+    void LotDrona(std::shared_ptr<Drone> &Dr);
 
     //!!\brief Metody sprawdzajace czy obszar jest zajety
-    bool CzyZajete(std::shared_ptr<Dron>& WDron);
+    bool CzyZajete(std::shared_ptr<Drone>& WDron);
 
 };

@@ -28,7 +28,7 @@
  * skali bryly
  */
 
-class BrylaGeometryczna
+class Figure
 {
 protected:
 
@@ -38,9 +38,9 @@ protected:
 public:
 
     //!\brief Konstruktor bezparametryczny 
-    BrylaGeometryczna(std::string NazwaPilku, const Wektor3D& skala);
+    Figure(std::string NazwaPilku, const Wektor3D& skala);
     //!\brief Destruktor wirtualny
-    virtual ~BrylaGeometryczna() {}
+    virtual ~Figure() {}
 
     //!\brief Metoda zwracajaca nazwe pliku docelowego
     std::string ZwrocNazwePlikuFinalnego() const { return NazwaPliku_Finalny; }

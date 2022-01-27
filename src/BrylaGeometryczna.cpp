@@ -4,5 +4,5 @@
 #include <cmath>
 
 
-BrylaGeometryczna::BrylaGeometryczna(std::string NazwaPilku,const Wektor3D& skala)
-    : NazwaPliku_Finalny(NazwaPilku), Skala(skala) { }
+Figure::Figure(std::string NazwaPilku,const Wektor3D& skala)
+    : NazwaPliku_Finalny(NazwaPilku), Skala(skala){ }

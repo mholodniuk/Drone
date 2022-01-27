@@ -7,23 +7,32 @@
  * Ustawia Nazwe pliku wzorcowego i nadaje kat orientacji 0
  * 
  */
-Graniastoslup::Graniastoslup(std::string NazwaPilku, const Wektor3D& skala)
-    : BrylaGeometryczna(NazwaPilku, skala), Kat_Or(0) {
+Prism::Prism(std::string NazwaPilku, const Wektor3D& skala)
+    : Figure(NazwaPilku, skala), Orientation_deg(0) { }
 
+void Prism::CalculateLocalPosition()
+{
     std::ifstream PlikWzorcowy(PLIK_WZORCOWEGO_GRANIASTOSLUPA6);
+    std::stringstream buffer;
+    buffer << PlikWzorcowy.rdbuf();
 
     if(!PlikWzorcowy.is_open()) {
-        std::cerr<<std::endl<<"Blad otwarcia pliku: "<<NazwaPliku_Wzorcowy<<std::endl;
+        std::cerr << std::endl << "Blad otwarcia pliku: " << PLIK_WZORCOWEGO_GRANIASTOSLUPA6 << std::endl;
     }
-    wierzcholki.reserve(28);
 
-    for(Wektor3D& wierzcholek : wierzcholki) {
-        PlikWzorcowy >> wierzcholek;
-        std::cout<<wierzcholek;
+    Wektor3D tmp;
+    while(buffer>>tmp) {
+        //std::cout<<tmp;
+        vertices.push_back(tmp);
+    }
+
+    for(Wektor3D& wierzcholek : vertices) {
+        for(int i=0; i<WYMIAR; ++i) {
+            wierzcholek[i] = wierzcholek[i] * Skala[i];
+        }
     }
     PlikWzorcowy.close();
 }
-
 
 
 /*!
@@ -33,13 +42,13 @@ Graniastoslup::Graniastoslup(std::string NazwaPilku, const Wektor3D& skala)
  * i na jej podstawie obliczane jest polozenie po obrocie
  *
  */
-void Graniastoslup::Obrot()
+void Prism::Rotate()
 {
-    double KatRad = Kat_Or*M_PI/180;
+    double KatRad = Orientation_deg*M_PI/180;
     Macierz3x3 MacierzRot;
     MacierzRot.ObrotZ(KatRad);
 
-    for(Wektor3D& wierzcholek : wierzcholki) {
+    for(Wektor3D& wierzcholek : vertices) {
         wierzcholek = MacierzRot * wierzcholek;
     }
 }
@@ -53,13 +62,10 @@ void Graniastoslup::Obrot()
  * \param[in] Trans - Wektor translacji
  * 
  */
-void Graniastoslup::Transformacja(const Wektor3D& Trans)
+void Prism::Transform(const Wektor3D& Trans)
 {
-    Obrot();
-    for(Wektor3D& wierzcholek : wierzcholki) {
-        for(int i=0; i<WYMIAR; ++i) {
-            wierzcholek[i] = wierzcholek[i] * Skala[i] + Trans[i];
-        }
+    for(Wektor3D& wierzcholek : vertices) {
+        wierzcholek += Trans;
     }
 }
 
@@ -76,7 +82,7 @@ void Graniastoslup::Transformacja(const Wektor3D& Trans)
  * \retval false - gdy operacja sie nie uda
  * 
  */
-bool Graniastoslup::TworzOpisGraniastoslupu(const Wektor3D& Trans)
+bool Prism::SaveToFile(const Wektor3D& Trans)
 {
     std::ofstream PlikFinalny(NazwaPliku_Finalny);
 
@@ -85,11 +91,16 @@ bool Graniastoslup::TworzOpisGraniastoslupu(const Wektor3D& Trans)
         std::cerr<<std::endl<<"Blad otwarcia pliku: "<<NazwaPliku_Finalny<<std::endl;
         return false;
     }
-
-    for(const Wektor3D& wierzcholek : wierzcholki) {
-        Transformacja(Trans);
+    CalculateLocalPosition();
+    Rotate();
+    Transform(Trans);
+    int i=0;
+    for(const auto& wierzcholek : vertices) { 
+        if(i != 0 && i % 4 == 0) PlikFinalny << "\n";
+        i++;
         PlikFinalny << wierzcholek;
     }
+    vertices.clear();
     PlikFinalny.close();
     return !PlikFinalny.fail();
 }
@@ -105,8 +116,8 @@ bool Graniastoslup::TworzOpisGraniastoslupu(const Wektor3D& Trans)
  * \retval false - jesli operacja sie nie powiedzie
  * 
  */
-bool Graniastoslup::TransDoUklRodzica(const Wektor3D& Wek)
+bool Prism::Translate(const Wektor3D& Wek)
 {   
-    if(!TworzOpisGraniastoslupu(Wek)) return false;
+    if(!SaveToFile(Wek)) return false;
     return true;
 }

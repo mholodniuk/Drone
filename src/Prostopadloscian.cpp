@@ -6,9 +6,11 @@
  * Ustawia Nazwe pliku wzorcowego i nadaje kat orientacji 0
  * 
  */
-Prostopadloscian::Prostopadloscian(std::string NazwaPilku, const Wektor3D& skala)
-    : BrylaGeometryczna(NazwaPilku, skala), Kat_Or(0) {
-    
+Cuboid::Cuboid(std::string NazwaPilku, const Wektor3D& skala)
+    : Figure(NazwaPilku, skala), Orientation_deg(0) { }
+
+void Cuboid::CalculateLocalPosition() 
+{
     std::ifstream PlikWzorcowy(PLIK_WZORCOWEGO_SZESCIANU);
     std::stringstream buffer;
     buffer << PlikWzorcowy.rdbuf();
@@ -20,11 +22,16 @@ Prostopadloscian::Prostopadloscian(std::string NazwaPilku, const Wektor3D& skala
     Wektor3D tmp;
     while(buffer>>tmp) {
         //std::cout<<tmp;
-        wierzcholki.push_back(tmp);
+        vertices.push_back(tmp);
+    }
+
+    for(Wektor3D& wierzcholek : vertices) {
+        for(int i=0; i<WYMIAR; ++i) {
+            wierzcholek[i] = wierzcholek[i] * Skala[i];
+        }
     }
     PlikWzorcowy.close();
 }
-
 
 /*!
  * \brief Metoda Obracajaca Prostopadloscian
@@ -33,12 +40,12 @@ Prostopadloscian::Prostopadloscian(std::string NazwaPilku, const Wektor3D& skala
  * i na jej podstawie obliczane jest polozenie po obrocie
  *
  */
-void Prostopadloscian::Obrot() {
-    double KatRad = Kat_Or*M_PI/180;
+void Cuboid::Rotate() {
+    double KatRad = Orientation_deg*M_PI/180;
     Macierz3x3 MacierzRot;
     MacierzRot.ObrotZ(KatRad);
 
-    for(Wektor3D& wierzcholek : wierzcholki) {
+    for(Wektor3D& wierzcholek : vertices) {
         wierzcholek = MacierzRot * wierzcholek;
     }
 }
@@ -52,14 +59,10 @@ void Prostopadloscian::Obrot() {
  * \param[in] Trans - Wektor translacji
  * 
  */
-void Prostopadloscian::Transformacja(const Wektor3D& Trans) {
-    Obrot();
-    for(Wektor3D& wierzcholek : wierzcholki) {
-        for(int i=0; i<WYMIAR; ++i) {
-            wierzcholek[i] = wierzcholek[i] * Skala[i] + Trans[i];
-        }
+void Cuboid::Transform(const Wektor3D& Trans) {
+    for(Wektor3D& wierzcholek : vertices) {
+        wierzcholek += Trans;
     }
-    
 }
 
 /*!
@@ -75,7 +78,7 @@ void Prostopadloscian::Transformacja(const Wektor3D& Trans) {
  * \retval false - gdy operacja sie nie uda
  * 
  */
-bool Prostopadloscian::TworzOpisProstopadloscianu(const Wektor3D& Trans)
+bool Cuboid::SaveToFile(const Wektor3D& Trans)
 {
     std::ofstream PlikFinalny(NazwaPliku_Finalny);
 
@@ -84,14 +87,16 @@ bool Prostopadloscian::TworzOpisProstopadloscianu(const Wektor3D& Trans)
         std::cerr<<std::endl<<"Blad otwarcia pliku: "<<NazwaPliku_Finalny<<std::endl;
         return false;
     }
-    Transformacja(Trans);
+    CalculateLocalPosition();
+    Rotate();
+    Transform(Trans);
     int i=0;
-    for(const auto& wierzcholek : wierzcholki) { 
+    for(const auto& wierzcholek : vertices) { 
         if(i != 0 && i % 4 == 0) PlikFinalny << "\n";
         i++;
         PlikFinalny << wierzcholek;
     }
-
+    vertices.clear();
     PlikFinalny.close();
     return !PlikFinalny.fail();
 }
@@ -107,12 +112,8 @@ bool Prostopadloscian::TworzOpisProstopadloscianu(const Wektor3D& Trans)
  * \retval false - jesli operacja sie nie powiedzie
  * 
  */
-bool Prostopadloscian::TransDoUklRodzica(const Wektor3D& Wek)
+bool Cuboid::Translate(const Wektor3D& Wek)
 {   
-    for(auto &wierzcholek : wierzcholki) {
-        std::cout << wierzcholek << std::endl;
-    }
-
-    if(!TworzOpisProstopadloscianu(Wek)) return false;
+    if(!SaveToFile(Wek)) return false;
     return true;
 }

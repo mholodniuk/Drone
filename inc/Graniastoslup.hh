@@ -17,23 +17,25 @@
  * Atrybutami tej klasy jest Polozenie oraz kat orientacji
  */
 
-class Graniastoslup: public BrylaGeometryczna
+class Prism: public Figure
 {
-    double Kat_Or;
-    std::vector<Wektor3D> wierzcholki;
+    double Orientation_deg;
+    std::vector<Wektor3D> vertices;
 
 public:
 
-    Graniastoslup(std::string NazwaPilku, const Wektor3D& skala);
+    Prism(std::string, const Wektor3D&);
 
     //!\brief Metody Transformujace
-    void ZadajKatObrotu(double kat) { Kat_Or = kat; };
-    void Obrot();
-    void Transformacja(const Wektor3D& Trans);
-    bool TworzOpisGraniastoslupu(const Wektor3D& Trans);
+    void SetRotation(double kat) { Orientation_deg = kat; };
+    void Rotate();
+    void Transform(const Wektor3D& Trans);
+    bool SaveToFile(const Wektor3D& Trans);
+
+    void CalculateLocalPosition();
 
     //!\brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
-    bool TransDoUklRodzica(const Wektor3D& Wek);
+    bool Translate(const Wektor3D& Wek);
 
     //virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 };
