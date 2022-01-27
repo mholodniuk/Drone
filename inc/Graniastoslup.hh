@@ -19,23 +19,14 @@
 
 class Prism: public Figure
 {
-    double Orientation_deg;
-    std::vector<Wektor3D> vertices;
+    
 
 public:
 
     Prism(std::string, const Wektor3D&);
 
-    //!\brief Metody Transformujace
-    void SetRotation(double kat) { Orientation_deg = kat; };
-    void Rotate();
-    void Transform(const Wektor3D& Trans);
-    bool SaveToFile(const Wektor3D& Trans);
+    void CalculateLocalPosition() override;
 
-    void CalculateLocalPosition();
-
-    //!\brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
-    bool Translate(const Wektor3D& Wek);
 
     //virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 };

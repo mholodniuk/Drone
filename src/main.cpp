@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-  Scena S;
+  Scene S;
   char input = 'm';
 
   S.TworzScene();

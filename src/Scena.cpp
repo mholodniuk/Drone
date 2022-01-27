@@ -5,28 +5,17 @@
 #include <unistd.h>
 
 
-Scena::Scena() {
-  
-}
-
-/*!
- * \brief Metoda ustawiajaca Drony na scenie
- *
- * Drony sa tworzone i ustawiane "na szytwno"
- * 
- */
-void Scena::TworzScene()
-{
+Scene::Scene() {
   UstawGNUPlot(Lacze);
-  lPrzeszkod = 0;
+  ObstacleCounter = 0;
 
-  UstawDrony();
+  SetDrones();
 }
 
 /*!
  * \brief Metoda wyswietlajaca menu programu
  */
-void Scena::WyswietlMenu()
+void Scene::WyswietlMenu()
 {
   std::cout<<"\n\t a - Wybierz aktywnego drona"<<std::endl;
   std::cout<<"\t p - Zadaj parametry przelotu"<<std::endl;
@@ -44,18 +33,18 @@ void Scena::WyswietlMenu()
  * przelot. W razie wyboru niepoprawnego liczby (id drona) zostanie
  * wyswitlony odpowiedni komunikat.
  */
-void Scena::WyborDrona()
+void Scene::WyborDrona()
 {
   int aktywny, pomocnicza = 0;
   std::cout<<"Aktualnie aktywny jest dron o wspolrzednych: "<<std::endl;
-  Dron_wybrany->PodajWspolrzedne();
+  ChosenDrone->PrintPosition();
   std::cout<<std::endl<<"Wybierz aktywnego drona: ";
   std::cin>>aktywny;
-  for(const std::shared_ptr<Drone>& Dr : ListaDronow)
+  for(const std::shared_ptr<Drone>& Dr : DroneList)
   {
     if(Dr->ZwrocID() == aktywny)
     {
-      Dron_wybrany = Dr;
+      ChosenDrone = Dr;
       ++pomocnicza;
     }
   }
@@ -66,7 +55,7 @@ void Scena::WyborDrona()
 /*!
  * \brief Metoda obslugujaca menu
  */
-void Scena::Menu(char& wybor)
+void Scene::Menu(char& wybor)
 {
   switch(wybor)
   {
@@ -78,7 +67,7 @@ void Scena::Menu(char& wybor)
       break;
 
     case 'a':
-      WyswietlDrony();
+      PrintDrones();
       WyborDrona();
       break;
     
@@ -88,12 +77,12 @@ void Scena::Menu(char& wybor)
 
 
     case 'D':
-      DodajDrona();
+      AddDrone();
       break;
 
 
     case 'p':
-      LotDrona(Dron_wybrany);
+      Animate(ChosenDrone);
       Wektor3D::ZwrocIloscWektorow();
       break;
 
@@ -115,15 +104,15 @@ void Scena::Menu(char& wybor)
  * 
  * \return _Dron - wskaznik na dodanego drona
  */
-std::shared_ptr<Drone> Scena::DodajDrona(unsigned int ID, const Wektor3D& Wek)
+std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
 {
   std::shared_ptr<Drone> _Dron = std::make_shared<Drone>(ID, Lacze);
   Lacze.Rysuj();
 
-  _Dron->TransDoUklRodzica(Wek, Lacze);
+  _Dron->Translate(Wek, Lacze);
 
-  ListaDronow.push_back(_Dron);
-  ListaObiektow.push_back(_Dron);
+  DroneList.push_back(_Dron);
+  ObjectList.push_back(_Dron);
 
   return _Dron;
 }
@@ -135,11 +124,11 @@ std::shared_ptr<Drone> Scena::DodajDrona(unsigned int ID, const Wektor3D& Wek)
  * ustawiony jako dron nr 1.
  * 
  */
-void Scena::UstawDrony()
+void Scene::SetDrones()
 {
   Wektor3D W1 = {50, 50, 10};
 
-  Dron_wybrany = DodajDrona(1, W1);
+  ChosenDrone = AddDrone(1, W1);
 
 }
 
@@ -153,25 +142,25 @@ void Scena::UstawDrony()
  * dronow. Dodany drona jest umiejscawiany na wskazanym miejscu
  * 
  */
-void Scena::DodajDrona()
+void Scene::AddDrone()
 {
   double wsp_x, wsp_y;
-  int id_drona = ListaDronow.size() + 1;
+  int id_drona = DroneList.size() + 1;
 
   std::cout<<"Procedura dodawania drona..."<<std::endl;
   std::cout<<"Podaj wsporzedne drona (x,y): ";
   std::cin>>wsp_x>>wsp_y;
 
-  DodajDrona(id_drona, {wsp_x, wsp_y, 0});
+  AddDrone(id_drona, {wsp_x, wsp_y, 0});
 }
 
-void Scena::WyswietlDrony()
+void Scene::PrintDrones()
 {
-  std::cout<<"Aktualnie na scenie znajduje sie " << ListaDronow.size() << std::endl;
+  std::cout<<"Aktualnie na scenie znajduje sie " << DroneList.size() << std::endl;
 
-  for(const std::shared_ptr<Drone> &Dr : ListaDronow)
+  for(const std::shared_ptr<Drone> &Dr : DroneList)
   {
-    std::cout << Dr->ZwrocID() << ". " << Dr->Identyfikuj() << std::endl;
+    std::cout << Dr->ZwrocID() << ". " << Dr->Identify() << std::endl;
   }
   std::cout<<std::endl;
 }
@@ -190,14 +179,14 @@ void Scena::WyswietlDrony()
  * \retval true - jesli dane miejsce jest zajete przez obiekt sceny
  * 
  */
-bool Scena::CzyZajete(std::shared_ptr<Drone>& Dr)
+bool Scene::IsFree(std::shared_ptr<Drone>& Dr)
 {
-  for(const std::shared_ptr<ObiektSceny>& Ob : ListaObiektow)
+  for(const std::shared_ptr<SceneObject>& Ob : ObjectList)
   {
     if(Ob == Dr) continue;
     if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
     {
-      std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identyfikuj() << 
+      std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identify() << 
       std:: endl << "Przedluzam lot....." << std::endl << std::endl;
 
       return true;
@@ -218,7 +207,7 @@ bool Scena::CzyZajete(std::shared_ptr<Drone>& Dr)
  * \param[in] Dr - wskaznik na aktualnie aktywnego drona
  * 
  */
-void Scena::LotDrona(std::shared_ptr<Drone> &Dr)
+void Scene::Animate(std::shared_ptr<Drone> &Dr)
 {
   double kat, dlugosc;
   Wektor3D Polozenie_poczatkowe = Dr->ZwrocPolozenie();
@@ -236,7 +225,7 @@ void Scena::LotDrona(std::shared_ptr<Drone> &Dr)
   Dr->Obrot(kat, Lacze);
   Dr->LotDoPrzodu(dlugosc, Lacze);
 
-  while(CzyZajete(Dr))
+  while(IsFree(Dr))
   {
     dlugosc += 30;
     Dr->WyczyscSciezke(Lacze);
@@ -250,5 +239,5 @@ void Scena::LotDrona(std::shared_ptr<Drone> &Dr)
   Dr->WyczyscSciezke(Lacze);
   Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
 
-  Dr->PodajWspolrzedne();
+  Dr->PrintPosition();
 }

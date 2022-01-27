@@ -23,22 +23,19 @@
  * czy miejsce ladowania jest wolne
  */
 
-class Scena
+class Scene
 {
     PzG::LaczeDoGNUPlota Lacze;
-    unsigned int lPrzeszkod;
+    unsigned int ObstacleCounter;
 
-    std::list<std::shared_ptr<ObiektSceny>> ListaObiektow;
-    std::list<std::shared_ptr<Drone>> ListaDronow;
-    std::shared_ptr<Drone> Dron_wybrany;
+    std::list<std::shared_ptr<SceneObject>> ObjectList;
+    std::list<std::shared_ptr<Drone>> DroneList;
+    std::shared_ptr<Drone> ChosenDrone;
 
 public:
 
     //!\brief konstruktor bezparametryczny
-    Scena();
-
-    //!\brief Metoda tworzaca uklad sceny
-    void TworzScene();
+    Scene();
 
     //!\brief Metody obslugujace dzialanie sceny
     void Menu(char& wybor);
@@ -46,15 +43,15 @@ public:
     void WyborDrona();
 
     //!\brief metody dodajace drony
-    std::shared_ptr<Drone> DodajDrona(unsigned int ID, const Wektor3D& wek);
-    void UstawDrony();
-    void DodajDrona();
-    void WyswietlDrony();
+    std::shared_ptr<Drone> AddDrone(unsigned int ID, const Wektor3D& wek);
+    void SetDrones();
+    void AddDrone();
+    void PrintDrones();
 
     //!\brief Metody animujace lot drona
-    void LotDrona(std::shared_ptr<Drone> &Dr);
+    void Animate(std::shared_ptr<Drone> &Dr);
 
     //!!\brief Metody sprawdzajace czy obszar jest zajety
-    bool CzyZajete(std::shared_ptr<Drone>& WDron);
+    bool IsFree(std::shared_ptr<Drone>& WDron);
 
 };

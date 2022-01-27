@@ -19,13 +19,13 @@
  * metody pozwalajace odpowiednio identyfikowac obiekty
  */
 
-class ObiektSceny
+class SceneObject
 {
 public:
 
     //!\brief Konstruktor i wirtualny destruktor
-    ObiektSceny() { }
-    virtual ~ObiektSceny() { }
+    SceneObject() { }
+    virtual ~SceneObject() { }
 
     //!\brief Metoda sprawdzajaca czy dany obiekt jest obiektem klasy Dron
     virtual bool CzyDron() const { return false; }
@@ -34,8 +34,8 @@ public:
     virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const = 0;
 
     //!\brief Metody pozwalajce na identyfikacje obiektu
-    virtual std::string Identyfikuj() const { return "obiekt sceny"; }
+    virtual std::string Identify() const { return "obiekt sceny"; }
     virtual bool SprawdzID(unsigned int) const { return false; }
     virtual double PokazID() const { return 0; } 
-    virtual const char* ZwrocNazwePlikuFinalnego() const = 0;
+    virtual const char* GetFileName() const = 0;
 };

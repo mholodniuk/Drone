@@ -26,7 +26,7 @@
  * planujace sciezke jego lotu oraz animujace jego lot
  */
 
-class Drone: public ObiektSceny
+class Drone: public SceneObject
 {
   Wektor3D Position;
   double current_drone_rotation;
@@ -39,10 +39,10 @@ class Drone: public ObiektSceny
   unsigned int Promien_drona = 10;
 
   //!\brief Metody ustawiajace poszczegolne elementy
-  void Oblicz_i_Zapisz_WspKorpusu();
-  void Oblicz_i_Zapisz_WspRotorow();
-  void ZakrecRotorami();
-  void UstawRotory(double kat_rad);
+  void CalcAndSaveBody();
+  void CalcAndSaveRotors();
+  void SpinRotors();
+  void SetRotors(double kat_rad);
 
   //! \brief Metoda przesuwajaca drona o zadany wektor przesuniecia
   void PrzesunDrona(const Wektor3D& Wek) { Position += Wek; }
@@ -51,8 +51,8 @@ class Drone: public ObiektSceny
   void ZmienPolozenieDrona(const Wektor3D& nPolozenie) { Position = nPolozenie; }
 
   //! \brief Metody generujace nazwy plikow
-  inline std::string TworzNazweRotora(unsigned int id_Drona, unsigned int nrRotora);
-  inline std::string TworzNazweKorpusu(unsigned int id_Drona);
+  inline std::string CreateRotorFileName(unsigned int id_Drona, unsigned int nrRotora);
+  inline std::string CreateBodyFileName(unsigned int id_Drona);
 
 public:
 
@@ -70,17 +70,17 @@ public:
   virtual bool CzyDron() const override { return true; }
 
   //! \brief Metody zwracajace/wyswietlajace polozenie
-  void PodajWspolrzedne() const;
+  inline void PrintPosition() const { std::cout << Position[0] << " " <<Position[1] <<std::endl; }
   inline Wektor3D ZwrocPolozenie() const { return Position; }
 
   //! \brief Metoda tworzaca zestaw plikow ze wspolrzednymi
   void TworzDrona(unsigned int ID, PzG::LaczeDoGNUPlota & Lacze);
   
   //!! \brief Metoda transformujaca 
-  void TransDoUklRodzica(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze);
+  void Translate(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze);
 
   //! \brief Metoda zapisujaca polozenie poszczegolnych wierzcholkow
-  void Oblicz_i_ZapiszWspDrona();
+  void CalcAndSavePostion();
 
   //! \brief Metody Obliczajace i generujace sciezke lotu 
   void InicjalizujSciezke(PzG::LaczeDoGNUPlota& Lacze) const;
@@ -100,7 +100,7 @@ public:
   virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
   
   //! \brief Metody identyfikujace
-  virtual std::string Identyfikuj() const override;
-  virtual const char* ZwrocNazwePlikuFinalnego() const override;
+  virtual std::string Identify() const override;
+  virtual const char* GetFileName() const override;
 
 };

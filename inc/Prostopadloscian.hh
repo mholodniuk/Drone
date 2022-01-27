@@ -19,22 +19,10 @@
 
 class Cuboid: public Figure
 {
-    double Orientation_deg;
-    std::vector<Wektor3D> vertices;
 
 public:
 
     Cuboid(std::string NazwaPilku, const Wektor3D& skala);
-    void CalculateLocalPosition();
+    void CalculateLocalPosition() override;
 
-    //!\brief Metody Transformujace
-    inline void SetRotation(double kat) { Orientation_deg = kat; }
-    void Rotate();
-    void Transform(const Wektor3D& Trans);
-    bool SaveToFile(const Wektor3D& Trans);
-    
-    //!\brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
-    bool Translate(const Wektor3D& Wek);
-
-    //virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 };

@@ -32,8 +32,13 @@ class Figure
 {
 protected:
 
-    std::string NazwaPliku_Finalny;
-    Wektor3D Skala;
+    std::string FinalFileName;
+
+    Wektor3D Scale;
+
+    double Orientation_deg;
+
+    std::vector<Wektor3D> vertices;
 
 public:
 
@@ -43,6 +48,17 @@ public:
     virtual ~Figure() {}
 
     //!\brief Metoda zwracajaca nazwe pliku docelowego
-    std::string ZwrocNazwePlikuFinalnego() const { return NazwaPliku_Finalny; }
+    std::string ZwrocNazwePlikuFinalnego() const { return FinalFileName; }
+
+    //!\brief Metody Transformujace
+    void SetRotation(double kat) { Orientation_deg = kat; };
+    void Rotate();
+    void Transform(const Wektor3D& Trans);
+    bool SaveToFile(const Wektor3D& Trans);
+
+    virtual void CalculateLocalPosition() = 0;
+
+    //!\brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
+    bool Translate(const Wektor3D& Wek);
 
 };
