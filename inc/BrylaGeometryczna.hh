@@ -38,7 +38,7 @@ protected:
 
     double Orientation_deg;
 
-    Macierz3x3 GlobalOrientation;
+    Matrix3x3 GlobalOrientation;
 
     std::vector<Wektor3D> vertices;
 
@@ -56,7 +56,7 @@ public:
 
     //!\brief Metody Transformujace
     void SetRotation(double kat) { Orientation_deg = kat; };
-    void SetGlobalOrientation(const Macierz3x3& orient) { GlobalOrientation = orient; }
+    void SetGlobalOrientation(const Matrix3x3& orient) { GlobalOrientation = orient; }
     void Rotate();
     void Transform(const Wektor3D& Trans);
     bool Draw();

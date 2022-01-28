@@ -9,6 +9,7 @@
 Cuboid::Cuboid(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center)
     : Figure(NazwaPilku, skala, center) { }
 
+
 void Cuboid::CalculateLocalPosition() 
 {
     std::ifstream PlikWzorcowy(PLIK_WZORCOWEGO_SZESCIANU);
@@ -32,4 +33,3 @@ void Cuboid::CalculateLocalPosition()
     }
     PlikWzorcowy.close();
 }
-

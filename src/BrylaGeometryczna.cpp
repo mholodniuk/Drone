@@ -5,7 +5,7 @@
 
 
 Figure::Figure(std::string NazwaPilku,const Wektor3D& skala, const Wektor3D& center)
-    : FinalFileName(NazwaPilku), Scale(skala), Orientation_deg(0), GlobalOrientation(Macierz3x3()), LocalCenter(center) { }
+    : FinalFileName(NazwaPilku), Scale(skala), Orientation_deg(0), GlobalOrientation(Matrix3x3()), LocalCenter(center) { }
 
 
 /*!
@@ -15,27 +15,13 @@ Figure::Figure(std::string NazwaPilku,const Wektor3D& skala, const Wektor3D& cen
  * i na jej podstawie obliczane jest polozenie po obrocie
  *
  */
-void Figure::Rotate() {
-    double KatRad = Orientation_deg*M_PI/180;
-    Macierz3x3 MacierzRot;
-    MacierzRot.ObrotZ(KatRad);
+void Figure::Rotate() 
+{
+    Matrix3x3 MatrixRot(Matrix3x3::Axis::OZ, Orientation_deg);
 
     for(Wektor3D& wierzcholek : vertices) {
-        wierzcholek = MacierzRot * wierzcholek;
+        wierzcholek = MatrixRot * wierzcholek;
     }
-}
-/*!
- * \brief Metoda transformujaca prostopadloscia
- * 
- * Metoda transformujaca prostopadloscian wzgledem
- * katu i wektora
- * 
- * \param[in] Trans - Wektor translacji
- * 
- */
-void Figure::Transform(const Wektor3D& Trans) 
-{
-    
 }
 
 /*!
@@ -53,23 +39,23 @@ void Figure::Transform(const Wektor3D& Trans)
  */
 bool Figure::Draw()
 {
-    std::ofstream PlikFinalny(FinalFileName);
+    std::ofstream FileFile(FinalFileName);
 
-    if(!PlikFinalny.is_open()) {
+    if(!FileFile.is_open()) {
         std::cerr<<std::endl<<"Blad otwarcia pliku: "<<FinalFileName<<std::endl;
         return false;
     }
 
     int i=0;
-    for(const auto& wierzcholek : vertices) { 
-        if(i != 0 && i % 4 == 0) PlikFinalny << "\n";
+    for(const auto& vertex : vertices) { 
+        if(i != 0 && i % 4 == 0) FileFile << "\n";
         i++;
-        PlikFinalny << wierzcholek;
+        FileFile << vertex;
     }
     vertices.clear();
-    PlikFinalny.close();
+    FileFile.close();
     
-    return !PlikFinalny.fail();
+    return !FileFile.fail();
 }
 /*!
  * \brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
@@ -87,7 +73,7 @@ void Figure::Translate(const Wektor3D& Wek)
 {   
     CalculateLocalPosition();
     Rotate();
-    for(Wektor3D& wierzcholek : vertices) {
-        wierzcholek += (Wek+GlobalOrientation*LocalCenter);
+    for(Wektor3D& vertex : vertices) {
+        vertex += (Wek+GlobalOrientation*LocalCenter);
     }
 }

@@ -11,19 +11,53 @@
  * 
  * tworzy obiekt Macierz jako macierz jednostkowa
  */
-Macierz3x3::Macierz3x3()
+Matrix3x3::Matrix3x3()
 {
-  for(int i=0; i<WYMIAR; ++i)
-  {
-    for(int j=0; j<WYMIAR; ++j)
+    for(int i=0; i<WYMIAR; ++i)
     {
-      if(i==j)
-        wart[i][j] = 1;
-      else
-        wart[i][j] = 0;
+        for(int j=0; j<WYMIAR; ++j) {
+        if(i==j)
+            wart[i][j] = 1;
+        else
+            wart[i][j] = 0;
+        }
     }
-  }
 }
+
+Matrix3x3::Matrix3x3(Axis axis, double angle_deg)
+{
+    double rad = angle_deg*M_PI/180;
+
+    switch(axis) {
+        case Axis::OX:
+            wart[1][1] = cos(rad);
+            wart[1][2] = -sin(rad);
+            wart[2][1] = sin(rad);
+            wart[2][2] = cos(rad);
+            wart[0][0] = 1;
+            wart[1][0] = wart[0][1] = wart[0][2] = wart[2][0] = 0;
+            break;
+
+        case Axis::OY:
+            wart[0][0] = cos(rad);
+            wart[2][0] = -sin(rad);
+            wart[0][2] = sin(rad);
+            wart[2][2] = cos(rad);
+            wart[1][1] = 1;
+            wart[1][0] = wart[0][1] = wart[1][2] = wart[2][1] = 0;
+            break;
+
+        case Axis::OZ:
+            wart[0][0] = cos(rad);
+            wart[0][1] = -sin(rad);
+            wart[1][0] = sin(rad);
+            wart[1][1] = cos(rad);
+            wart[2][2] = 1;
+            wart[2][0] = wart[2][1] = wart[0][2] = wart[1][2] = 0;
+            break;
+    }
+}
+
 
 /*!
  * \brief Konstruktor bezparametryczny obiektu Macierz
@@ -32,15 +66,13 @@ Macierz3x3::Macierz3x3()
  * 
  * tworzy obiekt Macierz jako macierz jednostkowa
  */
-Macierz3x3::Macierz3x3(int liczba)
+Matrix3x3::Matrix3x3(int liczba)
 {
-  for(int i=0; i<WYMIAR; ++i)
-  {
-    for(int j=0; j<WYMIAR; ++j)
-    {
-      wart[i][j] = liczba;
+    for(int i=0; i<WYMIAR; ++i) {
+        for(int j=0; j<WYMIAR; ++j) {
+            wart[i][j] = liczba;
+        }
     }
-  }
 }
 
 /*!
@@ -52,14 +84,14 @@ Macierz3x3::Macierz3x3(int liczba)
  * 
  * \return MacObr - macierz obrotu OZ
  */
-void Macierz3x3::ObrotZ(double kat)
+void Matrix3x3::ObrotZ(double kat)
 {
-  //Macierz3x3 MacObr = Macierz3x3();
-  //double Rad = kat*M_PI/180;   //zamiana na radiany
-  (*this)(0,0) =  cos(kat);
-  (*this)(0,1) = -1*(sin(kat));
-  (*this)(1,0) =  sin(kat);
-  (*this)(1,1) =  cos(kat);
+    //Macierz3x3 MacObr = Macierz3x3();
+    //double Rad = kat*M_PI/180;   //zamiana na radiany
+    (*this)(0,0) =  cos(kat);
+    (*this)(0,1) = -1*(sin(kat));
+    (*this)(1,0) =  sin(kat);
+    (*this)(1,1) =  cos(kat);
 }
 
 /*!
@@ -71,17 +103,17 @@ void Macierz3x3::ObrotZ(double kat)
  * \return Wynik - wektor, bedacy iloczynem macierzy przez wektor
  * 
  */
-Wektor3D Macierz3x3::operator* (const Wektor3D& wektor) const
+Wektor3D Matrix3x3::operator* (const Wektor3D& wektor) const
 {
-  Wektor3D wynik;
-  for(int i=0; i<WYMIAR; ++i)
-  {
-    for(int j=0; j<WYMIAR; ++j)
+    Wektor3D wynik;
+    for(int i=0; i<WYMIAR; ++i)
     {
-      wynik[i] += (wart[i][j] * wektor[j]);
+        for(int j=0; j<WYMIAR; ++j)
+        {
+        wynik[i] += (wart[i][j] * wektor[j]);
+        }
     }
-  }
-  return wynik;
+    return wynik;
 }
 
 
@@ -94,20 +126,20 @@ Wektor3D Macierz3x3::operator* (const Wektor3D& wektor) const
  * \return Wynik - wektor, bedacy iloczynem wektorowym wektorow
  * 
  */
-Macierz3x3 Macierz3x3::operator* (const Macierz3x3& macierz) const
+Matrix3x3 Matrix3x3::operator* (const Matrix3x3& macierz) const
 {
-  Macierz3x3 wynik(0);  //musi byc zerowa bo inaczej wyjdzie zle
-  for(int i=0; i<WYMIAR; ++i) 
-  {
-    for(int j=0; j<WYMIAR; ++j)
+    Matrix3x3 wynik(0);  //musi byc zerowa bo inaczej wyjdzie zle
+    for(int i=0; i<WYMIAR; ++i) 
     {
-      for(int k=0; k<WYMIAR; ++k)
-      {
-        wynik(i, j) += (wart[i][k] * macierz(k, j));
-      }
+        for(int j=0; j<WYMIAR; ++j)
+        {
+        for(int k=0; k<WYMIAR; ++k)
+        {
+            wynik(i, j) += (wart[i][k] * macierz(k, j));
+        }
+        }
     }
-  }
-  return wynik;
+    return wynik;
 }
 
 /*!
@@ -121,18 +153,17 @@ Macierz3x3 Macierz3x3::operator* (const Macierz3x3& macierz) const
  * \return strumien z odpowiednio sformatowana macierza
  * 
  */
-inline
-std::ostream& operator << (std::ostream &Strm, const Macierz3x3 &Mac)
+inline std::ostream& operator << (std::ostream &Strm, const Matrix3x3 &Mac)
 {
-  for(int i=0; i<WYMIAR; ++i)
-  {
-    for(int j=0; j<WYMIAR; ++j)
+    for(int i=0; i<WYMIAR; ++i)
     {
-      Strm << std::setw(16) << std::fixed << std::setprecision(10) << Mac(i, j);
+        for(int j=0; j<WYMIAR; ++j)
+        {
+        Strm << std::setw(16) << std::fixed << std::setprecision(10) << Mac(i, j);
+        }
+        Strm<<std::endl;
     }
-    Strm<<std::endl;
-  }
-  return Strm;  
+    return Strm;  
 }
 
 /*!
@@ -146,17 +177,16 @@ std::ostream& operator << (std::ostream &Strm, const Macierz3x3 &Mac)
  * \return strumien z odpowiednio sformatowana macierza
  * 
  */
-inline
-std::istream& operator >> (std::istream &Strm, Macierz3x3 &Mac)
+inline std::istream& operator >> (std::istream &Strm, Matrix3x3 &Mac)
 {
-  for(int i=0; i<WYMIAR; ++i)
-  {
-    for(int j=0; j<WYMIAR; ++j)
+    for(int i=0; i<WYMIAR; ++i)
     {
-      Strm>>Mac(i,j);
-      if(Strm.fail())
-        return Strm;
+        for(int j=0; j<WYMIAR; ++j)
+        {
+        Strm>>Mac(i,j);
+        if(Strm.fail())
+            return Strm;
+        }
     }
-  }
-  return Strm;
+    return Strm;
 }

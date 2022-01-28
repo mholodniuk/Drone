@@ -44,7 +44,6 @@ public:
 
     //!\brief metody dodajace drony
     std::shared_ptr<Drone> AddDrone(unsigned int ID, const Wektor3D& wek);
-    void SetDrones();
     void AddDrone();
     void PrintDrones();
 

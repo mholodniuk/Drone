@@ -5,11 +5,13 @@
 #include <unistd.h>
 
 
-Scene::Scene() {
+Scene::Scene() 
+{
+    Wektor3D W1 = {50, 50, 0};
     UstawGNUPlot(Lacze);
     ObstacleCounter = 0;
 
-    SetDrones();
+    ChosenDrone = AddDrone(1, W1);
 }
 
 /*!
@@ -40,12 +42,10 @@ void Scene::WyborDrona()
     ChosenDrone->PrintPosition();
     std::cout<<std::endl<<"Wybierz aktywnego drona: ";
     std::cin>>aktywny;
-    for(const std::shared_ptr<Drone>& Dr : DroneList)
-    {
-        if(Dr->GetID() == aktywny)
-        {
-        ChosenDrone = Dr;
-        ++pomocnicza;
+    for(const std::shared_ptr<Drone>& Dr : DroneList) {
+        if(Dr->GetID() == aktywny) {
+            ChosenDrone = Dr;
+            ++pomocnicza;
         }
     }
     if(pomocnicza == 0) 
@@ -119,21 +119,6 @@ std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
 }
 
 /*!
- * \brief Metoda Ustawiajaca drony w odpowiednich miejscach na scenie
- *
- * Dodatkowo jako dron wybrany (ten ktory bedzie wykonywal lot) jest
- * ustawiony jako dron nr 1.
- * 
- */
-void Scene::SetDrones()
-{
-    Wektor3D W1 = {50, 50, 0};
-
-    ChosenDrone = AddDrone(1, W1);
-
-}
-
-/*!
  * \brief Metoda Dodajaca drona
  *
  * \pre mozna dodac maksymalnie 3 drony
@@ -159,8 +144,7 @@ void Scene::PrintDrones()
 {
     std::cout<<"Aktualnie na scenie znajduje sie " << DroneList.size() << std::endl;
 
-    for(const std::shared_ptr<Drone> &Dr : DroneList)
-    {
+    for(const std::shared_ptr<Drone> &Dr : DroneList) {
         std::cout << Dr->GetID() << ". " << Dr->Identify() << std::endl;
     }
     std::cout<<std::endl;
@@ -182,11 +166,9 @@ void Scene::PrintDrones()
  */
 bool Scene::IsOccupied(std::shared_ptr<Drone>& Dr)
 {
-    for(const std::shared_ptr<SceneObject>& Ob : ObjectList)
-    {
+    for(const std::shared_ptr<SceneObject>& Ob : ObjectList) {
         if(Ob == Dr) continue;
-        if(Ob->IsOccupied(Dr->GetPosition(), Dr->GetRadius()))
-        {
+        if(Ob->IsOccupied(Dr->GetPosition(), Dr->GetRadius())) {
             std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identify() << 
             std:: endl << "Przedluzam lot....." << std::endl << std::endl;
 
@@ -219,19 +201,18 @@ void Scene::Animate(std::shared_ptr<Drone> &Dr)
     std::cin>>dlugosc;
 
     Dr->InitPath(Lacze);
-    Dr->PlanPath(Polozenie_poczatkowe, kat, dlugosc);
-    Dr->PlanujSciezke(Lacze);
+    Dr->CreatePath(Polozenie_poczatkowe, kat, dlugosc);
+    Dr->PlanPath(Lacze);
 
     Dr->FlyVertical(80, Lacze);
     Dr->Rotate(kat, Lacze);
     Dr->FlyHorizontal(dlugosc, Lacze);
 
-    while(IsOccupied(Dr))
-    {
+    while(IsOccupied(Dr)) {
         dlugosc += 30;
         Dr->ClearPath(Lacze);
-        Dr->PlanPath(Polozenie_poczatkowe, 0, dlugosc);
-        Dr->PlanujSciezke(Lacze);
+        Dr->CreatePath(Polozenie_poczatkowe, 0, dlugosc);
+        Dr->PlanPath(Lacze);
         Dr->Wait(2, Lacze);
         Dr->FlyHorizontal(30, Lacze);
     }

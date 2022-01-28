@@ -27,8 +27,7 @@
  * planujace sciezke jego lotu oraz animujace jego lot
  */
 
-class Drone: public SceneObject
-{
+class Drone: public SceneObject {
     Wektor3D Position;
     double current_drone_rotation;
     std::shared_ptr<Cuboid> Body;
@@ -37,14 +36,7 @@ class Drone: public SceneObject
     
     unsigned int id;
     int single_step = 2;
-    unsigned int Promien_drona = 10;
-
-
-    //! \brief Metoda przesuwajaca drona o zadany wektor przesuniecia
-    void Move(const Wektor3D& Wek) { Position += Wek; }
-
-    //! \brief Metoda przemieszczajaca drona do zadanego wektora polozenia
-    void ChangePosition(const Wektor3D& nPolozenie) { Position = nPolozenie; }
+    unsigned int DroneRadius = 10;
 
     //! \brief Metody generujace nazwy plikow
     inline std::string CreateRotorFileName(unsigned int id_Drona, unsigned int nrRotora);
@@ -53,16 +45,14 @@ class Drone: public SceneObject
 public:
 
     //! \brief Konstruktor bezparametryczny 
-    Drone(unsigned int id, PzG::LaczeDoGNUPlota& lacze);
+    explicit Drone(unsigned int id, PzG::LaczeDoGNUPlota& lacze);
     
     //!\brief Destrkutor wirtualny
     virtual ~Drone() { }
 
     //! \brief Metody zwracajace oraz ustawiajace kat orientacji oraz ID
-    inline double GetRotatation_deg() { return current_drone_rotation; }
-    inline double GetRadius() { return Promien_drona; }
+    inline double GetRadius() { return DroneRadius; }
     inline double GetID() { return id; }
-    inline void SetRotateion_deg(double kat) { current_drone_rotation = kat; }
     virtual bool IsDrone() const override { return true; }
 
     //! \brief Metody zwracajace/wyswietlajace polozenie
@@ -78,8 +68,8 @@ public:
 
     //! \brief Metody Obliczajace i generujace sciezke lotu 
     void InitPath(PzG::LaczeDoGNUPlota& Lacze) const;
-    void PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze);
-    void PlanPath(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
+    void PlanPath(PzG::LaczeDoGNUPlota& Lacze);
+    void CreatePath(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
     void ClearPath(PzG::LaczeDoGNUPlota& Lacze) { path.ClearPath(Lacze); }
     void ShowPath(std::ofstream& Plik) const;
 
@@ -95,6 +85,6 @@ public:
     
     //! \brief Metody identyfikujace
     virtual std::string Identify() const override;
-    virtual const char* GetFileName() const override;
+    virtual const char* GetFileName() const override { return std::string("Dron"+id).c_str(); }
 
 };

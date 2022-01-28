@@ -37,5 +37,5 @@ public:
     virtual std::string Identify() const { return "obiekt sceny"; }
     virtual bool SprawdzID(unsigned int) const { return false; }
     virtual double PokazID() const { return 0; } 
-    virtual const char* GetFileName() const = 0;
+    virtual const char* GetFileName() const = 0; //to do usuwania obiektow
 };

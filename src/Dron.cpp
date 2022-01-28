@@ -15,20 +15,19 @@
 Drone::Drone(unsigned int ID, PzG::LaczeDoGNUPlota& lacze)
  : Position({0,0,0}), current_drone_rotation(0), id(ID) {
 
-    Wektor3D BodyScale = {10, 8, 4};
-    Wektor3D RotorScale = {8,8,4};
-    Wektor3D BodyPos = {0, 0, 2};
+    Wektor3D BodyScale = {16, 12, 10};
+    Wektor3D RotorScale = {10,10,6};
 
     std::string file_name = CreateBodyFileName(ID);
 
-    Body = std::make_shared<Cuboid>(file_name, BodyScale, Wektor3D({0,0,2}));
+    Body = std::make_shared<Cuboid>(file_name, BodyScale, Wektor3D({0,0,5}));
     Body->SetRotation(current_drone_rotation);
     lacze.DodajNazwePliku(file_name.c_str()).ZmienKolor(4);
     
     int idx = -1;
     for(std::shared_ptr<Prism>& Rotor : Rotors) {
         file_name = CreateRotorFileName(ID, ++idx);
-        Rotor = std::make_shared<Prism>(file_name, BodyScale, Wektor3D({(double)(idx>1 ? -5 : 5), (double)(idx==1 || idx==3 ? 4 : -4), 5}));
+        Rotor = std::make_shared<Prism>(file_name, RotorScale, Wektor3D({(double)(idx>1 ? -8 : 8), (double)(idx==1 || idx==3 ? 6 : -6), 10}));
         lacze.DodajNazwePliku(file_name.c_str()).ZmienKolor(4);
     }
 }
@@ -77,23 +76,8 @@ std::string Drone::CreateBodyFileName(unsigned int id_Drona)
 std::string Drone::Identify() const
 {
     std::ostringstream Obiekt;
-
     Obiekt << "Dron (" << Position[0] << ", " << Position[1] <<")";
-
     return Obiekt.str();
-}
-
-/*!
- * \brief Metoda zwracajca nazwe folderu docelowego
- * 
- * \note Zamiast nazwy pliku, metoda podaje nazwe folderu, w ktorym znajduje zestwa plikow
- * 
- * \return NazwaPlikuFinalnego
- */
-const char* Drone::GetFileName() const
-{
-    std::string NazwaFolderu = "Dron" + id;
-    return NazwaFolderu.c_str(); 
 }
 
 /*!
@@ -101,13 +85,12 @@ const char* Drone::GetFileName() const
  */
 void Drone::CalcAndSaveElements()
 {
-    Macierz3x3 MacierzRot;
-    MacierzRot.ObrotZ(current_drone_rotation*M_PI/180);
+    Matrix3x3 MatrixRot(Matrix3x3::Axis::OZ, current_drone_rotation);
     static double kat_obr = 0;
 
     Body->SetRotation(current_drone_rotation);
     for(int i=0; i<4; ++i) {
-        Rotors[i]->SetGlobalOrientation(MacierzRot);
+        Rotors[i]->SetGlobalOrientation(MatrixRot);
         Rotors[i]->SetRotation(i==0 || i==3 ? kat_obr : -kat_obr);
     }
     kat_obr+=15;
@@ -161,15 +144,14 @@ void Drone::Fly(Wektor3D& direction_vector, const double horizontal_distance, Pz
     double distance_left = horizontal_distance;
 
     distance_left -= single_step;
-    while(distance_left > 0)
-    {
+    while(distance_left > 0) {
         Translate(Wek_czastkowy);
         usleep(delay*1'000);
         Draw(Lacze);
         distance_left -= single_step;
     }
     Wektor3D move = direction_vector*horizontal_distance;
-    ChangePosition(Start_pos + move);
+    Position = Start_pos+move;
     Translate({0,0,0});
     Draw(Lacze);
 }
@@ -186,7 +168,7 @@ void Drone::Fly(Wektor3D& direction_vector, const double horizontal_distance, Pz
 void Drone::FlyHorizontal(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
 {
     Wektor3D Kierunek_lotu = {1, 0, 0};
-    Macierz3x3 MacierzRot;
+    Matrix3x3 MacierzRot;
 
     double Rad = current_drone_rotation*M_PI/180;
 
@@ -226,18 +208,14 @@ void Drone::FlyVertical(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
 void Drone::Rotate(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
 {
     kat_obrotu += current_drone_rotation;
-
-    if(kat_obrotu>0)
-    {
+    if(kat_obrotu>0) {
         for(; current_drone_rotation <= kat_obrotu; current_drone_rotation += 1) {
             Translate({0,0,0});
             usleep(100'000);
             Draw(Lacze);
         }
         current_drone_rotation -= 1;
-    }
-    else
-    {
+    } else {
         for(; current_drone_rotation >= kat_obrotu; current_drone_rotation -= 1) {
             Translate({0,0,0});
         usleep(100'000);
@@ -259,8 +237,7 @@ void Drone::Rotate(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
 void Drone::Wait(double czas_sek, PzG::LaczeDoGNUPlota& Lacze)
 {
     double licznik = 0;
-    while(true)
-    {
+    while(true) {
         Translate({0,0,0});
         usleep(100'000);
         Draw(Lacze);
@@ -278,7 +255,7 @@ void Drone::Wait(double czas_sek, PzG::LaczeDoGNUPlota& Lacze)
  * odpowiednim zsumowaniu katow
  * 
  */
-void Drone::PlanPath(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
+void Drone::CreatePath(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
 {
     kat_skretu += current_drone_rotation;
     path.CreatePath(Polozenie_poczatkowe, kat_skretu, Dlugosc_lotu);
@@ -292,7 +269,7 @@ void Drone::PlanPath(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, do
  * i jego metoda \e PlanujSciezke
  * 
  */
-void Drone::PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze)
+void Drone::PlanPath(PzG::LaczeDoGNUPlota& Lacze)
 {
     path.PlanPath(Lacze);
 }
