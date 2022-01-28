@@ -16,7 +16,7 @@
  * \return Wsp - nowe (finalne) polozenie
  * 
  */
-Wektor3D Sciezka::ObliczNoweWsp(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
+Wektor3D Path::CalcNewPos(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
 {
   Wektor3D Wsp;
   double kat_rad = kat_skretu*M_PI/180;
@@ -43,19 +43,19 @@ Wektor3D Sciezka::ObliczNoweWsp(const Wektor3D& Polozenie_poczatkowe, double kat
  * 
  * 
  */
-void Sciezka::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skretu_st, double Dlugosc_lotu)
+void Path::CreatePath(const Wektor3D& Starting_pos, double angle, double length)
 {
   Wektor3D pomoc;
 
-  ZestawPunktow.push_back(Polozenie_poczatkowe);
-  pomoc = Polozenie_poczatkowe;
+  Points.push_back(Starting_pos);
+  pomoc = Starting_pos;
   pomoc[2] += 80;
-  ZestawPunktow.push_back(pomoc);
-  pomoc = ObliczNoweWsp(Polozenie_poczatkowe, kat_skretu_st, Dlugosc_lotu);
+  Points.push_back(pomoc);
+  pomoc = CalcNewPos(Starting_pos, angle, length);
   pomoc[2] += 80;
-  ZestawPunktow.push_back(pomoc);
+  Points.push_back(pomoc);
   pomoc[2] -= 80;
-  ZestawPunktow.push_back(pomoc);
+  Points.push_back(pomoc);
 }
 
 /*!
@@ -67,9 +67,9 @@ void Sciezka::UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skre
  * \param[in] LaczeDoGNUPlota
  * 
  */
-void Sciezka::WyczyscSciezke(PzG::LaczeDoGNUPlota& Lacze)
+void Path::ClearPath(PzG::LaczeDoGNUPlota& Lacze)
 {
-  ZestawPunktow.clear();
+  Points.clear();
   std::ofstream Plik_Trasa(PLIK_TRASY_PRZELOTU);
   
   if(!Plik_Trasa.is_open())
@@ -93,9 +93,9 @@ void Sciezka::WyczyscSciezke(PzG::LaczeDoGNUPlota& Lacze)
  * \param[in] Plik - strumien plikowy docelowy
  * 
  */
-void Sciezka::WyswietlSciezke(std::ofstream& Plik) const
+void Path::ShowPath(std::ofstream& Plik) const
 {
-  for(auto i = ZestawPunktow.cbegin(); i != ZestawPunktow.cend(); ++i)
+  for(auto i = Points.cbegin(); i != Points.cend(); ++i)
   {
     Plik << *i;
   }
@@ -110,7 +110,7 @@ void Sciezka::WyswietlSciezke(std::ofstream& Plik) const
  * \param[in] LaczeDoGNUPlota
  * 
  */
-void Sciezka::PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze)
+void Path::PlanPath(PzG::LaczeDoGNUPlota& Lacze)
 {
   std::ofstream Plik_Trasa(PLIK_TRASY_PRZELOTU);
   
@@ -118,7 +118,7 @@ void Sciezka::PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze)
   {
     std::cerr << "Nie udalo sie otworzyc pliku" << PLIK_TRASY_PRZELOTU << std::endl;
   }
-  WyswietlSciezke(Plik_Trasa);
+  ShowPath(Plik_Trasa);
 
   Lacze.Rysuj();
   Plik_Trasa.close();

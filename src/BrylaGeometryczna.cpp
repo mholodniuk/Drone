@@ -35,10 +35,7 @@ void Figure::Rotate() {
  */
 void Figure::Transform(const Wektor3D& Trans) 
 {
-    Rotate();
-    for(Wektor3D& wierzcholek : vertices) {
-        wierzcholek += Trans;
-    }
+    
 }
 
 /*!
@@ -54,17 +51,15 @@ void Figure::Transform(const Wektor3D& Trans)
  * \retval false - gdy operacja sie nie uda
  * 
  */
-bool Figure::SaveToFile(const Wektor3D& Trans)
+bool Figure::Draw()
 {
     std::ofstream PlikFinalny(FinalFileName);
 
-    if(!PlikFinalny.is_open())
-    {
+    if(!PlikFinalny.is_open()) {
         std::cerr<<std::endl<<"Blad otwarcia pliku: "<<FinalFileName<<std::endl;
         return false;
     }
-    CalculateLocalPosition();
-    Transform(Trans);
+
     int i=0;
     for(const auto& wierzcholek : vertices) { 
         if(i != 0 && i % 4 == 0) PlikFinalny << "\n";
@@ -73,6 +68,7 @@ bool Figure::SaveToFile(const Wektor3D& Trans)
     }
     vertices.clear();
     PlikFinalny.close();
+    
     return !PlikFinalny.fail();
 }
 /*!
@@ -87,8 +83,11 @@ bool Figure::SaveToFile(const Wektor3D& Trans)
  * \retval false - jesli operacja sie nie powiedzie
  * 
  */
-bool Figure::Translate(const Wektor3D& Wek)
+void Figure::Translate(const Wektor3D& Wek)
 {   
-    if(!SaveToFile(Wek+GlobalOrientation*LocalCenter)) return false;
-    return true;
+    CalculateLocalPosition();
+    Rotate();
+    for(Wektor3D& wierzcholek : vertices) {
+        wierzcholek += (Wek+GlobalOrientation*LocalCenter);
+    }
 }

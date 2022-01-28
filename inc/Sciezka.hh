@@ -26,23 +26,23 @@
  * To rozwiazanie sprawdzi sie, jezeli tylko jeden dron bedzie sie ruszal.
  * 
  */
-class Sciezka
+class Path
 {
-    std::vector<Wektor3D> ZestawPunktow;
+    std::vector<Wektor3D> Points;
 
 public:
 
     //!\brief Metoda obliczajace punkty sciezki
-    void UstalSciezke(const Wektor3D& Polozenie_poczatkowe, double kat_skretu_st, double dlugosc);
+    void CreatePath(const Wektor3D& Startin_pos, double angle, double length);
     
     //!\brief Metody odpowiedzialne za wizualizacje
-    void PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze);
-    void WyswietlSciezke(std::ofstream& Plik) const;
+    void PlanPath(PzG::LaczeDoGNUPlota& Lacze);
+    void ShowPath(std::ofstream& Plik) const;
     
     //!\brief Metoda czyszczaca sciezke
-    void WyczyscSciezke(PzG::LaczeDoGNUPlota& Lacze);
+    void ClearPath(PzG::LaczeDoGNUPlota& Lacze);
     
     //!\brief Metoda obliczajace punkt koncowy sciezki
-    Wektor3D ObliczNoweWsp(const Wektor3D& Polozenie_poczatkowe, double kat_skretu_st, double dlugosc);
+    Wektor3D CalcNewPos(const Wektor3D& Starting_pos, double angle, double length);
 
 };

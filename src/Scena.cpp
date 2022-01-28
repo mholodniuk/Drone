@@ -6,10 +6,10 @@
 
 
 Scene::Scene() {
-  UstawGNUPlot(Lacze);
-  ObstacleCounter = 0;
+    UstawGNUPlot(Lacze);
+    ObstacleCounter = 0;
 
-  SetDrones();
+    SetDrones();
 }
 
 /*!
@@ -17,12 +17,12 @@ Scene::Scene() {
  */
 void Scene::WyswietlMenu()
 {
-  std::cout<<"\n\t a - Wybierz aktywnego drona"<<std::endl;
-  std::cout<<"\t p - Zadaj parametry przelotu"<<std::endl;
-  std::cout<<"\t w - Podaj liczbe wektorow"<<std::endl;
-  std::cout<<"\t D - Dodaj drona"<<std::endl;
-  std::cout<<"\t m - Wyswietl menu"<<std::endl<<std::endl;
-  std::cout<<"\t k - Koniec dzialania programu"<<std::endl<<std::endl;
+    std::cout<<"\n\t a - Wybierz aktywnego drona"<<std::endl;
+    std::cout<<"\t p - Zadaj parametry przelotu"<<std::endl;
+    std::cout<<"\t w - Podaj liczbe wektorow"<<std::endl;
+    std::cout<<"\t D - Dodaj drona"<<std::endl;
+    std::cout<<"\t m - Wyswietl menu"<<std::endl<<std::endl;
+    std::cout<<"\t k - Koniec dzialania programu"<<std::endl<<std::endl;
 }
 
 /*!
@@ -35,21 +35,21 @@ void Scene::WyswietlMenu()
  */
 void Scene::WyborDrona()
 {
-  int aktywny, pomocnicza = 0;
-  std::cout<<"Aktualnie aktywny jest dron o wspolrzednych: "<<std::endl;
-  ChosenDrone->PrintPosition();
-  std::cout<<std::endl<<"Wybierz aktywnego drona: ";
-  std::cin>>aktywny;
-  for(const std::shared_ptr<Drone>& Dr : DroneList)
-  {
-    if(Dr->GetID() == aktywny)
+    int aktywny, pomocnicza = 0;
+    std::cout<<"Aktualnie aktywny jest dron o wspolrzednych: "<<std::endl;
+    ChosenDrone->PrintPosition();
+    std::cout<<std::endl<<"Wybierz aktywnego drona: ";
+    std::cin>>aktywny;
+    for(const std::shared_ptr<Drone>& Dr : DroneList)
     {
-      ChosenDrone = Dr;
-      ++pomocnicza;
+        if(Dr->GetID() == aktywny)
+        {
+        ChosenDrone = Dr;
+        ++pomocnicza;
+        }
     }
-  }
-  if(pomocnicza == 0) 
-    std::cout<<"Nie udalo sie wybrac drona (mozliwy wybor: 1 lub 2)"<<std::endl;
+    if(pomocnicza == 0) 
+        std::cout<<"Nie udalo sie wybrac drona (mozliwy wybor: 1 lub 2)"<<std::endl;
 }
 
 /*!
@@ -57,39 +57,39 @@ void Scene::WyborDrona()
  */
 void Scene::Menu(char& wybor)
 {
-  switch(wybor)
-  {
-    case 'k':
-      break;
+    switch(wybor)
+    {
+        case 'k':
+        break;
 
-    case 'm':
-      WyswietlMenu();
-      break;
+        case 'm':
+        WyswietlMenu();
+        break;
 
-    case 'a':
-      PrintDrones();
-      WyborDrona();
-      break;
-    
-    case 'w':
-      Wektor3D::ZwrocIloscWektorow();
-      break;
-
-
-    case 'D':
-      AddDrone();
-      break;
+        case 'a':
+        PrintDrones();
+        WyborDrona();
+        break;
+        
+        case 'w':
+        Wektor3D::ZwrocIloscWektorow();
+        break;
 
 
-    case 'p':
-      Animate(ChosenDrone);
-      Wektor3D::ZwrocIloscWektorow();
-      break;
+        case 'D':
+        AddDrone();
+        break;
 
-    default:
-      std::cout<<"Wybrano niepoprawna opcje :("<<std::endl;
-      break;
-  }
+
+        case 'p':
+        Animate(ChosenDrone);
+        Wektor3D::ZwrocIloscWektorow();
+        break;
+
+        default:
+        std::cout<<"Wybrano niepoprawna opcje :("<<std::endl;
+        break;
+    }
 }
 
 /*!
@@ -106,15 +106,16 @@ void Scene::Menu(char& wybor)
  */
 std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
 {
-  std::shared_ptr<Drone> _Dron = std::make_shared<Drone>(ID, Lacze);
-  Lacze.Rysuj();
+    std::shared_ptr<Drone> _Dron = std::make_shared<Drone>(ID, Lacze);
+    Lacze.Rysuj();
 
-  _Dron->Translate(Wek, Lacze);
+    _Dron->Translate(Wek);
+    _Dron->Draw(Lacze);
 
-  DroneList.push_back(_Dron);
-  ObjectList.push_back(_Dron);
+    DroneList.push_back(_Dron);
+    ObjectList.push_back(_Dron);
 
-  return _Dron;
+    return _Dron;
 }
 
 /*!
@@ -126,9 +127,9 @@ std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
  */
 void Scene::SetDrones()
 {
-  Wektor3D W1 = {50, 50, 10};
+    Wektor3D W1 = {50, 50, 0};
 
-  ChosenDrone = AddDrone(1, W1);
+    ChosenDrone = AddDrone(1, W1);
 
 }
 
@@ -144,25 +145,25 @@ void Scene::SetDrones()
  */
 void Scene::AddDrone()
 {
-  double wsp_x, wsp_y;
-  int id_drona = DroneList.size() + 1;
+    double wsp_x, wsp_y;
+    int id_drona = DroneList.size() + 1;
 
-  std::cout<<"Procedura dodawania drona..."<<std::endl;
-  std::cout<<"Podaj wsporzedne drona (x,y): ";
-  std::cin>>wsp_x>>wsp_y;
+    std::cout<<"Procedura dodawania drona..."<<std::endl;
+    std::cout<<"Podaj wsporzedne drona (x,y): ";
+    std::cin>>wsp_x>>wsp_y;
 
-  AddDrone(id_drona, {wsp_x, wsp_y, 0});
+    AddDrone(id_drona, {wsp_x, wsp_y, 0});
 }
 
 void Scene::PrintDrones()
 {
-  std::cout<<"Aktualnie na scenie znajduje sie " << DroneList.size() << std::endl;
+    std::cout<<"Aktualnie na scenie znajduje sie " << DroneList.size() << std::endl;
 
-  for(const std::shared_ptr<Drone> &Dr : DroneList)
-  {
-    std::cout << Dr->GetID() << ". " << Dr->Identify() << std::endl;
-  }
-  std::cout<<std::endl;
+    for(const std::shared_ptr<Drone> &Dr : DroneList)
+    {
+        std::cout << Dr->GetID() << ". " << Dr->Identify() << std::endl;
+    }
+    std::cout<<std::endl;
 }
 
 
@@ -179,20 +180,20 @@ void Scene::PrintDrones()
  * \retval true - jesli dane miejsce jest zajete przez obiekt sceny
  * 
  */
-bool Scene::IsFree(std::shared_ptr<Drone>& Dr)
+bool Scene::IsOccupied(std::shared_ptr<Drone>& Dr)
 {
-  for(const std::shared_ptr<SceneObject>& Ob : ObjectList)
-  {
-    if(Ob == Dr) continue;
-    if(Ob->IsOccupied(Dr->GetPosition(), Dr->GetRadius()))
+    for(const std::shared_ptr<SceneObject>& Ob : ObjectList)
     {
-      std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identify() << 
-      std:: endl << "Przedluzam lot....." << std::endl << std::endl;
+        if(Ob == Dr) continue;
+        if(Ob->IsOccupied(Dr->GetPosition(), Dr->GetRadius()))
+        {
+            std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identify() << 
+            std:: endl << "Przedluzam lot....." << std::endl << std::endl;
 
-      return true;
+            return true;
+        }
     }
-  }
-  return false;
+    return false;
 }
 
 /*!
@@ -209,35 +210,35 @@ bool Scene::IsFree(std::shared_ptr<Drone>& Dr)
  */
 void Scene::Animate(std::shared_ptr<Drone> &Dr)
 {
-  double kat, dlugosc;
-  Wektor3D Polozenie_poczatkowe = Dr->GetPosition();
-  
-  std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
-  std::cin>>kat;
-  std::cout<<"Podaj dlugosc lotu: ";
-  std::cin>>dlugosc;
+    double kat, dlugosc;
+    Wektor3D Polozenie_poczatkowe = Dr->GetPosition();
+    
+    std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
+    std::cin>>kat;
+    std::cout<<"Podaj dlugosc lotu: ";
+    std::cin>>dlugosc;
 
-  Dr->InitPath(Lacze);
-  Dr->PlanPath(Polozenie_poczatkowe, kat, dlugosc);
-  Dr->PlanujSciezke(Lacze);
-
-  Dr->LotPionowy(80, Lacze);
-  Dr->Obrot(kat, Lacze);
-  Dr->LotDoPrzodu(dlugosc, Lacze);
-
-  while(IsFree(Dr))
-  {
-    dlugosc += 30;
-    Dr->ClearPath(Lacze);
-    Dr->PlanPath(Polozenie_poczatkowe, 0, dlugosc);
+    Dr->InitPath(Lacze);
+    Dr->PlanPath(Polozenie_poczatkowe, kat, dlugosc);
     Dr->PlanujSciezke(Lacze);
-    Dr->Czekaj(2, Lacze);
-    Dr->LotDoPrzodu(30, Lacze);
-  }
-  
-  Dr->LotPionowy(-80 ,Lacze);
-  Dr->ClearPath(Lacze);
-  Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
 
-  Dr->PrintPosition();
+    Dr->FlyVertical(80, Lacze);
+    Dr->Rotate(kat, Lacze);
+    Dr->FlyHorizontal(dlugosc, Lacze);
+
+    while(IsOccupied(Dr))
+    {
+        dlugosc += 30;
+        Dr->ClearPath(Lacze);
+        Dr->PlanPath(Polozenie_poczatkowe, 0, dlugosc);
+        Dr->PlanujSciezke(Lacze);
+        Dr->Wait(2, Lacze);
+        Dr->FlyHorizontal(30, Lacze);
+    }
+    
+    Dr->FlyVertical(-80 ,Lacze);
+    Dr->ClearPath(Lacze);
+    Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
+
+    Dr->PrintPosition();
 }

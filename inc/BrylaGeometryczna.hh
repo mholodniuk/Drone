@@ -59,11 +59,11 @@ public:
     void SetGlobalOrientation(const Macierz3x3& orient) { GlobalOrientation = orient; }
     void Rotate();
     void Transform(const Wektor3D& Trans);
-    bool SaveToFile(const Wektor3D& Trans);
+    bool Draw();
 
     virtual void CalculateLocalPosition() = 0;
 
     //!\brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
-    bool Translate(const Wektor3D& Wek);
+    void Translate(const Wektor3D& Wek);
 
 };

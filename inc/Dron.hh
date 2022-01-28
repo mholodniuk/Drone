@@ -4,6 +4,7 @@
 #include "Prostopadloscian.hh"
 #include "Graniastoslup.hh"
 #include "ObiektSceny.hh"
+#include <functional>
 #include <iostream>
 #include <memory>
 #include "lacze_do_gnuplota.hh"
@@ -32,17 +33,12 @@ class Drone: public SceneObject
     double current_drone_rotation;
     std::shared_ptr<Cuboid> Body;
     std::shared_ptr<Prism> Rotors[4];
-    Sciezka path;
+    Path path;
     
     unsigned int id;
-    int pojedynczy_krok = 2;
+    int single_step = 2;
     unsigned int Promien_drona = 10;
 
-    //!\brief Metody ustawiajace poszczegolne elementy
-    void CalcAndSaveBody();
-    void CalcAndSaveRotors();
-    void SpinRotors();
-    void SetRotors();
 
     //! \brief Metoda przesuwajaca drona o zadany wektor przesuniecia
     void Move(const Wektor3D& Wek) { Position += Wek; }
@@ -74,24 +70,25 @@ public:
     inline Wektor3D GetPosition() const { return Position; }
     
     //!! \brief Metoda transformujaca 
-    void Translate(const Wektor3D& Wek, PzG::LaczeDoGNUPlota& Lacze);
+    void Draw(PzG::LaczeDoGNUPlota& Lacze);
+    void Translate(const Wektor3D& Wek);
 
     //! \brief Metoda zapisujaca polozenie poszczegolnych wierzcholkow
-    void CalcAndSavePostion();
+    void CalcAndSaveElements();
 
     //! \brief Metody Obliczajace i generujace sciezke lotu 
     void InitPath(PzG::LaczeDoGNUPlota& Lacze) const;
     void PlanujSciezke(PzG::LaczeDoGNUPlota& Lacze);
     void PlanPath(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
-    void ClearPath(PzG::LaczeDoGNUPlota& Lacze) { path.WyczyscSciezke(Lacze); }
+    void ClearPath(PzG::LaczeDoGNUPlota& Lacze) { path.ClearPath(Lacze); }
     void ShowPath(std::ofstream& Plik) const;
 
     //! \brief Metody Animujace ruch drona
-    void Obrot(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
-    void Lec(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
-    void LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
-    void LotPionowy(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
-    void Czekaj(double czas, PzG::LaczeDoGNUPlota& Lacze);
+    void Rotate(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
+    void Fly(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
+    void FlyHorizontal(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
+    void FlyVertical(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
+    void Wait(double czas, PzG::LaczeDoGNUPlota& Lacze);
 
     //! \brief Metoda sprawdzajaca czy pod dronem jest wolne miejsce
     virtual bool IsOccupied(const Wektor3D& Polozenie_drona, double Promien) const override;

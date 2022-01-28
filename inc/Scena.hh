@@ -52,6 +52,6 @@ public:
     void Animate(std::shared_ptr<Drone> &Dr);
 
     //!!\brief Metody sprawdzajace czy obszar jest zajety
-    bool IsFree(std::shared_ptr<Drone>& WDron);
+    bool IsOccupied(std::shared_ptr<Drone>& WDron);
 
 };
