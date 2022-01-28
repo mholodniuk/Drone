@@ -23,7 +23,7 @@ class Prism: public Figure
 
 public:
 
-    Prism(std::string, const Wektor3D&);
+    Prism(std::string, const Wektor3D&, const Wektor3D& cnetr);
 
     void CalculateLocalPosition() override;
 

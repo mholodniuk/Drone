@@ -28,10 +28,10 @@ public:
     virtual ~SceneObject() { }
 
     //!\brief Metoda sprawdzajaca czy dany obiekt jest obiektem klasy Dron
-    virtual bool CzyDron() const { return false; }
+    virtual bool IsDrone() const { return false; }
 
     //!\brief Abstrakcyjna metoda sprawdzajca zajetosc obszaru
-    virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const = 0;
+    virtual bool IsOccupied(const Wektor3D& Polozenie_drona, double Promien) const = 0;
 
     //!\brief Metody pozwalajce na identyfikacje obiektu
     virtual std::string Identify() const { return "obiekt sceny"; }

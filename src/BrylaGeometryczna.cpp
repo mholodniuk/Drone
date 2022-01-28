@@ -4,8 +4,8 @@
 #include <cmath>
 
 
-Figure::Figure(std::string NazwaPilku,const Wektor3D& skala)
-    : FinalFileName(NazwaPilku), Scale(skala), Orientation_deg(0) { }
+Figure::Figure(std::string NazwaPilku,const Wektor3D& skala, const Wektor3D& center)
+    : FinalFileName(NazwaPilku), Scale(skala), Orientation_deg(0), GlobalOrientation(Macierz3x3()), LocalCenter(center) { }
 
 
 /*!
@@ -24,7 +24,6 @@ void Figure::Rotate() {
         wierzcholek = MacierzRot * wierzcholek;
     }
 }
-
 /*!
  * \brief Metoda transformujaca prostopadloscia
  * 
@@ -34,7 +33,9 @@ void Figure::Rotate() {
  * \param[in] Trans - Wektor translacji
  * 
  */
-void Figure::Transform(const Wektor3D& Trans) {
+void Figure::Transform(const Wektor3D& Trans) 
+{
+    Rotate();
     for(Wektor3D& wierzcholek : vertices) {
         wierzcholek += Trans;
     }
@@ -63,7 +64,6 @@ bool Figure::SaveToFile(const Wektor3D& Trans)
         return false;
     }
     CalculateLocalPosition();
-    Rotate();
     Transform(Trans);
     int i=0;
     for(const auto& wierzcholek : vertices) { 
@@ -89,6 +89,6 @@ bool Figure::SaveToFile(const Wektor3D& Trans)
  */
 bool Figure::Translate(const Wektor3D& Wek)
 {   
-    if(!SaveToFile(Wek)) return false;
+    if(!SaveToFile(Wek+GlobalOrientation*LocalCenter)) return false;
     return true;
 }

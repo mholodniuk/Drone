@@ -22,7 +22,7 @@ class Cuboid: public Figure
 
 public:
 
-    Cuboid(std::string NazwaPilku, const Wektor3D& skala);
+    Cuboid(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center);
     void CalculateLocalPosition() override;
 
 };

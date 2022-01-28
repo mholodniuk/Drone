@@ -38,12 +38,16 @@ protected:
 
     double Orientation_deg;
 
+    Macierz3x3 GlobalOrientation;
+
     std::vector<Wektor3D> vertices;
+
+    Wektor3D LocalCenter;
 
 public:
 
     //!\brief Konstruktor bezparametryczny 
-    Figure(std::string NazwaPilku, const Wektor3D& skala);
+    Figure(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center);
     //!\brief Destruktor wirtualny
     virtual ~Figure() {}
 
@@ -52,6 +56,7 @@ public:
 
     //!\brief Metody Transformujace
     void SetRotation(double kat) { Orientation_deg = kat; };
+    void SetGlobalOrientation(const Macierz3x3& orient) { GlobalOrientation = orient; }
     void Rotate();
     void Transform(const Wektor3D& Trans);
     bool SaveToFile(const Wektor3D& Trans);

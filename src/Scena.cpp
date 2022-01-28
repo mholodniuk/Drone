@@ -42,7 +42,7 @@ void Scene::WyborDrona()
   std::cin>>aktywny;
   for(const std::shared_ptr<Drone>& Dr : DroneList)
   {
-    if(Dr->ZwrocID() == aktywny)
+    if(Dr->GetID() == aktywny)
     {
       ChosenDrone = Dr;
       ++pomocnicza;
@@ -160,7 +160,7 @@ void Scene::PrintDrones()
 
   for(const std::shared_ptr<Drone> &Dr : DroneList)
   {
-    std::cout << Dr->ZwrocID() << ". " << Dr->Identify() << std::endl;
+    std::cout << Dr->GetID() << ". " << Dr->Identify() << std::endl;
   }
   std::cout<<std::endl;
 }
@@ -184,7 +184,7 @@ bool Scene::IsFree(std::shared_ptr<Drone>& Dr)
   for(const std::shared_ptr<SceneObject>& Ob : ObjectList)
   {
     if(Ob == Dr) continue;
-    if(Ob->CzyZajete(Dr->ZwrocPolozenie(), Dr->ZwrocPromien()))
+    if(Ob->IsOccupied(Dr->GetPosition(), Dr->GetRadius()))
     {
       std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identify() << 
       std:: endl << "Przedluzam lot....." << std::endl << std::endl;
@@ -210,15 +210,15 @@ bool Scene::IsFree(std::shared_ptr<Drone>& Dr)
 void Scene::Animate(std::shared_ptr<Drone> &Dr)
 {
   double kat, dlugosc;
-  Wektor3D Polozenie_poczatkowe = Dr->ZwrocPolozenie();
+  Wektor3D Polozenie_poczatkowe = Dr->GetPosition();
   
   std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
   std::cin>>kat;
   std::cout<<"Podaj dlugosc lotu: ";
   std::cin>>dlugosc;
 
-  Dr->InicjalizujSciezke(Lacze);
-  Dr->UstalSciezke(Polozenie_poczatkowe, kat, dlugosc);
+  Dr->InitPath(Lacze);
+  Dr->PlanPath(Polozenie_poczatkowe, kat, dlugosc);
   Dr->PlanujSciezke(Lacze);
 
   Dr->LotPionowy(80, Lacze);
@@ -228,15 +228,15 @@ void Scene::Animate(std::shared_ptr<Drone> &Dr)
   while(IsFree(Dr))
   {
     dlugosc += 30;
-    Dr->WyczyscSciezke(Lacze);
-    Dr->UstalSciezke(Polozenie_poczatkowe, 0, dlugosc);
+    Dr->ClearPath(Lacze);
+    Dr->PlanPath(Polozenie_poczatkowe, 0, dlugosc);
     Dr->PlanujSciezke(Lacze);
     Dr->Czekaj(2, Lacze);
     Dr->LotDoPrzodu(30, Lacze);
   }
   
   Dr->LotPionowy(-80 ,Lacze);
-  Dr->WyczyscSciezke(Lacze);
+  Dr->ClearPath(Lacze);
   Lacze.UsunNazwePliku(PLIK_TRASY_PRZELOTU);
 
   Dr->PrintPosition();

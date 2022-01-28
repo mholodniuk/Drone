@@ -7,8 +7,8 @@
  * Ustawia Nazwe pliku wzorcowego i nadaje kat orientacji 0
  * 
  */
-Prism::Prism(std::string NazwaPilku, const Wektor3D& skala)
-    : Figure(NazwaPilku, skala) { }
+Prism::Prism(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center)
+    : Figure(NazwaPilku, skala, center) { }
 
 void Prism::CalculateLocalPosition()
 {

@@ -11,8 +11,7 @@ int main()
 {
   Scene S;
   char input = 'm';
-
-  S.TworzScene();
+  
   Wektor3D::ZwrocIloscWektorow();
 
   while (input != 'k')
