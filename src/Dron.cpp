@@ -159,8 +159,6 @@ void Drone::SetRotors()
     Macierz3x3 MacierzRot;
     MacierzRot.ObrotZ(current_drone_rotation*M_PI/180);
     
-    Wektor3D temp = MacierzRot * Position;
-    
     for(int i=0; i<4; ++i) {
         Rotors[i]->SetGlobalOrientation(MacierzRot);
         Rotors[i]->Translate(Position);
@@ -231,7 +229,6 @@ void Drone::Lec(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeD
  */
 void Drone::LotDoPrzodu(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
 {
-
     Wektor3D Kierunek_lotu = {1, 0, 0};
     Macierz3x3 MacierzRot;
 

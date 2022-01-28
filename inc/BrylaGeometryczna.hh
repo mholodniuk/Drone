@@ -47,7 +47,7 @@ protected:
 public:
 
     //!\brief Konstruktor bezparametryczny 
-    Figure(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center);
+    explicit Figure(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center);
     //!\brief Destruktor wirtualny
     virtual ~Figure() {}
 
