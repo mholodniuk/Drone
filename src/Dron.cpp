@@ -125,6 +125,26 @@ void Drone::Translate(const Wektor3D& Wek)
     }
 }
 
+void Drone::Animate(Wektor3D& direction_vector, PzG::LaczeDoGNUPlota& Lacze)
+{
+    const double frequency = 30;
+
+    const double length = fabs(direction_vector.ObliczDlugosc());
+
+    const uint16_t delay = 1000./frequency;//[ms]
+    const double time = std::abs(length / (single_step / 1000)); //[ms]
+    const double hmt = time / delay;//[ms]
+
+    Wektor3D Wek_czastkowy = direction_vector * single_step;
+
+    for(uint32_t timeElapsed = 0; timeElapsed<=time; timeElapsed += delay)
+    {
+        Translate(Wek_czastkowy * hmt);
+        usleep(delay*1'000);
+        Draw(Lacze);
+    }
+}
+
 /*!
  * \brief Metoda realizujaca lot drona
  *
@@ -135,10 +155,11 @@ void Drone::Translate(const Wektor3D& Wek)
  */
 void Drone::Fly(Wektor3D& direction_vector, const double horizontal_distance, PzG::LaczeDoGNUPlota& Lacze)
 {
+    assert(fabs(direction_vector.ObliczDlugosc()-1) < BLAD_OBLICZEN);
+
     const double czestotliwosc = 30;
     const u_int16_t delay = 1000./czestotliwosc;
-    assert(fabs(direction_vector.ObliczDlugosc()-1) < BLAD_OBLICZEN);
-    //pojedynczy_krok = 2;
+
     Wektor3D Wek_czastkowy = direction_vector * single_step;
     Wektor3D Start_pos = Position;
     double distance_left = horizontal_distance;
@@ -168,11 +189,8 @@ void Drone::Fly(Wektor3D& direction_vector, const double horizontal_distance, Pz
 void Drone::FlyHorizontal(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
 {
     Wektor3D Kierunek_lotu = {1, 0, 0};
-    Matrix3x3 MacierzRot;
+    Matrix3x3 MacierzRot(Matrix3x3::Axis::OZ, current_drone_rotation);
 
-    double Rad = current_drone_rotation*M_PI/180;
-
-    MacierzRot.ObrotZ(Rad);
     Kierunek_lotu = MacierzRot * Kierunek_lotu;
 
     Fly(Kierunek_lotu, fabs(dlugosc_lotu), Lacze);
@@ -209,19 +227,19 @@ void Drone::Rotate(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
 {
     kat_obrotu += current_drone_rotation;
     if(kat_obrotu>0) {
-        for(; current_drone_rotation <= kat_obrotu; current_drone_rotation += 1) {
+        for(; current_drone_rotation <= kat_obrotu; current_drone_rotation += 5) {
             Translate({0,0,0});
             usleep(100'000);
             Draw(Lacze);
         }
-        current_drone_rotation -= 1;
+        current_drone_rotation -= 5;
     } else {
-        for(; current_drone_rotation >= kat_obrotu; current_drone_rotation -= 1) {
+        for(; current_drone_rotation >= kat_obrotu; current_drone_rotation -= 5) {
             Translate({0,0,0});
-        usleep(100'000);
-        Draw(Lacze);
+            usleep(100'000);
+            Draw(Lacze);
         }
-        current_drone_rotation += 1;
+        current_drone_rotation += 5;
     }
 }
 

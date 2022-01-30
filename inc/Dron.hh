@@ -28,6 +28,7 @@
  */
 
 class Drone: public SceneObject {
+
     Wektor3D Position;
     double current_drone_rotation;
     std::shared_ptr<Cuboid> Body;
@@ -35,6 +36,7 @@ class Drone: public SceneObject {
     Path path;
     
     unsigned int id;
+    float DeltaTime;
     int single_step = 2;
     unsigned int DroneRadius = 10;
 
@@ -72,6 +74,8 @@ public:
     void CreatePath(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
     void ClearPath(PzG::LaczeDoGNUPlota& Lacze) { path.ClearPath(Lacze); }
     void ShowPath(std::ofstream& Plik) const;
+
+    void Animate(Wektor3D& direction_vector, PzG::LaczeDoGNUPlota& Lacze);
 
     //! \brief Metody Animujace ruch drona
     void Rotate(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
