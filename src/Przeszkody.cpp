@@ -7,11 +7,11 @@
  * Ustawia Nazwe pliku wzorcowego i nadaje kat orientacji 0
  * 
  */
-Ridge::Ridge(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center)
-    : Figure(NazwaPilku, skala, center) { }
+Obstacle::Obstacle(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center, Type _type)
+    : Figure(NazwaPilku, skala, center), type(_type) { }
 
 
-void Ridge::CalculateLocalPosition() 
+void Obstacle::CalculateLocalPosition() 
 {
     std::ifstream PlikWzorcowy("bryly_wzorcowe/szescian_na_powierzchni.dat");
     std::stringstream buffer;
@@ -23,10 +23,28 @@ void Ridge::CalculateLocalPosition()
 
     Wektor3D tmp;
     while(buffer>>tmp) {
-        if(tmp[2]>0.5) {
-            if(tmp[0]<0)
-                tmp[0] = fabs(tmp[0]);
-        }
+
+        switch(type) {
+            case Ridge:
+                if(tmp[2] > 0.5)
+                    if(tmp[0] < 0)
+                        tmp[0] = fabs(tmp[0]);
+                break;
+
+            case Pyramid:
+                if(tmp[2] > 0.5)
+                    tmp[0] = tmp[1] = 0;
+                else if(tmp[2] == 0.5) {
+                    tmp[0] /= 2;
+                    tmp[1] /= 2;
+                }
+                break;
+
+            case Plateau:
+                break;
+
+            default: std::cerr << "wybrano zly typ przeszkody" <<std::endl; break;
+        }        
         vertices.push_back(tmp);
     }
 
@@ -38,7 +56,7 @@ void Ridge::CalculateLocalPosition()
     PlikWzorcowy.close();
 }
 
-void Ridge::Draw(PzG::LaczeDoGNUPlota& Lacze)
+void Obstacle::Draw(PzG::LaczeDoGNUPlota& Lacze)
 {
     Figure::Draw();
     Lacze.DodajNazwePliku(FinalFileName.c_str()).ZmienKolor(4);

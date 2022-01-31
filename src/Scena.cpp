@@ -122,7 +122,7 @@ std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
 void Scene::AddRidge()
 {
     std::string name = "dat/przeszkody/test.dat";
-    std::shared_ptr<Ridge> _ridge = std::make_shared<Ridge>(name, Wektor3D{30,30,30}, Wektor3D());
+    std::shared_ptr<Obstacle> _ridge = std::make_shared<Obstacle>(name, Wektor3D{30,30,60}, Wektor3D(), Type::Pyramid);
 
     _ridge->Translate(Wektor3D{100, 100, 0});
     _ridge->Draw(Lacze);

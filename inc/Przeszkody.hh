@@ -4,11 +4,15 @@
 #include "lacze_do_gnuplota.hh"
 #include "ObiektSceny.hh"
 
-class Ridge : public Figure, public SceneObject {
+enum Type {Ridge, Pyramid, Plateau};
+
+class Obstacle : public Figure, public SceneObject {
+
+    Type type;
 
 public:
 
-    Ridge(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center);
+    Obstacle(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center, Type typ);
 
     void CalculateLocalPosition() override;
     void Draw(PzG::LaczeDoGNUPlota& Lacze);
