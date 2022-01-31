@@ -26,9 +26,9 @@ void Cuboid::CalculateLocalPosition()
         vertices.push_back(tmp);
     }
 
-    for(Wektor3D& wierzcholek : vertices) {
+    for(Wektor3D& vertex : vertices) {
         for(int i=0; i<WYMIAR; ++i) {
-            wierzcholek[i] = wierzcholek[i] * Scale[i];
+            vertex[i] = vertex[i] * Scale[i];
         }
     }
     PlikWzorcowy.close();

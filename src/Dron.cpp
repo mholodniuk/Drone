@@ -125,26 +125,6 @@ void Drone::Translate(const Wektor3D& Wek)
     }
 }
 
-void Drone::Animate(Wektor3D& direction_vector, PzG::LaczeDoGNUPlota& Lacze)
-{
-    const double frequency = 30;
-
-    const double length = fabs(direction_vector.ObliczDlugosc());
-
-    const uint16_t delay = 1000./frequency;//[ms]
-    const double time = std::abs(length / (single_step / 1000)); //[ms]
-    const double hmt = time / delay;//[ms]
-
-    Wektor3D Wek_czastkowy = direction_vector * single_step;
-
-    for(uint32_t timeElapsed = 0; timeElapsed<=time; timeElapsed += delay)
-    {
-        Translate(Wek_czastkowy * hmt);
-        usleep(delay*1'000);
-        Draw(Lacze);
-    }
-}
-
 /*!
  * \brief Metoda realizujaca lot drona
  *

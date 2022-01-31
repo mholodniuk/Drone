@@ -12,6 +12,7 @@ Scene::Scene()
     ObstacleCounter = 0;
 
     ChosenDrone = AddDrone(1, W1);
+    AddRidge();
 }
 
 /*!
@@ -116,6 +117,17 @@ std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
     ObjectList.push_back(_Dron);
 
     return _Dron;
+}
+
+void Scene::AddRidge()
+{
+    std::string name = "dat/przeszkody/test.dat";
+    std::shared_ptr<Ridge> _ridge = std::make_shared<Ridge>(name, Wektor3D{30,30,30}, Wektor3D());
+
+    _ridge->Translate(Wektor3D{100, 100, 0});
+    _ridge->Draw(Lacze);
+
+    ObjectList.push_back(_ridge);
 }
 
 /*!

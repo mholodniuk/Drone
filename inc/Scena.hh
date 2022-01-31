@@ -4,6 +4,7 @@
 #include "ObiektSceny.hh"
 #include "lacze_do_gnuplota.hh"
 #include "BrylaGeometryczna.hh"
+#include "Przeszkody.hh"
 #include <list>
 #include <memory>
 
@@ -46,6 +47,8 @@ public:
     std::shared_ptr<Drone> AddDrone(unsigned int ID, const Wektor3D& wek);
     void AddDrone();
     void PrintDrones();
+
+    void AddRidge();
 
     //!\brief Metody animujace lot drona
     void Animate(std::shared_ptr<Drone> &Dr);
