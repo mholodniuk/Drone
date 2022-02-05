@@ -13,6 +13,8 @@ Scene::Scene()
 
     ChosenDrone = AddDrone(1, W1);
     AddRidge();
+    AddPyramid();
+    AddPlateau();
 }
 
 /*!
@@ -121,13 +123,38 @@ std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
 
 void Scene::AddRidge()
 {
-    std::string name = "dat/przeszkody/test.dat";
-    std::shared_ptr<Obstacle> _ridge = std::make_shared<Obstacle>(name, Wektor3D{30,30,60}, Wektor3D(), Type::Pyramid);
+    std::string name = "dat/przeszkody/przeszkoda1.dat";
+    std::shared_ptr<Obstacle> _ridge = std::make_shared<Obstacle>(name, Wektor3D{30,30,60}, Wektor3D(), Type::Ridge);
 
     _ridge->Translate(Wektor3D{100, 100, 0});
+    //_ridge->SetGlobalOrientation(Matrix3x3(Matrix3x3::Axis::OZ, rand()%180));
     _ridge->Draw(Lacze);
 
     ObjectList.push_back(_ridge);
+}
+
+void Scene::AddPyramid()
+{
+    std::string name = "dat/przeszkody/przeszkoda2.dat";
+    std::shared_ptr<Obstacle> _pyramid = std::make_shared<Obstacle>(name, Wektor3D{20,20,70}, Wektor3D(), Type::Pyramid);
+
+    _pyramid->Translate(Wektor3D{150, 100, 0});
+    //_pyramid->SetGlobalOrientation(Matrix3x3(Matrix3x3::Axis::OZ, rand()%180));
+    _pyramid->Draw(Lacze);
+
+    ObjectList.push_back(_pyramid);
+}
+
+void Scene::AddPlateau()
+{
+    std::string name = "dat/przeszkody/przeszkoda4.dat";
+    std::shared_ptr<Obstacle> _plateau = std::make_shared<Obstacle>(name, Wektor3D{30,50,20}, Wektor3D(), Type::Plateau);
+
+    _plateau->Translate(Wektor3D{100, 150, 0});
+    //_plateau->SetGlobalOrientation(Matrix3x3(Matrix3x3::Axis::OZ, rand()%180));
+    _plateau->Draw(Lacze);
+
+    ObjectList.push_back(_plateau);
 }
 
 /*!
@@ -217,7 +244,7 @@ void Scene::Animate(std::shared_ptr<Drone> &Dr)
     Dr->PlanPath(Lacze);
 
     Dr->FlyVertical(80, Lacze);
-    Dr->Rotate(kat, Lacze);
+    Dr->Rotation(kat, Lacze);
     Dr->FlyHorizontal(dlugosc, Lacze);
 
     while(IsOccupied(Dr)) {

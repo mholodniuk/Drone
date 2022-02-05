@@ -4,7 +4,6 @@
 #include "Prostopadloscian.hh"
 #include "Graniastoslup.hh"
 #include "ObiektSceny.hh"
-#include <functional>
 #include <iostream>
 #include <memory>
 #include "lacze_do_gnuplota.hh"
@@ -36,8 +35,7 @@ class Drone: public SceneObject {
     Path path;
     
     unsigned int id;
-    float DeltaTime;
-    int single_step = 2;
+    int single_step = 1;
     unsigned int DroneRadius = 10;
 
     //! \brief Metody generujace nazwy plikow
@@ -62,8 +60,8 @@ public:
     inline Wektor3D GetPosition() const { return Position; }
     
     //!! \brief Metoda transformujaca 
-    void Draw(PzG::LaczeDoGNUPlota& Lacze);
-    void Translate(const Wektor3D& Wek);
+    void Draw(PzG::LaczeDoGNUPlota&);
+    void Translate(const Wektor3D&);
 
     //! \brief Metoda zapisujaca polozenie poszczegolnych wierzcholkow
     void CalcAndSaveElements();
@@ -75,11 +73,9 @@ public:
     void ClearPath(PzG::LaczeDoGNUPlota& Lacze) { path.ClearPath(Lacze); }
     void ShowPath(std::ofstream& Plik) const;
 
-    void Animate(Wektor3D& direction_vector, PzG::LaczeDoGNUPlota& Lacze);
-
     //! \brief Metody Animujace ruch drona
-    void Rotate(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
-    void Fly(Wektor3D& Wek_kierunkowy, const double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
+    void Rotation(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
+    void Fly(Wektor3D& direction_vector, const double length, PzG::LaczeDoGNUPlota& Lacze);
     void FlyHorizontal(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
     void FlyVertical(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
     void Wait(double czas, PzG::LaczeDoGNUPlota& Lacze);

@@ -49,6 +49,8 @@ public:
     void PrintDrones();
 
     void AddRidge();
+    void AddPyramid();
+    void AddPlateau();
 
     //!\brief Metody animujace lot drona
     void Animate(std::shared_ptr<Drone> &Dr);

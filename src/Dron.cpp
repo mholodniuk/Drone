@@ -137,8 +137,8 @@ void Drone::Fly(Wektor3D& direction_vector, const double horizontal_distance, Pz
 {
     assert(fabs(direction_vector.ObliczDlugosc()-1) < BLAD_OBLICZEN);
 
-    const double czestotliwosc = 30;
-    const u_int16_t delay = 1000./czestotliwosc;
+    const double frequency = 30;
+    const u_int16_t delay = 1000./frequency;
 
     Wektor3D Wek_czastkowy = direction_vector * single_step;
     Wektor3D Start_pos = Position;
@@ -189,7 +189,7 @@ void Drone::FlyVertical(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
     if(dlugosc_lotu>0) kierunek =  1;
     if(dlugosc_lotu<0) kierunek = -1;
 
-    Wektor3D Kierunek_lotu = {0,0,kierunek};
+    Wektor3D Kierunek_lotu = {0, 0, kierunek};
 
     Fly(Kierunek_lotu, fabs(dlugosc_lotu), Lacze);
 }
@@ -203,7 +203,7 @@ void Drone::FlyVertical(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
  * \param[in] Lacze 
  * 
  */
-void Drone::Rotate(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
+void Drone::Rotation(double kat_obrotu, PzG::LaczeDoGNUPlota & Lacze)
 {
     kat_obrotu += current_drone_rotation;
     if(kat_obrotu>0) {
