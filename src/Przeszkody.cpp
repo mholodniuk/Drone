@@ -8,8 +8,22 @@
  * 
  */
 Obstacle::Obstacle(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center, Type _type)
-    : Figure(NazwaPilku, skala, center), type(_type) { }
+    : Figure(NazwaPilku, skala, Wektor3D()), type(_type), Position(center) { }
 
+
+std::string Obstacle::Identify() const
+{
+    switch(type) {
+        case Ridge:
+            return "Gora z dluga grania";
+        case Pyramid:
+            return "Gora z ostrym szczytem";
+        case Plateau:
+            return "Plaskowyz";
+        default:
+            return "Niezidentyfikowany obiekt";
+    }
+}
 
 void Obstacle::CalculateLocalPosition() 
 {
@@ -59,6 +73,64 @@ void Obstacle::CalculateLocalPosition()
 void Obstacle::Draw(PzG::LaczeDoGNUPlota& Lacze)
 {
     Figure::Draw();
-    Lacze.DodajNazwePliku(FinalFileName.c_str()).ZmienKolor(4);
+    Lacze.DodajNazwePliku(FinalFileName.c_str()).ZmienKolor(0);
     Lacze.Rysuj();
+}
+
+std::vector<Wektor<2>> Obstacle::GetBorderCords() const
+{
+    std::vector<Wektor<2>> vertex_cords;
+
+    Wektor<2> x_min, x_max, y_min, y_max;
+    //nazewnictwo nie jest zbytnio istotne
+    x_min[0] = Position[0] - Scale[0]/2;
+    x_min[1] = Position[1] - Scale[1]/2;
+
+    y_max[0] = Position[0] + Scale[0]/2;
+    y_max[1] = Position[1] + Scale[1]/2;
+
+    x_max[0] = Position[0] + Scale[0]/2;
+    x_max[1] = x_min[1];
+
+    y_min[0] = Position[0] - Scale[0]/2;
+    y_min[1] = y_max[1];
+
+    //  4.---------2.
+    //  |          |
+    //  |          |
+    //  1.---------3.
+
+    vertex_cords.push_back(x_min);
+    vertex_cords.push_back(y_max);
+    vertex_cords.push_back(x_max);
+    vertex_cords.push_back(y_min);
+
+    return vertex_cords;
+}
+
+bool Obstacle::IsOccupied(const Wektor3D& Polozenie_drona, double Radius) const
+{
+    std::vector<Wektor<2>> Cords2D =  GetBorderCords();
+    double distance, x, y; //x to zmienna pomocnicza
+    Wektor<2> DronePosition = Polozenie_drona;
+    Wektor<2> ObstaclePosition = Position;
+
+    distance = (DronePosition - ObstaclePosition).ObliczDlugosc();
+
+    //case 1: lewo/prawo
+    x = Radius + Scale[0]/2;
+    y = Radius + Scale[1]/2;
+    if(distance >= x && distance >= y)
+    {
+        //std::cout<<"Wolne na osi x i y plask"<<std::endl;
+        return false;
+    }
+
+    //case 3,4,5,6: odleglosci od wierzcholkow
+    for(unsigned int idx=0; idx<Cords2D.size(); ++idx) {
+        distance = (DronePosition - Cords2D[idx]).ObliczDlugosc();
+        if(distance <= Radius) return true;
+    }
+    
+    return true;
 }

@@ -52,6 +52,8 @@ public:
     void AddPyramid();
     void AddPlateau();
 
+    void RemoveObstacle();
+
     //!\brief Metody animujace lot drona
     void Animate(std::shared_ptr<Drone> &Dr);
 

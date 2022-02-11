@@ -42,7 +42,23 @@ class Drone: public SceneObject {
     inline std::string CreateRotorFileName(unsigned int id_Drona, unsigned int nrRotora);
     inline std::string CreateBodyFileName(unsigned int id_Drona);
 
+
 public:
+
+    //! \brief Metody Obliczajace i generujace sciezke lotu 
+    void InitPath(PzG::LaczeDoGNUPlota& Lacze) const;
+    void PlanPath(PzG::LaczeDoGNUPlota& Lacze);
+    void CreatePath(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
+    void ClearPath(PzG::LaczeDoGNUPlota& Lacze) { path.ClearPath(Lacze); }
+    void ShowPath(std::ofstream& Plik) const;
+
+    //! \brief Metody Animujace ruch drona
+    void Rotation(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
+    void Fly(Wektor3D& direction_vector, const double length, PzG::LaczeDoGNUPlota& Lacze);
+    void FlyHorizontal(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
+    void FlyVertical(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
+    void Wait(double czas, PzG::LaczeDoGNUPlota& Lacze);
+
 
     //! \brief Konstruktor bezparametryczny 
     explicit Drone(unsigned int id, PzG::LaczeDoGNUPlota& lacze);
@@ -65,20 +81,6 @@ public:
 
     //! \brief Metoda zapisujaca polozenie poszczegolnych wierzcholkow
     void CalcAndSaveElements();
-
-    //! \brief Metody Obliczajace i generujace sciezke lotu 
-    void InitPath(PzG::LaczeDoGNUPlota& Lacze) const;
-    void PlanPath(PzG::LaczeDoGNUPlota& Lacze);
-    void CreatePath(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
-    void ClearPath(PzG::LaczeDoGNUPlota& Lacze) { path.ClearPath(Lacze); }
-    void ShowPath(std::ofstream& Plik) const;
-
-    //! \brief Metody Animujace ruch drona
-    void Rotation(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
-    void Fly(Wektor3D& direction_vector, const double length, PzG::LaczeDoGNUPlota& Lacze);
-    void FlyHorizontal(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
-    void FlyVertical(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
-    void Wait(double czas, PzG::LaczeDoGNUPlota& Lacze);
 
     //! \brief Metoda sprawdzajaca czy pod dronem jest wolne miejsce
     virtual bool IsOccupied(const Wektor3D& Polozenie_drona, double Promien) const override;

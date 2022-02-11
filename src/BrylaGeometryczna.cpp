@@ -5,7 +5,7 @@
 
 
 Figure::Figure(std::string NazwaPilku,const Wektor3D& skala, const Wektor3D& center)
-    : FinalFileName(NazwaPilku), Scale(skala), Orientation_deg(0), GlobalOrientation(Matrix3x3()), LocalCenter(center) { }
+    : FinalFileName(NazwaPilku), Scale(skala), Orientation_deg(0), GlobalOrientation(Matrix3x3()), Position(center) { }
 
 
 /*!
@@ -74,6 +74,6 @@ void Figure::Translate(const Wektor3D& Wek)
     CalculateLocalPosition();
     Rotate();
     for(Wektor3D& vertex : vertices) {
-        vertex += (Wek+GlobalOrientation*LocalCenter);
+        vertex += (Wek+GlobalOrientation*Position);
     }
 }

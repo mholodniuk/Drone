@@ -9,6 +9,7 @@ enum Type {Ridge, Pyramid, Plateau};
 class Obstacle : public Figure, public SceneObject {
 
     Type type;
+    Wektor3D Position;
 
 public:
 
@@ -17,10 +18,11 @@ public:
     void CalculateLocalPosition() override;
     void Draw(PzG::LaczeDoGNUPlota& Lacze);
 
-    bool IsOccupied(const Wektor3D& Polozenie_drona, double Promien) const override { return false; }
+    virtual bool IsOccupied(const Wektor3D& Polozenie_drona, double Promien) const override;
+    std::vector<Wektor<2>> GetBorderCords() const;
     
     //! \brief Metody identyfikujace
-    std::string Identify() const override {return "aaa";};
+    std::string Identify() const override;
     const char* GetFileName() const override { return std::string("przeszkoda typu ...").c_str(); }
 
 };

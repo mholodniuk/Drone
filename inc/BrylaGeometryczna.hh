@@ -42,7 +42,7 @@ protected:
 
     std::vector<Wektor3D> vertices;
 
-    Wektor3D LocalCenter;
+    Wektor3D Position;
 
 public:
 
@@ -52,7 +52,7 @@ public:
     virtual ~Figure() {}
 
     //!\brief Metoda zwracajaca nazwe pliku docelowego
-    std::string ZwrocNazwePlikuFinalnego() const { return FinalFileName; }
+    std::string GetFileName() const { return FinalFileName; }
 
     //!\brief Metody Transformujace
     void SetRotation(double kat) { Orientation_deg = kat; };

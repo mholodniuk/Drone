@@ -7,10 +7,11 @@
 
 Scene::Scene() 
 {
-    Wektor3D W1 = {50, 50, 0};
+    Wektor3D W1{50, 50, 0};
     UstawGNUPlot(Lacze);
     ObstacleCounter = 0;
 
+    // drony zawsze na poczatku
     ChosenDrone = AddDrone(1, W1);
     AddRidge();
     AddPyramid();
@@ -26,8 +27,24 @@ void Scene::WyswietlMenu()
     std::cout<<"\t p - Zadaj parametry przelotu"<<std::endl;
     std::cout<<"\t w - Podaj liczbe wektorow"<<std::endl;
     std::cout<<"\t D - Dodaj drona"<<std::endl;
+    std::cout<<"\t u - usun przeszkode"<<std::endl;
     std::cout<<"\t m - Wyswietl menu"<<std::endl<<std::endl;
     std::cout<<"\t k - Koniec dzialania programu"<<std::endl<<std::endl;
+}
+
+void Scene::RemoveObstacle() 
+{
+    int id;
+    if(ObjectList.size() > 2) {
+        std::cout << "Podaj numer przeszkody do usuniecia:";
+        std::cin >> id; 
+        for(std::shared_ptr<SceneObject>& obj: ObjectList) {
+            if(obj->IsDrone()) continue;
+                
+
+        }
+    }
+    
 }
 
 /*!
@@ -63,25 +80,27 @@ void Scene::Menu(char& wybor)
     switch(wybor)
     {
         case 'k':
-        break;
+            break;
 
         case 'm':
-        WyswietlMenu();
-        break;
+            WyswietlMenu();
+            break;
 
         case 'a':
-        PrintDrones();
-        WyborDrona();
-        break;
+            PrintDrones();
+            WyborDrona();
+            break;
         
         case 'w':
-        Wektor3D::ZwrocIloscWektorow();
-        break;
+            Wektor3D::ZwrocIloscWektorow();
+            break;
 
+        case 'u':
+            RemoveObstacle();
 
         case 'D':
-        AddDrone();
-        break;
+            AddDrone();
+            break;
 
 
         case 'p':
@@ -123,11 +142,13 @@ std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
 
 void Scene::AddRidge()
 {
-    std::string name = "dat/przeszkody/przeszkoda1.dat";
-    std::shared_ptr<Obstacle> _ridge = std::make_shared<Obstacle>(name, Wektor3D{30,30,60}, Wektor3D(), Type::Ridge);
+    std::ostringstream stream;
+    stream << "dat/przeszkody/przeszkoda" << ++ObstacleCounter << ".dat";
+    std::string name = stream.str();
+    Wektor3D pos{100, 100, 0}, scale{30,30,60};
+    std::shared_ptr<Obstacle> _ridge = std::make_shared<Obstacle>(name, scale, pos, Type::Ridge);
 
-    _ridge->Translate(Wektor3D{100, 100, 0});
-    //_ridge->SetGlobalOrientation(Matrix3x3(Matrix3x3::Axis::OZ, rand()%180));
+    _ridge->Translate(pos);
     _ridge->Draw(Lacze);
 
     ObjectList.push_back(_ridge);
@@ -135,11 +156,13 @@ void Scene::AddRidge()
 
 void Scene::AddPyramid()
 {
-    std::string name = "dat/przeszkody/przeszkoda2.dat";
-    std::shared_ptr<Obstacle> _pyramid = std::make_shared<Obstacle>(name, Wektor3D{20,20,70}, Wektor3D(), Type::Pyramid);
+    std::ostringstream stream;
+    stream << "dat/przeszkody/przeszkoda" << ++ObstacleCounter << ".dat";
+    std::string name = stream.str();
+    Wektor3D pos{150, 50, 0}, scale{30,20,70};
+    std::shared_ptr<Obstacle> _pyramid = std::make_shared<Obstacle>(name, scale, pos, Type::Pyramid);
 
-    _pyramid->Translate(Wektor3D{150, 100, 0});
-    //_pyramid->SetGlobalOrientation(Matrix3x3(Matrix3x3::Axis::OZ, rand()%180));
+    _pyramid->Translate(pos);
     _pyramid->Draw(Lacze);
 
     ObjectList.push_back(_pyramid);
@@ -147,11 +170,13 @@ void Scene::AddPyramid()
 
 void Scene::AddPlateau()
 {
-    std::string name = "dat/przeszkody/przeszkoda4.dat";
-    std::shared_ptr<Obstacle> _plateau = std::make_shared<Obstacle>(name, Wektor3D{30,50,20}, Wektor3D(), Type::Plateau);
+    std::ostringstream stream;
+    stream << "dat/przeszkody/przeszkoda" << ++ObstacleCounter << ".dat";
+    std::string name = stream.str();
+    Wektor3D pos{150, 150, 0}, scale{30,50,20};
+    std::shared_ptr<Obstacle> _plateau = std::make_shared<Obstacle>(name, scale, pos, Type::Plateau);
 
-    _plateau->Translate(Wektor3D{100, 150, 0});
-    //_plateau->SetGlobalOrientation(Matrix3x3(Matrix3x3::Axis::OZ, rand()%180));
+    _plateau->Translate(pos);
     _plateau->Draw(Lacze);
 
     ObjectList.push_back(_plateau);
@@ -208,9 +233,9 @@ bool Scene::IsOccupied(std::shared_ptr<Drone>& Dr)
     for(const std::shared_ptr<SceneObject>& Ob : ObjectList) {
         if(Ob == Dr) continue;
         if(Ob->IsOccupied(Dr->GetPosition(), Dr->GetRadius())) {
+            Ob->Identify();
             std::cout << "Aktualna pozycja jest zajeta przez obiekt: " << Ob->Identify() << 
             std:: endl << "Przedluzam lot....." << std::endl << std::endl;
-
             return true;
         }
     }
