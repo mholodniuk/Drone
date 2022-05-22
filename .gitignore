@@ -1,3 +1,7 @@
-dat/*
-bin/*
-obj/*
+dat/
+obj/
+
+build/
+.vscode/
+
+Drone
