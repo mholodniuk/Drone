@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "Wektor3D.hh"
+#include "Vector3D.hh"
 
 /*!
  * \file "ObiektSceny.hh"
@@ -31,7 +31,7 @@ public:
     virtual bool IsDrone() const { return false; }
 
     //!\brief Abstrakcyjna metoda sprawdzajca zajetosc obszaru
-    virtual bool IsOccupied(const Wektor3D& Polozenie_drona, double Promien) const = 0;
+    virtual bool IsOccupied(const Vector3D& Polozenie_drona, double Promien) const = 0;
 
     //!\brief Metody pozwalajce na identyfikacje obiektu
     virtual std::string Identify() const { return "obiekt sceny"; }

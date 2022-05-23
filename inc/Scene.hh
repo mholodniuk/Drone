@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Dron.hh"
-#include "ObiektSceny.hh"
+#include "Drone.hh"
+#include "SceneObject.hh"
 #include "lacze_do_gnuplota.hh"
-#include "BrylaGeometryczna.hh"
-#include "Przeszkody.hh"
+#include "Figure.hh"
+#include "Obstacles.hh"
 #include <list>
 #include <memory>
 
@@ -44,7 +44,7 @@ public:
     void WyborDrona();
 
     //!\brief metody dodajace drony
-    std::shared_ptr<Drone> AddDrone(unsigned int ID, const Wektor3D& wek);
+    std::shared_ptr<Drone> AddDrone(unsigned int ID, const Vector3D& wek);
     void AddDrone();
     void PrintDrones();
 

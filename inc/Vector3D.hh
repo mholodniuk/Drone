@@ -1,5 +1,5 @@
 #pragma once
-#include "Wektor.hh"
+#include "Vector.hh"
 
 /*!
  * \file Wektor3D.hh
@@ -12,4 +12,4 @@
  * Wektor3D jest instancja klasy Wektor o wymiarze 3
  */
 
-typedef Wektor<3> Wektor3D;
+typedef Vector<3> Vector3D;

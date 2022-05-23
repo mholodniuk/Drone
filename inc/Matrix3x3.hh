@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Wektor3D.hh"
+#include "Vector3D.hh"
 
 
 /*!
@@ -58,7 +58,7 @@ public:
     /*!
     * \brief Operatory poszczegolnych dzialan
     */
-    Wektor3D operator*(const Wektor3D& Wektor) const;
+    Vector3D operator*(const Vector3D& Wektor) const;
     Matrix3x3 operator*(const Matrix3x3& Macierz) const;
     
 };

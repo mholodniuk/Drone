@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BrylaGeometryczna.hh"
+#include "Figure.hh"
 
 /*!
  * \file Graniastoslup.hh
@@ -23,10 +23,6 @@ class Prism: public Figure
 
 public:
 
-    Prism(std::string, const Wektor3D&, const Wektor3D& cnetr);
-
+    Prism(std::string, const Vector3D&, const Vector3D& cnetr);
     void CalculateLocalPosition() override;
-
-
-    //virtual bool CzyZajete(const Wektor3D& Polozenie_drona, double Promien) const override;
 };

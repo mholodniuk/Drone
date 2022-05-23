@@ -6,9 +6,9 @@
 #include <vector>
 #include <fstream>
 #include <string>
-#include "Wektor3D.hh"
-#include "Macierz3x3.hh"
-#include "Nazwy.hh"
+#include "Vector3D.hh"
+#include "Matrix3x3.hh"
+#include "Consts.hh"
  
 
 #define WYMIAR 3
@@ -34,20 +34,20 @@ protected:
 
     std::string FinalFileName;
 
-    Wektor3D Scale;
+    Vector3D Scale;
 
     double Orientation_deg;
 
     Matrix3x3 GlobalOrientation;
 
-    std::vector<Wektor3D> vertices;
+    std::vector<Vector3D> vertices;
 
-    Wektor3D Position;
+    Vector3D Position;
 
 public:
 
     //!\brief Konstruktor bezparametryczny 
-    explicit Figure(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center);
+    explicit Figure(std::string NazwaPilku, const Vector3D& skala, const Vector3D& center);
     //!\brief Destruktor wirtualny
     virtual ~Figure() {}
 
@@ -58,12 +58,12 @@ public:
     void SetRotation(double kat) { Orientation_deg = kat; };
     void SetGlobalOrientation(const Matrix3x3& orient) { GlobalOrientation = orient; }
     void Rotate();
-    void Transform(const Wektor3D& Trans);
+    void Transform(const Vector3D& Trans);
     bool Draw();
 
     virtual void CalculateLocalPosition() = 0;
 
     //!\brief Metoda przesuwajaca Prostopadloscian wzgledem Drona
-    void Translate(const Wektor3D& Wek);
+    void Translate(const Vector3D& Wek);
 
 };

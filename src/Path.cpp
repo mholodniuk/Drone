@@ -1,4 +1,4 @@
-#include "../inc/Sciezka.hh"
+#include "../inc/Path.hh"
 
 /*!
  * \brief Metoda obliczajca wspolrzedne
@@ -16,9 +16,9 @@
  * \return Wsp - nowe (finalne) polozenie
  * 
  */
-Wektor3D Path::CalcNewPos(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
+Vector3D Path::CalcNewPos(const Vector3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
 {
-  Wektor3D Wsp;
+  Vector3D Wsp;
   double kat_rad = kat_skretu*M_PI/180;
   Wsp[0] = Dlugosc_lotu * cos(kat_rad);
   Wsp[1] = Dlugosc_lotu * sin(kat_rad);
@@ -43,9 +43,9 @@ Wektor3D Path::CalcNewPos(const Wektor3D& Polozenie_poczatkowe, double kat_skret
  * 
  * 
  */
-void Path::CreatePath(const Wektor3D& Starting_pos, double angle, double length)
+void Path::CreatePath(const Vector3D& Starting_pos, double angle, double length)
 {
-  Wektor3D pomoc;
+  Vector3D pomoc;
 
   Points.push_back(Starting_pos);
   pomoc = Starting_pos;
@@ -61,7 +61,7 @@ void Path::CreatePath(const Wektor3D& Starting_pos, double angle, double length)
 /*!
  * \brief Metoda czyszczaca sciezke lotu drona
  *
- * Kontener z Wektorami3D zostaje wyczysczony, a plik trasy
+ * Kontener z Vectorami3D zostaje wyczysczony, a plik trasy
  * sciezki zostaje chwilowo wymazany
  * 
  * \param[in] LaczeDoGNUPlota

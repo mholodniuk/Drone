@@ -1,4 +1,4 @@
-#include "../inc/Graniastoslup.hh"
+#include "../inc/Prism.hh"
 
 
 /*!
@@ -7,7 +7,7 @@
  * Ustawia Nazwe pliku wzorcowego i nadaje kat orientacji 0
  * 
  */
-Prism::Prism(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center)
+Prism::Prism(std::string NazwaPilku, const Vector3D& skala, const Vector3D& center)
     : Figure(NazwaPilku, skala, center) { }
 
 void Prism::CalculateLocalPosition()
@@ -20,13 +20,13 @@ void Prism::CalculateLocalPosition()
         std::cerr << std::endl << "Blad otwarcia pliku: " << PLIK_WZORCOWEGO_GRANIASTOSLUPA6 << std::endl;
     }
 
-    Wektor3D tmp;
+    Vector3D tmp;
     while(buffer>>tmp) {
         //std::cout<<tmp;
         vertices.push_back(tmp);
     }
 
-    for(Wektor3D& wierzcholek : vertices) {
+    for(Vector3D& wierzcholek : vertices) {
         for(int i=0; i<WYMIAR; ++i) {
             wierzcholek[i] = wierzcholek[i] * Scale[i];
         }

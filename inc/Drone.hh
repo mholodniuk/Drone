@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Wektor3D.hh"
-#include "Prostopadloscian.hh"
-#include "Graniastoslup.hh"
-#include "ObiektSceny.hh"
+#include "Vector3D.hh"
+#include "Cuboid.hh"
+#include "Prism.hh"
+#include "SceneObject.hh"
 #include <iostream>
 #include <memory>
 #include "lacze_do_gnuplota.hh"
-#include "Sciezka.hh"
+#include "Path.hh"
 
 /*!
  * \file Dron.hh
@@ -28,7 +28,7 @@
 
 class Drone: public SceneObject {
 
-    Wektor3D Position;
+    Vector3D Position;
     double current_drone_rotation;
     std::shared_ptr<Cuboid> Body;
     std::shared_ptr<Prism> Rotors[4];
@@ -48,13 +48,13 @@ public:
     //! \brief Metody Obliczajace i generujace sciezke lotu 
     void InitPath(PzG::LaczeDoGNUPlota& Lacze) const;
     void PlanPath(PzG::LaczeDoGNUPlota& Lacze);
-    void CreatePath(const Wektor3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
+    void CreatePath(const Vector3D& Polozenie_poacztkowe, double kat_skretu, double Dlugosc_lotu);
     void ClearPath(PzG::LaczeDoGNUPlota& Lacze) { path.ClearPath(Lacze); }
     void ShowPath(std::ofstream& Plik) const;
 
     //! \brief Metody Animujace ruch drona
     void Rotation(double kat_obrotu, PzG::LaczeDoGNUPlota& Lacze);
-    void Fly(Wektor3D& direction_vector, const double length, PzG::LaczeDoGNUPlota& Lacze);
+    void Fly(Vector3D& direction_vector, const double length, PzG::LaczeDoGNUPlota& Lacze);
     void FlyHorizontal(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze);
     void FlyVertical(double dlugosc_lout, PzG::LaczeDoGNUPlota& Lacze);
     void Wait(double czas, PzG::LaczeDoGNUPlota& Lacze);
@@ -73,17 +73,17 @@ public:
 
     //! \brief Metody zwracajace/wyswietlajace polozenie
     inline void PrintPosition() const { std::cout << Position[0] << " " <<Position[1] <<std::endl; }
-    inline Wektor3D GetPosition() const { return Position; }
+    inline Vector3D GetPosition() const { return Position; }
     
     //!! \brief Metoda transformujaca 
     void Draw(PzG::LaczeDoGNUPlota&);
-    void Translate(const Wektor3D&);
+    void Translate(const Vector3D&);
 
     //! \brief Metoda zapisujaca polozenie poszczegolnych wierzcholkow
     void CalcAndSaveElements();
 
     //! \brief Metoda sprawdzajaca czy pod dronem jest wolne miejsce
-    virtual bool IsOccupied(const Wektor3D& Polozenie_drona, double Promien) const override;
+    virtual bool IsOccupied(const Vector3D& Polozenie_drona, double Promien) const override;
     
     //! \brief Metody identyfikujace
     virtual std::string Identify() const override;

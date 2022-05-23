@@ -7,4 +7,4 @@
  * \brief Ten plik zawiera funkcje pomocnicza
  */
 
-void UstawGNUPlot(PzG::LaczeDoGNUPlota & Lacze);
+void GnuplotSetUp(PzG::LaczeDoGNUPlota & Lacze);

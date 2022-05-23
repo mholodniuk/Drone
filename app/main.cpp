@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "../inc/Wektor3D.hh"
+#include "../inc/Vector3D.hh"
 #include "../inc/Menu.hh"
 #include <unistd.h>
-#include "../inc/Scena.hh"
+#include "../inc/Scene.hh"
 
 using namespace std;
 
@@ -12,7 +12,7 @@ int main()
   Scene S;
   char input = 'm';
   
-  Wektor3D::ZwrocIloscWektorow();
+  Vector3D::GetNumberOfVectors();
 
   while (input != 'k')
   {

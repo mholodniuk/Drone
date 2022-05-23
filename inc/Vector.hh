@@ -21,7 +21,7 @@
  * \tparam wymiar - rozmiar wektora
  */
 template <int wymiar>
-class Wektor
+class Vector
 {
     double wsp[wymiar];
     static int AktualnaIloscWektorow;
@@ -32,10 +32,10 @@ public:
     /*!
     * \brief Konstruktory bezparamentryczny (inicjalizuje zerami) i parametryczny 
     */
-    Wektor();
-    ~Wektor();
-    Wektor(const std::initializer_list<double> &rListWsp);
-    Wektor(const Wektor & wektor);
+    Vector();
+    ~Vector();
+    Vector(const std::initializer_list<double> &rListWsp);
+    Vector(const Vector & wektor);
 
     /*!
     * \brief przeciazenie operatora indeksowania dla odczytu
@@ -59,14 +59,14 @@ public:
     /*!
     * \brief przeciazenia operatorow
     */
-    Wektor& operator=(const Wektor&);
-    Wektor operator +(const Wektor &)const; 
-    Wektor operator -(Wektor &) const;
-    Wektor operator+= (const Wektor &);
-    bool operator!= (const Wektor &) const;
-    bool operator== (const Wektor &) const;
-    Wektor operator* (double mnoznik);
-    Wektor operator/ (double mnoznik);
+    Vector& operator=(const Vector&);
+    Vector operator +(const Vector &)const; 
+    Vector operator -(Vector &) const;
+    Vector operator+= (const Vector &);
+    bool operator!= (const Vector &) const;
+    bool operator== (const Vector &) const;
+    Vector operator* (double mnoznik);
+    Vector operator/ (double mnoznik);
 
     /*!
     * \brief Metoda obliczajaca dlugosc wektora
@@ -76,9 +76,9 @@ public:
     /*!
     * \brief Konwerter wektora o danym wymiarze na wektor o jeden wymiar mniejszy
     */
-    operator Wektor<wymiar-1> () const
+    operator Vector<wymiar-1> () const
     {
-        Wektor<wymiar-1> Wynik;
+        Vector<wymiar-1> Wynik;
         for(unsigned int idx=0; idx < wymiar-1; ++idx)  Wynik[idx] = (*this)[idx]; 
         return Wynik;
     }
@@ -86,7 +86,7 @@ public:
     /*!
     * \brief Metody zwracajace ilosc obiektow
     */
-    static void ZwrocIloscWektorow()
+    static void GetNumberOfVectors()
     {
         std::cout<<"Aktualna ilosc wektorow: "<<AktualnaIloscWektorow<<std::endl;
         std::cout<<"Ogolna ilosc wektorow: "<<OgolnaIloscWektorow<<std::endl;
@@ -95,10 +95,10 @@ public:
 };
     //!\brief inicjalizacja pol statycznych
     template <int wymiar>
-    int Wektor<wymiar>::AktualnaIloscWektorow = 0;
+    int Vector<wymiar>::AktualnaIloscWektorow = 0;
 
     template <int wymiar>
-    int Wektor<wymiar>::OgolnaIloscWektorow = 0;
+    int Vector<wymiar>::OgolnaIloscWektorow = 0;
 
 
 /*!
@@ -107,7 +107,7 @@ public:
  * tworzy obiekt Wektor i inicjalizuje jego pole wartoscia 0 oraz zlicza powstaly obiekt
  */
 template <int wymiar>
-Wektor<wymiar>::Wektor()
+Vector<wymiar>::Vector()
 {
     ++OgolnaIloscWektorow;
     ++AktualnaIloscWektorow;
@@ -121,7 +121,7 @@ Wektor<wymiar>::Wektor()
  * \brief Konstruktor kopiujacy
  */
 template <int wymiar>
-Wektor<wymiar>::Wektor(const Wektor<wymiar> & wektor)
+Vector<wymiar>::Vector(const Vector<wymiar> & wektor)
 {
     ++OgolnaIloscWektorow;
     ++AktualnaIloscWektorow;
@@ -135,7 +135,7 @@ Wektor<wymiar>::Wektor(const Wektor<wymiar> & wektor)
  * \brief Operator podstawienia
  */
 template<int wymiar>
-Wektor<wymiar>& Wektor<wymiar>::operator=(const Wektor<wymiar> & wektor)
+Vector<wymiar>& Vector<wymiar>::operator=(const Vector<wymiar> & wektor)
 {
     for(int i=0; i<wymiar; ++i)
     {
@@ -150,7 +150,7 @@ Wektor<wymiar>& Wektor<wymiar>::operator=(const Wektor<wymiar> & wektor)
  * zmniejsza aktualna ilosc obiektow klasy wektor
  */
 template <int wymiar>
-Wektor<wymiar>::~Wektor()
+Vector<wymiar>::~Vector()
 {
     --AktualnaIloscWektorow;
 }
@@ -163,7 +163,7 @@ Wektor<wymiar>::~Wektor()
  * \param[in] rListaWsp - lista wartosci, ktore maja byc przypisane wektorowi 
  */
 template <int wymiar>
-Wektor<wymiar>::Wektor(const std::initializer_list<double> & rListaWsp): Wektor()
+Vector<wymiar>::Vector(const std::initializer_list<double> & rListaWsp): Vector()
 {
     //++AktualnaIloscWektorow; ++OgolnaIloscWektorow;
     assert(rListaWsp.size() <= wymiar);
@@ -183,9 +183,9 @@ Wektor<wymiar>::Wektor(const std::initializer_list<double> & rListaWsp): Wektor(
  * 
  */
 template<int wymiar>
-Wektor<wymiar> Wektor<wymiar>::operator+(const Wektor<wymiar> & czynnik) const
+Vector<wymiar> Vector<wymiar>::operator+(const Vector<wymiar> & czynnik) const
 {
-    Wektor<wymiar> Wynik;
+    Vector<wymiar> Wynik;
     for(int i=0; i < wymiar; ++i)
     {
         Wynik[i] = wsp[i] + czynnik[i];
@@ -204,9 +204,9 @@ Wektor<wymiar> Wektor<wymiar>::operator+(const Wektor<wymiar> & czynnik) const
  * 
  */
 template<int wymiar>
-Wektor<wymiar> Wektor<wymiar>::operator-(Wektor<wymiar> & czynnik) const
+Vector<wymiar> Vector<wymiar>::operator-(Vector<wymiar> & czynnik) const
 {
-    Wektor<  wymiar> Wynik;
+    Vector<  wymiar> Wynik;
     for(int i=0; i < wymiar; ++i)
     {
         Wynik[i] = wsp[i] - czynnik[i];
@@ -225,7 +225,7 @@ Wektor<wymiar> Wektor<wymiar>::operator-(Wektor<wymiar> & czynnik) const
  * 
  */
 template<int wymiar>
-Wektor<wymiar> Wektor<wymiar>::operator+=(const Wektor<wymiar> & wektor)
+Vector<wymiar> Vector<wymiar>::operator+=(const Vector<wymiar> & wektor)
 {
     for(int i=0; i<wymiar; ++i)
     {
@@ -246,7 +246,7 @@ Wektor<wymiar> Wektor<wymiar>::operator+=(const Wektor<wymiar> & wektor)
  * 
  */
 template<int wymiar>
-bool Wektor<wymiar>::operator!= (const Wektor<wymiar>& wektor) const
+bool Vector<wymiar>::operator!= (const Vector<wymiar>& wektor) const
 {
     int licznik = 0;
     for(int i=0; i<wymiar; ++i)
@@ -272,7 +272,7 @@ bool Wektor<wymiar>::operator!= (const Wektor<wymiar>& wektor) const
  * 
  */
 template<int wymiar>
-bool Wektor<wymiar>::operator== (const Wektor<wymiar>& wektor) const
+bool Vector<wymiar>::operator== (const Vector<wymiar>& wektor) const
 {
     for(int i=0; i<wymiar; ++i)
     {
@@ -293,9 +293,9 @@ bool Wektor<wymiar>::operator== (const Wektor<wymiar>& wektor) const
  * 
  */
 template<int wymiar>
-Wektor<wymiar> Wektor<wymiar>::operator*(double mnoznik)
+Vector<wymiar> Vector<wymiar>::operator*(double mnoznik)
 {
-    Wektor<wymiar> wynik;
+    Vector<wymiar> wynik;
     for(int i=0; i < wymiar; ++i)
     {
         wynik[i] = wsp[i] * mnoznik;
@@ -304,10 +304,10 @@ Wektor<wymiar> Wektor<wymiar>::operator*(double mnoznik)
 }
 
 template<int wymiar>
-Wektor<wymiar> Wektor<wymiar>::operator/(double mnoznik)
+Vector<wymiar> Vector<wymiar>::operator/(double mnoznik)
 {
     assert(mnoznik != 0);
-    Wektor<wymiar> wynik;
+    Vector<wymiar> wynik;
     for(int i=0; i < wymiar; ++i)
     {
         wynik[i] = wsp[i] / mnoznik;
@@ -326,7 +326,7 @@ Wektor<wymiar> Wektor<wymiar>::operator/(double mnoznik)
  * 
  */
 template<int wymiar>
-double Wektor<wymiar>::ObliczDlugosc()
+double Vector<wymiar>::ObliczDlugosc()
 {
     double suma = 0;
     for(int i=0; i<wymiar; ++i)
@@ -349,7 +349,7 @@ double Wektor<wymiar>::ObliczDlugosc()
  * 
  */
 template <int wymiar>
-std::ostream& operator << (std::ostream &Strm, const Wektor<wymiar> &Wek)
+std::ostream& operator << (std::ostream &Strm, const Vector<wymiar> &Wek)
 {
     for(int i=0; i<wymiar; ++i)
     {
@@ -371,7 +371,7 @@ std::ostream& operator << (std::ostream &Strm, const Wektor<wymiar> &Wek)
  * 
  */
 template <int wymiar>
-std::istream& operator >> (std::istream &Strm, Wektor<wymiar> &Wek)
+std::istream& operator >> (std::istream &Strm, Vector<wymiar> &Wek)
 {
     for(int i=0; i<wymiar; ++i) {
         Strm >> Wek[i];

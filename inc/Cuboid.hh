@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BrylaGeometryczna.hh"
+#include "Figure.hh"
 
 /*!
  * \file Prostopadloscian.hh
@@ -22,7 +22,7 @@ class Cuboid: public Figure
 
 public:
 
-    Cuboid(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center);
+    Cuboid(std::string NazwaPilku, const Vector3D& skala, const Vector3D& center);
     void CalculateLocalPosition() override;
 
 };

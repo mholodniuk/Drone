@@ -1,4 +1,4 @@
-#include "../inc/Macierz3x3.hh"
+#include "../inc/Matrix3x3.hh"
 
 #include <cmath>
 #include <iostream>
@@ -103,9 +103,9 @@ void Matrix3x3::ObrotZ(double kat)
  * \return Wynik - wektor, bedacy iloczynem macierzy przez wektor
  * 
  */
-Wektor3D Matrix3x3::operator* (const Wektor3D& wektor) const
+Vector3D Matrix3x3::operator* (const Vector3D& wektor) const
 {
-    Wektor3D wynik;
+    Vector3D wynik;
     for(int i=0; i<WYMIAR; ++i)
     {
         for(int j=0; j<WYMIAR; ++j)

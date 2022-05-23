@@ -1,4 +1,4 @@
-#include "../inc/Przeszkody.hh"
+#include "../inc/Obstacles.hh"
 
 
 /*!
@@ -7,8 +7,8 @@
  * Ustawia Nazwe pliku wzorcowego i nadaje kat orientacji 0
  * 
  */
-Obstacle::Obstacle(std::string NazwaPilku, const Wektor3D& skala, const Wektor3D& center, Type _type)
-    : Figure(NazwaPilku, skala, Wektor3D()), type(_type), Position(center) { }
+Obstacle::Obstacle(std::string NazwaPilku, const Vector3D& skala, const Vector3D& center, Type _type)
+    : Figure(NazwaPilku, skala, Vector3D()), type(_type), Position(center) { }
 
 
 std::string Obstacle::Identify() const
@@ -35,7 +35,7 @@ void Obstacle::CalculateLocalPosition()
         std::cerr << std::endl << "Blad otwarcia pliku: bryly_wzorcowe/szescian_na_powierzchni.dat" << std::endl;
     }
 
-    Wektor3D tmp;
+    Vector3D tmp;
     while(buffer>>tmp) {
 
         switch(type) {
@@ -62,7 +62,7 @@ void Obstacle::CalculateLocalPosition()
         vertices.push_back(tmp);
     }
 
-    for(Wektor3D& vertex : vertices) {
+    for(Vector3D& vertex : vertices) {
         for(int i=0; i<WYMIAR; ++i) {
             vertex[i] = vertex[i] * Scale[i];
         }
@@ -77,11 +77,11 @@ void Obstacle::Draw(PzG::LaczeDoGNUPlota& Lacze)
     Lacze.Rysuj();
 }
 
-std::vector<Wektor<2>> Obstacle::GetBorderCords() const
+std::vector<Vector<2>> Obstacle::GetBorderCords() const
 {
-    std::vector<Wektor<2>> vertex_cords;
+    std::vector<Vector<2>> vertex_cords;
 
-    Wektor<2> x_min, x_max, y_min, y_max;
+    Vector<2> x_min, x_max, y_min, y_max;
     //nazewnictwo nie jest zbytnio istotne
     x_min[0] = Position[0] - Scale[0]/2;
     x_min[1] = Position[1] - Scale[1]/2;
@@ -108,12 +108,12 @@ std::vector<Wektor<2>> Obstacle::GetBorderCords() const
     return vertex_cords;
 }
 
-bool Obstacle::IsOccupied(const Wektor3D& Polozenie_drona, double Radius) const
+bool Obstacle::IsOccupied(const Vector3D& Polozenie_drona, double Radius) const
 {
-    std::vector<Wektor<2>> Cords2D =  GetBorderCords();
+    std::vector<Vector<2>> Cords2D =  GetBorderCords();
     double distance, x, y; //x to zmienna pomocnicza
-    Wektor<2> DronePosition = Polozenie_drona;
-    Wektor<2> ObstaclePosition = Position;
+    Vector<2> DronePosition = Polozenie_drona;
+    Vector<2> ObstaclePosition = Position;
 
     distance = (DronePosition - ObstaclePosition).ObliczDlugosc();
 

@@ -1,5 +1,5 @@
-#include "../inc/Dron.hh"
-#include "../inc/Nazwy.hh"
+#include "../inc/Drone.hh"
+#include "../inc/Consts.hh"
 #include <cmath>
 #include <fstream>
 #include <iostream>
@@ -15,19 +15,19 @@
 Drone::Drone(unsigned int ID, PzG::LaczeDoGNUPlota& lacze)
  : Position({0,0,0}), current_drone_rotation(0), id(ID) {
 
-    Wektor3D BodyScale = {16, 12, 10};
-    Wektor3D RotorScale = {10,10,6};
+    Vector3D BodyScale = {16, 12, 10};
+    Vector3D RotorScale = {10,10,6};
 
     std::string file_name = CreateBodyFileName(ID);
 
-    Body = std::make_shared<Cuboid>(file_name, BodyScale, Wektor3D({0,0,5}));
+    Body = std::make_shared<Cuboid>(file_name, BodyScale, Vector3D({0,0,5}));
     Body->SetRotation(current_drone_rotation);
     lacze.DodajNazwePliku(file_name.c_str()).ZmienKolor(4);
     
     int idx = -1;
     for(std::shared_ptr<Prism>& Rotor : Rotors) {
         file_name = CreateRotorFileName(ID, ++idx);
-        Rotor = std::make_shared<Prism>(file_name, RotorScale, Wektor3D({(double)(idx>1 ? -8 : 8), (double)(idx==1 || idx==3 ? 6 : -6), 10}));
+        Rotor = std::make_shared<Prism>(file_name, RotorScale, Vector3D({(double)(idx>1 ? -8 : 8), (double)(idx==1 || idx==3 ? 6 : -6), 10}));
         lacze.DodajNazwePliku(file_name.c_str()).ZmienKolor(4);
     }
 }
@@ -116,7 +116,7 @@ void Drone::Draw(PzG::LaczeDoGNUPlota& Lacze)
     Lacze.Rysuj();
 }
 
-void Drone::Translate(const Wektor3D& Wek)
+void Drone::Translate(const Vector3D& Wek)
 {
     Position += Wek;
     Body->Translate(Position);
@@ -133,15 +133,15 @@ void Drone::Translate(const Wektor3D& Wek)
  * \param[in] Lacze - lacze do gnuplota
  * 
  */
-void Drone::Fly(Wektor3D& direction_vector, const double horizontal_distance, PzG::LaczeDoGNUPlota& Lacze)
+void Drone::Fly(Vector3D& direction_vector, const double horizontal_distance, PzG::LaczeDoGNUPlota& Lacze)
 {
     assert(fabs(direction_vector.ObliczDlugosc()-1) < BLAD_OBLICZEN);
 
     const double frequency = 30;
     const u_int16_t delay = 1000./frequency;
 
-    Wektor3D Wek_czastkowy = direction_vector * single_step;
-    Wektor3D Start_pos = Position;
+    Vector3D Wek_czastkowy = direction_vector * single_step;
+    Vector3D Start_pos = Position;
     double distance_left = horizontal_distance;
 
     distance_left -= single_step;
@@ -151,7 +151,7 @@ void Drone::Fly(Wektor3D& direction_vector, const double horizontal_distance, Pz
         Draw(Lacze);
         distance_left -= single_step;
     }
-    Wektor3D move = direction_vector*horizontal_distance;
+    Vector3D move = direction_vector*horizontal_distance;
     Position = Start_pos+move;
     Translate({0,0,0});
     Draw(Lacze);
@@ -168,7 +168,7 @@ void Drone::Fly(Wektor3D& direction_vector, const double horizontal_distance, Pz
  */
 void Drone::FlyHorizontal(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
 {
-    Wektor3D Kierunek_lotu = {1, 0, 0};
+    Vector3D Kierunek_lotu = {1, 0, 0};
     Matrix3x3 MacierzRot(Matrix3x3::Axis::OZ, current_drone_rotation);
 
     Kierunek_lotu = MacierzRot * Kierunek_lotu;
@@ -189,7 +189,7 @@ void Drone::FlyVertical(double dlugosc_lotu, PzG::LaczeDoGNUPlota& Lacze)
     if(dlugosc_lotu>0) kierunek =  1;
     if(dlugosc_lotu<0) kierunek = -1;
 
-    Wektor3D Kierunek_lotu = {0, 0, kierunek};
+    Vector3D Kierunek_lotu = {0, 0, kierunek};
 
     Fly(Kierunek_lotu, fabs(dlugosc_lotu), Lacze);
 }
@@ -253,7 +253,7 @@ void Drone::Wait(double czas_sek, PzG::LaczeDoGNUPlota& Lacze)
  * odpowiednim zsumowaniu katow
  * 
  */
-void Drone::CreatePath(const Wektor3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
+void Drone::CreatePath(const Vector3D& Polozenie_poczatkowe, double kat_skretu, double Dlugosc_lotu)
 {
     kat_skretu += current_drone_rotation;
     path.CreatePath(Polozenie_poczatkowe, kat_skretu, Dlugosc_lotu);
@@ -308,11 +308,11 @@ void Drone::InitPath(PzG::LaczeDoGNUPlota& Lacze) const
  * \retval true - jesli dane miejsce jest zajete przez obiekt klasy Dron
  * 
  */
-bool Drone::IsOccupied(const Wektor3D& Polozenie_drona, double Promien) const
+bool Drone::IsOccupied(const Vector3D& Polozenie_drona, double Promien) const
 {
     double odleglosc;
-    Wektor<2> Polozenie_drona_2D = Polozenie_drona;
-    Wektor<2> Polozenie_drona_this = Position;
+    Vector<2> Polozenie_drona_2D = Polozenie_drona;
+    Vector<2> Polozenie_drona_this = Position;
 
     odleglosc = (Polozenie_drona_2D - Polozenie_drona_this).ObliczDlugosc();
 

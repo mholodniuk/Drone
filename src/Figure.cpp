@@ -1,10 +1,10 @@
-#include "../inc/BrylaGeometryczna.hh"
+#include "../inc/Figure.hh"
 #include <string.h>
 #include <fstream>
 #include <cmath>
 
 
-Figure::Figure(std::string NazwaPilku,const Wektor3D& skala, const Wektor3D& center)
+Figure::Figure(std::string NazwaPilku,const Vector3D& skala, const Vector3D& center)
     : FinalFileName(NazwaPilku), Scale(skala), Orientation_deg(0), GlobalOrientation(Matrix3x3()), Position(center) { }
 
 
@@ -19,7 +19,7 @@ void Figure::Rotate()
 {
     Matrix3x3 MatrixRot(Matrix3x3::Axis::OZ, Orientation_deg);
 
-    for(Wektor3D& wierzcholek : vertices) {
+    for(Vector3D& wierzcholek : vertices) {
         wierzcholek = MatrixRot * wierzcholek;
     }
 }
@@ -69,11 +69,11 @@ bool Figure::Draw()
  * \retval false - jesli operacja sie nie powiedzie
  * 
  */
-void Figure::Translate(const Wektor3D& Wek)
+void Figure::Translate(const Vector3D& Wek)
 {   
     CalculateLocalPosition();
     Rotate();
-    for(Wektor3D& vertex : vertices) {
+    for(Vector3D& vertex : vertices) {
         vertex += (Wek+GlobalOrientation*Position);
     }
 }

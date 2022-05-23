@@ -1,4 +1,4 @@
-#include "../inc/Scena.hh"
+#include "../inc/Scene.hh"
 
 #include "../inc/Menu.hh"
 #include <vector>
@@ -7,8 +7,8 @@
 
 Scene::Scene() 
 {
-    Wektor3D W1{50, 50, 0};
-    UstawGNUPlot(Lacze);
+    Vector3D W1{50, 50, 0};
+    GnuplotSetUp(Lacze);
     ObstacleCounter = 0;
 
     // drony zawsze na poczatku
@@ -25,7 +25,7 @@ void Scene::WyswietlMenu()
 {
     std::cout<<"\n\t a - Wybierz aktywnego drona"<<std::endl;
     std::cout<<"\t p - Zadaj parametry przelotu"<<std::endl;
-    std::cout<<"\t w - Podaj liczbe wektorow"<<std::endl;
+    std::cout<<"\t w - Podaj liczbe Vectorow"<<std::endl;
     std::cout<<"\t D - Dodaj drona"<<std::endl;
     std::cout<<"\t u - usun przeszkode"<<std::endl;
     std::cout<<"\t m - Wyswietl menu"<<std::endl<<std::endl;
@@ -92,7 +92,7 @@ void Scene::Menu(char& wybor)
             break;
         
         case 'w':
-            Wektor3D::ZwrocIloscWektorow();
+            Vector3D::GetNumberOfVectors();
             break;
 
         case 'u':
@@ -105,7 +105,7 @@ void Scene::Menu(char& wybor)
 
         case 'p':
         Animate(ChosenDrone);
-        Wektor3D::ZwrocIloscWektorow();
+        Vector3D::GetNumberOfVectors();
         break;
 
         default:
@@ -118,7 +118,7 @@ void Scene::Menu(char& wybor)
  * \brief Metoda Dodajaca drona do sceny
  *
  * \param[in] ID - id drona dodawanego
- * \param[in] Wek - wektor przesuniecia drona na scenie
+ * \param[in] Wek - Vector przesuniecia drona na scenie
  * 
  * Tworzony jest wskaznik na obiekt klasy dron, nastepnie jest
  * on odpowiednio tworzony, transformowany do ukladu rodzica
@@ -126,7 +126,7 @@ void Scene::Menu(char& wybor)
  * 
  * \return _Dron - wskaznik na dodanego drona
  */
-std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Wektor3D& Wek)
+std::shared_ptr<Drone> Scene::AddDrone(unsigned int ID, const Vector3D& Wek)
 {
     std::shared_ptr<Drone> _Dron = std::make_shared<Drone>(ID, Lacze);
     Lacze.Rysuj();
@@ -145,7 +145,7 @@ void Scene::AddRidge()
     std::ostringstream stream;
     stream << "dat/przeszkody/przeszkoda" << ++ObstacleCounter << ".dat";
     std::string name = stream.str();
-    Wektor3D pos{100, 100, 0}, scale{30,30,60};
+    Vector3D pos{100, 100, 0}, scale{30,30,60};
     std::shared_ptr<Obstacle> _ridge = std::make_shared<Obstacle>(name, scale, pos, Type::Ridge);
 
     _ridge->Translate(pos);
@@ -159,7 +159,7 @@ void Scene::AddPyramid()
     std::ostringstream stream;
     stream << "dat/przeszkody/przeszkoda" << ++ObstacleCounter << ".dat";
     std::string name = stream.str();
-    Wektor3D pos{150, 50, 0}, scale{30,20,70};
+    Vector3D pos{150, 50, 0}, scale{30,20,70};
     std::shared_ptr<Obstacle> _pyramid = std::make_shared<Obstacle>(name, scale, pos, Type::Pyramid);
 
     _pyramid->Translate(pos);
@@ -173,7 +173,7 @@ void Scene::AddPlateau()
     std::ostringstream stream;
     stream << "dat/przeszkody/przeszkoda" << ++ObstacleCounter << ".dat";
     std::string name = stream.str();
-    Wektor3D pos{150, 150, 0}, scale{30,50,20};
+    Vector3D pos{150, 150, 0}, scale{30,50,20};
     std::shared_ptr<Obstacle> _plateau = std::make_shared<Obstacle>(name, scale, pos, Type::Plateau);
 
     _plateau->Translate(pos);
@@ -257,7 +257,7 @@ bool Scene::IsOccupied(std::shared_ptr<Drone>& Dr)
 void Scene::Animate(std::shared_ptr<Drone> &Dr)
 {
     double kat, dlugosc;
-    Wektor3D Polozenie_poczatkowe = Dr->GetPosition();
+    Vector3D Polozenie_poczatkowe = Dr->GetPosition();
     
     std::cout<<"Podaj kierunek lotu (kat w stopniach): ";
     std::cin>>kat;

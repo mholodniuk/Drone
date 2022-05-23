@@ -1,12 +1,12 @@
 #include "../inc/Menu.hh"
 
 #include <iostream>
-#include "../inc/Nazwy.hh"
+#include "../inc/Consts.hh"
 
 /*!
  * \brief Funckja ustwiajaca odpowiednie parametry gnuplota
  */
-void UstawGNUPlot(PzG::LaczeDoGNUPlota & Lacze)
+void GnuplotSetUp(PzG::LaczeDoGNUPlota & Lacze)
 {
   Lacze.DodajNazwePliku("bryly_wzorcowe/plaszczyzna.dat");
 
