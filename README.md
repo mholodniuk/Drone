@@ -2,4 +2,7 @@
 
 Final project for Object programming course
 
-https://user-images.githubusercontent.com/77827442/159083837-a54f9aa7-e824-4596-88bf-e48a388a9166.mp4
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/77827442/174275522-6ae0bee8-c531-475f-b5f8-12da9caf97e7.gif" alt='drone' width="480">
+</p>
