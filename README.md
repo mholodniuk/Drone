@@ -1,4 +1,4 @@
-# Drone
+# Drone FLight Simulator
 
 Final project for Object programming course
 
