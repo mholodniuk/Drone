@@ -1,6 +1,4 @@
-# Drone FLight Simulator
-
-Final project for Object programming course
+# Drone Flight Simulator
 
 
 <p align="center">
